@@ -1,0 +1,38 @@
+.ea-cta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #273c75;
+    color: #fff;
+    padding: 50px;
+}
+p.ea-cta-desc {
+    margin-bottom: 0;
+}
+
+a.ea-cta-link-text {
+    display: inline-flex;
+    align-items: center;
+    color: #fff;
+    padding: 15px 30px;
+    background: #192a56;
+    transition: ease 0.3s;
+    position: relative;
+    z-index: 1;
+}
+
+a.ea-cta-link-text:before {
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 100%;
+    background: #2c3e50;
+    z-index: -1;
+    transition: ease 0.3s;
+}
+
+a.ea-cta-link-text:hover:before {
+    width: 100%;
+}

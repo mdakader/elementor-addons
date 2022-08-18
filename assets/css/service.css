@@ -1,0 +1,41 @@
+.ea-service {
+    padding: 30px;
+    background: #4B6587;
+    transition: 0.3s ease;
+}
+
+
+.service-icon i {
+    font-size: 45px;
+    transition: 0.3s ease;
+}
+
+h2.ea-service-title {
+    font-size: 24px;
+    line-height: 28px;
+    font-weight: 600;
+    color: #ffffff;
+    transition: 0.3s ease;
+}
+
+p.ea-service-description {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+    color: #ffffff;
+    transition: 0.3s ease;
+}
+
+a:focus,
+a:visited{
+    outline: transparent;
+}
+
+a.ea-service-link {
+    font-size: 15px;
+    line-height: 22px;
+    font-weight: 500;
+    text-transform: capitalize;
+    display: inline-block;
+    transition: 0.3s ease;
+}

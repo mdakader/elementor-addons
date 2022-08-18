@@ -1,0 +1,79 @@
+a.ea-image-gallery.jg-entry.jg-entry-visible {
+    transition: 0.3s ease;
+}
+
+a.ea-image-gallery.jg-entry.jg-entry-visible:after {
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%),
+    linear-gradient(0deg, #617385, #617385);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s ease;
+    z-index: 1;
+}
+
+a.ea-image-gallery.jg-entry.jg-entry-visible:hover:after {
+    opacity: 0.5;
+    visibility: visible;
+
+}
+
+.justified-gallery > a > .jg-caption,
+.justified-gallery > div > .jg-caption,
+.justified-gallery > figure > .jg-caption {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    padding: 5px;
+    background-color: #000000;
+    left: 0;
+    right: 0;
+    margin: 0;
+    color: #ffffff;
+    font-size: 20px;
+    line-height: 26px;
+    font-weight: 600;
+    font-family: sans-serif;
+    z-index: 99;
+}
+
+.ea-image-info {
+    position: absolute;
+    bottom: -100px;
+    left: 0;
+    color: #ffffff;
+    padding: 10px;
+    width: 100%;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s ease;
+    z-index: 99;
+}
+
+h2.ea-image-gallery-caption{
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 400;
+    text-transform: capitalize;
+}
+a.ea-image-gallery.jg-entry.jg-entry-visible:hover .ea-image-info {
+    visibility: visible;
+    opacity: 1;
+    bottom: 0;
+}
+
+.justified-gallery a.ea-image-gallery .jg-caption.jg-caption-visible,
+.justified-gallery a.ea-image-gallery  .jg-caption.jg-caption-visible,
+.justified-gallery a.ea-image-gallery  .jg-caption.jg-caption-visible {
+    display: none !important;
+    opacity: 0;
+}
+
+.justified-gallery .vbox-hidden {
+    display: initial;
+}

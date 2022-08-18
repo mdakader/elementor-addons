@@ -1,0 +1,36 @@
+h3.cta-title {
+    color: #131C4C;
+    font-size: 32px;
+    line-height: 44px;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+p.cta-desc {
+    color: #42486F;
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: 400;
+    margin-bottom: 0;
+}
+.brxt-cta-text a {
+    color: #F0386B;
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: 500;
+    margin-top: 32px;
+    display: inline-flex;
+    align-items: center;
+    transition: 0.3s ease;
+}
+
+span.cta-icon {
+    padding-left: 4px;
+    transition: 0.3s ease;
+}
+
+@media (max-width: 767.98px) {
+    h2.brxt-section-title br {
+        display: none;
+    }
+}

@@ -1,0 +1,14 @@
+.ea-title {
+    text-transform: uppercase;
+    font-size: 32px;
+    line-height: 40px;
+    font-weight: 700;
+}
+
+span.ea-first-title {
+    color: #e74c3c;
+}
+
+span.ea-last-title {
+    color: #2ecc71;
+}
