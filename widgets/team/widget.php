@@ -543,16 +543,16 @@ class TeamWidget extends Widget_Base {
 
         switch ($settings['post_card_style']) {
             case 'post-card-style-1':
-                include EASY_ADDONS_PATH . '/includes/teams/teams-1.php';  // Card Style 1
+                include EASY_ADDONS_PATH . '/widgets/team/teams/teams-1.php';  // Card Style 1
                 break;
             case 'post-card-style-2':
-                include EASY_ADDONS_PATH . '/includes/teams/teams-2.php';  // Card Style 2
+                include EASY_ADDONS_PATH . '/widgets/team/teams/teams-2.php';  // Card Style 2
                 break;
             case 'post-card-style-3':
-                include EASY_ADDONS_PATH . '/includes/teams/teams-3.php';  // Card Style 6
+                include EASY_ADDONS_PATH . '/widgets/team/teams/teams-3.php';  // Card Style 6
                 break;
             default:
-                include EASY_ADDONS_PATH . '/includes/teams/teams-1.php';  // Default Card Style 1
+                include EASY_ADDONS_PATH . '/widgets/team/teams/teams-1.php';  // Default Card Style 1
                 break;
         }
     }

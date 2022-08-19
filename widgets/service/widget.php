@@ -1,6 +1,6 @@
 <?php
 
-namespace EasyAddons\Widgets;
+namespace Easy_Addons\Widgets;
 
 use Elementor\Group_Control_Typography;
 use Elementor\Icons_Manager;
@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @since 1.0.0
  */
-class EAService extends Widget_Base {
+class Service_Widget extends Widget_Base {
 
 	/**
 	 * Retrieve the widget name.

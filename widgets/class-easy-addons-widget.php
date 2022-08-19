@@ -72,13 +72,19 @@ class Easy_Addons_Widget {
         wp_register_style( 'call-to-action', EASY_ADDONS_ASSETS . '/css/call-to-action.css');
         wp_register_style( 'price', EASY_ADDONS_ASSETS . '/css/price.css');
         wp_register_style( 'image-gallery', EASY_ADDONS_ASSETS .'/css/image-gallery.css');
+        wp_register_style( 'counter-up', EASY_ADDONS_ASSETS .'/css/counter-up.css');
+        wp_register_style( 'testimonial', EASY_ADDONS_ASSETS .'/css/testimonial.css');
 
         wp_register_style( 'justifiedGallery', EASY_ADDONS_ASSETS .'/css/justifiedGallery.min.css');
         wp_register_style( 'venobox', EASY_ADDONS_ASSETS . '/css/venobox.css', );
 
         wp_register_script( 'justifiedGallery', EASY_ADDONS_ASSETS .'/js/jquery.justifiedGallery.js', [ 'jquery' ], false, true );
+        wp_register_script( 'counter-up', EASY_ADDONS_ASSETS .'/js/jquery.counterup.min.js', [ 'jquery' ], false, true );
+        wp_register_script( 'waypoints', EASY_ADDONS_ASSETS .'/js/waypoints.min.js', [ 'jquery' ], false, true );
+        wp_register_script( 'counterUp', EASY_ADDONS_ASSETS .'/js/counter-up.js', [ 'jquery' ], false, true );
         wp_register_script( 'venobox', EASY_ADDONS_ASSETS .'/js/venobox.js', [ 'jquery' ], false, true );
         wp_register_script( 'image-gallery',EASY_ADDONS_ASSETS .'/js/image-gallery.js',  [ 'jquery' ], false, true );
+        wp_register_script( 'testimonial',EASY_ADDONS_ASSETS .'/js/testimonial.js',  [ 'jquery' ], false, true );
     }
 	/**
 	 * Register the stylesheets for the public-facing side of the site.
@@ -135,15 +141,34 @@ class Easy_Addons_Widget {
      * @access private
      */
     private function include_widgets_files() {
-        require_once(__DIR__ . '/price/price.php');
-        require_once( __DIR__ . '/dual-heading/dual-heading.php');
-        require_once( __DIR__ . '/team/team.php');
-        require_once( __DIR__ . '/flip-box/flip-box.php');
-        require_once( __DIR__ . '/call-to-action/call-to-action.php');
+
+//        $widgets = [
+//            'dual-heading',
+//            'call-to-action',
+//            'flip-box',
+//            'counter',
+//            'cf7',
+//            'team',
+//            'price',
+//            'image-gallery',
+//            'testimonial',
+//
+//        ];
+//        foreach ($widgets as $widget) {
+//            require_once(__DIR__ . '/' . $widget . '/widget.php');
+//        }
+
+        require_once(__DIR__ . '/price/widget.php');
+        require_once( __DIR__ . '/dual-heading/widget.php');
+        require_once( __DIR__ . '/team/widget.php');
+        require_once( __DIR__ . '/flip-box/widget.php');
+        require_once( __DIR__ . '/call-to-action/widget.php');
         require_once( __DIR__ . '/cf7/widget.php');
         require_once( __DIR__ . '/image-gallery/widget.php');
+        require_once( __DIR__ . '/counter/widget.php');
+        require_once( __DIR__ . '/testimonial/widget.php');
+        require_once( __DIR__ . '/service/widget.php');
     }
-
 
     /**
      * Register Widgets
@@ -165,6 +190,9 @@ class Easy_Addons_Widget {
         $widgets_manager->register( new Widgets\Call_To_Action());
         $widgets_manager->register( new Widgets\CF7());
         $widgets_manager->register( new Widgets\Image_Gallery());
+        $widgets_manager->register( new Widgets\Counter_Up());
+        $widgets_manager->register( new Widgets\Testimonial());
+        $widgets_manager->register( new Widgets\Service_Widget());
     }
 
 
