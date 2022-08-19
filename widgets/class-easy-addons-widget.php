@@ -168,6 +168,7 @@ class Easy_Addons_Widget {
         require_once( __DIR__ . '/counter/widget.php');
         require_once( __DIR__ . '/testimonial/widget.php');
         require_once( __DIR__ . '/service/widget.php');
+        require_once( __DIR__ . '/advance-button/widget.php');
     }
 
     /**
@@ -193,6 +194,7 @@ class Easy_Addons_Widget {
         $widgets_manager->register( new Widgets\Counter_Up());
         $widgets_manager->register( new Widgets\Testimonial());
         $widgets_manager->register( new Widgets\Service_Widget());
+        $widgets_manager->register( new Widgets\Advance_Button_Widget());
     }
 
 
