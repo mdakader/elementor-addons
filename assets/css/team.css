@@ -1,3 +1,8 @@
+img{
+    max-width: 100%;
+    height: auto;
+}
+
 img, svg {
     vertical-align: middle;
 }
@@ -888,9 +893,278 @@ span.team-thumb-info {
 
 
 /*
-* Start Team Style-12
+* Start Team Style-19
+-------------------------*/
+.team-wrapper.team-style-19 .our-team {
+    position: relative;
+    overflow: hidden;
+}
+
+.team-wrapper.team-style-19 .our-team .team-content {
+    border-top: 1px solid #e5e5e5;
+    position: absolute;
+    top: 50%;
+    background: #fff;
+    text-align: center;
+    padding: 32px 25px 5px;
+    transition: all 0.3s ease 0s;
+    width: 100%;
+}
+
+.team-wrapper.team-style-19.our-team{
+    overflow: hidden;
+}
+.team-wrapper.team-style-19 .our-team .pic{
+    transform:scale(1,1);
+    transition:transform 0.30s ease;
+    position: relative;
+}
+.team-wrapper.team-style-19 .our-team:hover .pic{
+    transform:scale(1.1,1.1);
+}
+.team-wrapper.team-style-19 .our-team .pic:before{
+    content: "";
+    width:100%;
+    height:100%;
+    position: absolute;
+    transition:background 0.50s ease-in-out ;
+}
+.team-wrapper.team-style-19 .our-team:hover .pic:before{
+    background:rgba(255, 255, 255,0.5);
+}
+.team-wrapper.team-style-19 .our-team .pic img{
+    width: 100%;
+    height: auto;
+}
+.team-wrapper.team-style-19 .our-team .team-content{
+    border-top: 1px solid #e5e5e5;
+    position: relative;
+    bottom: 0;
+    background:#fff;
+    text-align:center;
+    padding: 32px 25px 5px;
+    transition: all 0.3s ease 0s;
+}
+.team-wrapper.team-style-19 .our-team:hover .team-content{
+    bottom:15%;
+}
+.team-wrapper.team-style-19 .our-team .post-title{
+    margin:0;
+    color:#000;
+    font-size:13px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+}
+
+.team-wrapper.team-style-19 .our-team .post-title:after {
+    content: "";
+    width: 15%;
+    display: block;
+    margin: 15px auto 15px;
+    border-bottom: 2px solid #da3e65;
+}
+
+.team-wrapper.team-style-19 .our-team .post-title small{
+    display: block;
+    font-size:11px;
+    margin-top:3%;
+    letter-spacing:1px;
+    text-transform:uppercase;
+}
+.team-wrapper.team-style-19 .our-team .social-link{
+    padding:0;
+    margin:0 0 4% 0;
+}
+.team-wrapper.team-style-19 .our-team .social-link li{
+    list-style:none;
+    display:inline-block;
+    margin-right:15px;
+}
+.team-wrapper.team-style-19 .our-team .social-link li a{
+    font-size:19px;
+    color:#333;
+}
+.team-wrapper.team-style-19 .our-team .social-link li a.fa-facebook:hover{
+    color:#5d82d1;
+}
+.team-wrapper.team-style-19 .our-team .social-link li a.fa-google:hover{
+    color:#eb5e4c;
+}
+.team-wrapper.team-style-19 .our-team .social-link li a.fa-twitter:hover{
+    color:#40bff5;
+}
+.team-wrapper.team-style-19 .our-team .description{
+    line-height: 23px;
+    padding: 0 20px;
+    position: absolute;
+    transition: opacity 0.3s ease 0s;
+}
+.team-wrapper.team-style-19 .our-team .post-title span {
+    display: block;
+    margin-top: 10px;
+    font-size: 12px;
+}
+.team-wrapper.team-style-19 .our-team .post-title span {
+    display: block;
+    margin-top: 14px;
+}
+/*
+* End Team Style-19
 -------------------------*/
 
 /*
-* End Team Style-12
+* Start Team Style-20
+-------------------------*/
+.team-wrapper.team-style-20 img {
+    width: 100%;
+}
+
+.team-wrapper.team-style-20 .our-team {
+    position: relative;
+    overflow: hidden;
+}
+.team-wrapper.team-style-20 .our-team:after {
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 0;
+    height: 0;
+    width: 100%;
+    background: #121212;
+    z-index: 1;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease;
+}
+.team-wrapper.team-style-20:hover .our-team:after{
+    height: 100%;
+    visibility: visible;
+    opacity: 0.8;
+
+}
+
+.team-wrapper.team-style-20 ul.social-link {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-50%);
+    z-index: 10;
+    transition: all 0.4s ease;
+}
+
+.team-wrapper.team-style-20:hover ul.social-link {
+    bottom: 70%;
+    opacity: 1;
+    visibility: visible;
+}
+.team-wrapper.team-style-20 .our-team {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.team-wrapper.team-style-20 .our-team .team-content {
+    position: absolute;
+    bottom: 0;
+    visibility: hidden;
+    opacity: 0;
+    text-align: center;
+    padding: 32px 25px 5px;
+    transition: all 0.3s ease 0s;
+    width: 100%;
+    z-index: 15;
+}
+.team-wrapper.team-style-20:hover .our-team .team-content {
+    bottom: 15%;
+    visibility: visible;
+    opacity: 1;
+}
+
+.team-wrapper.team-style-20 .our-team .pic{
+    transform:scale(1,1);
+    transition:transform 0.30s ease;
+    position: relative;
+}
+.team-wrapper.team-style-20 .our-team:hover .pic{
+    transform:scale(1.1,1.1);
+}
+.team-wrapper.team-style-20 .our-team .pic:before{
+    content: "";
+    width:100%;
+    height:100%;
+    position: absolute;
+    transition:background 0.50s ease-in-out ;
+}
+.team-wrapper.team-style-20 .our-team:hover .pic:before{
+    background:rgba(255, 255, 255,0.5);
+}
+.team-wrapper.team-style-20 .our-team .pic img{
+    width: 100%;
+    height: auto;
+}
+
+.team-wrapper.team-style-20 .our-team .post-title {
+    margin: 0;
+    color: #fff;
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.team-wrapper.team-style-20 .our-team .post-title:after {
+    content: "";
+    width: 15%;
+    display: block;
+    margin: 15px auto 15px;
+    border-bottom: 2px solid #da3e65;
+}
+
+.team-wrapper.team-style-20 .our-team .post-title small{
+    display: block;
+    font-size:11px;
+    margin-top:3%;
+    letter-spacing:1px;
+    text-transform:uppercase;
+}
+.team-wrapper.team-style-20 .our-team .social-link{
+    padding:0;
+    margin:0 0 4% 0;
+}
+.team-wrapper.team-style-20 .our-team .social-link li{
+    list-style:none;
+    display:inline-block;
+    margin-right:15px;
+}
+.team-wrapper.team-style-20 .our-team .social-link li a {
+    font-size: 19px;
+    color: #fff;
+}
+.team-wrapper.team-style-20 .our-team .social-link li a.fa-facebook:hover{
+    color:#5d82d1;
+}
+.team-wrapper.team-style-20 .our-team .social-link li a.fa-google:hover{
+    color:#eb5e4c;
+}
+.team-wrapper.team-style-20 .our-team .social-link li a.fa-twitter:hover{
+    color:#40bff5;
+}
+.team-wrapper.team-style-20 .our-team .description{
+    line-height: 23px;
+    padding: 0 20px;
+    position: absolute;
+    transition: opacity 0.3s ease 0s;
+}
+.team-wrapper.team-style-20 .our-team .post-title span {
+    display: block;
+    margin-top: 10px;
+    font-size: 12px;
+}
+.team-wrapper.team-style-20 .our-team .post-title span {
+    display: block;
+    margin-top: 14px;
+}
+/*
+* End Team Style-20
 -------------------------*/

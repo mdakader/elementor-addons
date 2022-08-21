@@ -36,3 +36,18 @@ a.ea-cta-link-text:before {
 a.ea-cta-link-text:hover:before {
     width: 100%;
 }
+
+
+
+/*// `lg` applies to medium devices (tablets, less than 992px)*/
+@media (max-width: 992px) {
+    .ea-cta {
+        display: block;
+        justify-content: center;
+        margin-top: 25px;
+        text-align: center;
+    }
+    .ea-desc {
+        margin-bottom: 25px;
+    }
+}

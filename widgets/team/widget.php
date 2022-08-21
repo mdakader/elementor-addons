@@ -196,6 +196,8 @@ class Widget_Team extends Widget_Base
           'team-style-10' => esc_html__('Team Style 10', 'eassy-addons'),
           'team-style-11' => esc_html__('Team Style 11', 'eassy-addons'),
           'team-style-12' => esc_html__('Team Style 12', 'eassy-addons'),
+          'team-style-19' => esc_html__('Team Style 19', 'eassy-addons'),
+          'team-style-20' => esc_html__('Team Style 20', 'eassy-addons'),
         ],
         'default' => 'team-style-1',
       ]
@@ -941,6 +943,12 @@ class Widget_Team extends Widget_Base
         break;
       case 'team-style-12':
         include EASY_ADDONS_PATH . '/widgets/team/teams/team-12.php';
+        break;
+      case 'team-style-19':
+        include EASY_ADDONS_PATH . '/widgets/team/teams/team-19.php';
+        break;
+        case 'team-style-20':
+        include EASY_ADDONS_PATH . '/widgets/team/teams/team-20.php';
         break;
       default:
         include EASY_ADDONS_PATH . '/widgets/team/teams/team-1.php';
