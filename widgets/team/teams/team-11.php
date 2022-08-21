@@ -9,13 +9,13 @@ $team_style = $settings['team_style'];
                 <img src="<?php echo esc_url($settings['team_image']['url']) ?>" alt="Image"/>
             </div>
             <div class="team-content">
-                <h3 class="title">Kristiana</h3>
-                <span class="post">Web Designer</span>
+                <h3 class="title">Williamson</h3>
+                <span class="post">Web Developer</span>
             </div>
             <ul class="social">
                 <li><a href="#" class="fab fa-facebook"></a></li>
+                <li><a href="#" class="fab fa-twitter"></a></li>
                 <li><a href="#" class="fab fa-google-plus"></a></li>
-                <li><a href="#" class="fab fa-instagram"></a></li>
                 <li><a href="#" class="fab fa-linkedin"></a></li>
             </ul>
         </div>
