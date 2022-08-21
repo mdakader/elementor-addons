@@ -10,11 +10,11 @@ use Elementor\Widget_Base;
 if (!defined('ABSPATH'))
     exit;      // Exit if accessed directly
 
-class PostCard extends Widget_Base {
+class Post_Card_Widget extends Widget_Base {
 
     //Function for get the slug of the element name.
     public function get_name() {
-        return 'post-card-elementor-widget';
+        return 'post-card-widget';
     }
 
     //Function for get the name of the element.
@@ -831,16 +831,16 @@ class PostCard extends Widget_Base {
 
                     switch ($settings['post_card_style']) {
                         case 'post-card-style-1':
-                            include EASYADDONS_PATH . 'includes/posts/post-card-1.php';  // Card Style 1
+                            include EASY_ADDONS_PATH . '/widgets/post/posts/post-card-1.php';  // Card Style 1
                             break;
                         case 'post-card-style-2':
-                            include EASYADDONS_PATH . 'includes/posts/post-card-2.php';  // Card Style 2
+                            include EASY_ADDONS_PATH . '/widgets/post/posts/post-card-2.php';  // Card Style 2
                             break;
                         case 'post-card-style-6':
-                            include EASYADDONS_PATH . 'includes/posts/post-card-6.php';  // Card Style 6
+                            include EASY_ADDONS_PATH . '/widgets/post/posts/post-card-6.php';  // Card Style 6
                             break;
                         default:
-                            include EASYADDONS_PATH . 'includes/posts/post-card-1.php';  // Default Card Style 1
+                            include EASY_ADDONS_PATH . '/widgets/post/posts/post-card-1.php';  // Default Card Style 1
                             break;
                     }
 

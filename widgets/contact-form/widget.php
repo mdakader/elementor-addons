@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @since 1.0.0
  */
-class CF7 extends Widget_Base {
+class CF7_Widget extends Widget_Base {
 
     /**
      * Get widget name.

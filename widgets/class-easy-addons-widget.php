@@ -163,12 +163,16 @@ class Easy_Addons_Widget {
         require_once( __DIR__ . '/team/widget.php');
         require_once( __DIR__ . '/flip-box/widget.php');
         require_once( __DIR__ . '/call-to-action/widget.php');
-        require_once( __DIR__ . '/cf7/widget.php');
+        require_once(__DIR__ . '/contact-form/widget.php');
         require_once( __DIR__ . '/image-gallery/widget.php');
         require_once( __DIR__ . '/counter/widget.php');
         require_once( __DIR__ . '/testimonial/widget.php');
         require_once( __DIR__ . '/service/widget.php');
         require_once( __DIR__ . '/advance-button/widget.php');
+        require_once( __DIR__ . '/star-rating/widget.php');
+        require_once(__DIR__ . '/post/widget.php');
+        require_once(__DIR__ . '/post/posts/functions-post-card.php');
+//        require_once CARD_ELEMENTS_ELEMENTOR_PATH . 'include//posts/posts/functions-post-card.php';
     }
 
     /**
@@ -185,16 +189,18 @@ class Easy_Addons_Widget {
 
         // Register Widgets
         $widgets_manager->register( new Widgets\Price());
-        $widgets_manager->register( new Widgets\TeamWidget());
+        $widgets_manager->register( new Widgets\Widget_Team());
         $widgets_manager->register( new Widgets\Flip_Box());
         $widgets_manager->register( new Widgets\Dual_Heading());
         $widgets_manager->register( new Widgets\Call_To_Action());
-        $widgets_manager->register( new Widgets\CF7());
+        $widgets_manager->register( new Widgets\CF7_Widget());
         $widgets_manager->register( new Widgets\Image_Gallery());
         $widgets_manager->register( new Widgets\Counter_Up());
         $widgets_manager->register( new Widgets\Testimonial());
         $widgets_manager->register( new Widgets\Service_Widget());
         $widgets_manager->register( new Widgets\Advance_Button_Widget());
+        $widgets_manager->register( new Widgets\Widget_Star_Rating());
+        $widgets_manager->register( new Widgets\Post_Card_Widget());
     }
 
 
