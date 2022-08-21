@@ -281,7 +281,7 @@ class Testimonial extends Widget_Base
             'arrow_color', [
                 'label' => esc_html__('Color', 'easy-addons'),
                 'type' => Controls_Manager::COLOR,
-                'default' => '#000',
+                'default' => '#ffffff',
                 'selectors' => [
                     '{{WRAPPER}} .monadic-testimonial-button-next, {{WRAPPER}} .monadic-testimonial-button-prev' => 'color: {{VALUE}}'
                 ],
@@ -295,7 +295,7 @@ class Testimonial extends Widget_Base
             'arrow_bg_color', [
                 'label' => esc_html__('Background Color', 'easy-addons'),
                 'type' => Controls_Manager::COLOR,
-                'default' => '#7958FC',
+                'default' => '#372872',
                 'selectors' => [
                     '{{WRAPPER}} .monadic-testimonial-button-next, {{WRAPPER}} .monadic-testimonial-button-prev' => 'background-color: {{VALUE}}'
                 ],
@@ -375,7 +375,7 @@ class Testimonial extends Widget_Base
             'quote_icon_bg_color', [
                 'label' => esc_html__('Background', 'easy-addons'),
                 'type' => Controls_Manager::COLOR,
-                'default' => '#7958FC',
+                'default' => '#372872',
                 'selectors' => [
                     '{{WRAPPER}} .monadic-testimonial-icons' => 'background-color: {{VALUE}}'
                 ],
