@@ -2,18 +2,22 @@ img, svg {
     vertical-align: middle;
 }
 
-.our-team{
+/*
+* Start Team Style-1
+-------------------------*/
+
+.team-wrapper.team-style-1 .our-team{
     text-align: center;
     overflow: hidden;
     position: relative;
 }
-.our-team img{
+.team-wrapper.team-style-1  .our-team img{
     width: 100%;
     height: auto;
     transition: all 0.5s ease-in-out 0s;
 }
-.our-team:hover img{ transform: scale(1.2); }
-.our-team .social{
+.team-wrapper.team-style-1 .our-team:hover img{ transform: scale(1.2); }
+.team-wrapper.team-style-1 .our-team .social{
     list-style: none;
     padding: 30px 15px;
     margin: 0;
@@ -24,19 +28,19 @@ img, svg {
     left: -50%;
     transition: all 0.4s ease-in-out 0s;
 }
-.our-team:hover .social{ left: 0; }
-.our-team .social li{ display: block; }
-.our-team .social li a{
+.team-wrapper.team-style-1 .our-team:hover .social{ left: 0; }
+.team-wrapper.team-style-1 .our-team .social li{ display: block; }
+.team-wrapper.team-style-1 .our-team .social li a{
     display: block;
     padding: 5px 0;
     font-size: 18px;
     color: #fff;
     transition: all 0.3s ease-in-out 0s;
 }
-.our-team .social li:first-child a{ padding-top: 0; }
-.our-team .social li:last-child a{ padding-bottom: 0; }
-.our-team .social li a:hover{ color: #000; }
-.our-team .team-content{
+.team-wrapper.team-style-1 .our-team .social li:first-child a{ padding-top: 0; }
+.team-wrapper.team-style-1 .our-team .social li:last-child a{ padding-bottom: 0; }
+.team-wrapper.team-style-1 .our-team .social li a:hover{ color: #000; }
+.team-wrapper.team-style-1 .our-team .team-content{
     width: 100%;
     padding: 15px 10px;
     background: rgba(0, 0, 0, 0.6);
@@ -44,23 +48,18 @@ img, svg {
     bottom: 0;
     left: 0;
 }
-.our-team .title{
+.team-wrapper.team-style-1 .our-team .title{
     font-size: 22px;
     font-weight: bold;
     letter-spacing: 1px;
     color: #fff;
     margin: 0 0 5px 0;
 }
-.our-team .post{
+.team-wrapper.team-style-1 .our-team .post{
     display: block;
     font-size: 14px;
     color: #0facf3;
 }
-
-/*
-* Start Team Style-1
--------------------------*/
-
 
 
 /*
@@ -251,6 +250,122 @@ img, svg {
 /*
 * End Team Style-3
 -------------------------*/
+
+/*
+* Start Team Style-9
+-------------------------*/
+
+.team-wrapper.team-style-9 .our-team{
+    text-align: center;
+}
+.team-wrapper.team-style-9 .our-team .team_img{
+    position: relative;
+    overflow: hidden;
+}
+.team-wrapper.team-style-9 .our-team .team_img:after{
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255,255,255,0.2);
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    transition: all 0.3s ease 0s;
+}
+.team-wrapper.team-style-9 .our-team:hover .team_img:after{
+    bottom: 0;
+}
+.team-wrapper.team-style-9 .our-team img{
+    width: 100%;
+    height: auto;
+}
+.team-wrapper.team-style-9 .our-team .social{
+    padding: 0 0 18px 0;
+    margin: 0;
+    list-style: none;
+    position: absolute;
+    top: -100%;
+    right: 10px;
+    background: #f76c5e;
+    border-radius: 0 0 20px 20px;
+    z-index: 1;
+    transition: all 0.3s ease 0s;
+}
+.team-wrapper.team-style-9 .our-team:hover .social{
+    top: 0;
+}
+.team-wrapper.team-style-9 .our-team .social li a{
+    display: block;
+    padding: 15px;
+    font-size: 15px;
+    color: #fff;
+}
+.team-wrapper.team-style-9 .our-team:hover .social li a:hover{
+    color: #2a4284;
+}
+.team-wrapper.team-style-9 .our-team .team-content{
+    padding: 20px 0;
+    background: #fff;
+}
+.team-wrapper.team-style-9 .our-team .title{
+    font-size: 18px;
+    font-weight: bold;
+    color: #2a4284;
+    text-transform: capitalize;
+    margin: 0 0 20px;
+    position: relative;
+}
+.team-wrapper.team-style-9 .our-team .title:before{
+    content: "";
+    width: 25px;
+    height: 1px;
+    background: #27ae61;
+    position: absolute;
+    bottom: -10px;
+    right: 50%;
+    margin-right: 9px;
+    transition-duration: 0.25s;
+}
+.team-wrapper.team-style-9 .our-team .title:after{
+    content: "";
+    width: 25px;
+    height: 1px;
+    background: #27ae61;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    margin-left: 9px;
+    transition-duration: 0.25s;
+}
+.team-wrapper.team-style-9 .our-team:hover .title:before,
+.team-wrapper.team-style-9 .our-team:hover .title:after{
+    width: 50px;
+}
+.team-wrapper.team-style-9 .our-team .post{
+    display: inline-block;
+    font-size: 15px;
+    color:  #f76c5e;
+    text-transform: capitalize;
+}
+.team-wrapper.team-style-9 .our-team .post:before{
+    content: "";
+    display: block;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #27ae61;
+    margin: 0 auto;
+    position: relative;
+    top: -13px;
+}
+@media only screen and (max-width: 990px){
+    .team-wrapper.team-style-9 .our-team{ margin-bottom: 30px; }
+}
+
+/*
+* End Team Style-9
+-------------------------*/
+
 
 /*
 * Start Team Style-10
