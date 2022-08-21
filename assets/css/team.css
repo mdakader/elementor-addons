@@ -300,9 +300,51 @@ img, svg {
 @media only screen and (max-width: 990px){
     .team-wrapper.team-style-3 .our-team{ margin-bottom: 30px; }
 }
+
 /*
 * End Team Style-3
 -------------------------*/
+
+/*
+* Start Team Style-4
+-------------------------*/
+.team-thumb-container img {
+    width: 100%;
+}
+
+span.team-member-name {
+    display: block;
+    font-size: 28px;
+    text-transform: capitalize;
+    font-weight: 500;
+}
+
+span.team-member-position {
+    display: block;
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+span.team-thumb-info {
+    margin-top: 15px;
+    display: block;
+}
+
+/*
+* End Team Style-4
+-------------------------*/
+
+
+/*
+* Start Team Style-5
+-------------------------*/
+
+
+/*
+* End Team Style-5
+-------------------------*/
+
 
 /*
 * Start Team Style-6
@@ -323,7 +365,7 @@ img, svg {
     top:100%;
     width: 100%;
     height: 100%;
-    background-color:rgba(222, 79, 0, 0.8);
+    background-color: rgba(108,99,255,0.75);
     transition: all 0.35s ease 0s;
 }
 .team-wrapper.team-style-6 .team_social{
@@ -348,8 +390,8 @@ img, svg {
     transition: all 1.3s ease 0s;
 }
 .team-wrapper.team-style-6 .team_social > li > a:hover{
-    background: #fff;
-    color:#de4f00;
+    background: #1877F2;
+    color: #ffffff;
     transition: all 1.3s ease 0s;
 }
 .team-wrapper.team-style-6 .team-prof{
@@ -380,7 +422,6 @@ img, svg {
 /*
 * End Team Style-6
 -------------------------*/
-
 
 /*
 * Start Team Style-7
@@ -549,7 +590,7 @@ img, svg {
     }
 }
 /*
-* Start Team Style-8
+* End Team Style-8
 -------------------------*/
 
 /*
@@ -739,4 +780,117 @@ img, svg {
 
 /*
 * End Team Style-10
+-------------------------*/
+
+
+/*
+* Start Team Style-11
+-------------------------*/
+.team-wrapper.team-style-11 .our-team{
+    text-align: center;
+    position: relative;
+}
+.team-wrapper.team-style-11 .our-team:before{
+    content: "";
+    border: 4px solid #083d77;
+    opacity: 0;
+    position: absolute;
+    top: -7px;
+    left: -7px;
+    bottom: -7px;
+    right: -7px;
+    transform: scale(1.03);
+    transition: all 0.6s ease 0s;
+}
+.team-wrapper.team-style-11 .our-team:hover:before{
+    opacity: 1;
+    transform: scale(1);
+}
+.team-wrapper.team-style-11 .our-team .pic{ position: relative; }
+.team-wrapper.team-style-11 .our-team .pic:before{
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: all 0.6s ease 0s;
+}
+.team-wrapper.team-style-11 .our-team:hover .pic:before{ opacity: 1; }
+.team-wrapper.team-style-11 .our-team img{
+    width: 100%;
+    height: auto;
+}
+.team-wrapper.team-style-11 .our-team .team-content{
+    padding: 30px 0 20px;
+    position: relative;
+    top: 0;
+    transition: all 0.6s ease 0s;
+}
+.team-wrapper.team-style-11 .our-team:hover .team-content{ top: -50%; }
+.team-wrapper.team-style-11 .our-team .title{
+    display: block;
+    font-size: 20px;
+    font-weight: 700;
+    color: #333;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin: 0 0 7px 0;
+    transition: all 0.6s ease 0s;
+}
+.team-wrapper.team-style-11 .our-team:hover .title{ color: #fff; }
+.team-wrapper.team-style-11 .our-team .post{
+    display: block;
+    font-size: 17px;
+    font-weight: 500;
+    color: #707070;
+    text-transform: capitalize;
+    transition: all 0.6s ease 0s;
+}
+.team-wrapper.team-style-11 .our-team:hover .post{ color: #ffcc00; }
+.team-wrapper.team-style-11 .our-team .social{
+    width: 100%;
+    padding: 0;
+    margin: 0 0 30px;
+    list-style: none;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    transform: scale(0);
+    transition: all 0.6s ease 0s;
+}
+.team-wrapper.team-style-11 .our-team:hover .social{
+    opacity: 1;
+    transform: scale(1);
+}
+.team-wrapper.team-style-11 .our-team .social li{ display: inline-block; }
+.team-wrapper.team-style-11 .our-team .social li a{
+    display: block;
+    padding: 0 15px;
+    font-size: 18px;
+    color: #083d77;
+    border-right: 1px solid #083d77;
+    position: relative;
+    transition: all 0.3s ease 0s;
+}
+.team-wrapper.team-style-11 .our-team .social li a:hover{ color: #ffcc00; }
+.team-wrapper.team-style-11 .our-team .social li:last-child a{ border-right: none; }
+@media only screen and (max-width: 990px){
+    .team-wrapper.team-style-11 .our-team{ margin-bottom: 30px; }
+}
+
+/*
+* End Team Style-11
+-------------------------*/
+
+
+/*
+* Start Team Style-12
+-------------------------*/
+
+/*
+* End Team Style-12
 -------------------------*/
