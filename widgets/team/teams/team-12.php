@@ -1,4 +1,3 @@
-<!--http://bestjquery.com/tutorial/our-team/demo70/-->
 <?php
 $team_style = $settings['team_style'];
 ?>
@@ -10,15 +9,13 @@ $team_style = $settings['team_style'];
                 <img src="<?php echo esc_url($settings['team_image']['url']) ?>" alt="Image"/>
             </div>
             <div class="team-content">
-                <h3 class="title">Williamson</h3>
-                <span class="post">Web Developer</span>
+                <h3 class="post-title">Williamson<span>Web Developer</span></h3>
             </div>
-            <ul class="social">
+            <ul class="social-link">
                 <li><a href="#" class="fab fa-facebook"></a></li>
-                <li><a href="#" class="fab fa-google-plus"></a></li>
-                <li><a href="#" class="fab fa-instagram"></a></li>
-                <li><a href="#" class="fab fa-linkedin"></a></li>
+                <li><a href="#" class="fab fa-google"></a></li>
+                <li><a href="#" class="fab fa-twitter"></a></li>
             </ul>
-        </div
+        </div>
     </div>
 </div>
