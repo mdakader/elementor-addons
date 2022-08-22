@@ -1455,7 +1455,8 @@ span.team-thumb-info {
 /*
 * Start Team Style-18
 -------------------------*/
-.team-wrapper.team-style-18 .our-team{
+.team-wrapper.team-style-18 .our-team {
+    position: relative;
     overflow: hidden;
 }
 .team-wrapper.team-style-18 .our-team .pic{
@@ -1464,46 +1465,62 @@ span.team-thumb-info {
     position: relative;
 }
 .team-wrapper.team-style-18 .our-team:hover .pic{
-    transform:scale(1.1,1.1);
+    transform:scale(1.25,1.25);
 }
-.team-wrapper.team-style-18 .our-team .pic:before{
-    content: "";
-    width:100%;
-    height:100%;
+
+.team-wrapper.team-style-18 .our-team:after {
     position: absolute;
-    transition:background 0.50s ease-in-out ;
+    content: '';
+    background: #14306F;
+    width: 100%;
+    height: 0;
+    bottom: 100%;
+    left: 0;
+    transition: all 0.3s ease 0s;
 }
-.team-wrapper.team-style-18 .our-team:hover .pic:before{
-    background:rgba(255, 255, 255,0.5);
+.team-wrapper.team-style-18 .our-team:hover:after{
+    background: #14306F;
+    height: 100%;
+    bottom: 0;
+    opacity: 0.6;
 }
 .team-wrapper.team-style-18 .our-team .pic img{
     width: 100%;
     height: auto;
 }
-.team-wrapper.team-style-18 .our-team .team-content{
-    border-top: 1px solid #e5e5e5;
-    position: relative;
-    bottom: 0;
-    background:#fff;
-    text-align:center;
-    padding: 32px 25px 5px;
+.team-wrapper.team-style-18 .our-team .team-content {
+    position: absolute;
+    bottom: -50%;
+    background: #14306F;
+    text-align: center;
+    padding: 60px 25px 25px;
     transition: all 0.3s ease 0s;
+    clip-path: polygon(0 0, 100% 30%, 100% 100%, 0 100%);
+    width: 100%;
+    z-index: 10;
+    opacity: 0;
+    visibility: hidden;
 }
-.team-wrapper.team-style-18 .our-team:hover .team-content{
-    bottom:15%;
+.team-wrapper.team-style-18 .our-team:hover .team-content {
+    bottom: 0;
+    opacity: 1;
+    visibility: visible;
+}
+.team-wrapper.team-style-18 .our-team:hover .team-content {
+    background: #14306F;
 }
 .team-wrapper.team-style-18 .our-team .post-title{
     margin:0;
-    color:#000;
+    color:#ffffff;
     font-size:13px;
     letter-spacing:2px;
     text-transform:uppercase;
 }
-.team-wrapper.team-style-18 .our-team .post-title:after{
+.team-wrapper.team-style-18 .our-team .post-title:after {
     content: "";
     width: 15%;
     display: block;
-    margin: 7% auto 10%;
+    margin: 10px auto;
     border-bottom: 2px solid #da3e65;
 }
 .team-wrapper.team-style-18 .our-team .post-title small{
@@ -1513,27 +1530,46 @@ span.team-thumb-info {
     letter-spacing:1px;
     text-transform:uppercase;
 }
-.team-wrapper.team-style-18 .our-team .social-link{
-    padding:0;
-    margin:0 0 4% 0;
+.team-wrapper.team-style-18 .our-team .social-link {
+    padding: 0;
+    margin: 0 0 4% 0;
+    position: absolute;
+    bottom: -50%;
+    text-align: center;
+    transform: translate(-50%);
+    left: 50%;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s ease;
+    z-index: 15;
+}
+.team-wrapper.team-style-18 .our-team:hover .social-link {
+    bottom: 50%;
+    opacity: 1;
+    visibility: visible;
 }
 .team-wrapper.team-style-18 .our-team .social-link li{
     list-style:none;
     display:inline-block;
     margin-right:15px;
 }
-.team-wrapper.team-style-18 .our-team .social-link li a{
-    font-size:19px;
-    color:#333;
+.team-wrapper.team-style-18 .our-team .social-link li a {
+    font-size: 18px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    background: #5d82d1;
+    border-radius: 50%;
+    color: #fff;
 }
 .team-wrapper.team-style-18 .our-team .social-link li a.fa-facebook:hover{
-    color:#5d82d1;
+    color:#ffffff;
 }
 .team-wrapper.team-style-18 .our-team .social-link li a.fa-google:hover{
     color:#eb5e4c;
 }
 .team-wrapper.team-style-18 .our-team .social-link li a.fa-twitter:hover{
-    color:#40bff5;
+    color:#ffffff;
 }
 .team-wrapper.team-style-18 .our-team .description{
     line-height: 23px;
@@ -1541,8 +1577,6 @@ span.team-thumb-info {
     position: absolute;
     transition: opacity 0.3s ease 0s;
 }
-
-
 
 /*
 * End Team Style-18
