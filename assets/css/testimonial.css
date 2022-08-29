@@ -1,6 +1,8 @@
-/* Monadic Testimonial CSS  */
-.monadic-testimonial-button-next, 
-.monadic-testimonial-button-prev {
+/*
+* Start Testimonial Style-01
+-------------------------*/
+.easy-testimonial-button-next,
+.easy-testimonial-button-prev {
   position: absolute;
   top: 50%;
   display: flex;
@@ -18,28 +20,28 @@
   color: #fff;
 }
 
-.monadic-testimonial-button-prev {
+.easy-testimonial-button-prev {
   left: auto;
   right: 0;
 }
 
-.monadic-testimonial-button-prev.swiper-button-disabled {
+.easy-testimonial-button-prev.swiper-button-disabled {
   opacity: 0.5;
 }
-.monadic-testimonial-button-next.swiper-button-disabled {
+.easy-testimonial-button-next.swiper-button-disabled {
   opacity: 0.5;
 }
 
-.monadic-testimonial-wrapper .swiper-container {
+.easy-testimonial-wrapper .swiper-container {
   width: calc(100% - 100px);
   position: static;
 }
 
-.monadic-testimonial-item {
+.easy-testimonial-item {
   text-align: center;
 }
 
-.monadic-testimonial-icons {
+.easy-testimonial-icons {
   width: 64px;
   height: 64px;
   background: #7958FC;
@@ -53,7 +55,7 @@
   margin-bottom: 40px;
 }
 
-.monadic-testimonial-item p {
+.easy-testimonial-item p {
   text-align: center;
   font-size: 18px;
   line-height: 28px;
@@ -62,7 +64,7 @@
   color: #3C2C7D;
 }
 
-.monadic-testimonial-item h2 {
+.easy-testimonial-item h2 {
   font-size: 20px;
   color: #3C2C7D;
   line-height: 26px;
@@ -71,28 +73,69 @@
   margin-top: 0;
 }
 
-.monadic-testimonial-item h4 {
+.easy-testimonial-item h4 {
   font-size: 14px;
   color: #7958FC;
   line-height: 22px;
   font-weight: 400;
 }
 
-.monadic-testimonial-wrapper .swiper-container {
+.easy-testimonial-wrapper .swiper-container {
   margin-bottom: 50px;
 }
 
-.monadic-testimonial-wrapper .swiper-pagination-bullet {
+.easy-testimonial-wrapper .swiper-pagination-bullet {
   width: 12px;
   height: 5px;
   border-radius: 10px;
 }
 
-.monadic-testimonial-wrapper .swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet {
+.easy-testimonial-wrapper .swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet {
   margin: 0 4px;
 }
 
-.monadic-testimonial-wrapper .swiper-pagination-bullet-active {
+.easy-testimonial-wrapper .swiper-pagination-bullet-active {
   width: 24px;
 }
 
+/*
+* End Testimonial Style-01
+
+
+/*
+* Start Testimonial Style-03
+-------------------------*/
+.easy-testimonial.testimonial-style-3 .client-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin: 0 auto;
+  margin-bottom: 15px;
+  position: relative;
+  z-index: 1;
+}
+
+.easy-testimonial.testimonial-style-3 .client-img img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.easy-testimonial.testimonial-style-3 .easy-testimonial-icons {
+  width: 36px;
+  height: 36px;
+  background: #7958FC;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  border-radius: 50%;
+  font-size: 15px;
+  color: #fff;
+  margin-bottom: 40px;
+  position: absolute;
+  bottom: -36px;
+  left: 0;
+}
+/*
+* End Testimonial Style-03
+-------------------------*/

@@ -3,9 +3,9 @@
 namespace Easy_Addons\Widgets;
 
 use Elementor\Controls_Manager;
-use Elementor\Icons_Manager;
 use Elementor\Repeater;
 use Elementor\Group_Control_Typography;
+use Elementor\Utils;
 use Elementor\Widget_Base;
 
 if (!defined('ABSPATH')) {
@@ -96,14 +96,38 @@ class Testimonial extends Widget_Base
             ]
         );
 
+        $this->add_control(
+            'testimonial_style', [
+                'label' => __('Testimonial Style', 'easy-addons'),
+                'type' => Controls_Manager::SELECT,
+                'options' => [
+                    'testimonial-style-1' => esc_html__('Testimonial Style 1', 'eassy-addons'),
+                    'testimonial-style-2' => esc_html__('Testimonial Style 2', 'eassy-addons'),
+                    'testimonial-style-3' => esc_html__('Testimonial Style 3', 'eassy-addons'),
+                    'testimonial-style-4' => esc_html__('Testimonial Style 4', 'eassy-addons'),
+                    'testimonial-style-5' => esc_html__('Testimonial Style 5', 'eassy-addons'),
+                ],
+                'default' => 'testimonial-style-1',
+            ]
+        );
 
         $repeater = new Repeater();
 
         $repeater->add_control(
+            'client_image',
+            [
+                'label' => esc_html__( 'Choose Image', 'easy-addons' ),
+                'type' => Controls_Manager::MEDIA,
+                'default' => [
+                    'url' => Utils::get_placeholder_image_src(),
+                ],
+            ]
+        );
+        $repeater->add_control(
             'client_name', [
                 'label' => esc_html__('Client Name', 'easy-addons'),
                 'type' => Controls_Manager::TEXTAREA,
-                'placeholder' => esc_html__('Dianne Russell', 'easy-addons')
+                'placeholder' => esc_html__('Steve Thomas', 'easy-addons')
             ]
         );
 
@@ -111,7 +135,7 @@ class Testimonial extends Widget_Base
             'client_designation', [
                 'label' => esc_html__('Client Designation', 'easy-addons'),
                 'type' => Controls_Manager::TEXTAREA,
-                'placeholder' => esc_html__('CTO at XYZ Ltd.', 'easy-addons')
+                'placeholder' => esc_html__('CEO at XYZ Ltd.', 'easy-addons')
             ]
         );
 
@@ -141,8 +165,8 @@ class Testimonial extends Widget_Base
                 'fields' => $repeater->get_controls(),
                 'default' => [
                     [
-                        'client_name' => esc_html__('Dianne Russell', 'easy-addons'),
-                        'client_designation' => esc_html__('CTO at XYZ Ltd.', 'easy-addons'),
+                        'client_name' => esc_html__('Steve Thomas', 'easy-addons'),
+                        'client_designation' => esc_html__('CEO at XYZ Ltd.', 'easy-addons'),
                         'client_review' => esc_html__('Lorem ipsum dolor sit amet, consectetur adip iscing elit. Sed sit libero', 'easy-addons'),
                     ]
                 ],
@@ -269,7 +293,7 @@ class Testimonial extends Widget_Base
                 'setp' => 1,
                 'default' => 20,
                 'selectors' => [
-                    '{{WRAPPER}} .monadic-testimonial-button-next, {{WRAPPER}} .monadic-testimonial-button-prev' => 'font-size: {{VALUE}}px'
+                    '{{WRAPPER}} .easy-testimonial-button-next, {{WRAPPER}} .easy-testimonial-button-prev' => 'font-size: {{VALUE}}px'
                 ],
                 'condition' => [
                     'show_arrow' => 'yes',
@@ -283,7 +307,7 @@ class Testimonial extends Widget_Base
                 'type' => Controls_Manager::COLOR,
                 'default' => '#ffffff',
                 'selectors' => [
-                    '{{WRAPPER}} .monadic-testimonial-button-next, {{WRAPPER}} .monadic-testimonial-button-prev' => 'color: {{VALUE}}'
+                    '{{WRAPPER}} .easy-testimonial-button-next, {{WRAPPER}} .easy-testimonial-button-prev' => 'color: {{VALUE}}'
                 ],
                 'condition' => [
                     'show_arrow' => 'yes',
@@ -297,7 +321,7 @@ class Testimonial extends Widget_Base
                 'type' => Controls_Manager::COLOR,
                 'default' => '#372872',
                 'selectors' => [
-                    '{{WRAPPER}} .monadic-testimonial-button-next, {{WRAPPER}} .monadic-testimonial-button-prev' => 'background-color: {{VALUE}}'
+                    '{{WRAPPER}} .easy-testimonial-button-next, {{WRAPPER}} .easy-testimonial-button-prev' => 'background-color: {{VALUE}}'
                 ],
                 'condition' => [
                     'show_arrow' => 'yes',
@@ -366,7 +390,7 @@ class Testimonial extends Widget_Base
                 'type' => Controls_Manager::COLOR,
                 'default' => '#ffffff',
                 'selectors' => [
-                    '{{WRAPPER}} .monadic-testimonial-icons' => 'color: {{VALUE}}'
+                    '{{WRAPPER}} .easy-testimonial-icons' => 'color: {{VALUE}}'
                 ],
             ]
         );
@@ -377,7 +401,7 @@ class Testimonial extends Widget_Base
                 'type' => Controls_Manager::COLOR,
                 'default' => '#372872',
                 'selectors' => [
-                    '{{WRAPPER}} .monadic-testimonial-icons' => 'background-color: {{VALUE}}'
+                    '{{WRAPPER}} .easy-testimonial-icons' => 'background-color: {{VALUE}}'
                 ],
             ]
         );
@@ -394,7 +418,7 @@ class Testimonial extends Widget_Base
             Group_Control_Typography::get_type(), [
                 'name' => 'client_name_typography',
                 'label' => esc_html__('Typography', 'easy-addons'),
-                'selector' => '{{WRAPPER}} .monadic-testimonial-item h2',
+                'selector' => '{{WRAPPER}} .easy-testimonial-item h2',
             ]
         );
 
@@ -404,7 +428,7 @@ class Testimonial extends Widget_Base
                 'type' => Controls_Manager::COLOR,
                 'default' => '#3C2C7D',
                 'selectors' => [
-                    '{{WRAPPER}} .monadic-testimonial-item h2' => 'color: {{VALUE}}'
+                    '{{WRAPPER}} .easy-testimonial-item h2' => 'color: {{VALUE}}'
                 ],
             ]
         );
@@ -421,7 +445,7 @@ class Testimonial extends Widget_Base
             Group_Control_Typography::get_type(), [
                 'name' => 'client_designation_typography',
                 'label' => esc_html__('Typography', 'easy-addons'),
-                'selector' => '{{WRAPPER}} .monadic-testimonial-item h4',
+                'selector' => '{{WRAPPER}} .easy-testimonial-item h4',
             ]
         );
 
@@ -431,7 +455,7 @@ class Testimonial extends Widget_Base
                 'type' => Controls_Manager::COLOR,
                 'default' => '#3C2C7D',
                 'selectors' => [
-                    '{{WRAPPER}} .monadic-testimonial-item h4' => 'color: {{VALUE}}'
+                    '{{WRAPPER}} .easy-testimonial-item h4' => 'color: {{VALUE}}'
                 ],
             ]
         );
@@ -448,7 +472,7 @@ class Testimonial extends Widget_Base
             Group_Control_Typography::get_type(), [
                 'name' => 'client_review_typography',
                 'label' => esc_html__('Typography', 'easy-addons'),
-                'selector' => '{{WRAPPER}} .monadic-testimonial-item p',
+                'selector' => '{{WRAPPER}} .easy-testimonial-item p',
             ]
         );
 
@@ -458,7 +482,7 @@ class Testimonial extends Widget_Base
                 'type' => Controls_Manager::COLOR,
                 'default' => '#3C2C7D',
                 'selectors' => [
-                    '{{WRAPPER}} .monadic-testimonial-item p' => 'color: {{VALUE}}'
+                    '{{WRAPPER}} .easy-testimonial-item p' => 'color: {{VALUE}}'
                 ],
             ]
         );
@@ -474,78 +498,26 @@ class Testimonial extends Widget_Base
     protected function render()
     {
         $settings = $this->get_settings_for_display();
-        $id = 'monadic-testimonial-' . $this->get_id();
-        $testmonials = $settings['testimonials'];
-        $allow_html = [
-            'a' => [
-                'href' => [],
-                'title' => [],
-            ],
-            'br' => [],
-            'strong' => [],
-            'em' => []
-        ];
 
-        $this->add_render_attribute('monadic-testimonial', 'id', $id);
-        $this->add_render_attribute('monadic-testimonial', 'class', 'monadic-testimonial-wrapper');
-        $this->add_render_attribute('monadic-testimonial-slider', 'class', ['monadic-testimonial-slider', 'swiper-container']);
 
-        $this->add_render_attribute([
-            'monadic-testimonial' => [
-                'data-settings' => [
-                    wp_json_encode(array_filter([
-                        "loop" => ("yes" == $settings['infinity_loop']) ? true : false,
-                        "autoplay" => ("yes" == $settings["autoplay"]) ? ["delay" => $settings["autoplay_speed"]] : false,
-                        "speed" => $settings["animation_speed"],
-                        "navigation" => [
-                            "nextEl" => ".monadic-testimonial-button-next",
-                            "prevEl" => ".monadic-testimonial-button-prev",
-                        ],
-                        "pagination" => [
-                            "el" => "#" . $id . " .swiper-pagination",
-                            "clickable" => true,
-                        ],
-                    ]))
-                ],
-            ]
-        ]);
-
-        ?>
-    <div <?php $this->print_render_attribute_string('monadic-testimonial'); ?>>
-        <div <?php $this->print_render_attribute_string('monadic-testimonial-slider'); ?>>
-            <div class="swiper-wrapper">
-                <?php
-                $this->add_render_attribute('testimonial-item', 'class', 'monadic-testimonial-item swiper-slide', true);
-                foreach ($testmonials as $testmonial) {
-                    ?>
-                    <div <?php $this->print_render_attribute_string('testimonial-item'); ?>>
-                        <div class="monadic-testimonial-icons">
-                            <?php Icons_Manager::render_icon($testmonial['client_icon'], ['aria-hidden' => 'true']); ?>
-                        </div>
-                        <p><?php echo wp_kses($testmonial['client_review'], $allow_html); ?></p>
-                        <h2><?php echo esc_html($testmonial['client_name']); ?></h2>
-                        <h4><?php echo esc_html($testmonial['client_designation']); ?></h4>
-                    </div>
-                    <?php
-                }
-                ?>
-            </div>
-            <?php
-            if ('yes' === $settings['show_arrow']) { ?>
-                <div class="monadic-testimonial-button-next">
-                    <?php Icons_Manager::render_icon($settings['arrow_left_icon'], ['aria-hidden' => 'true']); ?>
-                </div>
-                <div class="monadic-testimonial-button-prev">
-                    <?php Icons_Manager::render_icon($settings['arrow_right_icon'], ['aria-hidden' => 'true']); ?>
-                </div>
-                <?php
-            }
-            if ('yes' === $settings['show_pagination']) { ?>
-
-                <div class="swiper-pagination"></div>
-            <?php }
-            ?>
-        </div>
-        <?php
+        switch ($settings['testimonial_style']) {
+            case 'testimonial-style-1':
+                include EASY_ADDONS_PATH . '/widgets/testimonial/testimonials/testimonial-1.php';
+                break;
+            case 'testimonial-style-2':
+                include EASY_ADDONS_PATH . '/widgets/testimonial/testimonials/testimonial-2.php';
+                break;
+            case 'testimonial-style-3':
+                include EASY_ADDONS_PATH . '/widgets/testimonial/testimonials/testimonial-3.php';
+                break;
+                case 'testimonial-style-4':
+                include EASY_ADDONS_PATH . '/widgets/testimonial/testimonials/testimonial-4.php';
+                break;            case 'testimonial-style-5':
+                include EASY_ADDONS_PATH . '/widgets/testimonial/testimonials/testimonial-5.php';
+                break;
+            default:
+                include EASY_ADDONS_PATH . '/widgets/testimonial/testimonials/testimonial-1.php';
+                break;
+        }
     }
 }

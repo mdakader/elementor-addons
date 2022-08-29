@@ -1,13 +1,12 @@
 (function ($, elementor) {
-
   'use strict';
   var widgetTestimonial = function ($scope, $) {
 
-      var $testimonial = $scope.find('.monadic-testimonial-wrapper');
+      var $testimonial = $scope.find('.easy-testimonial-wrapper');
       if (!$testimonial.length) {
           return;
       }
-      var $testimonialContainer = $testimonial.find('.monadic-testimonial-slider'),
+      var $testimonialContainer = $testimonial.find('.easy-testimonial-slider'),
           $settings = $testimonial.data('settings');
 
       const Swiper = elementorFrontend.utils.swiper;
@@ -17,7 +16,6 @@
       }
 
   };
-
 
   jQuery(window).on('elementor/frontend/init', function () {
       elementorFrontend.hooks.addAction('frontend/element_ready/testimonial.default', widgetTestimonial);
