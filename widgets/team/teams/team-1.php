@@ -22,9 +22,9 @@ $migration_allowed = Icons_Manager::is_migration_allowed();
 <div class="easy-addons-team">
     <div class="team-wrapper <?php echo esc_attr($team_style) ?>">
         <div class="our-team">
-            <div class="team_img">
+            <div class="team-img">
                 <img src="<?php echo esc_url($settings['team_image']['url']) ?>" alt="Image"/>
-                <ul class="social">
+                <ul class="social-links">
                   <?php
                   foreach ($settings['social_icon_list'] as $index => $item) {
                     $migrated = isset($item['__fa4_migrated']['social_icon']);

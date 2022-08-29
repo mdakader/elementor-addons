@@ -1,4 +1,3 @@
-<!--http://bestjquery.com/tutorial/our-team/demo46/-->
 <?php
 $team_style = $settings['team_style'];
 ?>
@@ -10,7 +9,7 @@ $team_style = $settings['team_style'];
             <div class="team-content">
                 <h3 class="title">Williamson</h3>
                 <span class="post">web developer</span>
-                <ul class="social">
+                <ul class="social-links">
                     <li><a href="#"><i class="fab fa-facebook"></i></a></li>
                     <li><a href="#"><i class="fab fa-google-plus"></i></a></li>
                     <li><a href="#"><i class="fab fa-twitter"></i></a></li>

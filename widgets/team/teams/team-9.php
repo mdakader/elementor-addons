@@ -4,9 +4,9 @@ $team_style = $settings['team_style']; ?>
 <div class="easy-addons-team">
     <div class="team-wrapper <?php echo esc_attr($team_style) ?>">
         <div class="our-team">
-            <div class="team_img">
+            <div class="team-img">
                 <img src="<?php echo esc_url($settings['team_image']['url']) ?>" alt="Image"/>
-                <ul class="social">
+                <ul class="social-links">
                     <li><a href="#"><i class="fab fa-facebook"></i></a></li>
                     <li><a href="#"><i class="fab fa-twitter"></i></a></li>
                     <li><a href="#"><i class="fab fa-linkedin"></i></a></li>

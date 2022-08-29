@@ -46,7 +46,7 @@ $migration_allowed = Icons_Manager::is_migration_allowed();
                     <p <?php $this->print_render_attribute_string('team_info') ?>> <?php echo esc_html($team_info); ?></p>
                 <?php endif; ?>
             </div>
-            <div class="social">
+            <div class="social-links">
                 <?php
                 foreach ($settings['social_icon_list'] as $index => $item) {
                     $migrated = isset($item['__fa4_migrated']['social_icon']);

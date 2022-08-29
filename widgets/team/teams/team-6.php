@@ -3,7 +3,7 @@ $team_style = $settings['team_style']; ?>
 <div class="easy-addons-team">
     <div class="team-wrapper <?php echo esc_attr($team_style) ?>">
         <div class="our-team">
-            <div class="pic">
+            <div class="team-img">
                 <img src="<?php echo esc_url($settings['team_image']['url']) ?>" alt="Image"/>
                 <div class="social_media_team">
                     <ul class="team_social">

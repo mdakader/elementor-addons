@@ -12,7 +12,7 @@ $team_style = $settings['team_style'];
                     quis, placerat id eros. Duis semper justo sed condimentum rutrum. Nunc tristique purus turpis.
                     Maecenas vulputate.
                 </p>
-                <ul class="social">
+                <ul class="social-links">
                     <li><a href="#"><i class="fab fa-instagram"></i></a></li>
                     <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
                     <li><a href="#"><i class="fab fa-twitter"></i></a></li>

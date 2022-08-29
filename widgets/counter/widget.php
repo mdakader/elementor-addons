@@ -2,10 +2,10 @@
 
 namespace Easy_Addons\Widgets;
 
+use Elementor\Group_Control_Background;
+use Elementor\Group_Control_Border;
+use Elementor\Group_Control_Box_Shadow;
 use Elementor\Group_Control_Typography;
-use Elementor\Icons_Manager;
-use Elementor\Repeater;
-use Elementor\Utils;
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
 
@@ -14,9 +14,8 @@ if (!defined('ABSPATH')) {
 } // Exit if accessed directly
 
 /**
- * Elementor Image Gallery
  *
- * Elementor widget for Image Gallery show.
+ * Counter Up Widget.
  *
  * @since 1.0.0
  */
@@ -62,7 +61,7 @@ class Counter_Up extends Widget_Base
      */
     public function get_icon()
     {
-        return 'eicon-gallery-grid';
+        return 'eicon-counter';
     }
 
     /**
@@ -134,7 +133,18 @@ class Counter_Up extends Widget_Base
             ]
         );
 
-
+        $this->add_control(
+            'counter_style', [
+                'label' => __('Counter Up Style', 'eassy-addons'),
+                'type' => Controls_Manager::SELECT,
+                'options' => [
+                    'counter-style-1' => esc_html__('Counter Up Style 1', 'eassy-addons'),
+                    'counter-style-2' => esc_html__('Counter Up Style 2', 'eassy-addons'),
+                    'counter-style-3' => esc_html__('Counter Up Style 3', 'eassy-addons'),
+                ],
+                'default' => 'counter-style-1',
+            ]
+        );
         $this->add_control(
             'counter-number',
             [
@@ -146,10 +156,10 @@ class Counter_Up extends Widget_Base
         $this->add_control(
             'counter-icon',
             [
-                'label'   => esc_html__( 'Icon', 'easy-addons' ),
-                'type'    => Controls_Manager::ICONS,
+                'label' => esc_html__('Icon', 'easy-addons'),
+                'type' => Controls_Manager::ICONS,
                 'default' => [
-                    'value'   => 'fas fa-star',
+                    'value' => 'fas fa-coffee',
                     'library' => 'solid',
                 ],
             ]
@@ -173,6 +183,15 @@ class Counter_Up extends Widget_Base
                 ],
                 'default' => '',
                 'placeholder' => esc_html__('Plus', 'easy-addons'),
+                'conditions' => [
+                    'terms' => [
+                        [
+                            'name' => 'counter_style',
+                            'operator' => '!==',
+                            'value' => 'counter-style-3',
+                        ],
+                    ],
+                ],
             ]
         );
 
@@ -210,48 +229,290 @@ class Counter_Up extends Widget_Base
             ]
         );
 
-        $this->add_control(
-            'image_justified',
+        $this->add_responsive_control(
+            'align',
             [
-                'label' => esc_html__('Justified Gallery Image', 'easy-addons'),
-                'type' => Controls_Manager::SELECT,
-                'default' => 'justify',
+                'label' => __( 'Alignment', 'easy-addons' ),
+                'type' => Controls_Manager::CHOOSE,
                 'options' => [
-                    'justify' => esc_html__('Justify', 'easy-addons'),
-                    'nojustify' => esc_html__('No Justify', 'easy-addons'),
-                    'center' => esc_html__('Center', 'easy-addons'),
-                    'right' => esc_html__('Right', 'easy-addons'),
+                    'left' => [
+                        'title' => esc_html__( 'Left', 'easy-addons' ),
+                        'icon' => 'eicon-text-align-left',
+                    ],
+                    'center' => [
+                        'title' => esc_html__( 'Center', 'easy-addons' ),
+                        'icon' => 'eicon-text-align-center',
+                    ],
+                    'right' => [
+                        'title' => esc_html__( 'Right', 'easy-addons' ),
+                        'icon' => 'eicon-text-align-right',
+                    ],
+                    'justify' => [
+                        'title' => esc_html__( 'Justified', 'easy-addons' ),
+                        'icon' => 'eicon-text-align-justify',
+                    ],
+                ],
+                'default' => 'center',
+                'selectors' => [
+                    '{{WRAPPER}} .easy-counter' => 'text-align: {{VALUE}};',
+                ],
+            ]
+        );
+        $this->add_control(
+           'counter_bg_color',
+            [
+                'label' => esc_html__( 'Background Color', 'easy-addons' ),
+                'type' => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .easy-counter' => 'background: {{VALUE}}',
+                ],
+                'conditions' => [
+                    'terms' => [
+                        [
+                            'name' => 'counter_style',
+                            'operator' => '!==',
+                            'value' => 'counter-style-3',
+                        ],
+                    ],
+                ],
+            ]
+        );
+        $this->add_group_control(
+            Group_Control_Box_Shadow::get_type(),
+            [
+                'name' => 'box_shadow',
+                'label' => esc_html__( 'Box Shadow', 'easy-addons' ),
+                'selector' => '{{WRAPPER}} .easy-counter',
+                'conditions' => [
+                    'terms' => [
+                        [
+                            'name' => 'counter_style',
+                            'operator' => '!==',
+                            'value' => 'counter-style-3',
+                        ],
+                    ],
+                ],
+            ],
+        );
+
+        $this->add_group_control(
+            Group_Control_Border::get_type(),
+            [
+                'name' => 'border',
+                'label' => esc_html__( 'Border', 'easy-addons' ),
+                'selector' => '{{WRAPPER}} .easy-counter',
+                'conditions' => [
+                    'terms' => [
+                        [
+                            'name' => 'counter_style',
+                            'operator' => '!==',
+                            'value' => 'counter-style-3',
+                        ],
+                    ],
                 ],
             ]
         );
         $this->add_responsive_control(
-            'image_margin',
+            'border-radius',
             [
-                'label' => esc_html__('Margin', 'easy-addons'),
-                'type' => Controls_Manager::NUMBER,
-                'min' => 5,
-                'max' => 100,
-                'step' => 2,
-                'default' => 10,
+                'label' => esc_html__( 'Border Radius', 'easy-addons' ),
+                'type' => Controls_Manager::DIMENSIONS,
+                'size_units' => [ 'px', '%', 'em' ],
+                'selectors' => [
+                    '{{WRAPPER}} .easy-counter' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+                'conditions' => [
+                    'terms' => [
+                        [
+                            'name' => 'counter_style',
+                            'operator' => '!==',
+                            'value' => 'counter-style-3',
+                        ],
+                    ],
+                ],
+            ]
+        );
+        $this->add_responsive_control(
+            'padding',
+            [
+                'label' => esc_html__( 'Padding', 'easy-addons' ),
+                'type' => Controls_Manager::DIMENSIONS,
+                'size_units' => [ 'px', '%', 'em' ],
+                'selectors' => [
+                    '{{WRAPPER}} .easy-counter' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+                'conditions' => [
+                    'terms' => [
+                        [
+                            'name' => 'counter_style',
+                            'operator' => '!==',
+                            'value' => 'counter-style-3',
+                        ],
+                    ],
+                ],
             ]
         );
         $this->add_control(
-            'image_caption_color',
+            'counter_bg_s3_color',
             [
-                'label' => esc_html__('Image Caption Text Color', 'easy-addons'),
+                'label' => esc_html__( 'Background Color', 'easy-addons' ),
                 'type' => Controls_Manager::COLOR,
-                'alpha' => true,
-                'default' => '#ffffff',
                 'selectors' => [
-                    '{{WRAPPER}} h2.ea-image-gallery-caption' => 'color: {{VALUE}}',
+                    '{{WRAPPER}} .easy-counter.counter-style-3:before' => 'background: {{VALUE}}',
+                    '{{WRAPPER}} .easy-counter.counter-style-3 .counter' => 'background: {{VALUE}}',
+                ],
+                'conditions' => [
+                    'terms' => [
+                        [
+                            'name' => 'counter_style',
+                            'operator' => '==',
+                            'value' => 'counter-style-3',
+                        ],
+                    ],
+                ],
+            ]
+        );
+        $this->add_group_control(
+            Group_Control_Border::get_type(),
+            [
+                'name' => 'border_s3',
+                'label' => esc_html__( 'Border', 'easy-addons' ),
+                'selector' => '{{WRAPPER}} .easy-counter.counter-style-3 .counter',
+                'conditions' => [
+                    'terms' => [
+                        [
+                            'name' => 'counter_style',
+                            'operator' => '==',
+                            'value' => 'counter-style-3',
+                        ],
+                    ],
+                ],
+            ]
+        );
+        $this->add_responsive_control(
+            'border_radius_s3',
+            [
+                'label' => esc_html__( 'Border Radius', 'easy-addons' ),
+                'type' => Controls_Manager::DIMENSIONS,
+                'size_units' => [ 'px', '%', 'em' ],
+                'selectors' => [
+                    '{{WRAPPER}} .easy-counter.counter-style-3 .counter' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+                'conditions' => [
+                    'terms' => [
+                        [
+                            'name' => 'counter_style',
+                            'operator' => '==',
+                            'value' => 'counter-style-3',
+                        ],
+                    ],
+                ],
+            ]
+        );
+        $this->add_group_control(
+            Group_Control_Box_Shadow::get_type(),
+            [
+                'name' => 'box_shadow_s3',
+                'label' => esc_html__( 'Box Shadow', 'easy-addons' ),
+                'selector' => '{{WRAPPER}} .easy-counter.counter-style-3 .counter',
+                'conditions' => [
+                    'terms' => [
+                        [
+                            'name' => 'counter_style',
+                            'operator' => '==',
+                            'value' => 'counter-style-3',
+                        ],
+                    ],
+                ],
+            ],
+        );
+
+        $this->add_responsive_control(
+            'padding_s3',
+            [
+                'label' => esc_html__( 'Padding', 'easy-addons' ),
+                'type' => Controls_Manager::DIMENSIONS,
+                'size_units' => [ 'px', '%', 'em' ],
+                'selectors' => [
+                    '{{WRAPPER}} .easy-counter.counter-style-3' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+                'conditions' => [
+                    'terms' => [
+                        [
+                            'name' => 'counter_style',
+                            'operator' => '==',
+                            'value' => 'counter-style-3',
+                        ],
+                    ],
                 ],
             ]
         );
         $this->add_group_control(
             Group_Control_Typography::get_type(),
             [
-                'name' => 'image_caption_typography',
-                'selector' => '{{WRAPPER}} h2.ea-image-gallery-caption',
+                'name' => 'counter-number-typo',
+                'label' => esc_html__( 'Counter Number Typography', 'easy-addons' ),
+                'selector' => '{{WRAPPER}} .easy-counter-up p span',
+            ]
+        );
+        $this->add_control(
+            'counter_number_color',
+            [
+                'label' => esc_html__( 'Number Color', 'easy-addons' ),
+                'type' => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}}  .counter-number' => 'color: {{VALUE}}',
+                ],
+            ]
+        );
+        $this->add_group_control(
+            Group_Control_Typography::get_type(),
+            [
+                'name' => 'counter-desc-typo',
+                'label' => esc_html__( 'Description Typography', 'easy-addons' ),
+                'selector' => '{{WRAPPER}} p.counter-desc',
+            ]
+        );
+        $this->add_control(
+            'counter_desc_color',
+            [
+                'label' => esc_html__( 'Description Color', 'easy-addons' ),
+                'type' => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} p.counter-desc' => 'color: {{VALUE}}',
+                ],
+            ]
+        );
+        $this->add_responsive_control(
+            'font_size',
+            [
+                'label' => esc_html__( 'Icon Size', 'easy-addons' ),
+                'type' => Controls_Manager::SLIDER,
+                'size_units' => [ 'px'],
+                'range' => [
+                    'px' => [
+                        'min' => 25,
+                        'max' => 150,
+                        'step' => 5,
+                    ],
+                ],
+                'default' => [
+                    'unit' => 'px',
+                    'size' => 42,
+                ],
+                'selectors' => [
+                    '{{WRAPPER}} .counter-icon' => 'font-size: {{SIZE}}{{UNIT}};',
+                ],
+            ]
+        );
+        $this->add_control(
+            'counter_icon_color',
+            [
+                'label' => esc_html__( 'Icon Color', 'easy-addons' ),
+                'type' => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .counter-icon' => 'color: {{VALUE}}',
+                ],
             ]
         );
 
@@ -271,48 +532,20 @@ class Counter_Up extends Widget_Base
     {
         $settings = $this->get_settings_for_display();
 
-        $counter_number = $settings['counter-number'];
-        $counter_desc = $settings['counter-desc'];
-        $counter_icon = $settings['counter-icon'];
-        $suffix = $settings['suffix'];
-        $counter_delay = $settings['counter-delay'];
-        $counter_duration = $settings['counter-duration'];
 
-        ?>
-
-        <div class="easy-counter-up">
-            <?php echo $this->get_id(); ?>
-            <div class="counter-icon">
-                <?php
-                Icons_Manager::render_icon( $counter_icon, [ 'aria-hidden' => 'true' ] ); ?>
-                <?php ?>
-            </div>
-            <?php if (!empty($counter_number)): ?>
-                <p>
-            <span class="counter"
-                  data-delay="<?php echo esc_attr($counter_delay); ?>"
-                  data-duration="<?php echo esc_attr($counter_duration); ?>"
-                  id="counter">
-                <?php echo esc_html($counter_number) ?>
-            </span><?php if (!empty($suffix)): ?><span><?php echo esc_html($suffix) ?></span><?php endif; ?>
-                </p>
-            <?php endif; ?>
-            <?php if (!empty($counter_desc)): ?>
-                <p><?php echo esc_html($counter_desc) ?></p>
-            <?php endif; ?>
-        </div>
-
-        <?php
+        switch ($settings['counter_style']) {
+            case 'counter-style-1':
+                include EASY_ADDONS_PATH . '/widgets/counter/counters/counter-1.php';
+                break;
+            case 'counter-style-2':
+                include EASY_ADDONS_PATH . '/widgets/counter/counters/counter-2.php';
+                break;
+            case 'counter-style-3':
+                include EASY_ADDONS_PATH . '/widgets/counter/counters/counter-3.php';
+                break;
+            default:
+                include EASY_ADDONS_PATH . '/widgets/counter/counters/counter-1.php';
+                break;
+        }
     }
-
-    /**
-     * Render the widget output in the editor.
-     *
-     * Written as a Backbone JavaScript template and used to generate the live preview.
-     *
-     * @since 1.0.0
-     *
-     * @access protected
-     */
-//	protected function _content_template() {}
 }
