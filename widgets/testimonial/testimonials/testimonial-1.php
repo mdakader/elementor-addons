@@ -51,13 +51,8 @@ $this->add_render_attribute([
                     foreach ($testmonials as $testmonial) {
                         ?>
                         <div <?php $this->print_render_attribute_string('testimonial-item'); ?>>
-
-                            <div class="client-img">
-                                <img src="<?php echo esc_url($testmonial['client_image']['url']) ?>"
-                                     alt="<?php echo esc_html($testmonial['client_name']) ?>"/>
-                                <div class="easy-testimonial-icons">
-                                    <?php Icons_Manager::render_icon($testmonial['client_icon'], ['aria-hidden' => 'true']); ?>
-                                </div>
+                            <div class="easy-testimonial-icons">
+                                <?php Icons_Manager::render_icon($testmonial['client_icon'], ['aria-hidden' => 'true']); ?>
                             </div>
                             <p><?php echo wp_kses($testmonial['client_review'], $allow_html); ?></p>
                             <h2><?php echo esc_html($testmonial['client_name']); ?></h2>
