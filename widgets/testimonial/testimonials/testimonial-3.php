@@ -5,7 +5,7 @@ use Elementor\Icons_Manager;
 $settings = $this->get_settings_for_display();
 $testimonial_style = $settings['testimonial_style'];
 $id = 'easy-testimonial-' . $this->get_id();
-$testmonials = $settings['testimonials'];
+$testimonials = $settings['testimonials'];
 $allow_html = [
     'a' => [
         'href' => [],
@@ -48,20 +48,15 @@ $this->add_render_attribute([
                 <div class="swiper-wrapper">
                     <?php
                     $this->add_render_attribute('testimonial-item', 'class', 'easy-testimonial-item swiper-slide', true);
-                    foreach ($testmonials as $testmonial) {
+                    foreach ($testimonials as $testimonial) {
                         ?>
                         <div <?php $this->print_render_attribute_string('testimonial-item'); ?>>
-
-                            <div class="client-img">
-                                <img src="<?php echo esc_url($testmonial['client_image']['url']) ?>"
-                                     alt="<?php echo esc_html($testmonial['client_name']) ?>"/>
-                                <div class="easy-testimonial-icons">
-                                    <?php Icons_Manager::render_icon($testmonial['client_icon'], ['aria-hidden' => 'true']); ?>
-                                </div>
+                            <div class="easy-testimonial-icons">
+                                <?php Icons_Manager::render_icon($testimonial['client_icon'], ['aria-hidden' => 'true']); ?>
                             </div>
-                            <p><?php echo wp_kses($testmonial['client_review'], $allow_html); ?></p>
-                            <h2><?php echo esc_html($testmonial['client_name']); ?></h2>
-                            <h4><?php echo esc_html($testmonial['client_designation']); ?></h4>
+                            <p><?php echo wp_kses($testimonial['client_review'], $allow_html); ?></p>
+                            <h2><?php echo esc_html($testimonial['client_name']); ?></h2>
+                            <h4><?php echo esc_html($testimonial['client_designation']); ?></h4>
                         </div>
                         <?php
                     }

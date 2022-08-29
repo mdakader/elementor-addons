@@ -116,7 +116,7 @@ class Testimonial extends Widget_Base
         $repeater->add_control(
             'client_image',
             [
-                'label' => esc_html__( 'Choose Image', 'easy-addons' ),
+                'label' => esc_html__('Choose Image', 'easy-addons'),
                 'type' => Controls_Manager::MEDIA,
                 'default' => [
                     'url' => Utils::get_placeholder_image_src(),
@@ -510,9 +510,10 @@ class Testimonial extends Widget_Base
             case 'testimonial-style-3':
                 include EASY_ADDONS_PATH . '/widgets/testimonial/testimonials/testimonial-3.php';
                 break;
-                case 'testimonial-style-4':
+            case 'testimonial-style-4':
                 include EASY_ADDONS_PATH . '/widgets/testimonial/testimonials/testimonial-4.php';
-                break;            case 'testimonial-style-5':
+                break;
+            case 'testimonial-style-5':
                 include EASY_ADDONS_PATH . '/widgets/testimonial/testimonials/testimonial-5.php';
                 break;
             default:

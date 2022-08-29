@@ -103,9 +103,9 @@
 
 
 /*
-* Start Testimonial Style-03
+* Start Testimonial Style-01
 -------------------------*/
-.easy-testimonial.testimonial-style-3 .client-img {
+.easy-testimonial.testimonial-style-1 .client-img {
   width: 120px;
   height: 120px;
   border-radius: 50%;
@@ -115,12 +115,12 @@
   z-index: 1;
 }
 
-.easy-testimonial.testimonial-style-3 .client-img img {
+.easy-testimonial.testimonial-style-1 .client-img img {
   width: 100%;
   height: 100%;
   border-radius: 50%;
 }
-.easy-testimonial.testimonial-style-3 .easy-testimonial-icons {
+.easy-testimonial.testimonial-style-1 .easy-testimonial-icons {
   width: 36px;
   height: 36px;
   background: #7958FC;
@@ -137,5 +137,5 @@
   left: 0;
 }
 /*
-* End Testimonial Style-03
+* End Testimonial Style-01
 -------------------------*/
