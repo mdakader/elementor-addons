@@ -135,12 +135,12 @@ class Counter_Up extends Widget_Base
 
         $this->add_control(
             'counter_style', [
-                'label' => __('Counter Up Style', 'eassy-addons'),
+                'label' => __('Counter Up Style', 'easy-addons'),
                 'type' => Controls_Manager::SELECT,
                 'options' => [
-                    'counter-style-1' => esc_html__('Counter Up Style 1', 'eassy-addons'),
-                    'counter-style-2' => esc_html__('Counter Up Style 2', 'eassy-addons'),
-                    'counter-style-3' => esc_html__('Counter Up Style 3', 'eassy-addons'),
+                    'counter-style-1' => esc_html__('Counter Up Style 1', 'easy-addons'),
+                    'counter-style-2' => esc_html__('Counter Up Style 2', 'easy-addons'),
+                    'counter-style-3' => esc_html__('Counter Up Style 3', 'easy-addons'),
                 ],
                 'default' => 'counter-style-1',
             ]

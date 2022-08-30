@@ -19,7 +19,7 @@ class Post_Card_Widget extends Widget_Base {
 
     //Function for get the name of the element.
     public function get_title() {
-        return __('Post Card', 'eassy-addons');
+        return __('Post Card', 'easy-addons');
     }
 
     //Function for get the icon of the element.
@@ -43,21 +43,21 @@ class Post_Card_Widget extends Widget_Base {
          */
         $this->start_controls_section(
             'section_layout', array(
-                'label' => esc_html__('Post Layout', 'eassy-addons'),
+                'label' => esc_html__('Post Layout', 'easy-addons'),
             )
         );
 
         $this->add_control(
             'post_card_style', [
-                'label' => __('Post Card Style', 'eassy-addons'),
+                'label' => __('Post Card Style', 'easy-addons'),
                 'type' => Controls_Manager::SELECT,
                 'options' => [
-                    'post-card-style-1' => esc_html__('Card Style 1', 'eassy-addons'),
-                    'post-card-style-2' => esc_html__('Card Style 2', 'eassy-addons'),
-                    'post-card-style-3' => esc_html__('Card Style 3 (PRO)', 'eassy-addons'),
-                    'post-card-style-4' => esc_html__('Card Style 4 (PRO)', 'eassy-addons'),
-                    'post-card-style-5' => esc_html__('Card Style 5 (PRO)', 'eassy-addons'),
-                    'post-card-style-6' => esc_html__('Card Style 6', 'eassy-addons'),
+                    'post-card-style-1' => esc_html__('Card Style 1', 'easy-addons'),
+                    'post-card-style-2' => esc_html__('Card Style 2', 'easy-addons'),
+                    'post-card-style-3' => esc_html__('Card Style 3 (PRO)', 'easy-addons'),
+                    'post-card-style-4' => esc_html__('Card Style 4 (PRO)', 'easy-addons'),
+                    'post-card-style-5' => esc_html__('Card Style 5 (PRO)', 'easy-addons'),
+                    'post-card-style-6' => esc_html__('Card Style 6', 'easy-addons'),
                 ],
                 'default' => 'post-card-style-1',
             ]
@@ -65,7 +65,7 @@ class Post_Card_Widget extends Widget_Base {
 
         $this->add_responsive_control(
             'post_card_columns', [
-                'label' => __('Columns', 'eassy-addons'),
+                'label' => __('Columns', 'easy-addons'),
                 'type' => Controls_Manager::SELECT,
                 'default' => '3',
                 'tablet_default' => '2',
@@ -88,7 +88,7 @@ class Post_Card_Widget extends Widget_Base {
 
         $this->add_control(
             'number_of_posts', [
-                'label' => __('Display No. of Posts', 'eassy-addons'),
+                'label' => __('Display No. of Posts', 'easy-addons'),
                 'type' => Controls_Manager::NUMBER,
                 'default' => 6,
             ]
@@ -104,18 +104,18 @@ class Post_Card_Widget extends Widget_Base {
 
         $this->add_control(
             'show_title', [
-                'label' => __('Show Title', 'eassy-addons'),
+                'label' => __('Show Title', 'easy-addons'),
                 'type' => Controls_Manager::SWITCHER,
                 'default' => 'yes',
-                'label_off' => __('Off', 'eassy-addons'),
-                'label_on' => __('On', 'eassy-addons'),
+                'label_off' => __('Off', 'easy-addons'),
+                'label_on' => __('On', 'easy-addons'),
                 'separator' => 'before',
             ]
         );
 
         $this->add_control(
             'title_tag', [
-                'label' => __('Title HTML Tag', 'eassy-addons'),
+                'label' => __('Title HTML Tag', 'easy-addons'),
                 'type' => Controls_Manager::SELECT,
                 'options' => [
                     'h1' => 'H1',
@@ -137,17 +137,17 @@ class Post_Card_Widget extends Widget_Base {
 
         $this->add_control(
             'show_excerpt', [
-                'label' => __('Excerpt', 'eassy-addons'),
+                'label' => __('Excerpt', 'easy-addons'),
                 'type' => Controls_Manager::SWITCHER,
-                'label_on' => __('Show', 'eassy-addons'),
-                'label_off' => __('Hide', 'eassy-addons'),
+                'label_on' => __('Show', 'easy-addons'),
+                'label_off' => __('Hide', 'easy-addons'),
                 'default' => 'yes',
             ]
         );
 
         $this->add_control(
             'excerpt_length', [
-                'label' => __('Excerpt Length', 'eassy-addons'),
+                'label' => __('Excerpt Length', 'easy-addons'),
                 'type' => Controls_Manager::NUMBER,
                 'default' => apply_filters('excerpt_length', 25),
                 'condition' => ['show_excerpt' => 'yes'],
@@ -155,7 +155,7 @@ class Post_Card_Widget extends Widget_Base {
         );
         $this->add_control(
             'excerpt_from', [
-                'label' => __('Excerpt From', 'eassy-addons'),
+                'label' => __('Excerpt From', 'easy-addons'),
                 'type' => Controls_Manager::SELECT,
                 'options' => [
                     'content' => 'Content',
@@ -170,10 +170,10 @@ class Post_Card_Widget extends Widget_Base {
 
         $this->add_control(
             'show_read_more', [
-                'label' => __('Read More', 'eassy-addons'),
+                'label' => __('Read More', 'easy-addons'),
                 'type' => Controls_Manager::SWITCHER,
-                'label_on' => __('Show', 'eassy-addons'),
-                'label_off' => __('Hide', 'eassy-addons'),
+                'label_on' => __('Show', 'easy-addons'),
+                'label_off' => __('Hide', 'easy-addons'),
                 'default' => 'yes',
                 'separator' => 'before',
             ]
@@ -181,19 +181,19 @@ class Post_Card_Widget extends Widget_Base {
 
         $this->add_control(
             'read_more_text', [
-                'label' => __('Read More Text', 'eassy-addons'),
+                'label' => __('Read More Text', 'easy-addons'),
                 'type' => Controls_Manager::TEXT,
-                'default' => __('Read More »', 'eassy-addons'),
+                'default' => __('Read More »', 'easy-addons'),
                 'condition' => ['show_read_more' => 'yes'],
             ]
         );
 
         $this->add_control(
             'show_meta_data', [
-                'label' => __('Show Meta Data', 'eassy-addons'),
+                'label' => __('Show Meta Data', 'easy-addons'),
                 'type' => Controls_Manager::SWITCHER,
-                'label_on' => __('Show', 'eassy-addons'),
-                'label_off' => __('Hide', 'eassy-addons'),
+                'label_on' => __('Show', 'easy-addons'),
+                'label_off' => __('Hide', 'easy-addons'),
                 'default' => 'yes',
                 'separator' => 'before',
             ]
@@ -201,18 +201,18 @@ class Post_Card_Widget extends Widget_Base {
 
         $this->add_control(
             'meta_data', [
-                'label' => __('Meta Data', 'eassy-addons'),
+                'label' => __('Meta Data', 'easy-addons'),
                 'label_block' => true,
                 'type' => Controls_Manager::SELECT2,
                 'default' => ['author', 'date', 'comments', 'tags', 'category'],
                 'multiple' => true,
                 'condition' => ['show_meta_data' => 'yes'],
                 'options' => [
-                    'author' => __('Author', 'eassy-addons'),
-                    'date' => __('Date', 'eassy-addons'),
-                    'comments' => __('Comments', 'eassy-addons'),
-                    'tags' => __('Tags', 'eassy-addons'),
-                    'category' => __('Category', 'eassy-addons'),
+                    'author' => __('Author', 'easy-addons'),
+                    'date' => __('Date', 'easy-addons'),
+                    'comments' => __('Comments', 'easy-addons'),
+                    'tags' => __('Tags', 'easy-addons'),
+                    'category' => __('Category', 'easy-addons'),
                 ],
                 'separator' => 'before',
             ]
@@ -223,50 +223,50 @@ class Post_Card_Widget extends Widget_Base {
 
         $this->start_controls_section(
             'section_post_query', array(
-                'label' => esc_html__('Query', 'eassy-addons'),
+                'label' => esc_html__('Query', 'easy-addons'),
             )
         );
 
         $this->add_control(
             'blog_categories', [
-                'label' => __('Categories', 'eassy-addons'),
+                'label' => __('Categories', 'easy-addons'),
                 'type' => Controls_Manager::SELECT2,
                 'label_block' => true,
                 'multiple' => true,
-                'description' => __('Select the categories you want to show', 'eassy-addons'),
+                'description' => __('Select the categories you want to show', 'easy-addons'),
                 'options' => card_elements_post_categories(),
             ]
         );
 
         $this->add_control(
             'advanced', [
-                'label' => __('Advanced', 'eassy-addons'),
+                'label' => __('Advanced', 'easy-addons'),
                 'type' => Controls_Manager::HEADING,
             ]
         );
 
         $this->add_control(
             'post_card_orderby', [
-                'label' => __('Order By', 'eassy-addons'),
+                'label' => __('Order By', 'easy-addons'),
                 'type' => Controls_Manager::SELECT,
                 'default' => 'post_date',
                 'options' => [
-                    'post_date' => __('Date', 'eassy-addons'),
-                    'post_title' => __('Title', 'eassy-addons'),
-                    'menu_order' => __('Menu Order', 'eassy-addons'),
-                    'rand' => __('Random', 'eassy-addons'),
+                    'post_date' => __('Date', 'easy-addons'),
+                    'post_title' => __('Title', 'easy-addons'),
+                    'menu_order' => __('Menu Order', 'easy-addons'),
+                    'rand' => __('Random', 'easy-addons'),
                 ],
             ]
         );
 
         $this->add_control(
             'post_sort_order', [
-                'label' => __('Sort By', 'eassy-addons'),
+                'label' => __('Sort By', 'easy-addons'),
                 'type' => Controls_Manager::SELECT,
                 'default' => 'desc',
                 'options' => [
-                    'asc' => __('ASC', 'eassy-addons'),
-                    'desc' => __('DESC', 'eassy-addons'),
+                    'asc' => __('ASC', 'easy-addons'),
+                    'desc' => __('DESC', 'easy-addons'),
                 ],
             ]
         );
@@ -283,13 +283,13 @@ class Post_Card_Widget extends Widget_Base {
          */
         $this->start_controls_section(
             'section_design_layout', [
-                'label' => __('Layout', 'eassy-addons'),
+                'label' => __('Layout', 'easy-addons'),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
         $this->add_control(
             'post_card_grid_gap', [
-                'label' => __('Grid Gap', 'eassy-addons'),
+                'label' => __('Grid Gap', 'easy-addons'),
                 'type' => Controls_Manager::SLIDER,
                 'default' => [
                     'size' => 30,
@@ -309,7 +309,7 @@ class Post_Card_Widget extends Widget_Base {
 
         $this->add_control(
             'post_card_row_gap', [
-                'label' => __('Rows Gap', 'eassy-addons'),
+                'label' => __('Rows Gap', 'easy-addons'),
                 'type' => Controls_Manager::SLIDER,
                 'default' => [
                     'size' => 35,
@@ -330,7 +330,7 @@ class Post_Card_Widget extends Widget_Base {
 
         $this->add_control(
             'post_card_border_radius', [
-                'label' => __('Border Radius', 'eassy-addons'),
+                'label' => __('Border Radius', 'easy-addons'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%'],
                 'selectors' => [
@@ -344,24 +344,24 @@ class Post_Card_Widget extends Widget_Base {
 
         $this->add_control(
             'alignment', [
-                'label' => __('Alignment', 'eassy-addons'),
+                'label' => __('Alignment', 'easy-addons'),
                 'type' => Controls_Manager::CHOOSE,
                 'label_block' => false,
                 'options' => [
                     'left' => [
-                        'title' => __('Left', 'eassy-addons'),
+                        'title' => __('Left', 'easy-addons'),
                         'icon' => 'fa fa-align-left',
                     ],
                     'center' => [
-                        'title' => __('Center', 'eassy-addons'),
+                        'title' => __('Center', 'easy-addons'),
                         'icon' => 'fa fa-align-center',
                     ],
                     'right' => [
-                        'title' => __('Right', 'eassy-addons'),
+                        'title' => __('Right', 'easy-addons'),
                         'icon' => 'fa fa-align-right',
                     ],
                     'justify' => [
-                        'title' => __('Justify', 'eassy-addons'),
+                        'title' => __('Justify', 'easy-addons'),
                         'icon' => 'fa fa-align-justify',
                     ],
                 ],
@@ -381,7 +381,7 @@ class Post_Card_Widget extends Widget_Base {
 
         $this->start_controls_section(
             'section_design_image_layout', [
-                'label' => __('Image', 'eassy-addons'),
+                'label' => __('Image', 'easy-addons'),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition' => [
                     'post_card_style' => ['post-card-style-1', 'post-card-style-2'],
@@ -391,7 +391,7 @@ class Post_Card_Widget extends Widget_Base {
 
         $this->add_control(
             'img_border_radius', [
-                'label' => __('Border Radius', 'eassy-addons'),
+                'label' => __('Border Radius', 'easy-addons'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%'],
                 'selectors' => [
@@ -402,7 +402,7 @@ class Post_Card_Widget extends Widget_Base {
 
         $this->start_controls_tabs(
             'thumbnail_effects_tabs', [
-                'label' => __('Image Thumbnail', 'eassy-addons'),
+                'label' => __('Image Thumbnail', 'easy-addons'),
                 'condition' => [
                     'post_card_style' => ['post-card-style-1', 'post-card-style-2'],
                 ]
@@ -410,7 +410,7 @@ class Post_Card_Widget extends Widget_Base {
         );
 
         $this->start_controls_tab('normal', [
-                'label' => __('Normal', 'eassy-addons'),
+                'label' => __('Normal', 'easy-addons'),
             ]
         );
 
@@ -427,7 +427,7 @@ class Post_Card_Widget extends Widget_Base {
         $this->end_controls_tab();
 
         $this->start_controls_tab('hover', [
-                'label' => __('Hover', 'eassy-addons'),
+                'label' => __('Hover', 'easy-addons'),
             ]
         );
 
@@ -450,7 +450,7 @@ class Post_Card_Widget extends Widget_Base {
 
         $this->start_controls_section(
             'section_design_content_bg', [
-                'label' => __('Background Color', 'eassy-addons'),
+                'label' => __('Background Color', 'easy-addons'),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition' => [
                     'post_card_style' => ['post-card-style-1', 'post-card-style-2'],
@@ -460,7 +460,7 @@ class Post_Card_Widget extends Widget_Base {
 
         $this->add_control(
             'category_bg_color', [
-                'label' => __('Category Color', 'eassy-addons'),
+                'label' => __('Category Color', 'easy-addons'),
                 'type' => Controls_Manager::COLOR,
                 'condition' => ['post_card_style' => 'post-card-style-1'],
                 'selectors' => [
@@ -471,7 +471,7 @@ class Post_Card_Widget extends Widget_Base {
 
         $this->add_control(
             'date_bg_color', [
-                'label' => __('Date Color', 'eassy-addons'),
+                'label' => __('Date Color', 'easy-addons'),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .post-card_date' => 'background-color: {{VALUE}};',
@@ -482,7 +482,7 @@ class Post_Card_Widget extends Widget_Base {
 
         $this->add_control(
             'content_box_bg_color', [
-                'label' => __('Content Box Color', 'eassy-addons'),
+                'label' => __('Content Box Color', 'easy-addons'),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .post-card-content-box, 
@@ -496,21 +496,21 @@ class Post_Card_Widget extends Widget_Base {
 
         $this->start_controls_section(
             'section_design_content', [
-                'label' => __('Content', 'eassy-addons'),
+                'label' => __('Content', 'easy-addons'),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
 
         $this->add_control(
             'date_style', [
-                'label' => __('Date', 'eassy-addons'),
+                'label' => __('Date', 'easy-addons'),
                 'type' => Controls_Manager::HEADING,
             ]
         );
 
         $this->add_control(
             'date_color', [
-                'label' => __('Color', 'eassy-addons'),
+                'label' => __('Color', 'easy-addons'),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .post-card_date_color,
@@ -520,14 +520,14 @@ class Post_Card_Widget extends Widget_Base {
         );
         $this->add_control(
             'category_style', [
-                'label' => __('Category', 'eassy-addons'),
+                'label' => __('Category', 'easy-addons'),
                 'type' => Controls_Manager::HEADING,
             ]
         );
 
         $this->add_control(
             'category_color', [
-                'label' => __('Color', 'eassy-addons'),
+                'label' => __('Color', 'easy-addons'),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .post-card_category,
@@ -540,7 +540,7 @@ class Post_Card_Widget extends Widget_Base {
 
         $this->add_control(
             'category_hover_color', [
-                'label' => __('Hover Color', 'eassy-addons'),
+                'label' => __('Hover Color', 'easy-addons'),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .post-card_category,
@@ -561,7 +561,7 @@ class Post_Card_Widget extends Widget_Base {
 
         $this->add_control(
             'category_spacing', [
-                'label' => __('Spacing', 'eassy-addons'),
+                'label' => __('Spacing', 'easy-addons'),
                 'type' => Controls_Manager::SLIDER,
                 'range' => [
                     'px' => [
@@ -576,7 +576,7 @@ class Post_Card_Widget extends Widget_Base {
 
         $this->add_control(
             'heading_title_style', [
-                'label' => __('Title', 'eassy-addons'),
+                'label' => __('Title', 'easy-addons'),
                 'type' => Controls_Manager::HEADING,
                 'condition' => ['show_title' => 'yes'],
             ]
@@ -584,7 +584,7 @@ class Post_Card_Widget extends Widget_Base {
 
         $this->add_control(
             'title_color', [
-                'label' => __('Color', 'eassy-addons'),
+                'label' => __('Color', 'easy-addons'),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .post-card_title,
@@ -612,7 +612,7 @@ class Post_Card_Widget extends Widget_Base {
 
         $this->add_control(
             'title_spacing', [
-                'label' => __('Spacing', 'eassy-addons'),
+                'label' => __('Spacing', 'easy-addons'),
                 'type' => Controls_Manager::SLIDER,
                 'range' => [
                     'px' => [
@@ -631,7 +631,7 @@ class Post_Card_Widget extends Widget_Base {
 
         $this->add_control(
             'heading_excerpt_style', [
-                'label' => __('Excerpt', 'eassy-addons'),
+                'label' => __('Excerpt', 'easy-addons'),
                 'type' => Controls_Manager::HEADING,
                 'separator' => 'before',
                 'condition' => [
@@ -642,7 +642,7 @@ class Post_Card_Widget extends Widget_Base {
 
         $this->add_control(
             'excerpt_color', [
-                'label' => __('Color', 'eassy-addons'),
+                'label' => __('Color', 'easy-addons'),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .post-card_excerpt' => 'color: {{VALUE}};',
@@ -665,7 +665,7 @@ class Post_Card_Widget extends Widget_Base {
 
         $this->add_control(
             'excerpt_spacing', [
-                'label' => __('Spacing', 'eassy-addons'),
+                'label' => __('Spacing', 'easy-addons'),
                 'type' => Controls_Manager::SLIDER,
                 'range' => [
                     'px' => [
@@ -683,7 +683,7 @@ class Post_Card_Widget extends Widget_Base {
 
         $this->add_control(
             'heading_readmore_style', [
-                'label' => __('Read More', 'eassy-addons'),
+                'label' => __('Read More', 'easy-addons'),
                 'type' => Controls_Manager::HEADING,
                 'separator' => 'before',
                 'condition' => ['show_read_more' => 'yes'],
@@ -692,7 +692,7 @@ class Post_Card_Widget extends Widget_Base {
 
         $this->add_control(
             'read_more_color', [
-                'label' => __('Color', 'eassy-addons'),
+                'label' => __('Color', 'easy-addons'),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .post-card_read-more' => 'color: {{VALUE}};',
@@ -711,7 +711,7 @@ class Post_Card_Widget extends Widget_Base {
 
         $this->add_control(
             'heading_meta_style', [
-                'label' => __('Meta', 'eassy-addons'),
+                'label' => __('Meta', 'easy-addons'),
                 'type' => Controls_Manager::HEADING,
                 'separator' => 'before',
                 'condition' => ['show_meta_data' => 'yes'],
@@ -720,7 +720,7 @@ class Post_Card_Widget extends Widget_Base {
 
         $this->add_control(
             'meta_color', [
-                'label' => __('Icon Color', 'eassy-addons'),
+                'label' => __('Icon Color', 'easy-addons'),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .post-card_meta-data span .fa,
@@ -732,7 +732,7 @@ class Post_Card_Widget extends Widget_Base {
 
         $this->add_control(
             'meta_separator_color', [
-                'label' => __('Text Color', 'eassy-addons'),
+                'label' => __('Text Color', 'easy-addons'),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .post-card_meta-data span,
@@ -757,7 +757,7 @@ class Post_Card_Widget extends Widget_Base {
 
         $this->add_control(
             'meta_spacing', [
-                'label' => __('Spacing', 'eassy-addons'),
+                'label' => __('Spacing', 'easy-addons'),
                 'type' => Controls_Manager::SLIDER,
                 'range' => [
                     'px' => [

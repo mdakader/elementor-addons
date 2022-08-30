@@ -3,6 +3,7 @@
 namespace Easy_Addons\Widgets;
 
 use Elementor\Controls_Manager;
+use Elementor\Group_Control_Border;
 use Elementor\Repeater;
 use Elementor\Group_Control_Typography;
 use Elementor\Utils;
@@ -101,11 +102,10 @@ class Testimonial extends Widget_Base
                 'label' => __('Testimonial Style', 'easy-addons'),
                 'type' => Controls_Manager::SELECT,
                 'options' => [
-                    'testimonial-style-1' => esc_html__('Testimonial Style 1', 'eassy-addons'),
-                    'testimonial-style-2' => esc_html__('Testimonial Style 2', 'eassy-addons'),
-                    'testimonial-style-3' => esc_html__('Testimonial Style 3', 'eassy-addons'),
-                    'testimonial-style-4' => esc_html__('Testimonial Style 4', 'eassy-addons'),
-                    'testimonial-style-5' => esc_html__('Testimonial Style 5', 'eassy-addons'),
+                    'testimonial-style-1' => esc_html__('Testimonial Style 1', 'easy-addons'),
+                    'testimonial-style-2' => esc_html__('Testimonial Style 2', 'easy-addons'),
+                    'testimonial-style-3' => esc_html__('Testimonial Style 3', 'easy-addons'),
+                    'testimonial-style-4' => esc_html__('Testimonial Style 4', 'easy-addons')
                 ],
                 'default' => 'testimonial-style-1',
             ]
@@ -167,7 +167,7 @@ class Testimonial extends Widget_Base
                     [
                         'client_name' => esc_html__('Steve Thomas', 'easy-addons'),
                         'client_designation' => esc_html__('CEO at XYZ Ltd.', 'easy-addons'),
-                        'client_review' => esc_html__('Lorem ipsum dolor sit amet, consectetur adip iscing elit. Sed sit libero', 'easy-addons'),
+                        'client_review' => esc_html__('Lorem ipsum dolor sit amet, consectetur adip iscing elit. Lorem ipsum dolor sit amet, consectetur adip iscing elit.', 'easy-addons'),
                     ]
                 ],
                 'title_field' => '{{{ client_name }}}',
@@ -467,7 +467,43 @@ class Testimonial extends Widget_Base
                 'separator' => 'before',
             ]
         );
-
+        $this->add_group_control(
+            Group_Control_Border::get_type(),
+            [
+                'name' => 'border_s3',
+                'label' => esc_html__( 'Border', 'easy-addons' ),
+                'selector' => '{{WRAPPER}} .easy-testimonial.testimonial-style-3 .easy-testimonial-item',
+                'conditions' => [
+                    'terms' => [
+                        [
+                            'name' => 'testimonial_style',
+                            'operator' => '==',
+                            'value' => 'testimonial-style-3',
+                        ],
+                    ],
+                ],
+            ]
+        );
+        $this->add_control(
+            'margin_s3',
+            [
+                'label' => esc_html__( 'Margin', 'easy-addons' ),
+                'type' => Controls_Manager::DIMENSIONS,
+                'size_units' => [ 'px', '%', 'em' ],
+                'selectors' => [
+                    '{{WRAPPER}} .easy-testimonial.testimonial-style-3 .easy-testimonial-item' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+                'conditions' => [
+                    'terms' => [
+                        [
+                            'name' => 'testimonial_style',
+                            'operator' => '==',
+                            'value' => 'testimonial-style-3',
+                        ],
+                    ],
+                ],
+            ]
+        );
         $this->add_group_control(
             Group_Control_Typography::get_type(), [
                 'name' => 'client_review_typography',
@@ -512,9 +548,6 @@ class Testimonial extends Widget_Base
                 break;
             case 'testimonial-style-4':
                 include EASY_ADDONS_PATH . '/widgets/testimonial/testimonials/testimonial-4.php';
-                break;
-            case 'testimonial-style-5':
-                include EASY_ADDONS_PATH . '/widgets/testimonial/testimonials/testimonial-5.php';
                 break;
             default:
                 include EASY_ADDONS_PATH . '/widgets/testimonial/testimonials/testimonial-1.php';

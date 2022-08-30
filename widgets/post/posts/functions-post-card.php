@@ -86,7 +86,7 @@ if (!function_exists('post_card_posted_by')) {
     function post_card_posted_by() {
         printf(
                 /* translators: 1: SVG icon. 2: post author, only visible to screen readers. 3: author link. */
-                '<span class="byauthor">%1$s<span class="screen-reader-text">%2$s</span><span class="author vcard"><a class="url fn n" href="%3$s">%4$s</a></span></span>', '<i class="fas fa-user" aria-hidden="true"></i>', __('Posted by', 'eassy-addons'), esc_url(get_author_posts_url(get_the_author_meta('ID'))), esc_html(get_the_author())
+                '<span class="byauthor">%1$s<span class="screen-reader-text">%2$s</span><span class="author vcard"><a class="url fn n" href="%3$s">%4$s</a></span></span>', '<i class="fas fa-user" aria-hidden="true"></i>', __('Posted by', 'easy-addons'), esc_url(get_author_posts_url(get_the_author_meta('ID'))), esc_html(get_the_author())
         );
     }
 
@@ -100,7 +100,7 @@ if (!function_exists('post_card_2_posted_by')) {
     function post_card_2_posted_by() {
         printf(
                 /* translators: 1: SVG icon. 2: post author, only visible to screen readers. 3: author link. */
-                '<span class="byauthor">%1$s<span class="screen-reader-text">%2$s</span><span class="author vcard"><a class="url fn n" href="%3$s">%4$s</a></span></span>', __(get_avatar(get_the_author_meta('ID'), 40)), __('By', 'eassy-addons'), esc_url(get_author_posts_url(get_the_author_meta('ID'))), esc_html(get_the_author())
+                '<span class="byauthor">%1$s<span class="screen-reader-text">%2$s</span><span class="author vcard"><a class="url fn n" href="%3$s">%4$s</a></span></span>', __(get_avatar(get_the_author_meta('ID'), 40)), __('By', 'easy-addons'), esc_url(get_author_posts_url(get_the_author_meta('ID'))), esc_html(get_the_author())
         );
     }
 
@@ -134,11 +134,11 @@ if (!function_exists('post_card_posted_on')) { // Not Use
 if (!function_exists('post_card_posted_categories')) {
 
     function post_card_posted_categories() {
-        $categories_list = get_the_category_list(__(', ', 'eassy-addons'));
+        $categories_list = get_the_category_list(__(', ', 'easy-addons'));
         if ($categories_list) {
             printf(
                     /* translators: 1: SVG icon. 2: posted in label, only visible to screen readers. 3: list of categories. */
-                    '<span class="cat-links">%1$s<span class="screen-reader-text">%2$s</span>%3$s</span>', '', __('Posted in', 'eassy-addons'), $categories_list
+                    '<span class="cat-links">%1$s<span class="screen-reader-text">%2$s</span>%3$s</span>', '', __('Posted in', 'easy-addons'), $categories_list
             ); // WPCS: XSS OK.
         }
     }
@@ -152,11 +152,11 @@ if (!function_exists('post_card_posted_tag')) {
 
     function post_card_posted_tag() {
         /* translators: used between list items, there is a space after the comma. */
-        $tags_list = get_the_tag_list('', __(', ', 'eassy-addons'));
+        $tags_list = get_the_tag_list('', __(', ', 'easy-addons'));
         if ($tags_list) {
             printf(
                     /* translators: 1: SVG icon. 2: posted in label, only visible to screen readers. 3: list of tags. */
-                    '<div class="post-card-tags"><span class="tags-links">%1$s<span class="screen-reader-text">%2$s </span>%3$s</span> </div>', '<i class="fa fa-tags" aria-hidden="true"></i>', __('Tags:', 'eassy-addons'), $tags_list
+                    '<div class="post-card-tags"><span class="tags-links">%1$s<span class="screen-reader-text">%2$s </span>%3$s</span> </div>', '<i class="fa fa-tags" aria-hidden="true"></i>', __('Tags:', 'easy-addons'), $tags_list
             ); // WPCS: XSS OK.
         }
     }
@@ -174,7 +174,7 @@ if (!function_exists('post_card_comment_count')) {
             echo '<i class="fa fa-comments" aria-hidden="true"></i>';
 
             /* translators: %s: Name of current post. Only visible to screen readers. */
-            comments_popup_link(sprintf(__('Leave a comment<span class="screen-reader-text"> on %s</span>', 'eassy-addons'), get_the_title()));
+            comments_popup_link(sprintf(__('Leave a comment<span class="screen-reader-text"> on %s</span>', 'easy-addons'), get_the_title()));
 
             echo '</span>';
         }

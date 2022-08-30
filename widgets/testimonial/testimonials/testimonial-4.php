@@ -51,17 +51,23 @@ $this->add_render_attribute([
                     foreach ($testimonials as $testimonial) {
                         ?>
                         <div <?php $this->print_render_attribute_string('testimonial-item'); ?>>
+                            <div class="easy-testimonial-icons">
+                                <?php Icons_Manager::render_icon($testimonial['client_icon'], ['aria-hidden' => 'true']); ?>
+                            </div>
+
+                            <div class="client-feedback">
+                                <p><?php echo wp_kses($testimonial['client_review'], $allow_html); ?></p>
+                            </div>
 
                             <div class="client-img">
                                 <img src="<?php echo esc_url($testimonial['client_image']['url']) ?>"
                                      alt="<?php echo esc_html($testimonial['client_name']) ?>"/>
-                                <div class="easy-testimonial-icons">
-                                    <?php Icons_Manager::render_icon($testimonial['client_icon'], ['aria-hidden' => 'true']); ?>
-                                </div>
+
                             </div>
-                            <p><?php echo wp_kses($testimonial['client_review'], $allow_html); ?></p>
+                            <div class="client-bio">
                             <h2><?php echo esc_html($testimonial['client_name']); ?></h2>
                             <h4><?php echo esc_html($testimonial['client_designation']); ?></h4>
+                            </div>
                         </div>
                         <?php
                     }
