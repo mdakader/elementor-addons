@@ -1,41 +1,79 @@
-.ea-service {
-    padding: 30px;
-    background: #4B6587;
-    transition: 0.3s ease;
+/*
+* Start Team Style-1
+-------------------------*/
+
+.easy-services-item {
+    background: #ffffff;
+    color: #172E5A;
+    padding: 25px;
+    margin: 5px 0 0 5px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px -5px rgba(0,0,0,0.3);
+    transition: all 0.3s ease 0s;
 }
 
+.easy-services-item:hover {
+    background: #172E5A;
+    color: #ffffff;
+}
 
-.service-icon i {
+.service-icon {
+    color: #172E5A;
     font-size: 45px;
-    transition: 0.3s ease;
+    transition: all 0.3s ease 0s;
 }
 
-h2.ea-service-title {
+.easy-services-item:hover .service-icon {
+    color: #ffffff;
+}
+
+h2.easy-service-title {
     font-size: 24px;
     line-height: 28px;
     font-weight: 600;
-    color: #ffffff;
-    transition: 0.3s ease;
+    color: #172E5A;
+    transition: all 0.3s ease 0s;
 }
 
-p.ea-service-description {
+.easy-services-item:hover h2.easy-service-title {
+    color: #ffffff;
+}
+
+p.easy-service-description {
     font-size: 14px;
     line-height: 20px;
     font-weight: 400;
+    color: #172E5A;
+    transition: all 0.3s ease 0s;
+}
+
+.easy-services-item:hover p.easy-service-description {
     color: #ffffff;
-    transition: 0.3s ease;
 }
 
-a:focus,
-a:visited{
-    outline: transparent;
-}
-
-a.ea-service-link {
-    font-size: 15px;
+a.easy-service-link {
+    font-size: 18px;
     line-height: 22px;
     font-weight: 500;
     text-transform: capitalize;
     display: inline-block;
     transition: 0.3s ease;
+    color: #e74c3c;
 }
+
+.easy-services-item:hover a.easy-service-link {
+    color: #ffffff;
+}
+/*
+* End Team Style-1
+-------------------------*/
+
+
+/*
+* Start Team Style-2
+-------------------------*/
+
+
+/*
+* End Team Style-2
+-------------------------*/

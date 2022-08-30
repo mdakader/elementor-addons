@@ -1,9 +1,7 @@
 <?php
-
 namespace Easy_Addons\Widgets;
 
 use Elementor\Group_Control_Typography;
-use Elementor\Icons_Manager;
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
 
@@ -30,7 +28,7 @@ class Service_Widget extends Widget_Base {
 	 *
 	 */
 	public function get_name() {
-		return 'ea-service';
+		return 'easy-service';
 	}
 
 	/**
@@ -104,7 +102,7 @@ class Service_Widget extends Widget_Base {
 	 *
 	 */
 	public function get_style_depends() {
-		return [ 'ea-service' ];
+		return [ 'service' ];
 	}
 
 	/**
@@ -123,6 +121,19 @@ class Service_Widget extends Widget_Base {
 				'label' => esc_html__( 'Dual Header', 'easy-addons' ),
 			]
 		);
+
+        $this->add_control(
+            'service_style', [
+                'label' => __('Service Style', 'easy-addons'),
+                'type' => Controls_Manager::SELECT,
+                'options' => [
+                    'service-style-1' => esc_html__('Service Style 1', 'easy-addons'),
+                    'service-style-2' => esc_html__('Service Style 2', 'easy-addons'),
+                    'service-style-3' => esc_html__('Service Style 3', 'easy-addons'),
+                ],
+                'default' => 'service-style-1',
+            ]
+        );
 		$this->add_control(
 			'service_icon',
 			[
@@ -178,35 +189,6 @@ class Service_Widget extends Widget_Base {
 				'default'     => esc_html__( 'Read More', 'easy-addons' ),
 			]
 		);
-		$this->add_responsive_control(
-			'align',
-			[
-				'label'     => __( 'Alignment', 'elementor' ),
-				'type'      => Controls_Manager::CHOOSE,
-				'options'   => [
-					'left'    => [
-						'title' => esc_html__( 'Left', 'easy-addons' ),
-						'icon'  => 'eicon-text-align-left',
-					],
-					'center'  => [
-						'title' => esc_html__( 'Center', 'easy-addons' ),
-						'icon'  => 'eicon-text-align-center',
-					],
-					'right'   => [
-						'title' => esc_html__( 'Right', 'easy-addons' ),
-						'icon'  => 'eicon-text-align-right',
-					],
-					'justify' => [
-						'title' => esc_html__( 'Justified', 'easy-addons' ),
-						'icon'  => 'eicon-text-align-justify',
-					],
-				],
-				'default'   => 'center',
-				'selectors' => [
-					'{{WRAPPER}} .ea-service' => 'text-align: {{VALUE}};',
-				],
-			]
-		);
 		$this->end_controls_section();
 
 		$this->start_controls_section(
@@ -216,7 +198,35 @@ class Service_Widget extends Widget_Base {
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
-
+        $this->add_responsive_control(
+            'align',
+            [
+                'label'     => __( 'Alignment', 'elementor' ),
+                'type'      => Controls_Manager::CHOOSE,
+                'options'   => [
+                    'left'    => [
+                        'title' => esc_html__( 'Left', 'easy-addons' ),
+                        'icon'  => 'eicon-text-align-left',
+                    ],
+                    'center'  => [
+                        'title' => esc_html__( 'Center', 'easy-addons' ),
+                        'icon'  => 'eicon-text-align-center',
+                    ],
+                    'right'   => [
+                        'title' => esc_html__( 'Right', 'easy-addons' ),
+                        'icon'  => 'eicon-text-align-right',
+                    ],
+                    'justify' => [
+                        'title' => esc_html__( 'Justified', 'easy-addons' ),
+                        'icon'  => 'eicon-text-align-justify',
+                    ],
+                ],
+                'default'   => 'center',
+                'selectors' => [
+                    '{{WRAPPER}} .easy-services-item' => 'text-align: {{VALUE}};',
+                ],
+            ]
+        );
 		$this->add_control(
 			'service_bg_color',
 			[
@@ -259,7 +269,7 @@ class Service_Widget extends Widget_Base {
 				'label'     => esc_html__( 'Service Icon Color', 'easy-addons' ),
 				'type'      => Controls_Manager::COLOR,
 				'alpha'     => true,
-				'default'   => '#ffffff',
+				'default'   => '#172E5A',
 				'selectors' => [
 					'{{WRAPPER}} .service-icon i' => 'color: {{VALUE}}',
 				],
@@ -271,7 +281,7 @@ class Service_Widget extends Widget_Base {
 				'label'     => esc_html__( 'Service Icon Hover Color', 'easy-addons' ),
 				'type'      => Controls_Manager::COLOR,
 				'alpha'     => true,
-				'default'   => '#33B5BF',
+				'default'   => '#ffffff',
 				'selectors' => [
 					'{{WRAPPER}} .ea-service:hover .service-icon i' => 'color: {{VALUE}}',
 				],
@@ -335,7 +345,7 @@ class Service_Widget extends Widget_Base {
 				'label'     => esc_html__( 'Service Title Color', 'easy-addons' ),
 				'type'      => Controls_Manager::COLOR,
 				'alpha'     => true,
-				'default'   => '#ffffff',
+				'default'   => '#172E5A',
 				'selectors' => [
 					'{{WRAPPER}} .ea-service-title' => 'color: {{VALUE}}',
 				],
@@ -366,7 +376,7 @@ class Service_Widget extends Widget_Base {
 				'label'     => esc_html__( 'Service Description Color', 'easy-addons' ),
 				'type'      => Controls_Manager::COLOR,
 				'alpha'     => true,
-				'default'   => '#ffffff',
+				'default'   => '#172E5A',
 				'selectors' => [
 					'{{WRAPPER}} .ea-service-description' => 'color: {{VALUE}}',
 				],
@@ -397,7 +407,7 @@ class Service_Widget extends Widget_Base {
 				'label'     => esc_html__( 'Service Link Text Color', 'easy-addons' ),
 				'type'      => Controls_Manager::COLOR,
 				'alpha'     => true,
-				'default'   => '#ffffff',
+				'default'   => '#e74c3c',
 				'selectors' => [
 					'{{WRAPPER}} .ea-service-link' => 'color: {{VALUE}}',
 				],
@@ -436,60 +446,24 @@ class Service_Widget extends Widget_Base {
 	 * @access protected
 	 */
 	protected function render() {
-		$settings = $this->get_settings_for_display();
-
-		$service_title = $this->get_settings( 'service_title' );
-		$this->add_render_attribute( 'service_title', 'class', 'ea-service-title' );
-		$this->add_inline_editing_attributes( 'service_title' );
-
-		$service_desc = $this->get_settings( 'service_desc' );
-		$this->add_render_attribute( 'service_desc', 'class', 'ea-service-description' );
-		$this->add_inline_editing_attributes( 'service_desc' );
-
-		$service_link_text = $this->get_settings( 'service_link_text' );
-		$this->add_render_attribute( 'service_link_text', 'class', 'ea-service-link' );
-		$this->add_inline_editing_attributes( 'service_link_text' );
-
-		?>
-        <div class="ea-service">
-            <div class="service-icon">
-				<?php
-				Icons_Manager::render_icon( $settings['service_icon'], [ 'aria-hidden' => 'true' ] ); ?>
-				<?php ?>
-            </div>
-
-			<?php if ( ! empty( $service_title ) ): ?>
-                <h2 <?php  $this->print_render_attribute_string( 'service_title' ) ?>> <?php echo esc_html( $service_title ); ?></h2>
-			<?php endif; ?>
+        {
+            $settings = $this->get_settings_for_display();
 
 
-			<?php if ( ! empty( $service_desc ) ): ?>
-                <p <?php $this->print_render_attribute_string( 'service_desc' ) ?>> <?php echo esc_html( $service_desc ); ?></p>
-			<?php endif; ?>
-
-
-			<?php
-			if ( ! empty( $settings['service_link']['url'] ) ) {
-				$this->add_link_attributes( 'service_link', $settings['service_link'] );
-			}
-			?>
-            <a <?php $this->print_render_attribute_string( 'service_link' ); ?><?php $this->print_render_attribute_string( 'service_link_text' ); ?>>
-				<?php echo esc_html( $service_link_text ); ?>
-            </a>
-
-        </div>
-
-		<?php
+            switch ($settings['service_style']) {
+                case 'service-style-1':
+                    include EASY_ADDONS_PATH . '/widgets/service/services/service-1.php';
+                    break;
+                case 'service-style-2':
+                    include EASY_ADDONS_PATH . '/widgets/service/services/service-2.php';
+                    break;
+                case 'service-style-3':
+                    include EASY_ADDONS_PATH . '/widgets/service/services/service-3.php';
+                    break;
+                default:
+                    include EASY_ADDONS_PATH . '/widgets/service/services/service-1.php';
+                    break;
+            }
+        }
 	}
-
-	/**
-	 * Render the widget output in the editor.
-	 *
-	 * Written as a Backbone JavaScript template and used to generate the live preview.
-	 *
-	 * @since 1.0.0
-	 *
-	 * @access protected
-	 */
-//	protected function _content_template() {}
 }
