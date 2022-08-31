@@ -66,6 +66,7 @@ class Easy_Addons_Widget {
 
 	}
     public function widget_scripts() {
+        wp_register_style( 'fontAwesome', EASY_ADDONS_ASSETS . '/css/all.css');
         wp_register_style( 'team', EASY_ADDONS_ASSETS . '/css/team.css');
         wp_register_style( 'flip-box', EASY_ADDONS_ASSETS . '/css/flip-box.css');
         wp_register_style( 'dual-heading', EASY_ADDONS_ASSETS . '/css/dual-heading.css');
@@ -75,6 +76,7 @@ class Easy_Addons_Widget {
         wp_register_style( 'counter-up', EASY_ADDONS_ASSETS .'/css/counter-up.css');
         wp_register_style( 'testimonial', EASY_ADDONS_ASSETS .'/css/testimonial.css');
         wp_register_style( 'service', EASY_ADDONS_ASSETS .'/css/service.css');
+        wp_register_style( 'posts', EASY_ADDONS_ASSETS .'/css/posts.css');
 
         wp_register_style( 'justifiedGallery', EASY_ADDONS_ASSETS .'/css/justifiedGallery.min.css');
         wp_register_style( 'venobox', EASY_ADDONS_ASSETS . '/css/venobox.css', );

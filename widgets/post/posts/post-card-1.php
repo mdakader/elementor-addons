@@ -1,15 +1,14 @@
-<!-- Start Post Card 1 -->  
-<article class="grid-item column post-card-container">  
-    <!-- Post-->
+<div class="grid-item column post-card-container">
     <div class="post-module">
-        <!-- Thumbnail-->
         <div class="thumbnail post-card-item_img"> 
             <?php
 			if ($settings['show_meta_data'] == "yes") {
             if (in_array('date', $settings['meta_data'])) {
                 ?>
                 <div class="date post-card_date">
-                    <div class="day post-card_date_color"><?php echo get_the_date('d M, Y'); ?></div> 
+                    <div class="day post-card_date_color">
+                        <i class="easy-post-date fas fa-calendar"></i>
+                        <?php echo get_the_date('d M, Y'); ?></div>
                 </div>
             <?php }}
             ?> 
@@ -17,16 +16,8 @@
                 <div class="post-card-image post-card_thumbnail">
                     <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail($settings['post_image_size_size']); ?></a>
                 </div>                 
-            <?php } else {
-                ?> 
-                <?php if (isset($settings['show_title']) && $settings['show_title'] == 'yes') { ?>
-                    <h3 class="thumb_title"> <?php the_title(); ?> </h3>
-                <?php } ?>
-                <?php
-            }
-            ?>  
+            <?php } ?>
         </div>
-        <!-- Post Content-->
         <div class="post-content post-card-content-box">
             <div class="category post-card_category post-card_category_background">
                 <?php echo post_card_posted_categories(); ?>
@@ -76,5 +67,4 @@
             </div>
         </div>
     </div> 
-</article>  
-<!-- End Post Card -->
+</div>

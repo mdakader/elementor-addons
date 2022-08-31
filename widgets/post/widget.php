@@ -12,26 +12,41 @@ if (!defined('ABSPATH'))
 
 class Post_Card_Widget extends Widget_Base {
 
-    //Function for get the slug of the element name.
+
     public function get_name() {
         return 'post-card-widget';
     }
 
-    //Function for get the name of the element.
+
     public function get_title() {
         return __('Post Card', 'easy-addons');
     }
 
-    //Function for get the icon of the element.
+
     public function get_icon() {
         return 'eicon-gallery-grid';
     }
 
-    //Function for include element into the category.
+
     public function get_categories() {
         return [ 'easy-addons' ];
     }
 
+    /**
+     * Retrieve the list of scripts the widget depended on.
+     *
+     * Used to set scripts dependencies required to run the widget.
+     *
+     * @return array Widget scripts dependencies.
+     * @since 1.0.0
+     *
+     * @access public
+     *
+     */
+    public function get_style_depends()
+    {
+        return ['posts'];
+    }
     /*
      * Adding the controls fields for the Card Elements
      */
@@ -52,12 +67,9 @@ class Post_Card_Widget extends Widget_Base {
                 'label' => __('Post Card Style', 'easy-addons'),
                 'type' => Controls_Manager::SELECT,
                 'options' => [
-                    'post-card-style-1' => esc_html__('Card Style 1', 'easy-addons'),
-                    'post-card-style-2' => esc_html__('Card Style 2', 'easy-addons'),
-                    'post-card-style-3' => esc_html__('Card Style 3 (PRO)', 'easy-addons'),
-                    'post-card-style-4' => esc_html__('Card Style 4 (PRO)', 'easy-addons'),
-                    'post-card-style-5' => esc_html__('Card Style 5 (PRO)', 'easy-addons'),
-                    'post-card-style-6' => esc_html__('Card Style 6', 'easy-addons'),
+                    'post-card-style-1' => esc_html__('Post Card Style 1', 'easy-addons'),
+                    'post-card-style-2' => esc_html__('Post Card Style 2', 'easy-addons'),
+                    'post-card-style-3' => esc_html__('Post Card Style 3', 'easy-addons'),
                 ],
                 'default' => 'post-card-style-1',
             ]
@@ -75,8 +87,6 @@ class Post_Card_Widget extends Widget_Base {
                     '2' => '2',
                     '3' => '3',
                     '4' => '4',
-                    '5' => '5',
-                    '6' => '6',
                 ],
                 'prefix_class' => 'elementor-grid%s-',
                 'frontend_available' => true,
@@ -514,7 +524,7 @@ class Post_Card_Widget extends Widget_Base {
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .post-card_date_color,
-				 {{WRAPPER}} .post-card-style-6 .card-time' => 'color: {{VALUE}};',
+				 {{WRAPPER}} .post-card-style-3 .card-time' => 'color: {{VALUE}};',
                 ],
             ]
         );
@@ -533,7 +543,7 @@ class Post_Card_Widget extends Widget_Base {
                     '{{WRAPPER}} .post-card_category,
                 {{WRAPPER}} .post-content .post-card_category,
                 {{WRAPPER}} .post-card_category a,
-                {{WRAPPER}} .post-card-style-6 .card-category' => 'color: {{VALUE}};',
+                {{WRAPPER}} .post-card-style-3 .card-category' => 'color: {{VALUE}};',
                 ],
             ]
         );
@@ -546,14 +556,14 @@ class Post_Card_Widget extends Widget_Base {
                     '{{WRAPPER}} .post-card_category,
                 {{WRAPPER}} .post-card_category:hover span.cat-links a,
                 {{WRAPPER}} .post-content .post-card_category a:hover,
-                {{WRAPPER}} .post-card-style-6 .card-category' => 'color: {{VALUE}};',
+                {{WRAPPER}} .post-card-style-3 .card-category' => 'color: {{VALUE}};',
                 ],
             ]
         );
 
         $this->add_group_control(
             Group_Control_Typography::get_type(), [
-                'name' => 'cateogry_typography',
+                'name' => 'category_typography',
                 'selector' => '{{WRAPPER}} .post-card_category,
                 {{WRAPPER}} .post-card_category a',
             ]
@@ -799,10 +809,6 @@ class Post_Card_Widget extends Widget_Base {
             $column = "elementor-grid-3";
         } elseif ($settings['post_card_columns'] == "4") {
             $column = "elementor-grid-4";
-        } elseif ($settings['post_card_columns'] == "5") {
-            $column = "elementor-grid-5";
-        } elseif ($settings['post_card_columns'] == "6") {
-            $column = "elementor-grid-6";
         }
 
         $args = array(
@@ -831,16 +837,16 @@ class Post_Card_Widget extends Widget_Base {
 
                     switch ($settings['post_card_style']) {
                         case 'post-card-style-1':
-                            include EASY_ADDONS_PATH . '/widgets/post/posts/post-card-1.php';  // Card Style 1
+                            include EASY_ADDONS_PATH . '/widgets/post/posts/post-card-1.php';
                             break;
                         case 'post-card-style-2':
-                            include EASY_ADDONS_PATH . '/widgets/post/posts/post-card-2.php';  // Card Style 2
+                            include EASY_ADDONS_PATH . '/widgets/post/posts/post-card-2.php';
                             break;
-                        case 'post-card-style-6':
-                            include EASY_ADDONS_PATH . '/widgets/post/posts/post-card-6.php';  // Card Style 6
+                        case 'post-card-style-3':
+                            include EASY_ADDONS_PATH . '/widgets/post/posts/post-card-3.php';
                             break;
                         default:
-                            include EASY_ADDONS_PATH . '/widgets/post/posts/post-card-1.php';  // Default Card Style 1
+                            include EASY_ADDONS_PATH . '/widgets/post/posts/post-card-1.php';
                             break;
                     }
 

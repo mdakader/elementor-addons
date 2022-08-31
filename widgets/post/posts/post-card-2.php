@@ -1,20 +1,10 @@
-<!-- Start Post Card 2 -->
-<article class="grid-item column post-card-container">
+<div class="grid-item column post-card-container">
     <div class="post-card-image post-card-box-radius post-module">
-        <!-- Thumbnail-->
         <?php if (has_post_thumbnail()) { ?>
             <div class="card-image post-card_thumbnail post-card-item_img">
                 <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail($settings['post_image_size_size']); ?></a>
             </div>
-        <?php } else {
-            ?>
-            <?php if (isset($settings['show_title']) && $settings['show_title'] == 'yes') { ?>
-                <div class="noimage">
-                    <h3 class="thumb_title"> <?php the_title(); ?> </h3>
-                </div>
-            <?php } ?>
-            <?php
-        }
+        <?php }
         ?>
         <div class="post-content post-card-content-bg-box">
             <div class="card_meta post-card_category">
@@ -79,5 +69,4 @@
             </div>
         </div>
     </div>
-</article>
-<!-- End Post Card -->
+</div>

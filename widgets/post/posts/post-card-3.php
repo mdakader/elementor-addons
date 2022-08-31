@@ -1,7 +1,5 @@
 <div class="post-card-style-6 card card3_style" style="background-image: url('<?php echo wp_get_attachment_url(get_post_thumbnail_id()); ?>'); background-size: contain; background-repeat: no-repeat;">
-
     <div class="card-info-hover">
-
         <div class="card-clock-info">
             <?php
 			if ($settings['show_meta_data'] == "yes") {
@@ -9,11 +7,8 @@
                 ?>
 			<span class="card-time"><?php echo get_the_date('d M, Y'); ?></span><?php }} ?>
         </div>
-
     </div>
-
     <div class="card-img" style="background-image: url('<?php echo wp_get_attachment_url(get_post_thumbnail_id()); ?>');"></div>
-
     <a href="<?php the_permalink(); ?>" class="card-link">
         <div class="card-img-hover"></div>
     </a>
