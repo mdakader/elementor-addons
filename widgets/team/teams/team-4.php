@@ -29,6 +29,15 @@ $migration_allowed = Icons_Manager::is_migration_allowed();
             <div class="team-img">
                 <img src="<?php echo esc_url($settings['team_image']['url']) ?>" alt="Image"/>
             </div>
+            <div class="team-content">
+                <?php if(!empty($team_name)):?>
+                    <h3 class="team-name"><?php echo esc_html($team_name);?>
+                        <small class="team-position">
+                            <?php echo esc_html($team_position);?>
+                        </small>
+                    </h3>
+                <?php endif;?>
+            </div>
             <ul class="social-links">
                 <?php
                 foreach ($settings['social_icon_list'] as $index => $item) {
@@ -79,15 +88,6 @@ $migration_allowed = Icons_Manager::is_migration_allowed();
                         </a></li>
                 <?php } ?>
             </ul>
-            <div class="team-content">
-                <?php if(!empty($team_name)):?>
-                <h3 class="team-name"><?php echo esc_html($team_name);?>
-                    <small class="team-position">
-                        <?php echo esc_html($team_position);?>
-                    </small>
-                </h3>
-                <?php endif;?>
-            </div>
         </div>
     </div>
 </div>

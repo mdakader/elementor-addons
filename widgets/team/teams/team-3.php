@@ -22,23 +22,11 @@ $fallback_defaults = [
 $migration_allowed = Icons_Manager::is_migration_allowed();
 
 ?>
-
 <div class="easy-addons-team">
     <div class="team-wrapper <?php echo esc_attr($team_style) ?>">
         <div class="our-team">
-            <img src="<?php echo esc_url($settings['team_image']['url']) ?>" alt="Image"/>
-            <div class="team-content">
-                <?php if(!empty($team_name)):?>
-                    <h3 class="team-name"><?php echo esc_html($team_name);?>
-                        <small class="team-position">
-                            <?php echo esc_html($team_position);?>
-                        </small>
-                    </h3>
-                <?php endif;?>
-                <p class="description">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio exercitationem facilis laborum
-                    perferendis quasi, ratione.
-                </p>
+            <div class="team-img">
+                <img src="<?php echo esc_url($settings['team_image']['url']) ?>" alt="Image"/>
                 <ul class="social-links">
                     <?php
                     foreach ($settings['social_icon_list'] as $index => $item) {
@@ -90,9 +78,14 @@ $migration_allowed = Icons_Manager::is_migration_allowed();
                     <?php } ?>
                 </ul>
             </div>
-            <div class="team-prof">
-                <h3 class="post-title">Williamson</h3>
-                <span class="post">Web Desginer</span>
+            <div class="team-content">
+                <?php if(!empty($team_name)):?>
+                    <h3 class="team-name"><?php echo esc_html($team_name);?>
+                        <small class="team-position">
+                            <?php echo esc_html($team_position);?>
+                        </small>
+                    </h3>
+                <?php endif;?>
             </div>
         </div>
     </div>

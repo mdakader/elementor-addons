@@ -182,12 +182,12 @@ class Widget_Team extends Widget_Base
                 'label' => __('Teams Style', 'easy-addons'),
                 'type' => Controls_Manager::SELECT,
                 'options' => [
+                    'team-style-1' => esc_html__('Team Style 1', 'easy-addons'),
+                    'team-style-2' => esc_html__('Team Style 2', 'easy-addons'),
+                    'team-style-3' => esc_html__('Team Style 3', 'easy-addons'),
+                    'team-style-4' => esc_html__('Team Style 4', 'easy-addons'),
                     'team-style-5' => esc_html__('Team Style 5', 'easy-addons'),
-                    'team-style-6' => esc_html__('Team Style 6', 'easy-addons'),
-                    'team-style-9' => esc_html__('Team Style 9', 'easy-addons'),
-                    'team-style-12' => esc_html__('Team Style 12', 'easy-addons'),
-                    'team-style-14' => esc_html__('Team Style 14', 'easy-addons'),
-                    'team-style-18' => esc_html__('Team Style 18', 'easy-addons')
+                    'team-style-6' => esc_html__('Team Style 6', 'easy-addons')
                 ],
                 'default' => 'team-style-1',
             ]
@@ -410,55 +410,6 @@ class Widget_Team extends Widget_Base
                 'prefix_class' => 'elementor-shape-',
             ]
         );
-
-        $this->add_responsive_control(
-            'columns',
-            [
-                'label' => esc_html__('Columns', 'easy-addons'),
-                'type' => Controls_Manager::SELECT,
-                'default' => '0',
-                'options' => [
-                    '0' => esc_html__('Auto', 'easy-addons'),
-                    '1' => '1',
-                    '2' => '2',
-                    '3' => '3',
-                    '4' => '4',
-                    '5' => '5',
-                    '6' => '6',
-                ],
-                'prefix_class' => 'elementor-grid%s-',
-                'selectors' => [
-                    '{{WRAPPER}}' => '--grid-template-columns: repeat({{VALUE}}, auto);',
-                ],
-            ]
-        );
-
-//        $this->add_responsive_control(
-//            'align',
-//            [
-//                'label' => esc_html__( 'Alignment', 'easy-addons' ),
-//                'type' => Controls_Manager::CHOOSE,
-//                'options' => [
-//                    'left'    => [
-//                        'title' => esc_html__( 'Left', 'easy-addons' ),
-//                        'icon' => 'eicon-text-align-left',
-//                    ],
-//                    'center' => [
-//                        'title' => esc_html__( 'Center', 'easy-addons' ),
-//                        'icon' => 'eicon-text-align-center',
-//                    ],
-//                    'right' => [
-//                        'title' => esc_html__( 'Right', 'easy-addons' ),
-//                        'icon' => 'eicon-text-align-right',
-//                    ],
-//                ],
-//                'prefix_class' => 'e-grid-align%s-',
-//                'default' => 'center',
-//                'selectors' => [
-//                    '{{WRAPPER}} .elementor-widget-container' => 'text-align: {{VALUE}}',
-//                ],
-//            ]
-//        );
 
         $this->add_control(
             'view',
@@ -898,26 +849,26 @@ class Widget_Team extends Widget_Base
 
 
         switch ($settings['team_style']) {
+            case 'team-style-1':
+                include EASY_ADDONS_PATH . '/widgets/team/teams/team-1.php';
+                break;
+            case 'team-style-2':
+                include EASY_ADDONS_PATH . '/widgets/team/teams/team-2.php';
+                break;
+            case 'team-style-3':
+                include EASY_ADDONS_PATH . '/widgets/team/teams/team-3.php';
+                break;
+            case 'team-style-4':
+                include EASY_ADDONS_PATH . '/widgets/team/teams/team-4.php';
+                break;
             case 'team-style-5':
                 include EASY_ADDONS_PATH . '/widgets/team/teams/team-5.php';
                 break;
             case 'team-style-6':
                 include EASY_ADDONS_PATH . '/widgets/team/teams/team-6.php';
                 break;
-            case 'team-style-9':
-                include EASY_ADDONS_PATH . '/widgets/team/teams/team-9.php';
-                break;
-            case 'team-style-12':
-                include EASY_ADDONS_PATH . '/widgets/team/teams/team-12.php';
-                break;
-            case 'team-style-14':
-                include EASY_ADDONS_PATH . '/widgets/team/teams/team-14.php';
-                break;
-            case 'team-style-18':
-                include EASY_ADDONS_PATH . '/widgets/team/teams/team-18.php';
-                break;
             default:
-                include EASY_ADDONS_PATH . '/widgets/team/teams/team-5.php';
+                include EASY_ADDONS_PATH . '/widgets/team/teams/team-1.php';
                 break;
         }
     }
