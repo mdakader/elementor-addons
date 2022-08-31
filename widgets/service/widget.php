@@ -243,10 +243,19 @@ class Service_Widget extends Widget_Base
                 'label' => esc_html__('Service Background Color', 'easy-addons'),
                 'type' => Controls_Manager::COLOR,
                 'alpha' => true,
-                'default' => '#4B6587',
+                'default' => '#ffffff',
                 'selectors' => [
-                    '{{WRAPPER}} .ea-service' => 'background-color: {{VALUE}}',
+                    '{{WRAPPER}} .easy-services-item' => 'background-color: {{VALUE}}',
                 ],
+//                'conditions' => [
+//                    'terms' => [
+//                        [
+//                            'name' => 'service_style',
+//                            'operator' => '==',
+//                            'value' => 'service-style-1',
+//                        ],
+//                    ],
+//                ],
             ]
         );
 
@@ -256,9 +265,9 @@ class Service_Widget extends Widget_Base
                 'label' => esc_html__('Service Background Hover Color', 'easy-addons'),
                 'type' => Controls_Manager::COLOR,
                 'alpha' => true,
-                'default' => '#4B6587',
+                'default' => '#172E5A',
                 'selectors' => [
-                    '{{WRAPPER}} .ea-service:hover' => 'background-color: {{VALUE}}',
+                    '{{WRAPPER}} .easy-services-item:hover' => 'background-color: {{VALUE}}',
                 ],
             ]
         );
@@ -269,7 +278,7 @@ class Service_Widget extends Widget_Base
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%', 'em'],
                 'selectors' => [
-                    '{{WRAPPER}} .ea-service' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .easy-services-item' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
@@ -293,7 +302,7 @@ class Service_Widget extends Widget_Base
                 'alpha' => true,
                 'default' => '#ffffff',
                 'selectors' => [
-                    '{{WRAPPER}} .ea-service:hover .service-icon i' => 'color: {{VALUE}}',
+                    '{{WRAPPER}} .easy-services-item:hover .service-icon i' => 'color: {{VALUE}}',
                 ],
             ]
         );
@@ -357,7 +366,7 @@ class Service_Widget extends Widget_Base
                 'alpha' => true,
                 'default' => '#172E5A',
                 'selectors' => [
-                    '{{WRAPPER}} .ea-service-title' => 'color: {{VALUE}}',
+                    '{{WRAPPER}} .easy-service-title' => 'color: {{VALUE}}',
                 ],
             ]
         );
@@ -369,7 +378,7 @@ class Service_Widget extends Widget_Base
                 'alpha' => true,
                 'default' => '#ffffff',
                 'selectors' => [
-                    '{{WRAPPER}} .ea-service:hover .ea-service-title' => 'color: {{VALUE}}',
+                    '{{WRAPPER}} .easy-service:hover .easy-service-title' => 'color: {{VALUE}}',
                 ],
             ]
         );
@@ -388,7 +397,7 @@ class Service_Widget extends Widget_Base
                 'alpha' => true,
                 'default' => '#172E5A',
                 'selectors' => [
-                    '{{WRAPPER}} .ea-service-description' => 'color: {{VALUE}}',
+                    '{{WRAPPER}} .easy-service-description' => 'color: {{VALUE}}',
                 ],
             ]
         );
@@ -400,7 +409,7 @@ class Service_Widget extends Widget_Base
                 'alpha' => true,
                 'default' => '#ffffff',
                 'selectors' => [
-                    '{{WRAPPER}} .ea-service:hover .ea-service-description' => 'color: {{VALUE}}',
+                    '{{WRAPPER}} .easy-services-item:hover .easy-service-description' => 'color: {{VALUE}}',
                 ],
             ]
         );
@@ -408,7 +417,7 @@ class Service_Widget extends Widget_Base
             Group_Control_Typography::get_type(),
             [
                 'name' => 'service_btn_typography',
-                'selector' => '{{WRAPPER}} .ea-service-description',
+                'selector' => '{{WRAPPER}} .easy-service-description',
             ]
         );
         $this->add_control(
@@ -419,7 +428,7 @@ class Service_Widget extends Widget_Base
                 'alpha' => true,
                 'default' => '#e74c3c',
                 'selectors' => [
-                    '{{WRAPPER}} .ea-service-link' => 'color: {{VALUE}}',
+                    '{{WRAPPER}} .easy-service-link' => 'color: {{VALUE}}',
                 ],
             ]
         );
@@ -431,7 +440,7 @@ class Service_Widget extends Widget_Base
                 'alpha' => true,
                 'default' => '#33B5BF',
                 'selectors' => [
-                    '{{WRAPPER}} .ea-service:hover .ea-service-link' => 'color: {{VALUE}}',
+                    '{{WRAPPER}} .easy-services-item:hover .easy-service-link' => 'color: {{VALUE}}',
                 ],
             ]
         );

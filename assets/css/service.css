@@ -182,6 +182,7 @@ a.easy-service-link {
     height: 80px;
     position: relative;
     z-index: 1;
+    overflow: hidden;
 }
 .easy-services.service-style-4 .service-icon:after {
     position: absolute;
@@ -192,6 +193,7 @@ a.easy-service-link {
     height: 100%;
     background: #172E5A;
     border-radius: 50%;
+    border: 1px solid #172E5A;
     z-index: -1;
     transition: all 0.5s ease 0s;
     transform: scale(0);
