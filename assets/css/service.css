@@ -1,15 +1,13 @@
 /*
-* Start Team Style-1
+* Start Team Style
 -------------------------*/
-
 .easy-services-item {
     background: #ffffff;
     color: #172E5A;
     padding: 25px;
-    margin: 5px 0 0 5px;
     border-radius: 10px;
     box-shadow: 0 0 15px -5px rgba(0,0,0,0.3);
-    transition: all 0.3s ease 0s;
+    transition: all 0.5s ease 0s;
 }
 
 .easy-services-item:hover {
@@ -20,34 +18,34 @@
 .service-icon {
     color: #172E5A;
     font-size: 45px;
-    transition: all 0.3s ease 0s;
+    transition: all 0.5s ease 0s;
 }
 
 .easy-services-item:hover .service-icon {
     color: #ffffff;
 }
 
-h2.easy-service-title {
+.easy-service-title {
     font-size: 24px;
     line-height: 28px;
     font-weight: 600;
     color: #172E5A;
-    transition: all 0.3s ease 0s;
+    transition: all 0.5s ease 0s;
 }
 
-.easy-services-item:hover h2.easy-service-title {
+.easy-services-item:hover .easy-service-title {
     color: #ffffff;
 }
 
-p.easy-service-description {
+.easy-service-description {
     font-size: 14px;
     line-height: 20px;
     font-weight: 400;
     color: #172E5A;
-    transition: all 0.3s ease 0s;
+    transition: all 0.5s ease 0s;
 }
 
-.easy-services-item:hover p.easy-service-description {
+.easy-services-item:hover .easy-service-description {
     color: #ffffff;
 }
 
@@ -57,13 +55,19 @@ a.easy-service-link {
     font-weight: 500;
     text-transform: capitalize;
     display: inline-block;
-    transition: 0.3s ease;
-    color: #e74c3c;
+    transition: 0.5s ease 0s;
+    color: #db3157;
 }
 
-.easy-services-item:hover a.easy-service-link {
-    color: #ffffff;
-}
+/*
+* End Team Style
+-------------------------*/
+
+/*
+* Start Team Style-1
+-------------------------*/
+
+
 /*
 * End Team Style-1
 -------------------------*/
@@ -72,8 +76,168 @@ a.easy-service-link {
 /*
 * Start Team Style-2
 -------------------------*/
+.easy-services.service-style-2 .easy-services-item{
+    padding: 20px 25px;
+    border-radius: 5px;
+    text-align: right;
+    overflow: hidden;
+    z-index: 1;
+    position: relative;
+}
+.easy-services.service-style-2 .easy-services-item:before{
+    content: "";
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    background: #094d92;
+    position: absolute;
+    top: 0;
+    left: -100%;
+    z-index: -1;
+    transition: all 0.5s ease 0s;
+}
+.easy-services.service-style-2 .easy-services-item:hover:before{ left: 0; }
+.easy-services.service-style-2 .easy-services-item:after{
+    content: "";
+    width: 7px;
+    height: 0;
+    border-radius: 5px;
+    background: #db3157;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all 0.5s ease 0s;
+}
+.easy-services.service-style-2 .easy-services-item:hover:after{ height: 100%; }
+.easy-services.service-style-2 a.easy-service-link{
+    margin-bottom: 25px;
+    padding: 10px 15px;
+    transition: all 0.5s ease 0s;
+}
+.easy-services.service-style-2 .easy-services-item:hover a.easy-service-link{
+    border: 1px solid #ffffff;
+}
+/*
+* End Team Style-2
+-------------------------*/
 
 
 /*
-* End Team Style-2
+* Start Team Style-3
+-------------------------*/
+.easy-services.service-style-3 .easy-services-item{
+    padding: 0;
+    transition: all 0.5s ease 0s;
+}
+.easy-services.service-style-3 .easy-services-item:hover{
+    transform: translateY(-15px);
+}
+
+.easy-services.service-style-3 .service-icon {
+    padding: 25px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    background: linear-gradient(90deg, rgba(164, 185, 224,1) 20.182283912535816%,rgba(164, 185, 224,1) 20.80728395209771%,rgba(100, 100, 237,1) 80.18228771047744%);
+}
+.easy-services.service-style-3 h2.easy-service-title,
+.easy-services.service-style-3 p.easy-service-description{
+    padding: 0 25px;
+}
+.easy-services.service-style-3 a.easy-service-link{
+    margin-bottom: 25px;
+    padding: 10px 15px;
+    transition: all 0.5s ease 0s;
+}
+.easy-services.service-style-3 .easy-services-item:hover a.easy-service-link{
+    border: 1px solid #ffffff;
+}
+/*
+* End Team Style-3
+-------------------------*/
+
+
+
+/*
+* Start Team Style-4
+-------------------------*/
+.easy-services.service-style-4 .easy-services-item {
+    background: #f6fcfd;
+    color: #172E5A;
+    padding: 25px;
+    border-radius: inherit;
+    box-shadow: none;
+    transition: all 0.5s ease 0s;
+}
+.easy-services.service-style-4 .service-icon {
+    color: #172E5A;
+    transition: all 0.5s ease 0s;
+    border: 1px solid #172E5A;
+    border-radius: 50%;
+    margin: 0 auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    width: 80px;
+    height: 80px;
+    position: relative;
+    z-index: 1;
+}
+.easy-services.service-style-4 .service-icon:after {
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #172E5A;
+    border-radius: 50%;
+    z-index: -1;
+    transition: all 0.5s ease 0s;
+    transform: scale(0);
+}
+.easy-services.service-style-4 .easy-services-item:hover .service-icon:after{
+    transform: scale(1);
+    background: #172E5A;
+}
+.easy-services.service-style-4 .easy-services-item:hover .service-icon{
+    color: #ffffff;
+}
+.easy-services.service-style-4 a.easy-service-link {
+    background: #172E5A;
+    color: #fff;
+    display: inline-flex;
+    margin-bottom: 25px;
+    padding: 10px 15px;
+    position: relative;
+    z-index: 1;
+    transition: all 0.5s ease 0s;
+}
+.easy-services.service-style-4 a.easy-service-link:after {
+    position: absolute;
+    content: '';
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: #172E5A;
+    top: 0;
+    z-index: -1;
+    transition: all 0.5s ease 0s;
+    transform: scale(0);
+    border: 1px solid #172E5A;
+}
+.easy-services.service-style-4 .easy-services-item:hover a.easy-service-link:after {
+    background: #ffffff;
+    transform: scale(1);
+}
+.easy-services.service-style-4 .easy-services-item:hover a.easy-service-link{
+    color: #172E5A;
+}
+.easy-services.service-style-4 .easy-services-item:hover .easy-service-title,
+.easy-services.service-style-4 .easy-services-item:hover .easy-service-description {
+    color: #172E5A;
+}
+/*
+* End Team Style-4
 -------------------------*/
