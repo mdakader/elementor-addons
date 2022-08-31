@@ -3,9 +3,7 @@
 namespace Easy_Addons\Widgets;
 
 use Elementor\Group_Control_Border;
-use Elementor\Group_Control_Image_Size;
 use Elementor\Group_Control_Typography;
-
 use Elementor\Repeater;
 use Elementor\Utils;
 use Elementor\Widget_Base;
