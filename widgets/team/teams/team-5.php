@@ -91,8 +91,13 @@ $migration_allowed = Icons_Manager::is_migration_allowed();
                 </ul>
             </div>
             <div class="team-prof">
-                <h3 class="post-title">Williamson</h3>
-                <span class="post">Web Desginer</span>
+                <?php if(!empty($team_name)):?>
+                    <h3 class="team-name"><?php echo esc_html($team_name);?>
+                        <small class="team-position">
+                            <?php echo esc_html($team_position);?>
+                        </small>
+                    </h3>
+                <?php endif;?>
             </div>
         </div>
     </div>
