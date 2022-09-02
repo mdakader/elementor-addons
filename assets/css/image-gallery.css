@@ -41,39 +41,3 @@ a.ea-image-gallery.jg-entry.jg-entry-visible:hover:after {
     font-family: sans-serif;
     z-index: 99;
 }
-
-.ea-image-info {
-    position: absolute;
-    bottom: -100px;
-    left: 0;
-    color: #ffffff;
-    padding: 10px;
-    width: 100%;
-    visibility: hidden;
-    opacity: 0;
-    transition: 0.3s ease;
-    z-index: 99;
-}
-
-h2.ea-image-gallery-caption{
-    font-size: 14px;
-    line-height: 18px;
-    font-weight: 400;
-    text-transform: capitalize;
-}
-a.ea-image-gallery.jg-entry.jg-entry-visible:hover .ea-image-info {
-    visibility: visible;
-    opacity: 1;
-    bottom: 0;
-}
-
-.justified-gallery a.ea-image-gallery .jg-caption.jg-caption-visible,
-.justified-gallery a.ea-image-gallery  .jg-caption.jg-caption-visible,
-.justified-gallery a.ea-image-gallery  .jg-caption.jg-caption-visible {
-    display: none !important;
-    opacity: 0;
-}
-
-.justified-gallery .vbox-hidden {
-    display: initial;
-}

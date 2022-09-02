@@ -127,33 +127,14 @@ class Image_Gallery extends Widget_Base {
 
 		$repeater = new Repeater();
 
-		$repeater->add_control(
-			'gallery_image',
-			[
-				'label' => esc_html__( 'Choose Image', 'easy-addons' ),
-				'type' => Controls_Manager::MEDIA,
-				'default' => [
-					'url' => Utils::get_placeholder_image_src(),
-				],
-			]
-		);
-		$repeater->add_control(
-			'image_caption', [
-				'label' => esc_html__( 'Image caption', 'easy-addons' ),
-				'type' => Controls_Manager::TEXTAREA,
-				'label_block' => true,
-			]
-		);
-
-		$this->add_control(
-			'gallery_image_list',
-			[
-				'label' => esc_html__( 'Gallery Images', 'easy-addons' ),
-				'type' => Controls_Manager::REPEATER,
-				'fields' => $repeater->get_controls(),
-				'title_field' => '{{{ image_caption }}}',
-			]
-		);
+        $this->add_control(
+            'gallery_image',
+            [
+                'label' => esc_html__( 'Add Images', 'easy-addons' ),
+                'type' => Controls_Manager::GALLERY,
+                'default' => [],
+            ]
+        );
 
 		$this->end_controls_section();
 
@@ -190,25 +171,6 @@ class Image_Gallery extends Widget_Base {
 				'default' => 10,
 			]
 		);
-		$this->add_control(
-			'image_caption_color',
-			[
-				'label' => esc_html__( 'Image Caption Text Color', 'easy-addons' ),
-				'type' => Controls_Manager::COLOR,
-				'alpha' => true,
-				'default'=> '#ffffff',
-				'selectors' => [
-					'{{WRAPPER}} h2.ea-image-gallery-caption' => 'color: {{VALUE}}',
-				],
-			]
-		);
-		$this->add_group_control(
-			Group_Control_Typography::get_type(),
-			[
-				'name' => 'image_caption_typography',
-				'selector' => '{{WRAPPER}} h2.ea-image-gallery-caption',
-			]
-		);
 
 		$this->end_controls_section();
 	}
@@ -238,17 +200,12 @@ class Image_Gallery extends Widget_Base {
                  data-justify-image="<?php echo esc_attr($image_justified);?>"
                  data-margin="<?php echo esc_attr($image_margin);?>">
 				<?php
-				if (!empty($settings['gallery_image_list'])):
-					foreach ($settings['gallery_image_list'] as $em_gallery_photo):
+				if (!empty($settings['gallery_image'])):
+					foreach ($settings['gallery_image'] as $em_gallery_photo):
 						?>
-                        <a class="ea-image-gallery" data-gall="gallery01" href="<?php echo esc_url($em_gallery_photo['gallery_image']['url']) ?>">
-                            <img alt="<?php echo esc_html($em_gallery_photo['image_caption']) ?>"
-                                 src="<?php echo esc_url($em_gallery_photo['gallery_image']['url']) ?>"/>
-                            <div class="ea-image-info">
-								<?php if(!empty($em_gallery_photo['image_caption'])):?>
-                                    <h2  <?php  $this->print_render_attribute_string( 'image_caption' ) ?>><?php echo esc_html($em_gallery_photo['image_caption']) ?></h2>
-								<?php endif;?>
-                            </div>
+                        <a class="ea-image-gallery" data-gall="gallery01" href="<?php echo esc_url($em_gallery_photo['url']) ?>">
+                            <img alt=""
+                                 src="<?php echo esc_url($em_gallery_photo['url']) ?>"/>
                         </a>
 					<?php endforeach; endif; ?>
             </div>
