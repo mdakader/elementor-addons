@@ -1,11 +1,64 @@
 <?php
 
+if ( ! function_exists( 'easy_addons_posted_on' ) ) :
+    /**
+     * Prints HTML with meta information for the current post-date/time.
+     */
+    function easy_addons_posted_on() {
+        $time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
+        if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
+            $time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
+        }
+
+        $time_string = sprintf(
+            $time_string,
+            esc_attr( get_the_date( DATE_W3C ) ),
+            esc_html( get_the_date() ),
+            esc_attr( get_the_modified_date( DATE_W3C ) ),
+            esc_html( get_the_modified_date() )
+        );
+
+        $icon = '<i class="fas fa-calendar"></i>';
+
+        $posted_on = sprintf(
+            '<a class="post-date-text" href="%s" rel="bookmark">%s%s</a>',
+            esc_url( get_permalink() ),
+            $icon,
+            $time_string
+        );
+
+        echo  $posted_on; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+    }
+endif;
+
+if ( ! function_exists( 'easy_addons_posted_by' ) ):
+    /**
+     * return HTML with meta information for the current author.
+     */
+    function easy_addons_posted_by() {
+
+        $icon = '<i class="fas fa-user-alt"></i>';
+        $author_id = get_post_field('post_author', get_the_ID());
+        $author_name = get_the_author_meta('display_name', $author_id);
+        $url = get_author_posts_url($author_id);
+        $byline = sprintf(
+            '<a class="post-author-text author vcard" href="%s">%s%s</a>',
+            esc_url( $url ),
+            $icon,
+            esc_html( $author_name )
+        );
+
+        echo $byline; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+
+    }
+endif;
+
 /**
  * Return post category array.
  */
-if (!function_exists('card_elements_post_categories')) {
+if (!function_exists('easy_addons_post_categories')) {
 
-    function card_elements_post_categories()
+    function easy_addons_post_categories()
     {
 
         $terms = get_terms(
@@ -30,9 +83,9 @@ if (!function_exists('card_elements_post_categories')) {
 /**
  * Return post author array.
  */
-if (!function_exists('card_elements_post_author')) {
+if (!function_exists('easy_addons_post_author')) {
 
-    function card_elements_post_author()
+    function easy_addons_post_author()
     {
 
         $args = array(
@@ -57,9 +110,9 @@ if (!function_exists('card_elements_post_author')) {
 /**
  * Return post tags array.
  */
-if (!function_exists('card_elements_post_tags')) {
+if (!function_exists('easy_addons_post_tags')) {
 
-    function card_elements_post_tags()
+    function easy_addons_post_tags()
     {
 
         $terms = get_terms(
@@ -84,9 +137,9 @@ if (!function_exists('card_elements_post_tags')) {
 /**
  * Return post by author
  * */
-if (!function_exists('post_card_posted_by')) {
+if (!function_exists('easy_addons__posted_by')) {
 
-    function post_card_posted_by()
+    function easy_addons__posted_by()
     {
         printf(
         /* translators: 1: SVG icon. 2: post author, only visible to screen readers. 3: author link. */
@@ -97,26 +150,11 @@ if (!function_exists('post_card_posted_by')) {
 }
 
 /**
- * Return post by author
- * */
-if (!function_exists('post_card_2_posted_by')) {
-
-    function post_card_2_posted_by()
-    {
-        printf(
-        /* translators: 1: SVG icon. 2: post author, only visible to screen readers. 3: author link. */
-            '<span class="byauthor">%1$s<span class="screen-reader-text">%2$s</span><span class="author vcard"><a class="url fn n" href="%3$s">%4$s</a></span></span>', __(get_avatar(get_the_author_meta('ID'), 40)), __('By', 'easy-addons'), esc_url(get_author_posts_url(get_the_author_meta('ID'))), esc_html(get_the_author())
-        );
-    }
-
-}
-
-/**
  * Return post by date and time
  * */
-if (!function_exists('post_card_posted_on')) { // Not Use
+if (!function_exists('easy_addons_posted_on')) { // Not Use
 
-    function post_card_posted_on()
+    function easy_addons_posted_on()
     {
         $time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
         if (get_the_time('U') !== get_the_modified_time('U')) {
@@ -137,11 +175,11 @@ if (!function_exists('post_card_posted_on')) { // Not Use
 /**
  * Return post by categories
  * */
-if (!function_exists('post_card_posted_categories')) {
+if (!function_exists('easy_addons_posted_categories')) {
 
-    function post_card_posted_categories()
+    function easy_addons_posted_categories()
     {
-        $categories_list = get_the_category_list(__(', ', 'easy-addons'));
+        $categories_list = get_the_category_list(__(' ', 'easy-addons'));
         if ($categories_list) {
             printf(
             /* translators: 1: SVG icon. 2: posted in label, only visible to screen readers. 3: list of categories. */
@@ -155,9 +193,9 @@ if (!function_exists('post_card_posted_categories')) {
 /**
  * Return post by tags
  * */
-if (!function_exists('post_card_posted_tag')) {
+if (!function_exists('easy_addons_posted_tag')) {
 
-    function post_card_posted_tag()
+    function easy_addons_posted_tag()
     {
         /* translators: used between list items, there is a space after the comma. */
         $tags_list = get_the_tag_list('', __(', ', 'easy-addons'));
@@ -174,9 +212,9 @@ if (!function_exists('post_card_posted_tag')) {
 /**
  * Return post by comment count
  * */
-if (!function_exists('post_card_comment_count')) {
+if (!function_exists('easy_addons_post_comment_count')) {
 
-    function post_card_comment_count()
+    function easy_addons_post_comment_count()
     {
         if (!post_password_required() && (comments_open() || get_comments_number())) {
             echo '<span class="comments-link">';

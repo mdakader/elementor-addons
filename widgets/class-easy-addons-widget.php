@@ -155,7 +155,7 @@ class Easy_Addons_Widget {
         require_once( __DIR__ . '/testimonial/widget.php');
         require_once( __DIR__ . '/service/widget.php');
         require_once(__DIR__ . '/post/widget.php');
-        require_once(__DIR__ . '/post/posts/functions-post-card.php');
+        require_once(__DIR__ . '/post/posts/functions-post.php');
     }
 
     /**

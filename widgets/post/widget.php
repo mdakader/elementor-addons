@@ -1,4 +1,5 @@
 <?php
+
 namespace Easy_Addons\Widgets;
 
 use Elementor\Controls_Manager;
@@ -10,26 +11,31 @@ use Elementor\Widget_Base;
 if (!defined('ABSPATH'))
     exit;      // Exit if accessed directly
 
-class Post_Card_Widget extends Widget_Base {
+class Post_Card_Widget extends Widget_Base
+{
 
 
-    public function get_name() {
+    public function get_name()
+    {
         return 'post-card-widget';
     }
 
 
-    public function get_title() {
+    public function get_title()
+    {
         return __('Post Card', 'easy-addons');
     }
 
 
-    public function get_icon() {
+    public function get_icon()
+    {
         return 'eicon-gallery-grid';
     }
 
 
-    public function get_categories() {
-        return [ 'easy-addons' ];
+    public function get_categories()
+    {
+        return ['easy-addons'];
     }
 
     /**
@@ -47,11 +53,13 @@ class Post_Card_Widget extends Widget_Base {
     {
         return ['posts'];
     }
+
     /*
      * Adding the controls fields for the Card Elements
      */
 
-    protected function register_controls() {
+    protected function register_controls()
+    {
 
         /*
          * Start post card controls fields
@@ -70,6 +78,7 @@ class Post_Card_Widget extends Widget_Base {
                     'post-card-style-1' => esc_html__('Post Card Style 1', 'easy-addons'),
                     'post-card-style-2' => esc_html__('Post Card Style 2', 'easy-addons'),
                     'post-card-style-3' => esc_html__('Post Card Style 3', 'easy-addons'),
+                    'post-card-style-4' => esc_html__('Post Card Style 4', 'easy-addons'),
                 ],
                 'default' => 'post-card-style-1',
             ]
@@ -244,7 +253,7 @@ class Post_Card_Widget extends Widget_Base {
                 'label_block' => true,
                 'multiple' => true,
                 'description' => __('Select the categories you want to show', 'easy-addons'),
-                'options' => card_elements_post_categories(),
+                'options' => easy_addons_post_categories(),
             ]
         );
 
@@ -795,7 +804,8 @@ class Post_Card_Widget extends Widget_Base {
      *
      * @access protected
      */
-    protected function render() {
+    protected function render()
+    {
 
         $settings = $this->get_settings_for_display();
 
@@ -831,22 +841,25 @@ class Post_Card_Widget extends Widget_Base {
 
         if ($blog_posts->have_posts()) :
             ?>
-            <div class="post_card grid-container post-card-grid-gap elementor-grid <?php echo $card_style . ' ' . $column; ?>" >
+            <div class="post_card grid-container post-card-grid-gap elementor-grid <?php echo $card_style . ' ' . $column; ?>">
                 <?php
                 while ($blog_posts->have_posts()) : $blog_posts->the_post();
 
                     switch ($settings['post_card_style']) {
                         case 'post-card-style-1':
-                            include EASY_ADDONS_PATH . '/widgets/post/posts/post-card-1.php';
+                            include EASY_ADDONS_PATH . '/widgets/post/posts/post-1.php';
                             break;
                         case 'post-card-style-2':
-                            include EASY_ADDONS_PATH . '/widgets/post/posts/post-card-2.php';
+                            include EASY_ADDONS_PATH . '/widgets/post/posts/post-2.php';
                             break;
                         case 'post-card-style-3':
-                            include EASY_ADDONS_PATH . '/widgets/post/posts/post-card-3.php';
+                            include EASY_ADDONS_PATH . '/widgets/post/posts/post-3.php';
+                            break;
+                        case 'post-card-style-4':
+                            include EASY_ADDONS_PATH . '/widgets/post/posts/post-4.php';
                             break;
                         default:
-                            include EASY_ADDONS_PATH . '/widgets/post/posts/post-card-1.php';
+                            include EASY_ADDONS_PATH . '/widgets/post/posts/post-1.php';
                             break;
                     }
 
