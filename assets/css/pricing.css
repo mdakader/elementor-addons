@@ -1,0 +1,386 @@
+/*
+* Start Pricing Card Style-01
+--------------------------------*/
+.easy-pricing-table-item.pricing-card-style-1 .pricing-table {
+    color: #666;
+    background: radial-gradient(#fff, #eee);
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+    padding: 0 0 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.easy-pricing-table-item.pricing-card-style-1 .pricing-table .pricing-table-header {
+    padding: 25px 0 10px;
+}
+
+.easy-pricing-table-item.pricing-card-style-1 .pricing-table .title {
+    color: #263C5C;
+    font-size: 30px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 0 0 25px;
+}
+
+.easy-pricing-table-item.pricing-card-style-1 .pricing-table .price-value {
+    color: #fff;
+    background: linear-gradient(to right, #B231EA, #7734EE);
+    padding: 10px 40px 12px;
+    margin: 0 0 15px;
+    border-radius: 10px;
+    display: inline-block;
+}
+
+.easy-pricing-table-item.pricing-card-style-1 .pricing-table .price-value .amount {
+    font-size: 57px;
+    font-weight: 600;
+    line-height: 57px;
+}
+
+.easy-pricing-table-item.pricing-card-style-1 .pricing-table .pricing-content {
+    text-align: left;
+    padding: 0;
+    margin: 0 0 30px;
+    list-style: none;
+    display: inline-block;
+}
+
+.easy-pricing-table-item.pricing-card-style-1 .pricing-table .pricing-content li {
+    font-size: 18px;
+    line-height: 35px;
+    padding: 0 10px 0 28px;
+    margin: 0 0 10px;
+    position: relative;
+}
+
+.easy-pricing-table-item.pricing-card-style-1 .pricing-table .pricing-content li:last-child {
+    margin: 0;
+}
+
+
+.easy-pricing-table-item.pricing-card-style-1 .pricing-table .pricing-content li.disable:before {
+    display: none;
+}
+
+.easy-pricing-table-item.pricing-card-style-1 .pricing-table .price-table-signup a {
+    color: #fff;
+    background: linear-gradient(to right, #4A63A6, #2C3B6A);
+    font-size: 22px;
+    font-weight: 700;
+    text-transform: capitalize;
+    padding: 8px 25px 10px;
+    border-radius: 50px;
+    display: inline-block;
+    transition: all 0.3s;
+}
+
+.easy-pricing-table-item.pricing-card-style-1 .pricing-table .price-table-signup a:hover {
+    text-shadow: 5px 5px 2px rgba(0, 0, 0, 0.5);
+}
+
+.easy-pricing-table-item.pricing-card-style-1 .pricing-table.green .price-value,
+.easy-pricing-table-item.pricing-card-style-1 .pricing-table.green .pricing-content li:before {
+    background: linear-gradient(to right, #B1D075, #20AB74);
+}
+
+.easy-pricing-table-item.pricing-card-style-1 .pricing-table.blue .price-value,
+.easy-pricing-table-item.pricing-card-style-1 .pricing-table.blue .pricing-content li:before {
+    background: linear-gradient(to right, #48CDED, #5151EC);
+}
+
+@media only screen and (max-width: 990px) {
+    .easy-pricing-table-item.pricing-card-style-1 .pricing-table {
+        margin: 0 0 40px;
+    }
+}
+/*
+* End Pricing Card Style-01
+--------------------------------*/
+
+/*
+* Start Pricing Card Style-02
+--------------------------------*/
+:root{
+    --g-color1: #F87BA3;
+    --g-color2: #FFCC68;
+}
+.easy-pricing-table-item.pricing-card-style-2 .pricing-table{
+    background: linear-gradient(to left bottom,var(--g-color1),var(--g-color2));
+    font-family: 'Poppins', sans-serif;
+    padding: 40px 0 35px;
+    border-radius: 50px;
+    box-shadow: 0 0 15px -2px rgba(0,0,0,0.2);
+}
+.easy-pricing-table-item.pricing-card-style-2 .pricing-table .pricing-table-header{
+    color: #fff;
+    text-align: left;
+    padding: 0 0 0 35px;
+    margin: 0 0 25px;
+}
+.easy-pricing-table-item.pricing-card-style-2 .pricing-table .title{
+    color: var(--g-color1);
+    background-color: #fff;
+    font-size: 35px;
+    font-weight: 400;
+    text-transform: uppercase;
+    padding: 10px 10px 10px 30px;
+    margin: 0 0 25px;
+    border-radius: 50px 0 0 50px;
+}
+.easy-pricing-table-item.pricing-card-style-2 .pricing-table .price-value{
+    text-align: center;
+    display: inline-block;
+}
+.easy-pricing-table-item.pricing-card-style-2 .pricing-table .price-value .currency{
+    font-size: 23px;
+    line-height: 23px;
+    vertical-align: top;
+    display: inline-block;
+}
+.easy-pricing-table-item.pricing-card-style-2 .pricing-table .price-value .amount{
+    font-size: 75px;
+    font-weight: 500;
+    line-height: 58px;
+    display: inline-block;
+}
+.easy-pricing-table-item.pricing-card-style-2 .pricing-table .duration{
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    display: block;
+}
+.easy-pricing-table-item.pricing-card-style-2 .pricing-table .pricing-content{
+    text-align: left;
+    padding: 0 15px 0 35px;
+    margin: 0 0 25px;
+    list-style: none;
+    display: inline-block;
+}
+.easy-pricing-table-item.pricing-card-style-2 .pricing-table .pricing-content li{
+    color: #fff;
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 35px;
+    letter-spacing: 0.5px;
+    padding: 0 15px 0 40px;
+    margin: 0 0 10px;
+    position: relative;
+}
+.easy-pricing-table-item.pricing-card-style-2 .pricing-table .pricing-content li:last-child{ margin: 0; }
+
+.easy-pricing-table-item.pricing-card-style-2 .pricing-table .price-table-signup a{
+    color: var(--g-color2);
+    background-color: #fff;
+    font-size: 22px;
+    font-weight: 400;
+    text-align: center;
+    letter-spacing: 0.5px;
+    text-transform: capitalize;
+    padding: 5px 18px;
+    margin: 0 35px;
+    border-radius: 50px;
+    display: block;
+    transition: all 0.3s;
+}
+.easy-pricing-table-item.pricing-card-style-2 .pricing-table .price-table-signup a:hover{
+    color: var(--g-color1);
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+@media only screen and (max-width: 990px){
+    .easy-pricing-table-item.pricing-card-style-2 .pricing-table{ margin: 0 0 40px; }
+}
+
+/*
+* End Pricing Card Style-02
+--------------------------------*/
+
+
+/*
+* Start Pricing Card Style-03
+--------------------------------*/
+.easy-pricing-table-item.pricing-card-style-3 .pricing-table{
+    background-color: #fff;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    padding: 35px 0 0;
+    box-shadow: 3px 3px 7px 0px rgba(0,0,0,0.3);
+    border-radius: 20px;
+}
+.easy-pricing-table-item.pricing-card-style-3 .pricing-table .pricing-table-header{
+    background: linear-gradient(transparent,transparent,#e7e7e7);
+    padding: 0 0 30px;
+}
+.easy-pricing-table-item.pricing-card-style-3 .pricing-table .title{
+    color: #333;
+    font-size: 33px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 0 0 20px;
+}
+.easy-pricing-table-item.pricing-card-style-3 .pricing-table .title:after{
+    content: "";
+    background: #F63459;
+    width: 160px;
+    height: 3px;
+    margin: 20px auto 0;
+    display: block;
+    clear: both;
+}
+.easy-pricing-table-item.pricing-card-style-3 .pricing-table .price-value{
+    color: #F63459;
+    font-size: 52px;
+    font-weight: 800;
+    line-height: 47px;
+    letter-spacing: 2px;
+    display: block;
+}
+.easy-pricing-table-item.pricing-card-style-3 .pricing-table .price-value sup{
+    font-size: 30px;
+    vertical-align: bottom;
+}
+.easy-pricing-table-item.pricing-card-style-3 .pricing-table .pricing-content{
+    background: linear-gradient(#F53149, #FD6653);
+    border-radius: 0 0 20px 20px;
+    padding: 35px 30px;
+}
+.easy-pricing-table-item.pricing-card-style-3 .pricing-table .pricing-content ul{
+    text-align: left;
+    padding: 0 0 0 20px;
+    margin: 0 0 25px;
+    display: inline-block;
+}
+.easy-pricing-table-item.pricing-card-style-3 .pricing-table .pricing-content ul li{
+    color: #fff;
+    font-size: 17px;
+    font-weight: 300;
+    margin: 0 0 15px;
+    letter-spacing: 0.5px;
+    position: relative;
+}
+.easy-pricing-table-item.pricing-card-style-3 .pricing-table .pricing-content ul li:last-child{ margin: 0; }
+.easy-pricing-table-item.pricing-card-style-3 .pricing-table .price-table-signup a{
+    color: #fff;
+    font-size: 20px;
+    font-weight: 400;
+    font-style: italic;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 7px 25px;
+    margin: 0 auto;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    display: inline-block;
+    transition: all 0.5s;
+}
+.easy-pricing-table-item.pricing-card-style-3 .pricing-table .price-table-signup a:hover{
+    letter-spacing: 2px;
+    box-shadow: 0 0 0 5px rgba(255,255,255,0.5);
+}
+.easy-pricing-table-item.pricing-card-style-3 .pricing-table.orange .title:after{ background-color: #ED8009; }
+.easy-pricing-table-item.pricing-card-style-3 .pricing-table.orange .price-value{ color: #ED8009; }
+.easy-pricing-table-item.pricing-card-style-3 .pricing-table.orange .pricing-content{ background: linear-gradient(#ED8009, #FCA531); }
+@media only screen and (max-width: 990px){
+    .easy-pricing-table-item.pricing-card-style-3 .pricing-table{ margin-bottom: 40px; }
+}
+
+/*
+* End Pricing Card Style-03
+--------------------------------*/
+
+
+/*
+* Start Pricing Card Style-04
+--------------------------------*/
+.easy-pricing-table-item.pricing-card-style-4 .pricing-table{
+    color: #555;
+    background-color: #fff;
+    font-family: 'Outfit', sans-serif;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(0,0,0,0.15);
+}
+.easy-pricing-table-item.pricing-card-style-4 .pricing-table .pricing-table-header{
+    color: #fff;
+    background: linear-gradient(to top right,#854BCC,#4C9FD0);
+    padding: 25px 20px 80px;
+    margin: 0 0 10px;
+    clip-path: polygon(0 0, 100% 0, 100% 70%, 0% 100%);
+}
+.easy-pricing-table-item.pricing-card-style-4 .pricing-table .title{
+    color: rgba(255,255,255,0.8);
+    font-size: 30px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin: 0 0 15px;
+}
+.easy-pricing-table-item.pricing-card-style-4 .pricing-table .price-value .amount{
+    font-size: 80px;
+    font-weight: 600;
+    line-height: 80px;
+    display: block;
+}
+.easy-pricing-table-item.pricing-card-style-4 .pricing-table .price-value .duration{
+    font-size: 19px;
+    font-weight: 200;
+    letter-spacing: 0.5px;
+    display: block;
+}
+.easy-pricing-table-item.pricing-card-style-4 .pricing-table .pricing-content{
+    padding: 0;
+    margin: 0 0 35px;
+    list-style: none;
+    display: inline-block;
+}
+.easy-pricing-table-item.pricing-card-style-4 .pricing-table .pricing-content li{
+    font-size: 18px;
+    line-height: 25px;
+    text-transform: capitalize;
+    padding: 5px 0 0;
+}
+.easy-pricing-table-item.pricing-card-style-4 .pricing-table .pricing-content li:after{
+    content: '';
+    background: linear-gradient(to top right,#854BCC,#4C9FD0);
+    height: 2px;
+    width: 100%;
+    margin: 5px 0 0;
+    clear: both;
+    display: block;
+}
+.easy-pricing-table-item.pricing-card-style-4 .pricing-table .pricing-content li:last-child:after{ display: none; }
+.easy-pricing-table-item.pricing-card-style-4 .pricing-table .price-table-signup{
+    background: linear-gradient(to top right,#854BCC,#4C9FD0);
+    padding: 10px 10px 9px;
+}
+.easy-pricing-table-item.pricing-card-style-4 .pricing-table .price-table-signup a{
+    color: rgba(255,255,255,0.8);
+    font-size: 20px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: all 0.3s ease 0s;
+}
+.easy-pricing-table-item.pricing-card-style-4 .pricing-table .price-table-signup a:hover{
+    color: #fff;
+    text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.4);
+}
+.easy-pricing-table-item.pricing-card-style-4 .pricing-table.pink .pricing-table-header,
+.easy-pricing-table-item.pricing-card-style-4 .pricing-table.pink .pricing-content li:after,
+.easy-pricing-table-item.pricing-card-style-4 .pricing-table.pink .price-table-signup{
+    background: linear-gradient(to top right,#E244D4,#F57875);
+}
+.easy-pricing-table-item.pricing-card-style-4 .pricing-table.green .pricing-table-header,
+.easy-pricing-table-item.pricing-card-style-4 .pricing-table.green .pricing-content li:after,
+.easy-pricing-table-item.pricing-card-style-4 .pricing-table.green .price-table-signup{
+    background: linear-gradient(to top right,#4EEABA,#36A3CC);
+}
+@media only screen and (max-width: 990px){
+    .easy-pricing-table-item.pricing-card-style-4 .pricing-table{ margin: 0 0 40px; }
+}
+
+
+/*
+* End Pricing Card Style-04
+--------------------------------*/

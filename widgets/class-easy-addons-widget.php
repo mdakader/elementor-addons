@@ -71,7 +71,7 @@ class Easy_Addons_Widget {
         wp_register_style( 'flip-box', EASY_ADDONS_ASSETS . '/css/flip-box.css');
         wp_register_style( 'dual-heading', EASY_ADDONS_ASSETS . '/css/dual-heading.css');
         wp_register_style( 'call-to-action', EASY_ADDONS_ASSETS . '/css/call-to-action.css');
-        wp_register_style( 'price', EASY_ADDONS_ASSETS . '/css/price.css');
+        wp_register_style( 'price', EASY_ADDONS_ASSETS . '/css/pricing.css');
         wp_register_style( 'image-gallery', EASY_ADDONS_ASSETS .'/css/image-gallery.css');
         wp_register_style( 'counter-up', EASY_ADDONS_ASSETS .'/css/counter-up.css');
         wp_register_style( 'testimonial', EASY_ADDONS_ASSETS .'/css/testimonial.css');
@@ -145,7 +145,7 @@ class Easy_Addons_Widget {
      */
     private function include_widgets_files() {
 
-        require_once(__DIR__ . '/price/widget.php');
+        require_once(__DIR__ . '/pricing/widget.php');
         require_once( __DIR__ . '/dual-heading/widget.php');
         require_once( __DIR__ . '/team/widget.php');
         require_once( __DIR__ . '/flip-box/widget.php');
@@ -171,7 +171,7 @@ class Easy_Addons_Widget {
         $this->include_widgets_files();
 
         // Register Widgets
-        $widgets_manager->register( new Widgets\Price());
+        $widgets_manager->register( new Widgets\Widget_Price());
         $widgets_manager->register( new Widgets\Widget_Team());
         $widgets_manager->register( new Widgets\Flip_Box());
         $widgets_manager->register( new Widgets\Dual_Heading());
