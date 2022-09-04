@@ -1,9 +1,9 @@
-.easy-pricing-table {
+.easy-pricing-table-item .easy-pricing-table {
     position: relative;
     z-index: 1;
 }
 
-span.recommended-badge {
+.easy-pricing-table-item span.recommended-badge {
     position: absolute;
     top: 38px;
     left: -38px;
@@ -14,9 +14,17 @@ span.recommended-badge {
     color: #fff;
     padding: 3px 5px;
     border-radius: 5px;
+    z-index: 1;
 }
-
-.pricing-table .pricing-content {
+.easy-pricing-table-item .pricing-table .pricing-content span.currency {
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 32px;
+}
+.easy-pricing-table-item .pricing-table-header .currency {
+    font-size: 32px;
+}
+.easy-pricing-table-item .pricing-table .pricing-content {
     text-align: left;
     padding: 0;
     margin: 0 0 30px;
@@ -24,7 +32,7 @@ span.recommended-badge {
     display: inline-block;
 }
 
-.pricing-table .pricing-content li {
+.easy-pricing-table-item .pricing-table .pricing-content li {
     font-size: 18px;
     line-height: 35px;
     padding: 0 10px 0 28px;
@@ -32,14 +40,39 @@ span.recommended-badge {
     position: relative;
 }
 
-.pricing-table .pricing-content li:last-child {
+.easy-pricing-table-item .pricing-table .pricing-content li:last-child {
     margin: 0;
 }
 
 
-.pricing-table .pricing-content li.disable:before {
+.easy-pricing-table-item .pricing-table .pricing-content li.disable:before {
     display: none;
 }
+
+.easy-pricing-table-item .pricing-table .price-value{
+    text-align: center;
+    display: inline-block;
+}
+.easy-pricing-table-item .pricing-table .price-value .currency{
+    font-size: 23px;
+    line-height: 23px;
+    vertical-align: top;
+    display: inline-block;
+}
+.easy-pricing-table-item .pricing-table .price-value .amount{
+    font-size: 75px;
+    font-weight: 500;
+    line-height: 58px;
+    display: inline-flex;
+    align-items: self-end;
+}
+.easy-pricing-table-item .pricing-table .duration{
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    display: block;
+}
+
 
 /*
 * Start Pricing Card Style-01
@@ -72,15 +105,7 @@ span.recommended-badge {
     padding: 10px 40px 12px;
     margin: 0 0 15px;
     border-radius: 10px;
-    display: inline-block;
 }
-
-.easy-pricing-table-item.pricing-card-style-1 .pricing-table .price-value .amount {
-    font-size: 57px;
-    font-weight: 600;
-    line-height: 57px;
-}
-
 
 .easy-pricing-table-item.pricing-card-style-1 .pricing-table .price-table-signup a {
     color: #fff;
@@ -135,29 +160,6 @@ span.recommended-badge {
     margin: 0 0 25px;
     border-radius: 50px 0 0 50px;
 }
-.easy-pricing-table-item.pricing-card-style-2 .pricing-table .price-value{
-    text-align: center;
-    display: inline-block;
-}
-.easy-pricing-table-item.pricing-card-style-2 .pricing-table .price-value .currency{
-    font-size: 23px;
-    line-height: 23px;
-    vertical-align: top;
-    display: inline-block;
-}
-.easy-pricing-table-item.pricing-card-style-2 .pricing-table .price-value .amount{
-    font-size: 75px;
-    font-weight: 500;
-    line-height: 58px;
-    display: inline-block;
-}
-.easy-pricing-table-item.pricing-card-style-2 .pricing-table .duration{
-    font-size: 15px;
-    font-weight: 400;
-    letter-spacing: 2px;
-    display: block;
-}
-
 .easy-pricing-table-item.pricing-card-style-2 .pricing-table .price-table-signup a{
     color: #FFCC68;
     background-color: #fff;
@@ -209,18 +211,6 @@ span.recommended-badge {
     letter-spacing: 1px;
     text-transform: uppercase;
     margin: 0 0 15px;
-}
-.easy-pricing-table-item.pricing-card-style-3 .pricing-table .price-value .amount{
-    font-size: 80px;
-    font-weight: 600;
-    line-height: 80px;
-    display: block;
-}
-.easy-pricing-table-item.pricing-card-style-3 .pricing-table .price-value .duration{
-    font-size: 19px;
-    font-weight: 200;
-    letter-spacing: 0.5px;
-    display: block;
 }
 
 .easy-pricing-table-item.pricing-card-style-3 .pricing-table .price-table-signup{

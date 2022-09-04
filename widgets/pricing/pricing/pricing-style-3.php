@@ -9,11 +9,14 @@ $pricing_card_style = $settings['pricing_card_style'];
 <div class="easy-pricing-table">
     <div class="easy-pricing-table-item <?php echo esc_attr($pricing_card_style); ?>">
         <div class="pricing-table">
+            <?php if(!empty($settings['price_badge_title'])):?>
+                <span class="recommended-badge"><?php echo esc_html($settings['price_badge_title']);?></span>
+            <?php endif;?>
             <div class="pricing-table-header">
                 <h3 class="title"><?php echo esc_html($settings['price_table_title'])?></h3>
                 <div class="price-value">
-                    <span class="amount"><?php echo esc_html($settings['price_table_amount'])?></span>
-                    <span class="duration">Per Month</span>
+                    <span class="amount"><span class="currency"><?php echo esc_html($settings['price_currency'])?></span><?php echo esc_html($settings['price_table_amount'])?></span>
+                    <span class="duration"><?php echo esc_html($settings['price_duration']);?></span>
                 </div>
             </div>
             <ul class="pricing-content">
@@ -54,8 +57,9 @@ $pricing_card_style = $settings['pricing_card_style'];
                 <a <?php echo $this->get_render_attribute_string('price_signup_link'); ?>>
                     <?php echo esc_html($settings['price_signup_text']);?>
                 </a>
-
             </div>
+            <?php if(!empty($settings['price_badge_title'])):?>
+            <?php endif;?>
         </div>
     </div>
 </div>

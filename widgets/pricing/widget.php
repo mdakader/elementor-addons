@@ -145,33 +145,17 @@ class Widget_Price extends Widget_Base
                 'label' => esc_html__( 'Currency', 'easy-addons' ),
                 'type' => Controls_Manager::TEXT,
                 'default' => esc_html__( '$', 'easy-addons' ),
-                'placeholder' => esc_html__( 'Type Price Amount $25', 'easy-addons' ),
+                'placeholder' => esc_html__( 'Type Price Currency $', 'easy-addons' ),
             ]
         );
 
-        $this->add_control(
-            'currency',
-            [
-                'label' => __( 'Currency', 'happy-elementor-addons' ),
-                'type' => Controls_Manager::SELECT,
-                'label_block' => false,
-                'options' => [
-                    ''             => __( 'None', 'happy-elementor-addons' ),
-                    'bdt'          => '&#2547; ' . _x( 'BD Taka', 'Currency Symbol', 'happy-elementor-addons' ),
-                    'dollar'       => '&#36; ' . _x( 'Dollar', 'Currency Symbol', 'happy-elementor-addons' ),
-                    'euro'         => '&#128; ' . _x( 'Euro', 'Currency Symbol', 'happy-elementor-addons' ),
-                    'pound'        => '&#163; ' . _x( 'Pound Sterling', 'Currency Symbol', 'happy-elementor-addons' ),
-                ],
-                'default' => 'dollar',
-            ]
-        );
         $this->add_control(
             'price_table_amount',
             [
                 'label' => esc_html__( 'Price', 'easy-addons' ),
                 'type' => Controls_Manager::TEXT,
-                'default' => esc_html__( '$25', 'easy-addons' ),
-                'placeholder' => esc_html__( 'Type Price Amount $25', 'easy-addons' ),
+                'default' => esc_html__( '25', 'easy-addons' ),
+                'placeholder' => esc_html__( 'Type Price Amount 25', 'easy-addons' ),
             ]
         );
 
@@ -282,8 +266,7 @@ class Widget_Price extends Widget_Base
             [
                 'label' => esc_html__( 'Badge Title', 'easy-addons' ),
                 'type' => Controls_Manager::TEXT,
-                'default' => esc_html__( 'Recommended', 'easy-addons' ),
-                'placeholder' => esc_html__( 'Type your title here', 'easy-addons' ),
+                'placeholder' => esc_html__( 'Type Recommended', 'easy-addons' ),
             ]
         );
         $this->end_controls_section();
