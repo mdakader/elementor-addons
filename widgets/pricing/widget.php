@@ -115,7 +115,6 @@ class Widget_Price extends Widget_Base
                     'pricing-card-style-1' => esc_html__('Pricing Card Style 1', 'easy-addons'),
                     'pricing-card-style-2' => esc_html__('Pricing Card Style 2', 'easy-addons'),
                     'pricing-card-style-3' => esc_html__('Pricing Card Style 3', 'easy-addons'),
-                    'pricing-card-style-4' => esc_html__('Pricing Card Style 4', 'easy-addons'),
                 ],
                 'default' => 'pricing-card-style-1',
             ]
@@ -141,12 +140,48 @@ class Widget_Price extends Widget_Base
         );
 
         $this->add_control(
+            'price_currency',
+            [
+                'label' => esc_html__( 'Currency', 'easy-addons' ),
+                'type' => Controls_Manager::TEXT,
+                'default' => esc_html__( '$', 'easy-addons' ),
+                'placeholder' => esc_html__( 'Type Price Amount $25', 'easy-addons' ),
+            ]
+        );
+
+        $this->add_control(
+            'currency',
+            [
+                'label' => __( 'Currency', 'happy-elementor-addons' ),
+                'type' => Controls_Manager::SELECT,
+                'label_block' => false,
+                'options' => [
+                    ''             => __( 'None', 'happy-elementor-addons' ),
+                    'bdt'          => '&#2547; ' . _x( 'BD Taka', 'Currency Symbol', 'happy-elementor-addons' ),
+                    'dollar'       => '&#36; ' . _x( 'Dollar', 'Currency Symbol', 'happy-elementor-addons' ),
+                    'euro'         => '&#128; ' . _x( 'Euro', 'Currency Symbol', 'happy-elementor-addons' ),
+                    'pound'        => '&#163; ' . _x( 'Pound Sterling', 'Currency Symbol', 'happy-elementor-addons' ),
+                ],
+                'default' => 'dollar',
+            ]
+        );
+        $this->add_control(
             'price_table_amount',
             [
                 'label' => esc_html__( 'Price', 'easy-addons' ),
                 'type' => Controls_Manager::TEXT,
                 'default' => esc_html__( '$25', 'easy-addons' ),
                 'placeholder' => esc_html__( 'Type Price Amount $25', 'easy-addons' ),
+            ]
+        );
+
+        $this->add_control(
+            'price_duration',
+            [
+                'label' => esc_html__( 'Duration', 'easy-addons' ),
+                'type' => Controls_Manager::TEXT,
+                'default' => esc_html__( 'per month', 'easy-addons' ),
+                'placeholder' => esc_html__( 'Per month', 'easy-addons' ),
             ]
         );
         $this->end_controls_section();
@@ -467,9 +502,6 @@ class Widget_Price extends Widget_Base
                 break;
             case 'pricing-card-style-3':
                 include EASY_ADDONS_PATH . '/widgets/pricing/pricing/pricing-style-3.php';
-                break;
-            case 'pricing-card-style-4':
-                include EASY_ADDONS_PATH . '/widgets/pricing/pricing/pricing-style-4.php';
                 break;
             default:
                 include EASY_ADDONS_PATH . '/widgets/pricing/pricing/pricing-style-1.php';

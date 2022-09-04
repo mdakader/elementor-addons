@@ -13,6 +13,7 @@ $pricing_card_style = $settings['pricing_card_style'];
                 <h3 class="title"><?php echo esc_html($settings['price_table_title'])?></h3>
                 <div class="price-value">
                     <span class="amount"><?php echo esc_html($settings['price_table_amount'])?></span>
+                    <span class="duration">Per Month</span>
                 </div>
             </div>
             <ul class="pricing-content">

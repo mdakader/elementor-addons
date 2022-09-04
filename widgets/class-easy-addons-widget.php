@@ -77,6 +77,7 @@ class Easy_Addons_Widget {
         wp_register_style( 'testimonial', EASY_ADDONS_ASSETS .'/css/testimonial.css');
         wp_register_style( 'service', EASY_ADDONS_ASSETS .'/css/service.css');
         wp_register_style( 'posts', EASY_ADDONS_ASSETS .'/css/posts.css');
+        wp_register_style( 'skills-bar', EASY_ADDONS_ASSETS .'/css/skills-bar.css');
 
         wp_register_style( 'justifiedGallery', EASY_ADDONS_ASSETS .'/css/justifiedGallery.min.css');
         wp_register_style( 'venobox', EASY_ADDONS_ASSETS . '/css/venobox.css', );
@@ -84,10 +85,12 @@ class Easy_Addons_Widget {
         wp_register_script( 'justifiedGallery', EASY_ADDONS_ASSETS .'/js/jquery.justifiedGallery.js', [ 'jquery' ], false, true );
         wp_register_script( 'counter-up', EASY_ADDONS_ASSETS .'/js/jquery.counterup.min.js', [ 'jquery' ], false, true );
         wp_register_script( 'waypoints', EASY_ADDONS_ASSETS .'/js/waypoints.min.js', [ 'jquery' ], false, true );
+        wp_register_script( 'progressbar', EASY_ADDONS_ASSETS .'/js/progressbar.min.js', [ 'jquery' ], false, true );
         wp_register_script( 'counterUp', EASY_ADDONS_ASSETS .'/js/counter-up.js', [ 'jquery' ], false, true );
         wp_register_script( 'venobox', EASY_ADDONS_ASSETS .'/js/venobox.js', [ 'jquery' ], false, true );
         wp_register_script( 'image-gallery',EASY_ADDONS_ASSETS .'/js/image-gallery.js',  [ 'jquery' ], false, true );
         wp_register_script( 'testimonial',EASY_ADDONS_ASSETS .'/js/testimonial.js',  [ 'jquery' ], false, true );
+        wp_register_script( 'skills-bar',EASY_ADDONS_ASSETS .'/js/skills-bar.js',  [ 'jquery' ], false, true );
     }
 	/**
 	 * Register the stylesheets for the public-facing side of the site.
