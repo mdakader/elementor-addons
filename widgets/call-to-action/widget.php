@@ -1,5 +1,7 @@
 <?php
 namespace Easy_Addons\Widgets;
+use Elementor\Group_Control_Background;
+use Elementor\Group_Control_Box_Shadow;
 use Elementor\Group_Control_Typography;
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
@@ -27,7 +29,7 @@ class Call_To_Action extends Widget_Base {
 	 *
 	 */
 	public function get_name() {
-		return 'call-to-action';
+		return 'easy_cta';
 	}
 
 	/**
@@ -155,97 +157,190 @@ class Call_To_Action extends Widget_Base {
 				'default' => esc_html__( 'Read More', 'easy-addons' ),
 			]
 		);
-		$this->add_responsive_control(
-			'align',
-			[
-				'label' => __( 'Alignment', 'elementor' ),
-				'type' => Controls_Manager::CHOOSE,
-				'options' => [
-					'left' => [
-						'title' => esc_html__( 'Left', 'easy-addons' ),
-						'icon' => 'eicon-text-align-left',
-					],
-					'center' => [
-						'title' => esc_html__( 'Center', 'easy-addons' ),
-						'icon' => 'eicon-text-align-center',
-					],
-					'right' => [
-						'title' => esc_html__( 'Right', 'easy-addons' ),
-						'icon' => 'eicon-text-align-right',
-					],
-					'justify' => [
-						'title' => esc_html__( 'Justified', 'easy-addons' ),
-						'icon' => 'eicon-text-align-justify',
-					],
-				],
-				'default' => '',
-				'selectors' => [
-					'{{WRAPPER}} .ea-title' => 'text-align: {{VALUE}};',
-				],
-			]
-		);
-		$this->end_controls_section();
+        $this->end_controls_section();
 
-		$this->start_controls_section(
-			'section_style',
-			[
-				'label' => esc_html__( 'Style', 'easy-addons' ),
-				'tab'   => Controls_Manager::TAB_STYLE,
-			]
-		);
 
-		$this->add_control(
-			'text_transform',
-			[
-				'label'     =>esc_html__( 'Text Transform', 'easy-addons' ),
-				'type'      => Controls_Manager::SELECT,
-				'default'   => '',
-				'options'   => [
-					''           => esc_html__( 'None', 'easy-addons' ),
-					'uppercase'  => esc_html__( 'UPPERCASE', 'easy-addons' ),
-					'lowercase'  => esc_html__( 'lowercase', 'easy-addons' ),
-					'capitalize' => esc_html__( 'Capitalize', 'easy-addons' ),
-				],
-				'selectors' => [
-					'{{WRAPPER}} .ea-title' => 'text-transform: {{VALUE}};',
-				],
-			]
-		);
+        $this->start_controls_section(
+            'cta_style',
+            [
+                'label' => esc_html__('CTA Style', 'easy-addons'),
+                'tab' => Controls_Manager::TAB_STYLE,
+            ]
+        );
 
-		$this->add_control(
-			'first_title_color',
-			[
-				'label' => esc_html__( 'First Title Color', 'easy-addons' ),
-				'type' => Controls_Manager::COLOR,
-				'alpha' => true,
-				'default'=> '#e74c3c',
-				'selectors' => [
-					'{{WRAPPER}} .ea-first-title' => 'color: {{VALUE}}',
-				],
-			]
-		);
+        $this->add_control(
+            'easy_cta_style', [
+                'label' => __('CTA Style', 'easy-addons'),
+                'type' => Controls_Manager::SELECT,
+                'options' => [
+                    'cta-style-1' => esc_html__('CTA Style 1', 'easy-addons'),
+                    'cta-style-2' => esc_html__('CTA Style 2', 'easy-addons'),
+                ],
+                'default' => 'cta-style-1',
+            ]
+        );
 
-		$this->add_control(
-			'last_title_color',
-			[
-				'label' => esc_html__( 'Last Title Color', 'easy-addons' ),
-				'type' => Controls_Manager::COLOR,
-				'alpha' => true,
-				'default'=> '#2ecc71',
-				'selectors' => [
-					'{{WRAPPER}} .ea-last-title' => 'color: {{VALUE}}',
-				],
-			]
-		);
-		$this->add_group_control(
-			Group_Control_Typography::get_type(),
-			[
-				'name' => 'dual_title_typography',
-				'selector' => '{{WRAPPER}} .ea-title',
-			]
-		);
+        $this->add_group_control(
+            Group_Control_Background::get_type(),
+            [
+                'name' => 'cta_bg',
+                'label' => esc_html__( 'Background', 'easy-addons'),
+                'types' => [ 'classic', 'gradient'],
+                'selector' =>'{{WRAPPER}} .easy-cta',
+            ]
+        );
+
+        $this->add_responsive_control(
+            'cta_padding',
+            [
+                'label' => esc_html__( 'Padding', 'easy-addons'),
+                'type' => Controls_Manager::DIMENSIONS,
+                'size_units' => [ 'px', '%', 'em' ],
+                'selectors' => [
+                    '{{WRAPPER}} .easy-cta' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+            ]
+        );
+
+
+        $this->add_responsive_control(
+            'cta_align',
+            [
+                'label' => __( 'Alignment', 'elementor' ),
+                'type' => Controls_Manager::CHOOSE,
+                'options' => [
+                    'left' => [
+                        'title' => esc_html__( 'Left', 'easy-addons' ),
+                        'icon' => 'eicon-text-align-left',
+                    ],
+                    'center' => [
+                        'title' => esc_html__( 'Center', 'easy-addons' ),
+                        'icon' => 'eicon-text-align-center',
+                    ],
+                    'right' => [
+                        'title' => esc_html__( 'Right', 'easy-addons' ),
+                        'icon' => 'eicon-text-align-right',
+                    ],
+                    'justify' => [
+                        'title' => esc_html__( 'Justified', 'easy-addons' ),
+                        'icon' => 'eicon-text-align-justify',
+                    ],
+                ],
+                'default' => '',
+                'selectors' => [
+                    '{{WRAPPER}} .easy-cta.cta-style-2' => 'text-align: {{VALUE}};',
+                ],
+                'condition' => [
+                    'easy_cta_style' => ['cta-style-2'],
+                ]
+            ]
+        );
+        $this->end_controls_section();
+
+        $this->start_controls_section(
+            'cta_desc_style',
+            [
+                'label' => esc_html__('CTA Description', 'easy-addons'),
+                'tab' => Controls_Manager::TAB_STYLE,
+            ]
+        );
 
 		$this->end_controls_section();
+
+
+        $this->start_controls_section(
+            'cta_btn_style',
+            [
+                'label' => esc_html__('CTA Button', 'easy-addons'),
+                'tab' => Controls_Manager::TAB_STYLE,
+            ]
+        );
+
+        $this->start_controls_tabs(
+            'cta_btn__tabs', [
+                'label' => __('CTA Button', 'easy-addons'),
+            ]
+        );
+
+        $this->start_controls_tab('cta_btn_normal', [
+                'label' => __('Normal','easy-addons'),
+            ]
+        );
+        $this->add_control(
+            'subscribe_clr_text',
+            [
+                'label' => esc_html__('Subscribe Button Color', 'easy-addons'),
+                'type' => Controls_Manager::COLOR,
+                'default' => '#2c3e50',
+                'selectors' => [
+                    '{{WRAPPER}} .easy-pricing-table-item .pricing-table .price-table-signup a' => 'color: {{VALUE}};',
+                ],
+            ]
+        );
+
+        $this->add_group_control(
+            Group_Control_Background::get_type(),
+            [
+                'name' => 'subscribe_background_bg',
+                'label' => esc_html__( 'Background', 'easy-addons'),
+                'types' => [ 'classic', 'gradient'],
+                'selector' =>'{{WRAPPER}} .easy-pricing-table-item .pricing-table .price-table-signup a',
+            ]
+        );
+
+        $this->add_group_control(
+            Group_Control_Typography::get_type(),
+            [
+                'name' => 'subscribe_typography',
+                'label' => esc_html__('Subscribe Button Typography', 'easy-addons'),
+                'selector' => '{{WRAPPER}} .easy-pricing-table-item .pricing-table .price-table-signup a',
+            ]
+        );
+
+        $this->end_controls_tab();
+
+        $this->start_controls_tab('cta_btn_hover', [
+                'label' => __('Hover','easy-addons'),
+            ]
+        );
+        $this->add_control(
+            'subscribe_h_btn_text_clr',
+            [
+                'label' => esc_html__('Subscribe Button Color', 'easy-addons'),
+                'type' => Controls_Manager::COLOR,
+                'default' => '#2c3e50',
+                'selectors' => [
+                    '{{WRAPPER}} .easy-pricing-table-item .pricing-table .price-table-signup a:hover' => 'color: {{VALUE}};',
+                ],
+            ]
+        );
+
+        $this->add_group_control(
+            Group_Control_Background::get_type(),
+            [
+                'name' => 'subscribe_h_background_bg',
+                'label' => esc_html__( 'Background', 'easy-addons'),
+                'types' => [ 'classic', 'gradient'],
+                'selector' =>'{{WRAPPER}} .easy-pricing-table-item .pricing-table .price-table-signup a:hover',
+            ]
+        );
+        $this->add_group_control(
+            Group_Control_Box_Shadow::get_type(),
+            [
+                'name' => 'subscribe_h_box_shadow',
+                'label' => esc_html__( 'Box Shadow', 'easy-addons'),
+                'selector' => '{{WRAPPER}} .easy-pricing-table-item .pricing-table .price-table-signup a:hover',
+                'condition' => [
+                    'pricing_card_style' => ['pricing-card-style-2','pricing-card-style-3'],
+                ]
+            ]
+        );
+
+        $this->end_controls_tab();
+
+        $this->end_controls_tabs();
+
+        $this->end_controls_section();
 	}
 
 	/**
@@ -261,20 +356,20 @@ class Call_To_Action extends Widget_Base {
 		$settings = $this->get_settings_for_display();
 
 		$ea_cta_desc = $this->get_settings( 'ea_cta_desc' );
-		$this->add_render_attribute( 'ea_cta_desc', 'class', 'ea-cta-desc' );
+		$this->add_render_attribute( 'ea_cta_desc', 'class', 'easy-cta-desc' );
 		$this->add_inline_editing_attributes( 'ea_cta_desc' );
 
 		$cta_link_text= $this->get_settings( 'cta_link_text' );
-		$this->add_render_attribute( 'cta_link_text', 'class', 'ea-cta-link-text' );
+		$this->add_render_attribute( 'cta_link_text', 'class', 'easy-cta-link-text' );
 		$this->add_inline_editing_attributes( 'cta_link_text' );
 		?>
-		<div class="ea-cta">
-			<div class="ea-desc">
+		<div class="easy-cta <?php echo esc_attr($settings['easy_cta_style']);?>">
+			<div class="easy-desc">
 				<?php if(!empty($ea_cta_desc)):?>
 					<p <?php  $this->print_render_attribute_string( 'ea_cta_desc' ) ?>> <?php echo esc_html( $ea_cta_desc ); ?></p>
 				<?php endif;?>
 			</div>
-            <div class="ea-link">
+            <div class="easy-link">
                 <?php
                 if ( ! empty( $settings['cta_link']['url'] ) ) {
                 $this->add_link_attributes( 'cta_link', $settings['cta_link'] );

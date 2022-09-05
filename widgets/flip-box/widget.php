@@ -246,7 +246,7 @@ class Flip_Box extends Widget_Base {
                 'alpha'     => true,
                 'default'   => '#ffffff',
                 'selectors' => [
-                    '{{WRAPPER}} .ea-flip-box-title' => 'color: {{VALUE}}',
+                    '{{WRAPPER}} .easy-flip-box-title' => 'color: {{VALUE}}',
                 ],
             ]
         );
@@ -254,7 +254,7 @@ class Flip_Box extends Widget_Base {
             Group_Control_Typography::get_type(),
             [
                 'name'     => 'flip_box_title_typography',
-                'selector' => '{{WRAPPER}} .ea-flip-box-title',
+                'selector' => '{{WRAPPER}} .easy-flip-box-title',
             ]
         );
         $this->add_control(
@@ -265,7 +265,7 @@ class Flip_Box extends Widget_Base {
                 'alpha'     => true,
                 'default'   => '#ffffff',
                 'selectors' => [
-                    '{{WRAPPER}} .ea-flip-box-desc' => 'color: {{VALUE}}',
+                    '{{WRAPPER}} .easy-flip-box-desc' => 'color: {{VALUE}}',
                 ],
             ]
         );
@@ -273,7 +273,7 @@ class Flip_Box extends Widget_Base {
             Group_Control_Typography::get_type(),
             [
                 'name'     => 'flip_box_desc_typography',
-                'selector' => '{{WRAPPER}} .ea-flip-box-desc',
+                'selector' => '{{WRAPPER}} .easy-flip-box-desc',
             ]
         );
         $this->add_control(
@@ -284,7 +284,7 @@ class Flip_Box extends Widget_Base {
                 'alpha'     => true,
                 'default'   => '#ffffff',
                 'selectors' => [
-                    '{{WRAPPER}} .ea-flip-box-link' => 'color: {{VALUE}}',
+                    '{{WRAPPER}} .easy-flip-box-link' => 'color: {{VALUE}}',
                 ],
             ]
         );
@@ -296,7 +296,7 @@ class Flip_Box extends Widget_Base {
                 'alpha'     => true,
                 'default'   => '#33B5BF',
                 'selectors' => [
-                    '{{WRAPPER}} .flip-box-back:hover .ea-flip-box-link' => 'color: {{VALUE}}',
+                    '{{WRAPPER}} .flip-box-back:hover .easy-flip-box-link' => 'color: {{VALUE}}',
                 ],
             ]
         );
@@ -304,7 +304,7 @@ class Flip_Box extends Widget_Base {
             Group_Control_Typography::get_type(),
             [
                 'name'     => 'flip_box_link_typography',
-                'selector' => '{{WRAPPER}} .ea-flip-box-link',
+                'selector' => '{{WRAPPER}} .easy-flip-box-link',
             ]
         );
         $this->add_responsive_control(

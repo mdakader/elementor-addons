@@ -1,16 +1,20 @@
-.ea-cta {
+/*
+* Start Team Style-1
+-------------------------*/
+
+.easy-cta {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: #273c75;
+    background: linear-gradient(to top right,#854BCC,#4C9FD0);;
     color: #fff;
     padding: 50px;
 }
-p.ea-cta-desc {
+p.easy-cta-desc {
     margin-bottom: 0;
 }
 
-a.ea-cta-link-text {
+a.easy-cta-link-text {
     display: inline-flex;
     align-items: center;
     color: #fff;
@@ -21,7 +25,7 @@ a.ea-cta-link-text {
     z-index: 1;
 }
 
-a.ea-cta-link-text:before {
+a.easy-cta-link-text:before {
     position: absolute;
     content: '';
     left: 0;
@@ -33,21 +37,44 @@ a.ea-cta-link-text:before {
     transition: ease 0.3s;
 }
 
-a.ea-cta-link-text:hover:before {
+a.easy-cta-link-text:hover:before {
     width: 100%;
 }
+.easy-desc {
+    margin-right: 50px;
+    width: 70%;
+}
 
+/*
+* End Team Style-1
+-------------------------*/
 
+/*
+* Start Team Style-2
+-------------------------*/
 
-/*// `lg` applies to medium devices (tablets, less than 992px)*/
+.easy-cta.cta-style-2 {
+    display: block;
+}
+.easy-cta.cta-style-2 .easy-desc {
+    margin-right: 0;
+    width: 100%;
+    margin-bottom: 40px;
+}
+/*
+* End Team Style-2
+-------------------------*/
+
 @media (max-width: 992px) {
-    .ea-cta {
+    .easy-cta {
         display: block;
         justify-content: center;
         margin-top: 25px;
         text-align: center;
     }
-    .ea-desc {
+    .easy-desc {
         margin-bottom: 25px;
+        margin-right: 0;
+        width: 100%;
     }
 }

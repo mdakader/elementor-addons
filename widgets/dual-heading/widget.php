@@ -168,7 +168,7 @@ class Dual_Heading extends Widget_Base {
 				],
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .ea-title' => 'text-align: {{VALUE}};',
+					'{{WRAPPER}} .easy-title' => 'text-align: {{VALUE}};',
 				],
 			]
 		);
@@ -195,7 +195,7 @@ class Dual_Heading extends Widget_Base {
 					'capitalize' => esc_html__( 'Capitalize', 'easy-addons' ),
 				],
 				'selectors' => [
-					'{{WRAPPER}} .ea-title' => 'text-transform: {{VALUE}};',
+					'{{WRAPPER}} .easy-title' => 'text-transform: {{VALUE}};',
 				],
 			]
 		);
@@ -208,7 +208,7 @@ class Dual_Heading extends Widget_Base {
 				'alpha' => true,
 				'default'=> '#e74c3c',
 				'selectors' => [
-					'{{WRAPPER}} .ea-first-title' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .easy-first-title' => 'color: {{VALUE}}',
 				],
 			]
 		);
@@ -221,7 +221,7 @@ class Dual_Heading extends Widget_Base {
 				'alpha' => true,
 				'default'=> '#2ecc71',
 				'selectors' => [
-					'{{WRAPPER}} .ea-last-title' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .easy-last-title' => 'color: {{VALUE}}',
 				],
 			]
 		);
@@ -229,7 +229,7 @@ class Dual_Heading extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'dual_title_typography',
-				'selector' => '{{WRAPPER}} .ea-title',
+				'selector' => '{{WRAPPER}} .easy-title',
 			]
 		);
 

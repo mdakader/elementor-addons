@@ -11,7 +11,7 @@
                 margins: margin,
             }).on('jg.complete', function () {
                 new VenoBox({
-                    selector: '.ea-image-gallery',
+                    selector: '.easy-image-gallery',
                     numeration: true,
                     infinigall: true,
                     share: true,

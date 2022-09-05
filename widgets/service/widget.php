@@ -386,7 +386,7 @@ class Service_Widget extends Widget_Base
             Group_Control_Typography::get_type(),
             [
                 'name' => 'service_title_typography',
-                'selector' => '{{WRAPPER}} .ea-service-title',
+                'selector' => '{{WRAPPER}} .easy-service-title',
             ]
         );
         $this->add_control(
@@ -448,7 +448,7 @@ class Service_Widget extends Widget_Base
             Group_Control_Typography::get_type(),
             [
                 'name' => 'service_desc_typography',
-                'selector' => '{{WRAPPER}} .ea-service-link',
+                'selector' => '{{WRAPPER}} .easy-service-link',
             ]
         );
 

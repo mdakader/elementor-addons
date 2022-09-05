@@ -218,7 +218,7 @@ class Widget_Team extends Widget_Base
                 ],
                 'default' => 'center',
                 'selectors' => [
-                    '{{WRAPPER}} .ea-service' => 'text-align: {{VALUE}};',
+                    '{{WRAPPER}} .easy-service' => 'text-align: {{VALUE}};',
                 ],
             ]
         );
@@ -438,7 +438,7 @@ class Widget_Team extends Widget_Base
                 'alpha' => true,
                 'default' => '#4B6587',
                 'selectors' => [
-                    '{{WRAPPER}} .ea-service' => 'background-color: {{VALUE}}',
+                    '{{WRAPPER}} .easy-service' => 'background-color: {{VALUE}}',
                 ],
             ]
         );
@@ -451,7 +451,7 @@ class Widget_Team extends Widget_Base
                 'alpha' => true,
                 'default' => '#4B6587',
                 'selectors' => [
-                    '{{WRAPPER}} .ea-service:hover' => 'background-color: {{VALUE}}',
+                    '{{WRAPPER}} .easy-service:hover' => 'background-color: {{VALUE}}',
                 ],
             ]
         );
@@ -462,7 +462,7 @@ class Widget_Team extends Widget_Base
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%', 'em'],
                 'selectors' => [
-                    '{{WRAPPER}} .ea-service' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .easy-service' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
@@ -486,7 +486,7 @@ class Widget_Team extends Widget_Base
                 'alpha' => true,
                 'default' => '#33B5BF',
                 'selectors' => [
-                    '{{WRAPPER}} .ea-service:hover .service-icon i' => 'color: {{VALUE}}',
+                    '{{WRAPPER}} .easy-service:hover .service-icon i' => 'color: {{VALUE}}',
                 ],
             ]
         );
@@ -550,7 +550,7 @@ class Widget_Team extends Widget_Base
                 'alpha' => true,
                 'default' => '#ffffff',
                 'selectors' => [
-                    '{{WRAPPER}} .ea-service-title' => 'color: {{VALUE}}',
+                    '{{WRAPPER}} .easy-service-title' => 'color: {{VALUE}}',
                 ],
             ]
         );
@@ -562,7 +562,7 @@ class Widget_Team extends Widget_Base
                 'alpha' => true,
                 'default' => '#ffffff',
                 'selectors' => [
-                    '{{WRAPPER}} .ea-service:hover .ea-service-title' => 'color: {{VALUE}}',
+                    '{{WRAPPER}} .easy-service:hover .easy-service-title' => 'color: {{VALUE}}',
                 ],
             ]
         );
@@ -570,7 +570,7 @@ class Widget_Team extends Widget_Base
             Group_Control_Typography::get_type(),
             [
                 'name' => 'service_title_typography',
-                'selector' => '{{WRAPPER}} .ea-service-title',
+                'selector' => '{{WRAPPER}} .easy-service-title',
             ]
         );
         $this->add_control(
@@ -581,7 +581,7 @@ class Widget_Team extends Widget_Base
                 'alpha' => true,
                 'default' => '#ffffff',
                 'selectors' => [
-                    '{{WRAPPER}} .ea-service-description' => 'color: {{VALUE}}',
+                    '{{WRAPPER}} .easy-service-description' => 'color: {{VALUE}}',
                 ],
             ]
         );
@@ -593,7 +593,7 @@ class Widget_Team extends Widget_Base
                 'alpha' => true,
                 'default' => '#ffffff',
                 'selectors' => [
-                    '{{WRAPPER}} .ea-service:hover .ea-service-description' => 'color: {{VALUE}}',
+                    '{{WRAPPER}} .easy-service:hover .easy-service-description' => 'color: {{VALUE}}',
                 ],
             ]
         );
@@ -601,7 +601,7 @@ class Widget_Team extends Widget_Base
             Group_Control_Typography::get_type(),
             [
                 'name' => 'service_btn_typography',
-                'selector' => '{{WRAPPER}} .ea-service-description',
+                'selector' => '{{WRAPPER}} .easy-service-description',
             ]
         );
         $this->add_control(
@@ -612,7 +612,7 @@ class Widget_Team extends Widget_Base
                 'alpha' => true,
                 'default' => '#ffffff',
                 'selectors' => [
-                    '{{WRAPPER}} .ea-service-link' => 'color: {{VALUE}}',
+                    '{{WRAPPER}} .easy-service-link' => 'color: {{VALUE}}',
                 ],
             ]
         );
@@ -624,7 +624,7 @@ class Widget_Team extends Widget_Base
                 'alpha' => true,
                 'default' => '#33B5BF',
                 'selectors' => [
-                    '{{WRAPPER}} .ea-service:hover .ea-service-link' => 'color: {{VALUE}}',
+                    '{{WRAPPER}} .easy-service:hover .easy-service-link' => 'color: {{VALUE}}',
                 ],
             ]
         );
@@ -632,7 +632,7 @@ class Widget_Team extends Widget_Base
             Group_Control_Typography::get_type(),
             [
                 'name' => 'service_desc_typography',
-                'selector' => '{{WRAPPER}} .ea-service-link',
+                'selector' => '{{WRAPPER}} .easy-service-link',
             ]
         );
 
