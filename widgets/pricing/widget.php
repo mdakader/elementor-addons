@@ -6,7 +6,6 @@ use Elementor\Controls_Manager;
 use Elementor\Group_Control_Background;
 use Elementor\Group_Control_Border;
 use Elementor\Group_Control_Box_Shadow;
-use Elementor\Group_Control_Css_Filter;
 use Elementor\Group_Control_Typography;
 use Elementor\Repeater;
 use Elementor\Widget_Base;
@@ -300,7 +299,20 @@ class Widget_Price extends Widget_Base
                 'name' => 'price_card_background_bg',
                 'label' => esc_html__( 'Background', 'easy-addons'),
                 'types' => [ 'classic', 'gradient'],
-                'selector' =>'{{WRAPPER}} .easy-pricing-table-item .pricing-table .price-table-signup a',
+                'selector' =>'{{WRAPPER}} .easy-pricing-table-item .pricing-table',
+            ]
+        );
+
+        $this->add_group_control(
+            Group_Control_Background::get_type(),
+            [
+                'name' => 'price_card_header_bg',
+                'label' => esc_html__( 'Background', 'easy-addons'),
+                'types' => [ 'classic', 'gradient'],
+                'selector' =>'{{WRAPPER}} .easy-pricing-table-item.pricing-card-style-3 .pricing-table .pricing-table-header',
+                'condition' => [
+                    'pricing_card_style' => ['pricing-card-style-3'],
+                ]
             ]
         );
 
@@ -309,11 +321,11 @@ class Widget_Price extends Widget_Base
             [
                 'name' => 'price_card_box_shadow',
                 'label' => esc_html__( 'Box Shadow', 'easy-addons'),
-                'selector' => '{{WRAPPER}} .easy-pricing-table-item .pricing-table .price-table-signup a:hover',
+                'selector' => '{{WRAPPER}} .easy-pricing-table-item .pricing-table',
             ]
         );
 
-        $this->add_control(
+        $this->add_responsive_control(
             'price_card_padding',
             [
                 'label' => esc_html__( 'Padding', 'easy-addons'),
@@ -325,7 +337,7 @@ class Widget_Price extends Widget_Base
             ]
         );
 
-        $this->add_control(
+        $this->add_responsive_control(
             'price_card_border',
             [
                 'label' => esc_html__( 'Border Radius', 'easy-addons'),
@@ -350,7 +362,7 @@ class Widget_Price extends Widget_Base
                 'name' => 'price_card_h_background_bg',
                 'label' => esc_html__( 'Background', 'easy-addons'),
                 'types' => [ 'classic', 'gradient'],
-                'selector' =>'{{WRAPPER}} .easy-pricing-table-item .pricing-table .price-table-signup a:hover',
+                'selector' =>'{{WRAPPER}} .easy-pricing-table-item .pricing-table:hover',
             ]
         );
 
@@ -359,7 +371,7 @@ class Widget_Price extends Widget_Base
             [
                 'name' => 'price_card_h_box_shadow',
                 'label' => esc_html__( 'Box Shadow', 'easy-addons'),
-                'selector' => '{{WRAPPER}} .easy-pricing-table-item .pricing-table .price-table-signup a:hover',
+                'selector' => '{{WRAPPER}} .easy-pricing-table-item .pricing-table:hover',
             ]
         );
 
@@ -397,6 +409,18 @@ class Widget_Price extends Widget_Base
             ]
         );
 
+        $this->add_group_control(
+            Group_Control_Background::get_type(),
+            [
+                'name' => 'price_card_title_bg',
+                'label' => esc_html__( 'Price Title Background Color', 'easy-addons'),
+                'types' => [ 'classic', 'gradient'],
+                'selector' =>'{{WRAPPER}} .easy-pricing-table-item.pricing-card-style-2 .pricing-table .title',
+                'condition' => [
+                    'pricing_card_style' => ['pricing-card-style-2'],
+                ]
+            ]
+        );
         $this->end_controls_section();
 
         $this->start_controls_section(
@@ -434,7 +458,7 @@ class Widget_Price extends Widget_Base
             ]
         );
 
-        $this->add_control(
+        $this->add_responsive_control(
             'price_padding',
             [
                 'label' => esc_html__( 'Padding', 'easy-addons'),
