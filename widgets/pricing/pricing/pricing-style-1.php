@@ -15,7 +15,10 @@ $pricing_card_style = $settings['pricing_card_style'];
             <div class="pricing-table-header">
                 <h3 class="title"><?php echo esc_html($settings['price_table_title'])?></h3>
                 <div class="price-value">
-                    <span class="amount"><span class="currency"><?php echo esc_html($settings['price_currency'])?></span><?php echo esc_html($settings['price_table_amount'])?></span>
+                    <span class="price-amount">
+                        <span class="currency"><?php echo esc_html($settings['price_currency'])?></span>
+                        <span class="amount"><?php echo esc_html($settings['price_table_amount'])?></span>
+                    </span>
                     <span class="duration"><?php echo esc_html($settings['price_duration']);?></span>
                 </div>
             </div>

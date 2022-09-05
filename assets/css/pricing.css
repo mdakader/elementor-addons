@@ -73,6 +73,10 @@
     display: block;
 }
 
+.easy-pricing-table-item .pricing-table span.price-amount {
+    display: flex;
+    align-items: baseline;
+}
 
 /*
 * Start Pricing Card Style-01
@@ -196,6 +200,7 @@
     font-family: 'Outfit', sans-serif;
     text-align: center;
     box-shadow: 0 0 20px rgba(0,0,0,0.15);
+    padding-bottom: 25px;
 }
 .easy-pricing-table-item.pricing-card-style-3 .pricing-table .pricing-table-header{
     color: #fff;
@@ -212,22 +217,23 @@
     text-transform: uppercase;
     margin: 0 0 15px;
 }
-
-.easy-pricing-table-item.pricing-card-style-3 .pricing-table .price-table-signup{
-    background: linear-gradient(to top right,#854BCC,#4C9FD0);
-    padding: 10px 10px 9px;
-}
 .easy-pricing-table-item.pricing-card-style-3 .pricing-table .price-table-signup a{
-    color: rgba(255,255,255,0.8);
-    font-size: 20px;
-    font-weight: 300;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    transition: all 0.3s ease 0s;
+    color: #ffffff;
+    background: linear-gradient(to top right,#854BCC,#4C9FD0);
+    font-size: 22px;
+    font-weight: 400;
+    text-align: center;
+    letter-spacing: 0.5px;
+    text-transform: capitalize;
+    padding: 5px 18px;
+    margin: 0 35px;
+    border-radius: 50px;
+    display: block;
+    transition: all 0.3s;
 }
 .easy-pricing-table-item.pricing-card-style-3 .pricing-table .price-table-signup a:hover{
-    color: #fff;
-    text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.4);
+    color: #ffffff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
 }
 
 @media only screen and (max-width: 990px){

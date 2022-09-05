@@ -3,7 +3,11 @@
 namespace Easy_Addons\Widgets;
 
 use Elementor\Controls_Manager;
+use Elementor\Group_Control_Background;
 use Elementor\Group_Control_Border;
+use Elementor\Group_Control_Box_Shadow;
+use Elementor\Group_Control_Css_Filter;
+use Elementor\Group_Control_Typography;
 use Elementor\Repeater;
 use Elementor\Widget_Base;
 
@@ -270,200 +274,401 @@ class Widget_Price extends Widget_Base
             ]
         );
         $this->end_controls_section();
+
         $this->start_controls_section(
-            'section_social_style',
+            'price_card_style',
             [
-                'label' => esc_html__('Icon', 'easy-addons'),
+                'label' => esc_html__('Price Card Style', 'easy-addons'),
+                'tab' => Controls_Manager::TAB_STYLE,
+            ]
+        );
+
+        $this->start_controls_tabs(
+            'price_card_tabs', [
+                'label' => __('Price Card Style', 'easy-addons'),
+            ]
+        );
+
+        $this->start_controls_tab('price_card_normal', [
+                'label' => __('Normal','easy-addons'),
+            ]
+        );
+
+        $this->add_group_control(
+            Group_Control_Background::get_type(),
+            [
+                'name' => 'price_card_background_bg',
+                'label' => esc_html__( 'Background', 'easy-addons'),
+                'types' => [ 'classic', 'gradient'],
+                'selector' =>'{{WRAPPER}} .easy-pricing-table-item .pricing-table .price-table-signup a',
+            ]
+        );
+
+        $this->add_group_control(
+            Group_Control_Box_Shadow::get_type(),
+            [
+                'name' => 'price_card_box_shadow',
+                'label' => esc_html__( 'Box Shadow', 'easy-addons'),
+                'selector' => '{{WRAPPER}} .easy-pricing-table-item .pricing-table .price-table-signup a:hover',
+            ]
+        );
+
+        $this->add_control(
+            'price_card_padding',
+            [
+                'label' => esc_html__( 'Padding', 'easy-addons'),
+                'type' => Controls_Manager::DIMENSIONS,
+                'size_units' => [ 'px', '%', 'em' ],
+                'selectors' => [
+                    '{{WRAPPER}} .pricing-table' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+            ]
+        );
+
+        $this->add_control(
+            'price_card_border',
+            [
+                'label' => esc_html__( 'Border Radius', 'easy-addons'),
+                'type' => Controls_Manager::DIMENSIONS,
+                'size_units' => [ 'px', '%', 'em' ],
+                'selectors' => [
+                    '{{WRAPPER}} .pricing-table' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+            ]
+        );
+
+        $this->end_controls_tab();
+
+        $this->start_controls_tab('price_card_hover', [
+                'label' => __('Hover','easy-addons'),
+            ]
+        );
+
+        $this->add_group_control(
+            Group_Control_Background::get_type(),
+            [
+                'name' => 'price_card_h_background_bg',
+                'label' => esc_html__( 'Background', 'easy-addons'),
+                'types' => [ 'classic', 'gradient'],
+                'selector' =>'{{WRAPPER}} .easy-pricing-table-item .pricing-table .price-table-signup a:hover',
+            ]
+        );
+
+        $this->add_group_control(
+            Group_Control_Box_Shadow::get_type(),
+            [
+                'name' => 'price_card_h_box_shadow',
+                'label' => esc_html__( 'Box Shadow', 'easy-addons'),
+                'selector' => '{{WRAPPER}} .easy-pricing-table-item .pricing-table .price-table-signup a:hover',
+            ]
+        );
+
+        $this->end_controls_tab();
+
+        $this->end_controls_tabs();
+
+        $this->end_controls_section();
+
+        $this->start_controls_section(
+            'header_style',
+            [
+                'label' => esc_html__('Header', 'easy-addons'),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
 
         $this->add_control(
-            'icon_color',
+            'header_title_clr_text',
             [
-                'label' => esc_html__('Color', 'easy-addons'),
-                'type' => Controls_Manager::SELECT,
-                'default' => 'default',
-                'options' => [
-                    'default' => esc_html__('Official Color', 'easy-addons'),
-                    'custom' => esc_html__('Custom', 'easy-addons'),
-                ],
-            ]
-        );
-
-        $this->add_control(
-            'icon_primary_color',
-            [
-                'label' => esc_html__('Primary Color', 'easy-addons'),
+                'label' => esc_html__('Header Title Color', 'easy-addons'),
                 'type' => Controls_Manager::COLOR,
-                'condition' => [
-                    'icon_color' => 'custom',
-                ],
+                'default' => '#2c3e50',
                 'selectors' => [
-                    '{{WRAPPER}} .elementor-social-icon' => 'background-color: {{VALUE}};',
-                ],
-            ]
-        );
-
-        $this->add_control(
-            'icon_secondary_color',
-            [
-                'label' => esc_html__('Secondary Color', 'easy-addons'),
-                'type' => Controls_Manager::COLOR,
-                'condition' => [
-                    'icon_color' => 'custom',
-                ],
-                'selectors' => [
-                    '{{WRAPPER}} .elementor-social-icon i' => 'color: {{VALUE}};',
-                    '{{WRAPPER}} .elementor-social-icon svg' => 'fill: {{VALUE}};',
-                ],
-            ]
-        );
-
-        $this->add_responsive_control(
-            'icon_size',
-            [
-                'label' => esc_html__('Size', 'easy-addons'),
-                'type' => Controls_Manager::SLIDER,
-                'range' => [
-                    'px' => [
-                        'min' => 6,
-                        'max' => 300,
-                    ],
-                ],
-                'selectors' => [
-                    '{{WRAPPER}}' => '--icon-size: {{SIZE}}{{UNIT}}',
-                ],
-            ]
-        );
-
-        $this->add_responsive_control(
-            'icon_padding',
-            [
-                'label' => esc_html__('Padding', 'easy-addons'),
-                'type' => Controls_Manager::SLIDER,
-                'selectors' => [
-                    '{{WRAPPER}} .elementor-social-icon' => '--icon-padding: {{SIZE}}{{UNIT}}',
-                ],
-                'default' => [
-                    'unit' => 'em',
-                ],
-                'tablet_default' => [
-                    'unit' => 'em',
-                ],
-                'mobile_default' => [
-                    'unit' => 'em',
-                ],
-                'range' => [
-                    'em' => [
-                        'min' => 0,
-                        'max' => 5,
-                    ],
-                ],
-            ]
-        );
-
-        $this->add_responsive_control(
-            'icon_spacing',
-            [
-                'label' => esc_html__('Spacing', 'easy-addons'),
-                'type' => Controls_Manager::SLIDER,
-                'range' => [
-                    'px' => [
-                        'min' => 0,
-                        'max' => 100,
-                    ],
-                ],
-                'default' => [
-                    'size' => 5,
-                ],
-                'selectors' => [
-                    '{{WRAPPER}}' => '--grid-column-gap: {{SIZE}}{{UNIT}}',
-                ],
-            ]
-        );
-
-        $this->add_responsive_control(
-            'row_gap',
-            [
-                'label' => esc_html__('Rows Gap', 'easy-addons'),
-                'type' => Controls_Manager::SLIDER,
-                'default' => [
-                    'size' => 0,
-                ],
-                'selectors' => [
-                    '{{WRAPPER}}' => '--grid-row-gap: {{SIZE}}{{UNIT}}',
+                    '{{WRAPPER}} .easy-pricing-table-item .pricing-table .title' => 'color: {{VALUE}};',
                 ],
             ]
         );
 
         $this->add_group_control(
-            Group_Control_Border::get_type(),
+            Group_Control_Typography::get_type(),
             [
-                'name' => 'image_border',
-                'selector' => '{{WRAPPER}} .elementor-social-icon',
-                'separator' => 'before',
+                'name' => 'header_title_typography',
+                'selector' => '{{WRAPPER}} .easy-pricing-table-item .pricing-table .title',
+            ]
+        );
+
+        $this->end_controls_section();
+
+        $this->start_controls_section(
+            'price_style',
+            [
+                'label' => esc_html__('Price', 'easy-addons'),
+                'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
 
         $this->add_control(
-            'border_radius',
+            'price_text_clr',
             [
-                'label' => esc_html__('Border Radius', 'easy-addons'),
+                'label' => esc_html__('Price Color', 'easy-addons'),
+                'type' => Controls_Manager::COLOR,
+                'default' => '#ffffff',
+                'selectors' => [
+                    '{{WRAPPER}} .easy-pricing-table-item .pricing-table .price-value .amount' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .easy-pricing-table-item .pricing-table .price-value .currency' => 'color: {{VALUE}};',
+                ],
+            ]
+        );
+
+        $this->add_responsive_control(
+            'price_mb',
+            [
+                'label' => esc_html__('Margin Bottom', 'easy-addons'),
+                'type' => Controls_Manager::SLIDER,
+                'selectors' => [
+                    '{{WRAPPER}} .easy-pricing-table-item.pricing-card-style-1 .pricing-table .price-value' => 'margin-bottom: {{SIZE}}{{UNIT}}',
+                ],
+                'default' => [
+                    'unit' => 'px',
+                ],
+            ]
+        );
+
+        $this->add_control(
+            'price_padding',
+            [
+                'label' => esc_html__( 'Padding', 'easy-addons'),
                 'type' => Controls_Manager::DIMENSIONS,
-                'size_units' => ['px', '%', 'em'],
+                'size_units' => [ 'px', '%', 'em' ],
                 'selectors' => [
-                    '{{WRAPPER}} .elementor-icon' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .easy-pricing-table-item.pricing-card-style-1 .pricing-table .price-value' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+                'conditions' => [
+                    'terms' => [
+                        [
+                            'name' => 'pricing_card_style',
+                            'operator' => '==',
+                            'value' => 'pricing-card-style-1',
+                        ],
+                    ],
+                ],
+            ]
+        );
+
+		$this->add_group_control(
+            Group_Control_Background::get_type(),
+            [
+                'name' => 'price_background_bg',
+                'label' => esc_html__( 'Background', 'easy-addons'),
+                'types' => [ 'classic', 'gradient'],
+                'selector' =>'{{WRAPPER}} .easy-pricing-table-item.pricing-card-style-1 .pricing-table .price-value',
+                'conditions' => [
+                    'terms' => [
+                        [
+                            'name' => 'pricing_card_style',
+                            'operator' => '==',
+                            'value' => 'pricing-card-style-1',
+                        ],
+                    ],
+                ],
+            ]
+        );
+
+        $this->add_group_control(
+            Group_Control_Typography::get_type(),
+            [
+                'name' => 'price_text_typography',
+                'label' => esc_html__('Price Typography', 'easy-addons'),
+                'selector' => '{{WRAPPER}} .easy-pricing-table-item .pricing-table .price-value .amount',
+            ]
+        );
+
+        $this->add_control(
+            'duration_text_clr',
+            [
+                'label' => esc_html__('Duration Color', 'easy-addons'),
+                'type' => Controls_Manager::COLOR,
+                'default' => '#ffffff',
+                'selectors' => [
+                    '{{WRAPPER}} .easy-pricing-table-item .pricing-table .duration' => 'color: {{VALUE}};',
+                ],
+            ]
+        );
+
+        $this->add_group_control(
+            Group_Control_Typography::get_type(),
+            [
+                'name' => 'price_duration_typography',
+                'label' => esc_html__('Duration Typography', 'easy-addons'),
+                'selector' => '{{WRAPPER}} .easy-pricing-table-item .pricing-table .duration',
+            ]
+        );
+
+        $this->end_controls_section();
+
+        $this->start_controls_section(
+            'features_style',
+            [
+                'label' => esc_html__('Features', 'easy-addons'),
+                'tab' => Controls_Manager::TAB_STYLE,
+            ]
+        );
+
+        $this->add_control(
+            'features_clr_text',
+            [
+                'label' => esc_html__('Features Color', 'easy-addons'),
+                'type' => Controls_Manager::COLOR,
+                'default' => '#2c3e50',
+                'selectors' => [
+                    '{{WRAPPER}} .easy-pricing-table-item .pricing-table .pricing-content li' => 'color: {{VALUE}};',
+                ],
+            ]
+        );
+
+        $this->add_group_control(
+            Group_Control_Typography::get_type(),
+            [
+                'name' => 'features_typography',
+                'label' => esc_html__('Features Typography', 'easy-addons'),
+                'selector' => '{{WRAPPER}} .easy-pricing-table-item .pricing-table .pricing-content li',
+            ]
+        );
+
+        $this->end_controls_section();
+
+        $this->start_controls_section(
+            'subscribes_style',
+            [
+                'label' => esc_html__('Subscribe', 'easy-addons'),
+                'tab' => Controls_Manager::TAB_STYLE,
+            ]
+        );
+
+        $this->start_controls_tabs(
+            'subscribe_btn_tabs', [
+                'label' => __('Subscribe Button', 'easy-addons'),
+            ]
+        );
+
+        $this->start_controls_tab('normal', [
+                'label' => __('Normal','easy-addons'),
+            ]
+        );
+        $this->add_control(
+            'subscribe_clr_text',
+            [
+                'label' => esc_html__('Subscribe Button Color', 'easy-addons'),
+                'type' => Controls_Manager::COLOR,
+                'default' => '#2c3e50',
+                'selectors' => [
+                    '{{WRAPPER}} .easy-pricing-table-item .pricing-table .price-table-signup a' => 'color: {{VALUE}};',
+                ],
+            ]
+        );
+
+        $this->add_group_control(
+            Group_Control_Background::get_type(),
+            [
+                'name' => 'subscribe_background_bg',
+                'label' => esc_html__( 'Background', 'easy-addons'),
+                'types' => [ 'classic', 'gradient'],
+                'selector' =>'{{WRAPPER}} .easy-pricing-table-item .pricing-table .price-table-signup a',
+            ]
+        );
+
+        $this->add_group_control(
+            Group_Control_Typography::get_type(),
+            [
+                'name' => 'subscribe_typography',
+                'label' => esc_html__('Subscribe Button Typography', 'easy-addons'),
+                'selector' => '{{WRAPPER}} .easy-pricing-table-item .pricing-table .price-table-signup a',
+            ]
+        );
+
+        $this->end_controls_tab();
+
+        $this->start_controls_tab('hover', [
+                'label' => __('Hover','easy-addons'),
+            ]
+        );
+        $this->add_control(
+            'subscribe_h_btn_text_clr',
+            [
+                'label' => esc_html__('Subscribe Button Color', 'easy-addons'),
+                'type' => Controls_Manager::COLOR,
+                'default' => '#2c3e50',
+                'selectors' => [
+                    '{{WRAPPER}} .easy-pricing-table-item .pricing-table .price-table-signup a:hover' => 'color: {{VALUE}};',
+                ],
+            ]
+        );
+
+        $this->add_group_control(
+            Group_Control_Background::get_type(),
+            [
+                'name' => 'subscribe_h_background_bg',
+                'label' => esc_html__( 'Background', 'easy-addons'),
+                'types' => [ 'classic', 'gradient'],
+                'selector' =>'{{WRAPPER}} .easy-pricing-table-item .pricing-table .price-table-signup a:hover',
+            ]
+        );
+        $this->add_group_control(
+            Group_Control_Box_Shadow::get_type(),
+            [
+                'name' => 'subscribe_h_box_shadow',
+                'label' => esc_html__( 'Box Shadow', 'easy-addons'),
+                'selector' => '{{WRAPPER}} .easy-pricing-table-item .pricing-table .price-table-signup a:hover',
+                'condition' => [
+                    'pricing_card_style' => ['pricing-card-style-2','pricing-card-style-3'],
+                ]
+            ]
+        );
+
+        $this->end_controls_tab();
+
+        $this->end_controls_tabs();
+
+        $this->end_controls_section();
+
+        $this->start_controls_section(
+            'badge_style',
+            [
+                'label' => esc_html__('Badge', 'easy-addons'),
+                'tab' => Controls_Manager::TAB_STYLE,
+            ]
+        );
+
+        $this->add_control(
+            'badge_bg',
+            [
+                'label' => esc_html__('Background Color', 'easy-addons'),
+                'type' => Controls_Manager::COLOR,
+                'default' => '#2c3e50',
+                'selectors' => [
+                    '{{WRAPPER}} .easy-pricing-table-item span.recommended-badge' => 'background: {{VALUE}};',
                 ],
             ]
         );
 
         $this->add_control(
-            'hover_primary_color',
+            'badge_color',
             [
-                'label' => esc_html__('Primary Color', 'easy-addons'),
+                'label' => esc_html__('Color', 'easy-addons'),
                 'type' => Controls_Manager::COLOR,
-                'default' => '',
-                'condition' => [
-                    'icon_color' => 'custom',
-                ],
+                'default' => '#ffffff',
                 'selectors' => [
-                    '{{WRAPPER}} .elementor-social-icon:hover' => 'background-color: {{VALUE}};',
+                    '{{WRAPPER}} .easy-pricing-table-item span.recommended-badge' => 'color: {{VALUE}};',
                 ],
             ]
         );
-
-        $this->add_control(
-            'hover_secondary_color',
+        $this->add_group_control(
+            Group_Control_Typography::get_type(),
             [
-                'label' => esc_html__('Secondary Color', 'easy-addons'),
-                'type' => Controls_Manager::COLOR,
-                'default' => '',
-                'condition' => [
-                    'icon_color' => 'custom',
-                ],
-                'selectors' => [
-                    '{{WRAPPER}} .elementor-social-icon:hover i' => 'color: {{VALUE}};',
-                    '{{WRAPPER}} .elementor-social-icon:hover svg' => 'fill: {{VALUE}};',
-                ],
+                'name' => 'badge_typography',
+                'selector' => '{{WRAPPER}} .easy-pricing-table-item span.recommended-badge',
             ]
         );
-
-        $this->add_control(
-            'hover_border_color',
-            [
-                'label' => esc_html__('Border Color', 'easy-addons'),
-                'type' => Controls_Manager::COLOR,
-                'default' => '',
-                'condition' => [
-                    'image_border_border!' => '',
-                ],
-                'selectors' => [
-                    '{{WRAPPER}} .elementor-social-icon:hover' => 'border-color: {{VALUE}};',
-                ],
-            ]
-        );
-
         $this->end_controls_section();
 
     }
