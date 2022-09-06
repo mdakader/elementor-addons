@@ -6,7 +6,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: linear-gradient(to top right,#854BCC,#4C9FD0);;
+    background: linear-gradient(to top right,#854BCC,#4C9FD0);
     color: #fff;
     padding: 50px;
 }
@@ -20,9 +20,13 @@ a.easy-cta-link-text {
     color: #fff;
     padding: 15px 30px;
     background: #192a56;
-    transition: ease 0.3s;
+    transition: all 0.4s ease 0s;
     position: relative;
     z-index: 1;
+}
+
+a.easy-cta-link-text:hover{
+    color: #0C0C10;
 }
 
 a.easy-cta-link-text:before {
@@ -32,9 +36,10 @@ a.easy-cta-link-text:before {
     top: 0;
     width: 0;
     height: 100%;
-    background: #2c3e50;
+    background: #ffffff;
+    color: #0c0c0c;
     z-index: -1;
-    transition: ease 0.3s;
+    transition: all 0.4s ease 0s;
 }
 
 a.easy-cta-link-text:hover:before {

@@ -245,6 +245,26 @@ class Call_To_Action extends Widget_Base {
             ]
         );
 
+        $this->add_control(
+            'cta_desc_clr_text',
+            [
+                'label' => esc_html__('CTA Description Text Color', 'easy-addons'),
+                'type' => Controls_Manager::COLOR,
+                'default' => '#ffffff',
+                'selectors' => [
+                    '{{WRAPPER}} p.easy-cta-desc' => 'color: {{VALUE}};',
+                ],
+            ]
+        );
+
+        $this->add_group_control(
+            Group_Control_Typography::get_type(),
+            [
+                'name' => 'ct_desc_typography',
+                'label' => esc_html__('CTA Description Typography', 'easy-addons'),
+                'selector' => '{{WRAPPER}} p.easy-cta-desc',
+            ]
+        );
 		$this->end_controls_section();
 
 
@@ -267,13 +287,13 @@ class Call_To_Action extends Widget_Base {
             ]
         );
         $this->add_control(
-            'subscribe_clr_text',
+            'cta_btn_text_clr',
             [
-                'label' => esc_html__('Subscribe Button Color', 'easy-addons'),
+                'label' => esc_html__('Button Text Color', 'easy-addons'),
                 'type' => Controls_Manager::COLOR,
-                'default' => '#2c3e50',
+                'default' => '#ffffff',
                 'selectors' => [
-                    '{{WRAPPER}} .easy-pricing-table-item .pricing-table .price-table-signup a' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} a.easy-cta-link-text' => 'color: {{VALUE}};',
                 ],
             ]
         );
@@ -281,19 +301,31 @@ class Call_To_Action extends Widget_Base {
         $this->add_group_control(
             Group_Control_Background::get_type(),
             [
-                'name' => 'subscribe_background_bg',
-                'label' => esc_html__( 'Background', 'easy-addons'),
+                'name' => 'cta_btn_bg',
+                'label' => esc_html__( 'CTA Button Background', 'easy-addons'),
                 'types' => [ 'classic', 'gradient'],
-                'selector' =>'{{WRAPPER}} .easy-pricing-table-item .pricing-table .price-table-signup a',
+                'selector' =>'{{WRAPPER}} a.easy-cta-link-text',
             ]
         );
 
         $this->add_group_control(
             Group_Control_Typography::get_type(),
             [
-                'name' => 'subscribe_typography',
-                'label' => esc_html__('Subscribe Button Typography', 'easy-addons'),
-                'selector' => '{{WRAPPER}} .easy-pricing-table-item .pricing-table .price-table-signup a',
+                'name' => 'cta_btn_typography',
+                'label' => esc_html__('CTA Button Text Typography', 'easy-addons'),
+                'selector' => '{{WRAPPER}} a.easy-cta-link-text',
+            ]
+        );
+
+        $this->add_responsive_control(
+            'cta_btn_padding',
+            [
+                'label' => esc_html__( 'CTA Button Padding', 'easy-addons'),
+                'type' => Controls_Manager::DIMENSIONS,
+                'size_units' => [ 'px', '%', 'em' ],
+                'selectors' => [
+                    '{{WRAPPER}} a.easy-cta-link-text' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
             ]
         );
 
@@ -304,13 +336,13 @@ class Call_To_Action extends Widget_Base {
             ]
         );
         $this->add_control(
-            'subscribe_h_btn_text_clr',
+            'cta_btn_text_h_clr',
             [
-                'label' => esc_html__('Subscribe Button Color', 'easy-addons'),
+                'label' => esc_html__('Button Text Hover Color', 'easy-addons'),
                 'type' => Controls_Manager::COLOR,
-                'default' => '#2c3e50',
+                'default' => '#111827',
                 'selectors' => [
-                    '{{WRAPPER}} .easy-pricing-table-item .pricing-table .price-table-signup a:hover' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} a.easy-cta-link-text:hover' => 'color: {{VALUE}};',
                 ],
             ]
         );
@@ -318,23 +350,13 @@ class Call_To_Action extends Widget_Base {
         $this->add_group_control(
             Group_Control_Background::get_type(),
             [
-                'name' => 'subscribe_h_background_bg',
-                'label' => esc_html__( 'Background', 'easy-addons'),
+                'name' => 'cta_btn_h_bg',
+                'label' => esc_html__( 'CTA Button Hover Background', 'easy-addons'),
                 'types' => [ 'classic', 'gradient'],
-                'selector' =>'{{WRAPPER}} .easy-pricing-table-item .pricing-table .price-table-signup a:hover',
+                'selector' =>'{{WRAPPER}} a.easy-cta-link-text:before',
             ]
         );
-        $this->add_group_control(
-            Group_Control_Box_Shadow::get_type(),
-            [
-                'name' => 'subscribe_h_box_shadow',
-                'label' => esc_html__( 'Box Shadow', 'easy-addons'),
-                'selector' => '{{WRAPPER}} .easy-pricing-table-item .pricing-table .price-table-signup a:hover',
-                'condition' => [
-                    'pricing_card_style' => ['pricing-card-style-2','pricing-card-style-3'],
-                ]
-            ]
-        );
+
 
         $this->end_controls_tab();
 
