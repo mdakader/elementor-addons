@@ -2,6 +2,7 @@
 
 namespace Easy_Addons\Widgets;
 
+use Elementor\Group_Control_Background;
 use Elementor\Group_Control_Border;
 use Elementor\Group_Control_Typography;
 use Elementor\Repeater;
@@ -135,6 +136,22 @@ class Widget_Team extends Widget_Base
         );
 
         $this->add_control(
+            'team_style', [
+                'label' => __('Teams Style', 'easy-addons'),
+                'type' => Controls_Manager::SELECT,
+                'options' => [
+                    'team-style-1' => esc_html__('Team Style 1', 'easy-addons'),
+                    'team-style-2' => esc_html__('Team Style 2', 'easy-addons'),
+                    'team-style-3' => esc_html__('Team Style 3', 'easy-addons'),
+                    'team-style-4' => esc_html__('Team Style 4', 'easy-addons'),
+                    'team-style-5' => esc_html__('Team Style 5', 'easy-addons'),
+                    'team-style-6' => esc_html__('Team Style 6', 'easy-addons')
+                ],
+                'default' => 'team-style-1',
+            ]
+        );
+
+        $this->add_control(
             'team_image',
             [
                 'label' => esc_html__('Image', 'easy-addons'),
@@ -177,51 +194,6 @@ class Widget_Team extends Widget_Base
             ]
         );
 
-        $this->add_control(
-            'team_style', [
-                'label' => __('Teams Style', 'easy-addons'),
-                'type' => Controls_Manager::SELECT,
-                'options' => [
-                    'team-style-1' => esc_html__('Team Style 1', 'easy-addons'),
-                    'team-style-2' => esc_html__('Team Style 2', 'easy-addons'),
-                    'team-style-3' => esc_html__('Team Style 3', 'easy-addons'),
-                    'team-style-4' => esc_html__('Team Style 4', 'easy-addons'),
-                    'team-style-5' => esc_html__('Team Style 5', 'easy-addons'),
-                    'team-style-6' => esc_html__('Team Style 6', 'easy-addons')
-                ],
-                'default' => 'team-style-1',
-            ]
-        );
-
-        $this->add_responsive_control(
-            'align',
-            [
-                'label' => __('Alignment', 'easy-addons'),
-                'type' => Controls_Manager::CHOOSE,
-                'options' => [
-                    'left' => [
-                        'title' => esc_html__('Left', 'easy-addons'),
-                        'icon' => 'eicon-text-align-left',
-                    ],
-                    'center' => [
-                        'title' => esc_html__('Center', 'easy-addons'),
-                        'icon' => 'eicon-text-align-center',
-                    ],
-                    'right' => [
-                        'title' => esc_html__('Right', 'easy-addons'),
-                        'icon' => 'eicon-text-align-right',
-                    ],
-                    'justify' => [
-                        'title' => esc_html__('Justified', 'easy-addons'),
-                        'icon' => 'eicon-text-align-justify',
-                    ],
-                ],
-                'default' => 'center',
-                'selectors' => [
-                    '{{WRAPPER}} .easy-service' => 'text-align: {{VALUE}};',
-                ],
-            ]
-        );
         $this->end_controls_section();
 
         $this->start_controls_section(
@@ -423,9 +395,9 @@ class Widget_Team extends Widget_Base
         $this->end_controls_section();
 
         $this->start_controls_section(
-            'section_style',
+            'team_section_style',
             [
-                'label' => esc_html__('Style', 'easy-addons'),
+                'label' => esc_html__('Team Style', 'easy-addons'),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -636,15 +608,82 @@ class Widget_Team extends Widget_Base
             ]
         );
 
-        $this->end_controls_section();
-        $this->start_controls_section(
-            'section_social_style',
+        $this->add_responsive_control(
+            'align',
             [
-                'label' => esc_html__('Icon', 'easy-addons'),
+                'label' => __('Alignment', 'easy-addons'),
+                'type' => Controls_Manager::CHOOSE,
+                'options' => [
+                    'left' => [
+                        'title' => esc_html__('Left', 'easy-addons'),
+                        'icon' => 'eicon-text-align-left',
+                    ],
+                    'center' => [
+                        'title' => esc_html__('Center', 'easy-addons'),
+                        'icon' => 'eicon-text-align-center',
+                    ],
+                    'right' => [
+                        'title' => esc_html__('Right', 'easy-addons'),
+                        'icon' => 'eicon-text-align-right',
+                    ],
+                    'justify' => [
+                        'title' => esc_html__('Justified', 'easy-addons'),
+                        'icon' => 'eicon-text-align-justify',
+                    ],
+                ],
+                'default' => 'center',
+                'selectors' => [
+                    '{{WRAPPER}} .easy-service' => 'text-align: {{VALUE}};',
+                ],
+            ]
+        );
+        $this->end_controls_section();
+
+        $this->start_controls_section(
+            'team_name_style',
+            [
+                'label' => esc_html__('Name', 'easy-addons'),
+                'tab' => Controls_Manager::TAB_STYLE,
+            ]
+        );
+        $this->end_controls_section();
+
+        $this->start_controls_section(
+            'team_designation_style',
+            [
+                'label' => esc_html__('Designation', 'easy-addons'),
+                'tab' => Controls_Manager::TAB_STYLE,
+            ]
+        );
+        $this->end_controls_section();
+
+        $this->start_controls_section(
+            'team_desc_style',
+            [
+                'label' => esc_html__('Information', 'easy-addons'),
+                'tab' => Controls_Manager::TAB_STYLE,
+            ]
+        );
+        $this->end_controls_section();
+
+        $this->start_controls_section(
+            'team_btn_style',
+            [
+                'label' => esc_html__('Socials Links', 'easy-addons'),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
 
+        $this->start_controls_tabs(
+            'socials_link_btn_tabs', [
+                'label' => __('Socials Links', 'easy-addons'),
+            ]
+        );
+
+        $this->start_controls_tab('socials_link_normal', [
+                'label' => __('Normal','easy-addons'),
+            ]
+        );
         $this->add_control(
             'icon_color',
             [
@@ -767,7 +806,7 @@ class Widget_Team extends Widget_Base
         $this->add_group_control(
             Group_Control_Border::get_type(),
             [
-                'name' => 'image_border', // We know this mistake - TODO: 'icon_border' (for hover control condition also)
+                'name' => 'image_border', 
                 'selector' => '{{WRAPPER}} .elementor-social-icon',
                 'separator' => 'before',
             ]
@@ -830,6 +869,125 @@ class Widget_Team extends Widget_Base
                 ],
             ]
         );
+        $this->add_group_control(
+            Group_Control_Typography::get_type(),
+            [
+                'name' => 'socials_link_typography',
+                'selector' => '{{WRAPPER}} .easy-services a.easy-service-link',
+            ]
+        );
+        $this->add_control(
+            'socials_link_color',
+            [
+                'label' => esc_html__('Button Text Color', 'easy-addons'),
+                'type' => Controls_Manager::COLOR,
+                'alpha' => true,
+                'default' => '#e74c3c',
+                'selectors' => [
+                    '{{WRAPPER}} .easy-services a.easy-service-link' => 'color: {{VALUE}}',
+                ],
+            ]
+        );
+        $this->add_group_control(
+            Group_Control_Background::get_type(),
+            [
+                'name' => 'socials_link_bg',
+                'label' => esc_html__( 'Button Background Color', 'easy-addons'),
+                'types' => ['gradient'],
+                'selector' =>'{{WRAPPER}} .easy-services a.easy-service-link',
+            ]
+        );
+
+        $this->add_responsive_control(
+            'socials_link_padding',
+            [
+                'label' => esc_html__('Padding', 'easy-addons'),
+                'type' => Controls_Manager::DIMENSIONS,
+                'size_units' => ['px', '%', 'em'],
+                'selectors' => [
+                    '{{WRAPPER}} .easy-services a.easy-service-link' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+            ]
+        );
+
+        $this->add_responsive_control(
+            'socials_link_top_margin',
+            [
+                'label' => esc_html__('Button Margin Top', 'easy-addons'),
+                'type' => Controls_Manager::SLIDER,
+                'size_units' => ['px', '%'],
+                'range' => [
+                    'px' => [
+                        'min' => 0,
+                        'max' => 100,
+                        'step' => 1,
+                    ],
+                    '%' => [
+                        'min' => 0,
+                        'max' => 100,
+                    ],
+                ],
+                'default' => [
+                    'unit' => 'px',
+                    'size' => 15,
+                ],
+                'selectors' => [
+                    '{{WRAPPER}} .easy-services a.easy-service-link' => 'margin-top: {{SIZE}}{{UNIT}};',
+                ],
+            ]
+        );
+        $this->end_controls_tab();
+
+        $this->start_controls_tab('socials_link_hover', [
+                'label' => __('Hover','easy-addons'),
+            ]
+        );
+
+        $this->add_group_control(
+            Group_Control_Background::get_type(),
+            [
+                'name' => 'socials_link_h_background_bg',
+                'label' => esc_html__( 'Button Hover Background Color', 'easy-addons'),
+                'types' => [ 'gradient'],
+                'selector' =>'{{WRAPPER}} .easy-services a.easy-service-link',
+                'condition' => [
+                    'service_style' => ['service-style-1', 'service-style-2', 'service-style-3'],
+                ]
+            ]
+        );
+
+        $this->add_group_control(
+            Group_Control_Background::get_type(),
+            [
+                'name' => 'socials_link_background_bg',
+                'label' => esc_html__( 'Button Hover Background Color', 'easy-addons'),
+                'types' => [ 'gradient'],
+                'selector' =>'{{WRAPPER}} .easy-services.service-style-4 .easy-services-item:hover a.easy-service-link:after',
+                'condition' => [
+                    'service_style' => ['service-style-4'],
+                ]
+            ]
+        );
+
+        $this->add_control(
+            'socials_link_color_h',
+            [
+                'label' => esc_html__('Button Text Hover Color', 'easy-addons'),
+                'type' => Controls_Manager::COLOR,
+                'alpha' => true,
+                'default' => '#33B5BF',
+                'selectors' => [
+                    '{{WRAPPER}} .easy-services-item:hover .easy-service-link' => 'color: {{VALUE}}',
+                ],
+                'condition' => [
+                    'service_style' => ['service-style-4'],
+                ]
+            ]
+        );
+
+        $this->end_controls_tab();
+
+        $this->end_controls_tabs();
 
         $this->end_controls_section();
     }

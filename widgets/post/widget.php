@@ -291,15 +291,7 @@ class Post_Card_Widget extends Widget_Base
         );
 
         $this->end_controls_section();
-        /*
-         * End post card control
-         */
 
-
-        /*
-         * Start control style tab for post card
-         * Start name control style
-         */
         $this->start_controls_section(
             'section_design_layout', [
                 'label' => __('Layout', 'easy-addons'),
@@ -792,9 +784,7 @@ class Post_Card_Widget extends Widget_Base
         );
 
         $this->end_controls_section();
-        /*
-         * End control style tab for post card
-         */
+
     }
 
     /**

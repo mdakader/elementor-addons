@@ -2,6 +2,9 @@
 
 namespace Easy_Addons\Widgets;
 
+use Elementor\Group_Control_Background;
+use Elementor\Group_Control_Border;
+use Elementor\Group_Control_Box_Shadow;
 use Elementor\Group_Control_Typography;
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
@@ -11,7 +14,7 @@ if (!defined('ABSPATH')) {
 } // Exit if accessed directly
 
 /**
- * Elementor Dual Heading
+ * Elementor Service Widget
  *
  * Elementor widget for Dual Heading show.
  *
@@ -31,7 +34,7 @@ class Service_Widget extends Widget_Base
      */
     public function get_name()
     {
-        return 'easy-service';
+        return 'easy_service';
     }
 
     /**
@@ -45,7 +48,7 @@ class Service_Widget extends Widget_Base
      */
     public function get_title()
     {
-        return __('Service', 'easy-addons');
+        return __('Services', 'easy-addons');
     }
 
     /**
@@ -127,7 +130,7 @@ class Service_Widget extends Widget_Base
         $this->start_controls_section(
             'section_content',
             [
-                'label' => esc_html__('Dual Header', 'easy-addons'),
+                'label' => esc_html__('Service', 'easy-addons'),
             ]
         );
 
@@ -202,14 +205,14 @@ class Service_Widget extends Widget_Base
         $this->end_controls_section();
 
         $this->start_controls_section(
-            'section_style',
+            'services_style',
             [
-                'label' => esc_html__('Style', 'easy-addons'),
+                'label' => esc_html__('Service Style', 'easy-addons'),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
         $this->add_responsive_control(
-            'align',
+            'service_align',
             [
                 'label' => __('Alignment', 'elementor'),
                 'type' => Controls_Manager::CHOOSE,
@@ -237,6 +240,7 @@ class Service_Widget extends Widget_Base
                 ],
             ]
         );
+
         $this->add_control(
             'service_bg_color',
             [
@@ -247,15 +251,22 @@ class Service_Widget extends Widget_Base
                 'selectors' => [
                     '{{WRAPPER}} .easy-services-item' => 'background-color: {{VALUE}}',
                 ],
-//                'conditions' => [
-//                    'terms' => [
-//                        [
-//                            'name' => 'service_style',
-//                            'operator' => '==',
-//                            'value' => 'service-style-1',
-//                        ],
-//                    ],
-//                ],
+            ]
+        );
+
+        $this->add_control(
+            'service_4_bg_color',
+            [
+                'label' => esc_html__('Service Background Color', 'easy-addons'),
+                'type' => Controls_Manager::COLOR,
+                'alpha' => true,
+                'default' => '#ffffff',
+                'selectors' => [
+                    '{{WRAPPER}} .easy-services-item' => 'background-color: {{VALUE}}',
+                ],
+                'condition' => [
+                    'service_style' => ['service-style-4'],
+                ]
             ]
         );
 
@@ -269,10 +280,30 @@ class Service_Widget extends Widget_Base
                 'selectors' => [
                     '{{WRAPPER}} .easy-services-item:hover' => 'background-color: {{VALUE}}',
                 ],
+                'condition' => [
+                    'service_style' => ['service-style-1', 'service-style-3', 'service-style-4'],
+                ]
             ]
         );
+
+        $this->add_control(
+            'service_2_bg_color_h',
+            [
+                'label' => esc_html__('Service Background Hover Color', 'easy-addons'),
+                'type' => Controls_Manager::COLOR,
+                'alpha' => true,
+                'default' => '#172E5A',
+                'selectors' => [
+                    '{{WRAPPER}} .easy-services.service-style-2 .easy-services-item:before' => 'background-color: {{VALUE}}',
+                ],
+                'condition' => [
+                    'service_style' => ['service-style-2'],
+                ]
+            ]
+        );
+
         $this->add_responsive_control(
-            'padding',
+            'service_padding',
             [
                 'label' => esc_html__('Padding', 'easy-addons'),
                 'type' => Controls_Manager::DIMENSIONS,
@@ -282,10 +313,37 @@ class Service_Widget extends Widget_Base
                 ],
             ]
         );
+
+        $this->add_group_control(
+            Group_Control_Box_Shadow::get_type(),
+            [
+                'name' => 'service_box_shadow',
+                'label' => esc_html__( 'Box Shadow', 'easy-addons' ),
+                'selector' => '{{WRAPPER}} .easy-services-item',
+            ]
+        );
+        $this->add_group_control(
+            Group_Control_Border::get_type(),
+            [
+                'name' => 'service_border',
+                'label' => esc_html__( 'Border', 'easy-addons' ),
+                'selector' => '{{WRAPPER}} .easy-services-item',
+            ]
+        );
+        $this->end_controls_section();
+
+        $this->start_controls_section(
+            'service_icon_style',
+            [
+                'label' => esc_html__('Service Icon', 'easy-addons'),
+                'tab' => Controls_Manager::TAB_STYLE,
+            ]
+        );
+
         $this->add_control(
             'service_icon_color',
             [
-                'label' => esc_html__('Service Icon Color', 'easy-addons'),
+                'label' => esc_html__('Icon Color', 'easy-addons'),
                 'type' => Controls_Manager::COLOR,
                 'alpha' => true,
                 'default' => '#172E5A',
@@ -297,7 +355,7 @@ class Service_Widget extends Widget_Base
         $this->add_control(
             'service_icon_color_h',
             [
-                'label' => esc_html__('Service Icon Hover Color', 'easy-addons'),
+                'label' => esc_html__('Icon Hover Color', 'easy-addons'),
                 'type' => Controls_Manager::COLOR,
                 'alpha' => true,
                 'default' => '#ffffff',
@@ -306,10 +364,35 @@ class Service_Widget extends Widget_Base
                 ],
             ]
         );
+
+        $this->add_control(
+            'service_icon_background_bg',
+            [
+                'label' => esc_html__( 'Icon Background Color', 'easy-addons'),
+                'type' => Controls_Manager::COLOR,
+                'selectors' =>['{{WRAPPER}} .easy-services.service-style-3 .service-icon' => 'background: {{VALUE}}'],
+                'condition' => [
+                    'service_style' => ['service-style-3'],
+                ]
+            ]
+        );
+
+        $this->add_control(
+            'service_icon_h_background_bg',
+            [
+                'label' => esc_html__( 'Icon Background Hover Color', 'easy-addons'),
+                'type' => Controls_Manager::COLOR,
+                'selectors' =>['{{WRAPPER}} .easy-services-item:hover .easy-services .service-icon' => 'background: {{VALUE}}'],
+                'condition' => [
+                    'service_style' => ['service-style-3'],
+                ]
+            ]
+        );
+
         $this->add_responsive_control(
             'service_icon_font_size',
             [
-                'label' => esc_html__('Service Icon Size', 'easy-addons'),
+                'label' => esc_html__('Icon Size', 'easy-addons'),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => ['px', '%'],
                 'range' => [
@@ -335,7 +418,7 @@ class Service_Widget extends Widget_Base
         $this->add_responsive_control(
             'service_icon_margin',
             [
-                'label' => esc_html__('Service Icon Margin Bottom', 'easy-addons'),
+                'label' => esc_html__('Icon Margin Bottom', 'easy-addons'),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => ['px', '%'],
                 'range' => [
@@ -358,10 +441,19 @@ class Service_Widget extends Widget_Base
                 ],
             ]
         );
+        $this->end_controls_section();
+
+        $this->start_controls_section(
+            'service_title_style',
+            [
+                'label' => esc_html__('Service Title', 'easy-addons'),
+                'tab' => Controls_Manager::TAB_STYLE,
+            ]
+        );
         $this->add_control(
             'service_title_color',
             [
-                'label' => esc_html__('Service Title Color', 'easy-addons'),
+                'label' => esc_html__('Title Color', 'easy-addons'),
                 'type' => Controls_Manager::COLOR,
                 'alpha' => true,
                 'default' => '#172E5A',
@@ -373,12 +465,12 @@ class Service_Widget extends Widget_Base
         $this->add_control(
             'service_title_color_h',
             [
-                'label' => esc_html__('Service Title Hover Color', 'easy-addons'),
+                'label' => esc_html__('Title Hover Color', 'easy-addons'),
                 'type' => Controls_Manager::COLOR,
                 'alpha' => true,
                 'default' => '#ffffff',
                 'selectors' => [
-                    '{{WRAPPER}} .easy-service:hover .easy-service-title' => 'color: {{VALUE}}',
+                    '{{WRAPPER}} .easy-services-item:hover .easy-service-title' => 'color: {{VALUE}}',
                 ],
             ]
         );
@@ -389,10 +481,20 @@ class Service_Widget extends Widget_Base
                 'selector' => '{{WRAPPER}} .easy-service-title',
             ]
         );
+        $this->end_controls_section();
+
+        $this->start_controls_section(
+            'service_desc_style',
+            [
+                'label' => esc_html__('Service Description', 'easy-addons'),
+                'tab' => Controls_Manager::TAB_STYLE,
+            ]
+        );
+
         $this->add_control(
             'service_desc_color',
             [
-                'label' => esc_html__('Service Description Color', 'easy-addons'),
+                'label' => esc_html__('Description Color', 'easy-addons'),
                 'type' => Controls_Manager::COLOR,
                 'alpha' => true,
                 'default' => '#172E5A',
@@ -404,7 +506,7 @@ class Service_Widget extends Widget_Base
         $this->add_control(
             'service_desc_color_h',
             [
-                'label' => esc_html__('Service Description Hover Color', 'easy-addons'),
+                'label' => esc_html__('Description Hover Color', 'easy-addons'),
                 'type' => Controls_Manager::COLOR,
                 'alpha' => true,
                 'default' => '#ffffff',
@@ -413,44 +515,155 @@ class Service_Widget extends Widget_Base
                 ],
             ]
         );
+
+        $this->add_group_control(
+            Group_Control_Typography::get_type(),
+            [
+                'name' => 'service_desc_typography',
+                'label' => esc_html__('Description Typography', 'easy-addons'),
+                'selector' => '{{WRAPPER}} .easy-service-description',
+            ]
+        );
+
+        $this->end_controls_section();
+
+        $this->start_controls_section(
+            'service_btn_style',
+            [
+                'label' => esc_html__('Service Button', 'easy-addons'),
+                'tab' => Controls_Manager::TAB_STYLE,
+            ]
+        );
+
+        $this->start_controls_tabs(
+            'service_btn_tabs', [
+                'label' => __('Service Button', 'easy-addons'),
+            ]
+        );
+
+        $this->start_controls_tab('service_normal', [
+                'label' => __('Normal','easy-addons'),
+            ]
+        );
         $this->add_group_control(
             Group_Control_Typography::get_type(),
             [
                 'name' => 'service_btn_typography',
-                'selector' => '{{WRAPPER}} .easy-service-description',
+                'selector' => '{{WRAPPER}} .easy-services a.easy-service-link',
             ]
         );
         $this->add_control(
             'service_btn_color',
             [
-                'label' => esc_html__('Service Link Text Color', 'easy-addons'),
+                'label' => esc_html__('Button Text Color', 'easy-addons'),
                 'type' => Controls_Manager::COLOR,
                 'alpha' => true,
                 'default' => '#e74c3c',
                 'selectors' => [
-                    '{{WRAPPER}} .easy-service-link' => 'color: {{VALUE}}',
+                    '{{WRAPPER}} .easy-services a.easy-service-link' => 'color: {{VALUE}}',
                 ],
             ]
         );
+        $this->add_group_control(
+            Group_Control_Background::get_type(),
+            [
+                'name' => 'service_background_bg',
+                'label' => esc_html__( 'Button Background Color', 'easy-addons'),
+                'types' => ['gradient'],
+                'selector' =>'{{WRAPPER}} .easy-services a.easy-service-link',
+            ]
+        );
+
+        $this->add_responsive_control(
+            'service_btn_padding',
+            [
+                'label' => esc_html__('Padding', 'easy-addons'),
+                'type' => Controls_Manager::DIMENSIONS,
+                'size_units' => ['px', '%', 'em'],
+                'selectors' => [
+                    '{{WRAPPER}} .easy-services a.easy-service-link' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+            ]
+        );
+
+        $this->add_responsive_control(
+            'service_btn_top_margin',
+            [
+                'label' => esc_html__('Button Margin Top', 'easy-addons'),
+                'type' => Controls_Manager::SLIDER,
+                'size_units' => ['px', '%'],
+                'range' => [
+                    'px' => [
+                        'min' => 0,
+                        'max' => 100,
+                        'step' => 1,
+                    ],
+                    '%' => [
+                        'min' => 0,
+                        'max' => 100,
+                    ],
+                ],
+                'default' => [
+                    'unit' => 'px',
+                    'size' => 15,
+                ],
+                'selectors' => [
+                    '{{WRAPPER}} .easy-services a.easy-service-link' => 'margin-top: {{SIZE}}{{UNIT}};',
+                ],
+            ]
+        );
+        $this->end_controls_tab();
+
+        $this->start_controls_tab('service_hover', [
+                'label' => __('Hover','easy-addons'),
+            ]
+        );
+
+        $this->add_group_control(
+            Group_Control_Background::get_type(),
+            [
+                'name' => 'service_h_background_bg',
+                'label' => esc_html__( 'Button Hover Background Color', 'easy-addons'),
+                'types' => [ 'gradient'],
+                'selector' =>'{{WRAPPER}} .easy-services a.easy-service-link',
+                'condition' => [
+                    'service_style' => ['service-style-1', 'service-style-2', 'service-style-3'],
+                ]
+            ]
+        );
+
+        $this->add_group_control(
+            Group_Control_Background::get_type(),
+            [
+                'name' => 'service_4_h_background_bg',
+                'label' => esc_html__( 'Button Hover Background Color', 'easy-addons'),
+                'types' => [ 'gradient'],
+                'selector' =>'{{WRAPPER}} .easy-services.service-style-4 .easy-services-item:hover a.easy-service-link:after',
+                'condition' => [
+                    'service_style' => ['service-style-4'],
+                ]
+            ]
+        );
+
         $this->add_control(
             'service_btn_color_h',
             [
-                'label' => esc_html__('Service Link Text Hover Color', 'easy-addons'),
+                'label' => esc_html__('Button Text Hover Color', 'easy-addons'),
                 'type' => Controls_Manager::COLOR,
                 'alpha' => true,
                 'default' => '#33B5BF',
                 'selectors' => [
                     '{{WRAPPER}} .easy-services-item:hover .easy-service-link' => 'color: {{VALUE}}',
                 ],
+                'condition' => [
+                    'service_style' => ['service-style-4'],
+                ]
             ]
         );
-        $this->add_group_control(
-            Group_Control_Typography::get_type(),
-            [
-                'name' => 'service_desc_typography',
-                'selector' => '{{WRAPPER}} .easy-service-link',
-            ]
-        );
+
+        $this->end_controls_tab();
+
+        $this->end_controls_tabs();
 
         $this->end_controls_section();
     }

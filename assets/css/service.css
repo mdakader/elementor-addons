@@ -102,7 +102,7 @@ a.easy-service-link {
     width: 7px;
     height: 0;
     border-radius: 5px;
-    background: #db3157;
+    background: #172E5A;
     position: absolute;
     top: 0;
     left: 0;
@@ -165,7 +165,7 @@ a.easy-service-link {
     color: #172E5A;
     padding: 25px;
     border-radius: inherit;
-    box-shadow: none;
+    box-shadow: 0px 0px 10px 0px rgb(0 0 0 / 12%);
     transition: all 0.5s ease 0s;
 }
 .easy-services.service-style-4 .service-icon {
