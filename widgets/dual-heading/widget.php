@@ -122,7 +122,26 @@ class Dual_Heading extends Widget_Base {
 				'label' => esc_html__( 'Dual Header', 'easy-addons' ),
 			]
 		);
-
+        $this->add_control(
+            'dual_title_tag',
+            [
+                'label'       => __( 'Title HTML Tag', 'easy-addons' ),
+                'description' => __( 'Select a heading tag for title.', 'easy-addons' ),
+                'type'        => Controls_Manager::SELECT,
+                'default'     => 'h2',
+                'options'     => [
+                    'h1'   => 'H1',
+                    'h2'   => 'H2',
+                    'h3'   => 'H3',
+                    'h4'   => 'H4',
+                    'h5'   => 'H5',
+                    'h6'   => 'H6',
+                    'p'   => 'p',
+                    'div'   => 'div',
+                ],
+                'label_block' => true,
+            ]
+        );
 		$this->add_control(
 			'first_title',
 			[
@@ -249,24 +268,23 @@ class Dual_Heading extends Widget_Base {
 		$settings = $this->get_settings_for_display();
 
 		$first_title = $this->get_settings( 'first_title' );
-		$this->add_render_attribute( 'first_title', 'class', 'ea-first-title' );
+		$this->add_render_attribute( 'first_title', 'class', 'easy-first-title' );
 		$this->add_inline_editing_attributes( 'first_title' );
 
 		$last_title = $this->get_settings( 'last_title' );
-		$this->add_render_attribute( 'last_title', 'class', 'ea-last-title' );
+		$this->add_render_attribute( 'last_title', 'class', 'easy-last-title' );
 		$this->add_inline_editing_attributes( 'last_title' );
 		?>
-            <div class="ea-dual-header">
-                <h2 class="ea-title">
+            <div class="easy-dual-header">
+                <<?php echo esc_html($settings['dual_title_tag'])?> class="easy-title">
 	                <?php if(!empty($first_title)):?>
                     <span <?php  $this->print_render_attribute_string( 'first_title' ) ?>> <?php echo esc_html( $first_title ); ?></span>
                     <?php endif;?>
                     <?php if(!empty($last_title)):?>
                     <span <?php  $this->print_render_attribute_string( 'last_title' ) ?>> <?php echo esc_html( $last_title ); ?></span>
                     <?php endif;?>
-                </h2>
+                </<?php echo esc_html($settings['dual_title_tag'])?>>
             </div>
-
 		<?php
 	}
 
