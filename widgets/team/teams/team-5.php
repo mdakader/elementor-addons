@@ -11,7 +11,7 @@ $team_position = $this->get_settings('team_designation');
 $this->add_render_attribute('team_designation', 'class', 'team-member-position');
 
 $team_info = $this->get_settings('team_info');
-$this->add_render_attribute('team_info', 'class', 'team-member-info');
+$this->add_render_attribute('team_info', 'class', 'team-member-desc');
 
 $fallback_defaults = [
     'fa fa-facebook',
@@ -35,10 +35,11 @@ $migration_allowed = Icons_Manager::is_migration_allowed();
                         </small>
                     </h3>
                 <?php endif;?>
-                <p class="description">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio exercitationem facilis laborum
-                    perferendis quasi, ratione.
-                </p>
+                <div class="team-info">
+                    <?php if (!empty($team_info)): ?>
+                        <p <?php $this->print_render_attribute_string('team_info') ?>> <?php echo esc_html($team_info); ?></p>
+                    <?php endif; ?>
+                </div>
                 <ul class="social-links">
                     <?php
                     foreach ($settings['social_icon_list'] as $index => $item) {
