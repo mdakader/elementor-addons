@@ -2,7 +2,9 @@
 
 namespace Easy_Addons\Widgets;
 
+use Elementor\Group_Control_Background;
 use Elementor\Group_Control_Border;
+use Elementor\Group_Control_Box_Shadow;
 use Elementor\Group_Control_Typography;
 use Elementor\Utils;
 use Elementor\Widget_Base;
@@ -31,7 +33,7 @@ class Flip_Box extends Widget_Base {
      *
      */
     public function get_name() {
-        return 'flip-box';
+        return 'easy_flip_box';
     }
 
     /**
@@ -121,7 +123,7 @@ class Flip_Box extends Widget_Base {
         $this->start_controls_section(
             'section_content',
             [
-                'label' => esc_html__( 'Dual Header', 'easy-addons' ),
+                'label' => esc_html__( 'Flip Box', 'easy-addons' ),
             ]
         );
         $this->add_control(
@@ -137,9 +139,9 @@ class Flip_Box extends Widget_Base {
         $this->add_control(
             'flip_box_title',
             [
-                'label'       => esc_html__( 'First Title', 'easy-addons' ),
+                'label'       => esc_html__( 'Flip Box Title', 'easy-addons' ),
                 'type'        => Controls_Manager::TEXTAREA,
-                'placeholder' => esc_html__( 'Heading Text Here', 'easy-addons' ),
+                'placeholder' => esc_html__( 'Enter Flip Box Title Text Here', 'easy-addons' ),
                 'default'     => esc_html__( 'Heading Text Here', 'easy-addons' ),
             ]
         );
@@ -147,7 +149,7 @@ class Flip_Box extends Widget_Base {
         $this->add_control(
             'flip_box_desc',
             [
-                'label'       => esc_html__( 'Last Title', 'easy-addons' ),
+                'label'       => esc_html__( 'Description Text Here', 'easy-addons' ),
                 'type'        => Controls_Manager::TEXTAREA,
                 'placeholder' => esc_html__( 'Description Text Here', 'easy-addons' ),
                 'default'     => esc_html__( 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s', 'easy-addons' ),
@@ -177,41 +179,13 @@ class Flip_Box extends Widget_Base {
                 'default'     => esc_html__( 'Read More', 'easy-addons' ),
             ]
         );
-        $this->add_responsive_control(
-            'align',
-            [
-                'label'     => __( 'Alignment', 'elementor' ),
-                'type'      => Controls_Manager::CHOOSE,
-                'options'   => [
-                    'left'    => [
-                        'title' => esc_html__( 'Left', 'easy-addons' ),
-                        'icon'  => 'eicon-text-align-left',
-                    ],
-                    'center'  => [
-                        'title' => esc_html__( 'Center', 'easy-addons' ),
-                        'icon'  => 'eicon-text-align-center',
-                    ],
-                    'right'   => [
-                        'title' => esc_html__( 'Right', 'easy-addons' ),
-                        'icon'  => 'eicon-text-align-right',
-                    ],
-                    'justify' => [
-                        'title' => esc_html__( 'Justified', 'easy-addons' ),
-                        'icon'  => 'eicon-text-align-justify',
-                    ],
-                ],
-                'default'   => 'center',
-                'selectors' => [
-                    '{{WRAPPER}} .flip-box-content' => 'text-align: {{VALUE}};',
-                ],
-            ]
-        );
+
         $this->end_controls_section();
 
         $this->start_controls_section(
             'section_style',
             [
-                'label' => esc_html__( 'Style', 'easy-addons' ),
+                'label' => esc_html__( 'Flip Box', 'easy-addons' ),
                 'tab'   => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -238,73 +212,12 @@ class Flip_Box extends Widget_Base {
             ]
         );
 
-        $this->add_control(
-            'flip_box_title_color',
-            [
-                'label'     => esc_html__( 'Flip Box Title Color', 'easy-addons' ),
-                'type'      => Controls_Manager::COLOR,
-                'alpha'     => true,
-                'default'   => '#ffffff',
-                'selectors' => [
-                    '{{WRAPPER}} .easy-flip-box-title' => 'color: {{VALUE}}',
-                ],
-            ]
-        );
         $this->add_group_control(
-            Group_Control_Typography::get_type(),
+            Group_Control_Box_Shadow::get_type(),
             [
-                'name'     => 'flip_box_title_typography',
-                'selector' => '{{WRAPPER}} .easy-flip-box-title',
-            ]
-        );
-        $this->add_control(
-            'flip_box_desc_color',
-            [
-                'label'     => esc_html__( 'Flip Box Description Color', 'easy-addons' ),
-                'type'      => Controls_Manager::COLOR,
-                'alpha'     => true,
-                'default'   => '#ffffff',
-                'selectors' => [
-                    '{{WRAPPER}} .easy-flip-box-desc' => 'color: {{VALUE}}',
-                ],
-            ]
-        );
-        $this->add_group_control(
-            Group_Control_Typography::get_type(),
-            [
-                'name'     => 'flip_box_desc_typography',
-                'selector' => '{{WRAPPER}} .easy-flip-box-desc',
-            ]
-        );
-        $this->add_control(
-            'flip_box_link_color',
-            [
-                'label'     => esc_html__( 'Flip Box Link Text Color', 'easy-addons' ),
-                'type'      => Controls_Manager::COLOR,
-                'alpha'     => true,
-                'default'   => '#ffffff',
-                'selectors' => [
-                    '{{WRAPPER}} .easy-flip-box-link' => 'color: {{VALUE}}',
-                ],
-            ]
-        );
-        $this->add_control(
-            'flip_box_link_color_h',
-            [
-                'label'     => esc_html__( 'Flip Box Link Text Hover Color', 'easy-addons' ),
-                'type'      => Controls_Manager::COLOR,
-                'alpha'     => true,
-                'default'   => '#33B5BF',
-                'selectors' => [
-                    '{{WRAPPER}} .flip-box-back:hover .easy-flip-box-link' => 'color: {{VALUE}}',
-                ],
-            ]
-        );
-        $this->add_group_control(
-            Group_Control_Typography::get_type(),
-            [
-                'name'     => 'flip_box_link_typography',
-                'selector' => '{{WRAPPER}} .easy-flip-box-link',
+                'name' => 'flip_box_shadow',
+                'label' => esc_html__( 'Box Shadow', 'easy-addons' ),
+                'selector' => '{{WRAPPER}} .your-class',
             ]
         );
         $this->add_responsive_control(
@@ -326,6 +239,183 @@ class Flip_Box extends Widget_Base {
                 'selector' => '{{WRAPPER}} .inner-content',
             ]
         );
+        $this->add_responsive_control(
+            'align',
+            [
+                'label'     => __( 'Alignment', 'elementor' ),
+                'type'      => Controls_Manager::CHOOSE,
+                'options'   => [
+                    'left'    => [
+                        'title' => esc_html__( 'Left', 'easy-addons' ),
+                        'icon'  => 'eicon-text-align-left',
+                    ],
+                    'center'  => [
+                        'title' => esc_html__( 'Center', 'easy-addons' ),
+                        'icon'  => 'eicon-text-align-center',
+                    ],
+                    'right'   => [
+                        'title' => esc_html__( 'Right', 'easy-addons' ),
+                        'icon'  => 'eicon-text-align-right',
+                    ],
+                    'justify' => [
+                        'title' => esc_html__( 'Justified', 'easy-addons' ),
+                        'icon'  => 'eicon-text-align-justify',
+                    ],
+                ],
+                'default'   => 'center',
+                'selectors' => [
+                    '{{WRAPPER}} .flip-box-content .inner-content' => 'text-align: {{VALUE}};',
+                ],
+            ]
+        );
+        $this->end_controls_section();
+
+        $this->start_controls_section(
+            'flip_back_style',
+            [
+                'label' => esc_html__( 'Flip Box Back', 'easy-addons' ),
+                'tab'   => Controls_Manager::TAB_STYLE,
+            ]
+        );
+        $this->add_control(
+            'flip_box_title_color',
+            [
+                'label'     => esc_html__( 'Title Color', 'easy-addons' ),
+                'type'      => Controls_Manager::COLOR,
+                'alpha'     => true,
+                'default'   => '#ffffff',
+                'selectors' => [
+                    '{{WRAPPER}} .easy-flip-box-title' => 'color: {{VALUE}}',
+                ],
+            ]
+        );
+        $this->add_group_control(
+            Group_Control_Typography::get_type(),
+            [
+                'name'     => 'flip_box_title_typography',
+                'label'     => esc_html__( 'Title Typography', 'easy-addons' ),
+                'selector' => '{{WRAPPER}} .easy-flip-box-title',
+            ]
+        );
+        $this->add_control(
+            'flip_box_desc_color',
+            [
+                'label'     => esc_html__( 'Description Color', 'easy-addons' ),
+                'type'      => Controls_Manager::COLOR,
+                'alpha'     => true,
+                'default'   => '#ffffff',
+                'selectors' => [
+                    '{{WRAPPER}} .easy-flip-box-desc' => 'color: {{VALUE}}',
+                ],
+            ]
+        );
+        $this->add_group_control(
+            Group_Control_Typography::get_type(),
+            [
+                'name'     => 'flip_box_desc_typography',
+                'label'     => esc_html__( 'Description Typography', 'easy-addons' ),
+                'selector' => '{{WRAPPER}} .easy-flip-box-desc',
+            ]
+        );
+        $this->end_controls_section();
+
+
+        $this->start_controls_section(
+            'flip_box_btn_style',
+            [
+                'label' => esc_html__('Flip Box Button', 'easy-addons'),
+                'tab' => Controls_Manager::TAB_STYLE,
+            ]
+        );
+
+        $this->start_controls_tabs(
+            'flip_box_btn__tabs', [
+                'label' => __('Flip Box Button', 'easy-addons'),
+            ]
+        );
+
+        $this->start_controls_tab('flip_box_btn_normal', [
+                'label' => __('Normal','easy-addons'),
+            ]
+        );
+
+        $this->add_control(
+            'flip_box_link_color',
+            [
+                'label'     => esc_html__( 'Button Text Color', 'easy-addons' ),
+                'type'      => Controls_Manager::COLOR,
+                'alpha'     => true,
+                'default'   => '#ffffff',
+                'selectors' => [
+                    '{{WRAPPER}} .easy-flip-box-link' => 'color: {{VALUE}}',
+                ],
+            ]
+        );
+
+        $this->add_group_control(
+            Group_Control_Typography::get_type(),
+            [
+                'name'     => 'flip_box_link_typography',
+                'label'     => esc_html__( 'Button Text Typography', 'easy-addons' ),
+                'selector' => '{{WRAPPER}} .easy-flip-box-link',
+            ]
+        );
+
+        $this->add_group_control(
+            Group_Control_Background::get_type(),
+            [
+                'name' => 'flip_box_btn_bg',
+                'label' => esc_html__( 'Button Background', 'easy-addons'),
+                'types' => [ 'classic', 'gradient'],
+                'selector' =>'{{WRAPPER}} a.easy-cta-link-text',
+            ]
+        );
+
+        $this->add_responsive_control(
+            'flip_box_btn_padding',
+            [
+                'label' => esc_html__( 'Button Padding', 'easy-addons'),
+                'type' => Controls_Manager::DIMENSIONS,
+                'size_units' => [ 'px', '%', 'em' ],
+                'selectors' => [
+                    '{{WRAPPER}} a.easy-cta-link-text' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+            ]
+        );
+
+        $this->end_controls_tab();
+
+        $this->start_controls_tab('flip_box_btn_hover', [
+                'label' => __('Hover','easy-addons'),
+            ]
+        );
+        $this->add_control(
+            'flip_box_link_color_h',
+            [
+                'label'     => esc_html__( 'Button Text Hover Color', 'easy-addons' ),
+                'type'      => Controls_Manager::COLOR,
+                'alpha'     => true,
+                'default'   => '#0F172A',
+                'selectors' => [
+                    '{{WRAPPER}} .inner-content a.easy-flip-box-link:hover' => 'color: {{VALUE}}',
+                ],
+            ]
+        );
+        $this->add_group_control(
+            Group_Control_Background::get_type(),
+            [
+                'name' => 'flip_box_btn_h_bg',
+                'label' => esc_html__( 'Button Hover Background Color', 'easy-addons'),
+                'types' => [ 'classic', 'gradient'],
+                'selector' =>'{{WRAPPER}} .inner-content a.easy-flip-box-link:before',
+            ]
+        );
+
+
+        $this->end_controls_tab();
+
+        $this->end_controls_tabs();
+
         $this->end_controls_section();
     }
 
@@ -342,18 +432,18 @@ class Flip_Box extends Widget_Base {
         $settings = $this->get_settings_for_display();
 
         $flip_box_title = $this->get_settings( 'flip_box_title' );
-        $this->add_render_attribute( 'flip_box_title', 'class', 'ea-flip-box-title' );
+        $this->add_render_attribute( 'flip_box_title', 'class', 'easy-flip-box-title' );
         $this->add_inline_editing_attributes( 'flip_box_title' );
 
         $flip_box_desc = $this->get_settings( 'flip_box_desc' );
-        $this->add_render_attribute( 'flip_box_desc', 'class', 'ea-flip-box-desc' );
+        $this->add_render_attribute( 'flip_box_desc', 'class', 'easy-flip-box-desc' );
         $this->add_inline_editing_attributes( 'flip_box_desc' );
 
         $flip_box_link_text = $this->get_settings( 'flip_box_link_text' );
-        $this->add_render_attribute( 'flip_box_link_text', 'class', 'ea-flip-box-link' );
+        $this->add_render_attribute( 'flip_box_link_text', 'class', 'easy-flip-box-link' );
         $this->add_inline_editing_attributes( 'flip_box_link_text' );
         ?>
-        <div class="ea-flip-box">
+        <div class="easy-flip-box">
             <div class="flip-box-card">
                 <div class="flip-box-content">
                     <div class="flip-box-front">

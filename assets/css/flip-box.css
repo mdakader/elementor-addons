@@ -38,6 +38,7 @@
     justify-content: center;
     transition: 0.3s ease;
     padding: 30px;
+    box-shadow: rgb(0 0 0 / 35%) 0px 5px 15px;
 }
 
 .flip-box-front {
@@ -67,14 +68,37 @@ p.easy-flip-box-desc {
 }
 
 .inner-content a {
+    display: inline-flex;
+    align-items: center;
     color: #fff;
-    font-size: 16px;
-    line-height: 22px;
-    font-weight: 500;
-    text-transform: capitalize;
+    padding: 15px 30px;
+    margin-top: 25px;
+    background: #192a56;
+    transition: all 0.4s ease 0s;
+    position: relative;
+    z-index: 1;
 }
 
+.inner-content a.easy-flip-box-link:hover{
+    color: #0F172A;
+}
+
+.inner-content a:before {
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 100%;
+    background: #ffffff;
+    z-index: -1;
+    transition: all 0.4s ease 0s;
+}
+
+.inner-content a:hover:before {
+    width: 100%;
+}
 .inner-content {
-    border: 1px solid #ffffff;
     padding: 30px;
+    text-align: center;
 }
