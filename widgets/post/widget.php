@@ -835,7 +835,6 @@ class Post_Card_Widget extends Widget_Base
                             include EASY_ADDONS_PATH . '/widgets/post/posts/post-1.php';
                             break;
                     }
-
                 endwhile;
                 wp_reset_postdata();
                 ?>

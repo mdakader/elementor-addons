@@ -1,0 +1,1154 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Easy Addons\n"
+"POT-Creation-Date: 2022-09-07 19:48+0600\n"
+"PO-Revision-Date: 2022-09-07 19:49+0600\n"
+"Last-Translator: \n"
+"Language-Team: easy-addons\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.1\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: __;esc_html__\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: widgets/call-to-action/widget.php:44 widgets/call-to-action/widget.php:121
+msgid "Call To Action"
+msgstr ""
+
+#: widgets/call-to-action/widget.php:128
+msgid "Call To Action Text"
+msgstr ""
+
+#: widgets/call-to-action/widget.php:130 widgets/dual-heading/widget.php:150
+#: widgets/dual-heading/widget.php:151
+msgid "Heading First Text Here"
+msgstr ""
+
+#: widgets/call-to-action/widget.php:131
+msgid ""
+"Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+msgstr ""
+
+#: widgets/call-to-action/widget.php:138 widgets/flip-box/widget.php:161
+#: widgets/pricing/widget.php:237 widgets/service/widget.php:184
+#: widgets/team/widget.php:284
+msgid "Link"
+msgstr ""
+
+#: widgets/call-to-action/widget.php:140 widgets/flip-box/widget.php:163
+#: widgets/pricing/widget.php:239 widgets/service/widget.php:186
+#: widgets/team/widget.php:292
+msgid "https://your-link.com"
+msgstr ""
+
+#: widgets/call-to-action/widget.php:153 widgets/flip-box/widget.php:176
+#: widgets/service/widget.php:199
+msgid "Link Text"
+msgstr ""
+
+#: widgets/call-to-action/widget.php:155 widgets/flip-box/widget.php:178
+#: widgets/service/widget.php:201
+msgid "CTA Link Text"
+msgstr ""
+
+#: widgets/call-to-action/widget.php:156 widgets/flip-box/widget.php:179
+#: widgets/post/widget.php:191 widgets/post/widget.php:520
+#: widgets/service/widget.php:202
+msgid "Read More"
+msgstr ""
+
+#: widgets/call-to-action/widget.php:165 widgets/call-to-action/widget.php:172
+msgid "CTA Style"
+msgstr ""
+
+#: widgets/call-to-action/widget.php:175
+msgid "CTA Style 1"
+msgstr ""
+
+#: widgets/call-to-action/widget.php:176
+msgid "CTA Style 2"
+msgstr ""
+
+#: widgets/call-to-action/widget.php:186 widgets/pricing/widget.php:300
+#: widgets/pricing/widget.php:310 widgets/pricing/widget.php:363
+#: widgets/pricing/widget.php:486 widgets/pricing/widget.php:598
+#: widgets/pricing/widget.php:635 widgets/testimonial/widget.php:401
+msgid "Background"
+msgstr ""
+
+#: widgets/call-to-action/widget.php:195 widgets/counter/widget.php:338
+#: widgets/counter/widget.php:433 widgets/flip-box/widget.php:226
+#: widgets/post/widget.php:673 widgets/pricing/widget.php:331
+#: widgets/pricing/widget.php:464 widgets/service/widget.php:308
+#: widgets/service/widget.php:580
+msgid "Padding"
+msgstr ""
+
+#: widgets/call-to-action/widget.php:208 widgets/counter/widget.php:235
+#: widgets/dual-heading/widget.php:168 widgets/flip-box/widget.php:245
+#: widgets/post/widget.php:363 widgets/service/widget.php:217
+msgid "Alignment"
+msgstr ""
+
+#: widgets/call-to-action/widget.php:212 widgets/counter/widget.php:239
+#: widgets/dual-heading/widget.php:172 widgets/flip-box/widget.php:249
+#: widgets/post/widget.php:368 widgets/service/widget.php:221
+msgid "Left"
+msgstr ""
+
+#: widgets/call-to-action/widget.php:216 widgets/counter/widget.php:243
+#: widgets/dual-heading/widget.php:176 widgets/flip-box/widget.php:253
+#: widgets/image-gallery/widget.php:158 widgets/post/widget.php:372
+#: widgets/service/widget.php:225
+msgid "Center"
+msgstr ""
+
+#: widgets/call-to-action/widget.php:220 widgets/counter/widget.php:247
+#: widgets/dual-heading/widget.php:180 widgets/flip-box/widget.php:257
+#: widgets/image-gallery/widget.php:159 widgets/post/widget.php:376
+#: widgets/service/widget.php:229
+msgid "Right"
+msgstr ""
+
+#: widgets/call-to-action/widget.php:224 widgets/counter/widget.php:251
+#: widgets/dual-heading/widget.php:184 widgets/flip-box/widget.php:261
+#: widgets/post/widget.php:380 widgets/service/widget.php:233
+msgid "Justified"
+msgstr ""
+
+#: widgets/call-to-action/widget.php:242
+msgid "CTA Description"
+msgstr ""
+
+#: widgets/call-to-action/widget.php:250
+msgid "CTA Description Text Color"
+msgstr ""
+
+#: widgets/call-to-action/widget.php:263
+msgid "CTA Description Typography"
+msgstr ""
+
+#: widgets/call-to-action/widget.php:273 widgets/call-to-action/widget.php:280
+msgid "CTA Button"
+msgstr ""
+
+#: widgets/call-to-action/widget.php:285 widgets/flip-box/widget.php:338
+#: widgets/post/widget.php:573 widgets/post/widget.php:689
+#: widgets/pricing/widget.php:292 widgets/pricing/widget.php:579
+#: widgets/service/widget.php:545 widgets/team/widget.php:463
+msgid "Normal"
+msgstr ""
+
+#: widgets/call-to-action/widget.php:291 widgets/flip-box/widget.php:345
+#: widgets/service/widget.php:558
+msgid "Button Text Color"
+msgstr ""
+
+#: widgets/call-to-action/widget.php:304
+msgid "CTA Button Background"
+msgstr ""
+
+#: widgets/call-to-action/widget.php:314
+msgid "CTA Button Text Typography"
+msgstr ""
+
+#: widgets/call-to-action/widget.php:322
+msgid "CTA Button Padding"
+msgstr ""
+
+#: widgets/call-to-action/widget.php:334 widgets/flip-box/widget.php:389
+#: widgets/post/widget.php:631 widgets/post/widget.php:749
+#: widgets/pricing/widget.php:355 widgets/pricing/widget.php:616
+#: widgets/service/widget.php:618 widgets/team/widget.php:561
+msgid "Hover"
+msgstr ""
+
+#: widgets/call-to-action/widget.php:340 widgets/flip-box/widget.php:395
+#: widgets/service/widget.php:651
+msgid "Button Text Hover Color"
+msgstr ""
+
+#: widgets/call-to-action/widget.php:353
+msgid "CTA Button Hover Background"
+msgstr ""
+
+#: widgets/class-easy-addons-widget.php:196
+msgid "Easy Addons"
+msgstr ""
+
+#: widgets/counter/widget.php:50
+msgid "Counter Up"
+msgstr ""
+
+#: widgets/counter/widget.php:132
+msgid "Counter"
+msgstr ""
+
+#: widgets/counter/widget.php:138
+msgid "Counter Up Style"
+msgstr ""
+
+#: widgets/counter/widget.php:141
+msgid "Counter Up Style 1"
+msgstr ""
+
+#: widgets/counter/widget.php:142
+msgid "Counter Up Style 2"
+msgstr ""
+
+#: widgets/counter/widget.php:143
+msgid "Counter Up Style 3"
+msgstr ""
+
+#: widgets/counter/widget.php:151 widgets/counter/widget.php:170
+msgid "Counter Number"
+msgstr ""
+
+#: widgets/counter/widget.php:159 widgets/pricing/widget.php:197
+#: widgets/team/widget.php:208
+msgid "Icon"
+msgstr ""
+
+#: widgets/counter/widget.php:172
+msgid "Cups of coffee"
+msgstr ""
+
+#: widgets/counter/widget.php:179
+msgid "Number Suffix"
+msgstr ""
+
+#: widgets/counter/widget.php:185
+msgid "Plus"
+msgstr ""
+
+#: widgets/counter/widget.php:201
+msgid "Counter Delay"
+msgstr ""
+
+#: widgets/counter/widget.php:213
+msgid "Animation Duration"
+msgstr ""
+
+#: widgets/counter/widget.php:227 widgets/dual-heading/widget.php:199
+#: widgets/image-gallery/widget.php:144
+msgid "Style"
+msgstr ""
+
+#: widgets/counter/widget.php:264 widgets/counter/widget.php:358
+#: widgets/post/widget.php:605 widgets/pricing/widget.php:669
+#: widgets/team/widget.php:538 widgets/testimonial/widget.php:320
+msgid "Background Color"
+msgstr ""
+
+#: widgets/counter/widget.php:284 widgets/counter/widget.php:416
+#: widgets/flip-box/widget.php:219 widgets/post/widget.php:344
+#: widgets/pricing/widget.php:323 widgets/pricing/widget.php:373
+#: widgets/pricing/widget.php:644 widgets/service/widget.php:321
+msgid "Box Shadow"
+msgstr ""
+
+#: widgets/counter/widget.php:302 widgets/counter/widget.php:379
+#: widgets/flip-box/widget.php:238 widgets/service/widget.php:329
+#: widgets/testimonial/widget.php:479
+msgid "Border"
+msgstr ""
+
+#: widgets/counter/widget.php:318 widgets/counter/widget.php:395
+#: widgets/post/widget.php:557 widgets/pricing/widget.php:343
+msgid "Border Radius"
+msgstr ""
+
+#: widgets/counter/widget.php:454
+msgid "Counter Number Typography"
+msgstr ""
+
+#: widgets/counter/widget.php:461
+msgid "Number Color"
+msgstr ""
+
+#: widgets/counter/widget.php:472 widgets/flip-box/widget.php:316
+#: widgets/service/widget.php:523
+msgid "Description Typography"
+msgstr ""
+
+#: widgets/counter/widget.php:479 widgets/flip-box/widget.php:303
+#: widgets/service/widget.php:497
+msgid "Description Color"
+msgstr ""
+
+#: widgets/counter/widget.php:489 widgets/service/widget.php:395
+msgid "Icon Size"
+msgstr ""
+
+#: widgets/counter/widget.php:511 widgets/post/widget.php:706
+#: widgets/service/widget.php:346
+msgid "Icon Color"
+msgstr ""
+
+#: widgets/dual-heading/widget.php:45
+msgid "Dual Heading"
+msgstr ""
+
+#: widgets/dual-heading/widget.php:122
+msgid "Dual Header"
+msgstr ""
+
+#: widgets/dual-heading/widget.php:128 widgets/post/widget.php:136
+msgid "Title HTML Tag"
+msgstr ""
+
+#: widgets/dual-heading/widget.php:129
+msgid "Select a heading tag for title."
+msgstr ""
+
+#: widgets/dual-heading/widget.php:148
+msgid "First Title"
+msgstr ""
+
+#: widgets/dual-heading/widget.php:158
+msgid "Last Title"
+msgstr ""
+
+#: widgets/dual-heading/widget.php:160 widgets/dual-heading/widget.php:161
+msgid "Heading Last Text Here"
+msgstr ""
+
+#: widgets/dual-heading/widget.php:207
+msgid "Text Transform"
+msgstr ""
+
+#: widgets/dual-heading/widget.php:211
+msgid "None"
+msgstr ""
+
+#: widgets/dual-heading/widget.php:212
+msgid "UPPERCASE"
+msgstr ""
+
+#: widgets/dual-heading/widget.php:213
+msgid "lowercase"
+msgstr ""
+
+#: widgets/dual-heading/widget.php:214
+msgid "Capitalize"
+msgstr ""
+
+#: widgets/dual-heading/widget.php:225
+msgid "First Title Color"
+msgstr ""
+
+#: widgets/dual-heading/widget.php:238
+msgid "Last Title Color"
+msgstr ""
+
+#: widgets/flip-box/widget.php:49 widgets/flip-box/widget.php:126
+#: widgets/flip-box/widget.php:188
+msgid "Flip Box"
+msgstr ""
+
+#: widgets/flip-box/widget.php:132 widgets/testimonial/widget.php:119
+msgid "Choose Image"
+msgstr ""
+
+#: widgets/flip-box/widget.php:142
+msgid "Flip Box Title"
+msgstr ""
+
+#: widgets/flip-box/widget.php:144
+msgid "Enter Flip Box Title Text Here"
+msgstr ""
+
+#: widgets/flip-box/widget.php:145
+msgid "Heading Text Here"
+msgstr ""
+
+#: widgets/flip-box/widget.php:152 widgets/flip-box/widget.php:154
+msgid "Description Text Here"
+msgstr ""
+
+#: widgets/flip-box/widget.php:155
+msgid ""
+"Lorem Ipsum is simply dummy text of the printing and typesetting industry. "
+"Lorem Ipsum has been the industry standard dummy text ever since the 1500s"
+msgstr ""
+
+#: widgets/flip-box/widget.php:195
+msgid "Flip Box Height"
+msgstr ""
+
+#: widgets/flip-box/widget.php:276
+msgid "Flip Box Back"
+msgstr ""
+
+#: widgets/flip-box/widget.php:283 widgets/service/widget.php:456
+msgid "Title Color"
+msgstr ""
+
+#: widgets/flip-box/widget.php:296
+msgid "Title Typography"
+msgstr ""
+
+#: widgets/flip-box/widget.php:326 widgets/flip-box/widget.php:333
+msgid "Flip Box Button"
+msgstr ""
+
+#: widgets/flip-box/widget.php:359
+msgid "Button Text Typography"
+msgstr ""
+
+#: widgets/flip-box/widget.php:368
+msgid "Button Background"
+msgstr ""
+
+#: widgets/flip-box/widget.php:377
+msgid "Button Padding"
+msgstr ""
+
+#: widgets/flip-box/widget.php:408 widgets/service/widget.php:626
+#: widgets/service/widget.php:639
+msgid "Button Hover Background Color"
+msgstr ""
+
+#: widgets/image-gallery/widget.php:47 widgets/image-gallery/widget.php:124
+msgid "Image Gallery"
+msgstr ""
+
+#: widgets/image-gallery/widget.php:133
+msgid "Add Images"
+msgstr ""
+
+#: widgets/image-gallery/widget.php:152
+msgid "Justified Gallery Image"
+msgstr ""
+
+#: widgets/image-gallery/widget.php:156
+msgid "Justify"
+msgstr ""
+
+#: widgets/image-gallery/widget.php:157
+msgid "No Justify"
+msgstr ""
+
+#: widgets/image-gallery/widget.php:166 widgets/team/widget.php:510
+#: widgets/testimonial/widget.php:495
+msgid "Margin"
+msgstr ""
+
+#: widgets/post/posts/functions-post.php:146
+msgid "Posted by"
+msgstr ""
+
+#: widgets/post/posts/functions-post.php:182
+msgid " "
+msgstr ""
+
+#: widgets/post/posts/functions-post.php:186
+msgid "Posted in"
+msgstr ""
+
+#: widgets/post/posts/functions-post.php:201
+msgid ", "
+msgstr ""
+
+#: widgets/post/posts/functions-post.php:205
+msgid "Tags:"
+msgstr ""
+
+#: widgets/post/posts/functions-post.php:224
+#, php-format
+msgid "Leave a comment<span class=\"screen-reader-text\"> on %s</span>"
+msgstr ""
+
+#: widgets/post/widget.php:25
+msgid "Post Card"
+msgstr ""
+
+#: widgets/post/widget.php:68
+msgid "Post Content"
+msgstr ""
+
+#: widgets/post/widget.php:74
+msgid "Post Card Style"
+msgstr ""
+
+#: widgets/post/widget.php:77
+msgid "Post Card Style 1"
+msgstr ""
+
+#: widgets/post/widget.php:78
+msgid "Post Card Style 2"
+msgstr ""
+
+#: widgets/post/widget.php:79
+msgid "Post Card Style 3"
+msgstr ""
+
+#: widgets/post/widget.php:80
+msgid "Post Card Style 4"
+msgstr ""
+
+#: widgets/post/widget.php:88
+msgid "Columns"
+msgstr ""
+
+#: widgets/post/widget.php:109
+msgid "Display No. of Posts"
+msgstr ""
+
+#: widgets/post/widget.php:125
+msgid "Show Title"
+msgstr ""
+
+#: widgets/post/widget.php:128
+msgid "Off"
+msgstr ""
+
+#: widgets/post/widget.php:129
+msgid "On"
+msgstr ""
+
+#: widgets/post/widget.php:158 widgets/post/widget.php:468
+msgid "Excerpt"
+msgstr ""
+
+#: widgets/post/widget.php:160 widgets/post/widget.php:193
+#: widgets/post/widget.php:213 widgets/testimonial/widget.php:252
+#: widgets/testimonial/widget.php:345
+msgid "Show"
+msgstr ""
+
+#: widgets/post/widget.php:161 widgets/post/widget.php:194
+#: widgets/post/widget.php:214 widgets/testimonial/widget.php:253
+#: widgets/testimonial/widget.php:346
+msgid "Hide"
+msgstr ""
+
+#: widgets/post/widget.php:168
+msgid "Excerpt Length"
+msgstr ""
+
+#: widgets/post/widget.php:176
+msgid "Excerpt From"
+msgstr ""
+
+#: widgets/post/widget.php:202
+msgid "Read More Text"
+msgstr ""
+
+#: widgets/post/widget.php:204
+msgid "Read More »"
+msgstr ""
+
+#: widgets/post/widget.php:211
+msgid "Show Meta Data"
+msgstr ""
+
+#: widgets/post/widget.php:222
+msgid "Meta Data"
+msgstr ""
+
+#: widgets/post/widget.php:229
+msgid "Author"
+msgstr ""
+
+#: widgets/post/widget.php:230 widgets/post/widget.php:272
+msgid "Date"
+msgstr ""
+
+#: widgets/post/widget.php:231
+msgid "Comments"
+msgstr ""
+
+#: widgets/post/widget.php:232
+msgid "Tags"
+msgstr ""
+
+#: widgets/post/widget.php:233 widgets/post/widget.php:550
+#: widgets/post/widget.php:568 widgets/post/widget.php:579
+#: widgets/post/widget.php:684
+msgid "Category"
+msgstr ""
+
+#: widgets/post/widget.php:244
+msgid "Query"
+msgstr ""
+
+#: widgets/post/widget.php:250
+msgid "Categories"
+msgstr ""
+
+#: widgets/post/widget.php:254
+msgid "Select the categories you want to show"
+msgstr ""
+
+#: widgets/post/widget.php:261
+msgid "Advanced"
+msgstr ""
+
+#: widgets/post/widget.php:268
+msgid "Order By"
+msgstr ""
+
+#: widgets/post/widget.php:273 widgets/post/widget.php:408
+msgid "Title"
+msgstr ""
+
+#: widgets/post/widget.php:274
+msgid "Menu Order"
+msgstr ""
+
+#: widgets/post/widget.php:275
+msgid "Random"
+msgstr ""
+
+#: widgets/post/widget.php:282
+msgid "Sort By"
+msgstr ""
+
+#: widgets/post/widget.php:286
+msgid "ASC"
+msgstr ""
+
+#: widgets/post/widget.php:287
+msgid "DESC"
+msgstr ""
+
+#: widgets/post/widget.php:296
+msgid "Post Card Layout"
+msgstr ""
+
+#: widgets/post/widget.php:302
+msgid "Grid Gap"
+msgstr ""
+
+#: widgets/post/widget.php:322
+msgid "Rows Gap"
+msgstr ""
+
+#: widgets/post/widget.php:351
+msgid "Content Box Color"
+msgstr ""
+
+#: widgets/post/widget.php:401 widgets/testimonial/widget.php:95
+msgid "Content"
+msgstr ""
+
+#: widgets/post/widget.php:426 widgets/post/widget.php:479
+#: widgets/post/widget.php:537 widgets/post/widget.php:594
+#: widgets/pricing/widget.php:681 widgets/team/widget.php:348
+#: widgets/team/widget.php:395 widgets/team/widget.php:437
+#: widgets/team/widget.php:522 widgets/testimonial/widget.php:306
+#: widgets/testimonial/widget.php:354 widgets/testimonial/widget.php:390
+#: widgets/testimonial/widget.php:429 widgets/testimonial/widget.php:457
+#: widgets/testimonial/widget.php:522
+msgid "Color"
+msgstr ""
+
+#: widgets/post/widget.php:438 widgets/post/widget.php:637
+#: widgets/post/widget.php:755 widgets/team/widget.php:359
+#: widgets/team/widget.php:406 widgets/team/widget.php:568
+msgid "Hover Color"
+msgstr ""
+
+#: widgets/post/widget.php:450 widgets/post/widget.php:502
+#: widgets/post/widget.php:615 widgets/post/widget.php:731
+msgid "Spacing"
+msgstr ""
+
+#: widgets/post/widget.php:648 widgets/team/widget.php:580
+msgid "Hover Background Color"
+msgstr ""
+
+#: widgets/post/widget.php:665
+msgid "Post Meta"
+msgstr ""
+
+#: widgets/post/widget.php:717
+msgid "Text Color"
+msgstr ""
+
+#: widgets/pricing/widget.php:41 widgets/pricing/widget.php:188
+#: widgets/pricing/widget.php:190
+msgid "Price Table"
+msgstr ""
+
+#: widgets/pricing/widget.php:108 widgets/pricing/widget.php:387
+msgid "Header"
+msgstr ""
+
+#: widgets/pricing/widget.php:115
+msgid "Price Table Style"
+msgstr ""
+
+#: widgets/pricing/widget.php:118
+msgid "Pricing Card Style 1"
+msgstr ""
+
+#: widgets/pricing/widget.php:119
+msgid "Pricing Card Style 2"
+msgstr ""
+
+#: widgets/pricing/widget.php:120
+msgid "Pricing Card Style 3"
+msgstr ""
+
+#: widgets/pricing/widget.php:128
+msgid "Price Table Title"
+msgstr ""
+
+#: widgets/pricing/widget.php:130
+msgid "Standard"
+msgstr ""
+
+#: widgets/pricing/widget.php:131 widgets/pricing/widget.php:255
+msgid "Type your title here"
+msgstr ""
+
+#: widgets/pricing/widget.php:140 widgets/pricing/widget.php:158
+#: widgets/pricing/widget.php:429
+msgid "Price"
+msgstr ""
+
+#: widgets/pricing/widget.php:148
+msgid "Currency"
+msgstr ""
+
+#: widgets/pricing/widget.php:150
+msgid "$"
+msgstr ""
+
+#: widgets/pricing/widget.php:151
+msgid "Type Price Currency $"
+msgstr ""
+
+#: widgets/pricing/widget.php:160
+msgid "25"
+msgstr ""
+
+#: widgets/pricing/widget.php:161
+msgid "Type Price Amount 25"
+msgstr ""
+
+#: widgets/pricing/widget.php:168
+msgid "Duration"
+msgstr ""
+
+#: widgets/pricing/widget.php:170
+msgid "per month"
+msgstr ""
+
+#: widgets/pricing/widget.php:171
+msgid "Per month"
+msgstr ""
+
+#: widgets/pricing/widget.php:179 widgets/pricing/widget.php:536
+msgid "Features"
+msgstr ""
+
+#: widgets/pricing/widget.php:209
+msgid "Features List"
+msgstr ""
+
+#: widgets/pricing/widget.php:214
+msgid "100 Email Accounts"
+msgstr ""
+
+#: widgets/pricing/widget.php:218
+msgid "10 Subdomains"
+msgstr ""
+
+#: widgets/pricing/widget.php:230 widgets/pricing/widget.php:567
+msgid "Subscribe"
+msgstr ""
+
+#: widgets/pricing/widget.php:252 widgets/pricing/widget.php:254
+msgid "Sign Up"
+msgstr ""
+
+#: widgets/pricing/widget.php:263 widgets/pricing/widget.php:661
+msgid "Badge"
+msgstr ""
+
+#: widgets/pricing/widget.php:270
+msgid "Badge Title"
+msgstr ""
+
+#: widgets/pricing/widget.php:272
+msgid "Type Recommended"
+msgstr ""
+
+#: widgets/pricing/widget.php:280 widgets/pricing/widget.php:287
+msgid "Price Card Style"
+msgstr ""
+
+#: widgets/pricing/widget.php:395
+msgid "Header Title Color"
+msgstr ""
+
+#: widgets/pricing/widget.php:416
+msgid "Price Title Background Color"
+msgstr ""
+
+#: widgets/pricing/widget.php:437
+msgid "Price Color"
+msgstr ""
+
+#: widgets/pricing/widget.php:450
+msgid "Margin Bottom"
+msgstr ""
+
+#: widgets/pricing/widget.php:505
+msgid "Price Typography"
+msgstr ""
+
+#: widgets/pricing/widget.php:513
+msgid "Duration Color"
+msgstr ""
+
+#: widgets/pricing/widget.php:526
+msgid "Duration Typography"
+msgstr ""
+
+#: widgets/pricing/widget.php:544
+msgid "Features Color"
+msgstr ""
+
+#: widgets/pricing/widget.php:557
+msgid "Features Typography"
+msgstr ""
+
+#: widgets/pricing/widget.php:574
+msgid "Subscribe Button"
+msgstr ""
+
+#: widgets/pricing/widget.php:585 widgets/pricing/widget.php:622
+msgid "Subscribe Button Color"
+msgstr ""
+
+#: widgets/pricing/widget.php:608
+msgid "Subscribe Button Typography"
+msgstr ""
+
+#: widgets/service/widget.php:51
+msgid "Services"
+msgstr ""
+
+#: widgets/service/widget.php:133
+msgid "Service"
+msgstr ""
+
+#: widgets/service/widget.php:139 widgets/service/widget.php:210
+msgid "Service Style"
+msgstr ""
+
+#: widgets/service/widget.php:142
+msgid "Service Style 1"
+msgstr ""
+
+#: widgets/service/widget.php:143
+msgid "Service Style 2"
+msgstr ""
+
+#: widgets/service/widget.php:144
+msgid "Service Style 3"
+msgstr ""
+
+#: widgets/service/widget.php:145
+msgid "Service Style 4"
+msgstr ""
+
+#: widgets/service/widget.php:153 widgets/service/widget.php:338
+msgid "Service Icon"
+msgstr ""
+
+#: widgets/service/widget.php:165 widgets/service/widget.php:449
+msgid "Service Title"
+msgstr ""
+
+#: widgets/service/widget.php:167 widgets/service/widget.php:168
+msgid "Service Title Here"
+msgstr ""
+
+#: widgets/service/widget.php:174 widgets/service/widget.php:489
+msgid "Service Description"
+msgstr ""
+
+#: widgets/service/widget.php:176
+msgid "Service Description Here"
+msgstr ""
+
+#: widgets/service/widget.php:177
+msgid ""
+"Lorem Ipsum is simply dummy text of the printing and typesetting industry. "
+"Lorem Ipsum has been the industry standard dummy text ever since the 1500s,"
+msgstr ""
+
+#: widgets/service/widget.php:247 widgets/service/widget.php:260
+msgid "Service Background Color"
+msgstr ""
+
+#: widgets/service/widget.php:276 widgets/service/widget.php:292
+msgid "Service Background Hover Color"
+msgstr ""
+
+#: widgets/service/widget.php:358
+msgid "Icon Hover Color"
+msgstr ""
+
+#: widgets/service/widget.php:371
+msgid "Icon Background Color"
+msgstr ""
+
+#: widgets/service/widget.php:383
+msgid "Icon Background Hover Color"
+msgstr ""
+
+#: widgets/service/widget.php:421
+msgid "Icon Margin Bottom"
+msgstr ""
+
+#: widgets/service/widget.php:468
+msgid "Title Hover Color"
+msgstr ""
+
+#: widgets/service/widget.php:509
+msgid "Description Hover Color"
+msgstr ""
+
+#: widgets/service/widget.php:533 widgets/service/widget.php:540
+msgid "Service Button"
+msgstr ""
+
+#: widgets/service/widget.php:571
+msgid "Button Background Color"
+msgstr ""
+
+#: widgets/service/widget.php:592
+msgid "Button Margin Top"
+msgstr ""
+
+#: widgets/team/widget.php:50 widgets/team/widget.php:132
+msgid "Team"
+msgstr ""
+
+#: widgets/team/widget.php:138
+msgid "Teams Style"
+msgstr ""
+
+#: widgets/team/widget.php:141
+msgid "Team Style 1"
+msgstr ""
+
+#: widgets/team/widget.php:142
+msgid "Team Style 2"
+msgstr ""
+
+#: widgets/team/widget.php:143
+msgid "Team Style 3"
+msgstr ""
+
+#: widgets/team/widget.php:144
+msgid "Team Style 4"
+msgstr ""
+
+#: widgets/team/widget.php:145
+msgid "Team Style 5"
+msgstr ""
+
+#: widgets/team/widget.php:154
+msgid "Image"
+msgstr ""
+
+#: widgets/team/widget.php:168 widgets/team/widget.php:341
+#: widgets/testimonial/widget.php:414
+msgid "Name"
+msgstr ""
+
+#: widgets/team/widget.php:170 widgets/team/widget.php:171
+msgid "John Doe"
+msgstr ""
+
+#: widgets/team/widget.php:177 widgets/team/widget.php:179
+#: widgets/team/widget.php:380
+msgid "Designation"
+msgstr ""
+
+#: widgets/team/widget.php:180
+msgid "Web Developer"
+msgstr ""
+
+#: widgets/team/widget.php:187 widgets/team/widget.php:189
+msgid "Information"
+msgstr ""
+
+#: widgets/team/widget.php:190
+msgid "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+msgstr ""
+
+#: widgets/team/widget.php:199 widgets/team/widget.php:299
+msgid "Social Icons"
+msgstr ""
+
+#: widgets/team/widget.php:331
+msgid "Team Style"
+msgstr ""
+
+#: widgets/team/widget.php:371 widgets/team/widget.php:388
+#: widgets/team/widget.php:430 widgets/testimonial/widget.php:422
+#: widgets/testimonial/widget.php:450 widgets/testimonial/widget.php:515
+msgid "Typography"
+msgstr ""
+
+#: widgets/team/widget.php:419
+msgid "Description"
+msgstr ""
+
+#: widgets/team/widget.php:451 widgets/team/widget.php:458
+msgid "Socials Links"
+msgstr ""
+
+#: widgets/team/widget.php:470 widgets/testimonial/widget.php:289
+msgid "Size"
+msgstr ""
+
+#: widgets/team/widget.php:487 widgets/team/widget.php:550
+msgid "Border Color"
+msgstr ""
+
+#: widgets/team/widget.php:592
+msgid "Hover Border Color"
+msgstr ""
+
+#: widgets/testimonial/widget.php:35
+msgid "Testimonial"
+msgstr ""
+
+#: widgets/testimonial/widget.php:102 widgets/testimonial/widget.php:374
+msgid "Testimonial Style"
+msgstr ""
+
+#: widgets/testimonial/widget.php:105
+msgid "Testimonial Style 1"
+msgstr ""
+
+#: widgets/testimonial/widget.php:106
+msgid "Testimonial Style 2"
+msgstr ""
+
+#: widgets/testimonial/widget.php:107
+msgid "Testimonial Style 3"
+msgstr ""
+
+#: widgets/testimonial/widget.php:108
+msgid "Testimonial Style 4"
+msgstr ""
+
+#: widgets/testimonial/widget.php:128
+msgid "Client Name"
+msgstr ""
+
+#: widgets/testimonial/widget.php:130 widgets/testimonial/widget.php:168
+msgid "Steve Thomas"
+msgstr ""
+
+#: widgets/testimonial/widget.php:136 widgets/testimonial/widget.php:442
+msgid "Client Designation"
+msgstr ""
+
+#: widgets/testimonial/widget.php:138 widgets/testimonial/widget.php:169
+msgid "CEO at XYZ Ltd."
+msgstr ""
+
+#: widgets/testimonial/widget.php:144 widgets/testimonial/widget.php:470
+msgid "Client Review"
+msgstr ""
+
+#: widgets/testimonial/widget.php:146
+msgid "Lorem ipsum dolor sit amet,"
+msgstr ""
+
+#: widgets/testimonial/widget.php:152
+msgid "Select Icon"
+msgstr ""
+
+#: widgets/testimonial/widget.php:163
+msgid "Testimonials"
+msgstr ""
+
+#: widgets/testimonial/widget.php:170
+msgid ""
+"Lorem ipsum dolor sit amet, consectetur adip iscing elit. Lorem ipsum dolor "
+"sit amet, consectetur adip iscing elit."
+msgstr ""
+
+#: widgets/testimonial/widget.php:183
+msgid "Slider Options"
+msgstr ""
+
+#: widgets/testimonial/widget.php:191
+msgid "Autoplay?"
+msgstr ""
+
+#: widgets/testimonial/widget.php:193
+msgid "True"
+msgstr ""
+
+#: widgets/testimonial/widget.php:194
+msgid "False"
+msgstr ""
+
+#: widgets/testimonial/widget.php:202
+msgid "Autoplay Speed"
+msgstr ""
+
+#: widgets/testimonial/widget.php:213
+msgid "Infinite Loop?"
+msgstr ""
+
+#: widgets/testimonial/widget.php:215
+msgid "Yes"
+msgstr ""
+
+#: widgets/testimonial/widget.php:216
+msgid "No"
+msgstr ""
+
+#: widgets/testimonial/widget.php:224
+msgid "Animation Speed"
+msgstr ""
+
+#: widgets/testimonial/widget.php:235
+msgid "Slider Styles"
+msgstr ""
+
+#: widgets/testimonial/widget.php:242
+msgid "Arrow"
+msgstr ""
+
+#: widgets/testimonial/widget.php:250
+msgid "Show?"
+msgstr ""
+
+#: widgets/testimonial/widget.php:261
+msgid "Left Icon"
+msgstr ""
+
+#: widgets/testimonial/widget.php:275
+msgid "Right Icon"
+msgstr ""
+
+#: widgets/testimonial/widget.php:334
+msgid "Pagination"
+msgstr ""
+
+#: widgets/testimonial/widget.php:343
+msgid "Show Pagination?"
+msgstr ""
+
+#: widgets/testimonial/widget.php:383
+msgid "Quote Icon"
+msgstr ""

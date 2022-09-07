@@ -1,29 +1,21 @@
 <?php
-
 /**
- * The plugin bootstrap file
- *
- * This file is read by WordPress to generate the plugin information in the plugin
- * admin area. This file also includes all of the dependencies used by the plugin,
- * registers the activation and deactivation functions, and defines a function
- * that starts the plugin.
- *
- * @link              https://profiles.wordpress.org/babuwpd/
- * @since             1.0.0
- * @package           Easy_Addons
- *
- * @wordpress-plugin
- * Plugin Name:       Easy Addons for Elementor
- * Plugin URI:        https://babuwp.com/
- * Description:       This is a short description of what the plugin does. It's displayed in the WordPress admin area.
- * Version:           1.0.0
- * Author:            Babu WP
- * Author URI:        https://profiles.wordpress.org/babuwpd/
- * License:           GPL-2.0+
+ * Plugin Name: Easy Addons for Elementor
+ * Description: Easy Addons For Elementor is a plugin for widgets to extend for Elementor Page Builder.
+ * Plugin URI: https://babuwp.com/wp/easy-addons/
+ * Version:           1.1.0
+ * Requires at least: 5.2
+ * Requires PHP:      7.2
+ * Author: Babu WP
+ * Author URI: https://profiles.wordpress.org/babuwpd/
+ * Text Domain: easy-addons
+ * License:           GPL v2 or later
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
- * Text Domain:       easy-addons
  * Domain Path:       /languages
+ * Elementor tested up to:     3.7.4
+ * Elementor Pro tested up to: 3.7.4
  */
+
 
 // If this file is called directly, abort.
 if ( ! defined( 'WPINC' ) ) {

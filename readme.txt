@@ -1,18 +1,18 @@
 === Easy Addons for Elementor ===
 Contributors: babuwpd
-Tags: Easy Module, page builder, elementor website builder, front-end builder, drag and drop editor
+Tags: Easy Addons for Elementor Page Builder, page builder, elementor website builder, front-end builder, drag and drop editor, post card, testimonial, service, heading, price, counter up, call to action, image gallery, team, flip box.
 Requires at least: 4.6
 Tested up to: 6.0
 Requires PHP: 5.6
-Stable tag: 1.0.0
+Stable tag: 1.1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-    A simple plugin for Elementor Website Builder Addons.
+Easy Addons For Elementor is a plugin for widgets to extend for Elementor Page Builder.
 
 == Description ==
 
-    Easy Addons For Elementor plugin will add simple features For Elementor Website Builder Addons.
+Easy Addons For Elementor plugin will add some features For Elementor Website Builder Addons.
 
 
 = Available Widgets =
@@ -30,7 +30,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
     <li>Counter Up</li>
 </ul>
 
-
+**[View Demo](https://https://babuwp.com/wp/easy-addons//)**
 
 == Installation ==
 
@@ -57,11 +57,14 @@ You need Elementor Website Builder or Pro Version active for Easy Addons for Ele
 = 1.0.0 =
 * Initial Release
 
+= 1.1.0 =
+* Some new features added
+
 
 == Upgrade Notice ==
 
 = 1.0.0 =
 * Initial Release
 
-= 1.0.1 =
-* Name change
+= 1.1.0 =
+* Some new features added
