@@ -80,6 +80,10 @@ h1.title.post-card_title.post-card-alignment a {
 h2.title.post-card_title.post-card-alignment a {
     color: #818CF8;
 }
+h2.title.post-card_title.post-card-alignment a:hover {
+    color: #0C0C10;
+}
+
 .post-meta.post-card_meta-data.post-card-alignment i{
     color: #818CF8;
 }
