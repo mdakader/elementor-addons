@@ -188,13 +188,13 @@ class Image_Gallery extends Widget_Base {
 		$image_justified = $this->get_settings( 'image_justified' );
 		$image_margin = $this->get_settings( 'image_margin' );
 
-		$this->add_render_attribute( 'image_caption', 'class', 'ea-image-gallery-caption' );
+		$this->add_render_attribute( 'image_caption', 'class', 'easy-image-gallery-caption' );
 		$this->add_inline_editing_attributes( 'image_caption' );
 
 		?>
 
-        <div class="ea-gallery">
-            <div class="gallery-container" id="ea-gallery"
+        <div class="easy-gallery">
+            <div class="gallery-container" id="easy-gallery"
                  data-justify-image="<?php echo esc_attr($image_justified);?>"
                  data-margin="<?php echo esc_attr($image_margin);?>">
 				<?php
@@ -212,15 +212,4 @@ class Image_Gallery extends Widget_Base {
 
 		<?php
 	}
-
-	/**
-	 * Render the widget output in the editor.
-	 *
-	 * Written as a Backbone JavaScript template and used to generate the live preview.
-	 *
-	 * @since 1.0.0
-	 *
-	 * @access protected
-	 */
-//	protected function _content_template() {}
 }

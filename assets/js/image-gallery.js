@@ -5,7 +5,7 @@
             var justifyImage = imageJustify.data('justify-image');
             var margin = imageJustify.data('margin');
 
-            $(scope).find('#ea-gallery').justifiedGallery({
+            $(scope).find('#easy-gallery').justifiedGallery({
                 lastRow: justifyImage,
                 rowHeight: 200,
                 margins: margin,
