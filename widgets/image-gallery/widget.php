@@ -2,9 +2,7 @@
 
 namespace Easy_Addons\Widgets;
 
-use Elementor\Group_Control_Typography;
 use Elementor\Repeater;
-use Elementor\Utils;
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
 
@@ -203,7 +201,7 @@ class Image_Gallery extends Widget_Base {
 				if (!empty($settings['gallery_image'])):
 					foreach ($settings['gallery_image'] as $em_gallery_photo):
 						?>
-                        <a class="ea-image-gallery" data-gall="gallery01" href="<?php echo esc_url($em_gallery_photo['url']) ?>">
+                        <a class="easy-image-gallery" data-gall="gallery01" href="<?php echo esc_url($em_gallery_photo['url']) ?>">
                             <img alt=""
                                  src="<?php echo esc_url($em_gallery_photo['url']) ?>"/>
                         </a>
