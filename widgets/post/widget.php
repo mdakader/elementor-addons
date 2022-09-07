@@ -3,7 +3,7 @@
 namespace Easy_Addons\Widgets;
 
 use Elementor\Controls_Manager;
-use Elementor\Group_Control_Css_Filter;
+use Elementor\Group_Control_Box_Shadow;
 use Elementor\Group_Control_Image_Size;
 use Elementor\Group_Control_Typography;
 use Elementor\Widget_Base;
@@ -14,10 +14,9 @@ if (!defined('ABSPATH'))
 class Post_Card_Widget extends Widget_Base
 {
 
-
     public function get_name()
     {
-        return 'post-card-widget';
+        return 'easy_post_card';
     }
 
 
@@ -65,8 +64,8 @@ class Post_Card_Widget extends Widget_Base
          * Start post card controls fields
          */
         $this->start_controls_section(
-            'section_layout', array(
-                'label' => esc_html__('Post Layout', 'easy-addons'),
+            'post_card_content', array(
+                'label' => esc_html__('Post Content', 'easy-addons'),
             )
         );
 
@@ -109,7 +108,7 @@ class Post_Card_Widget extends Widget_Base
             'number_of_posts', [
                 'label' => __('Display No. of Posts', 'easy-addons'),
                 'type' => Controls_Manager::NUMBER,
-                'default' => 6,
+                'default' => 3,
             ]
         );
 
@@ -168,7 +167,7 @@ class Post_Card_Widget extends Widget_Base
             'excerpt_length', [
                 'label' => __('Excerpt Length', 'easy-addons'),
                 'type' => Controls_Manager::NUMBER,
-                'default' => apply_filters('excerpt_length', 25),
+                'default' => apply_filters('excerpt_length', 20),
                 'condition' => ['show_excerpt' => 'yes'],
             ]
         );
@@ -293,8 +292,8 @@ class Post_Card_Widget extends Widget_Base
         $this->end_controls_section();
 
         $this->start_controls_section(
-            'section_design_layout', [
-                'label' => __('Layout', 'easy-addons'),
+            'post_card_layout', [
+                'label' => __('Post Card Layout', 'easy-addons'),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -323,7 +322,7 @@ class Post_Card_Widget extends Widget_Base
                 'label' => __('Rows Gap', 'easy-addons'),
                 'type' => Controls_Manager::SLIDER,
                 'default' => [
-                    'size' => 35,
+                    'size' => 30,
                 ],
                 'range' => [
                     'px' => [
@@ -353,141 +352,12 @@ class Post_Card_Widget extends Widget_Base
             ]
         );
 
-        $this->add_control(
-            'alignment', [
-                'label' => __('Alignment', 'easy-addons'),
-                'type' => Controls_Manager::CHOOSE,
-                'label_block' => false,
-                'options' => [
-                    'left' => [
-                        'title' => __('Left', 'easy-addons'),
-                        'icon' => 'fa fa-align-left',
-                    ],
-                    'center' => [
-                        'title' => __('Center', 'easy-addons'),
-                        'icon' => 'fa fa-align-center',
-                    ],
-                    'right' => [
-                        'title' => __('Right', 'easy-addons'),
-                        'icon' => 'fa fa-align-right',
-                    ],
-                    'justify' => [
-                        'title' => __('Justify', 'easy-addons'),
-                        'icon' => 'fa fa-align-justify',
-                    ],
-                ],
-                'default' => 'left',
-                'prefix_class' => 'elementor-posts--align-',
-                'selectors' => [
-                    '{{WRAPPER}} .post-card-alignment,
-				 {{WRAPPER}} .card_align,
-				 {{WRAPPER}} .card-category,
-                 {{WRAPPER}} .card_title' => 'text-align: {{VALUE}};',
-                ],
-            ]
-        );
-
-        $this->end_controls_section();
-
-
-        $this->start_controls_section(
-            'section_design_image_layout', [
-                'label' => __('Image', 'easy-addons'),
-                'tab' => Controls_Manager::TAB_STYLE,
-                'condition' => [
-                    'post_card_style' => ['post-card-style-1', 'post-card-style-2'],
-                ],
-            ]
-        );
-
-        $this->add_control(
-            'img_border_radius', [
-                'label' => __('Border Radius', 'easy-addons'),
-                'type' => Controls_Manager::DIMENSIONS,
-                'size_units' => ['px', '%'],
-                'selectors' => [
-                    '{{WRAPPER}} .post-card-item_img, {{WRAPPER}} .elementor-post-item__overlay' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-                ],
-            ]
-        );
-
-        $this->start_controls_tabs(
-            'thumbnail_effects_tabs', [
-                'label' => __('Image Thumbnail', 'easy-addons'),
-                'condition' => [
-                    'post_card_style' => ['post-card-style-1', 'post-card-style-2'],
-                ]
-            ]
-        );
-
-        $this->start_controls_tab('normal', [
-                'label' => __('Normal', 'easy-addons'),
-            ]
-        );
-
         $this->add_group_control(
-            Group_Control_Css_Filter::get_type(), [
-                'name' => 'thumbnail_filters',
-                'condition' => [
-                    'post_card_style' => ['post-card-style-1', 'post-card-style-2'],
-                ],
-                'selector' => '{{WRAPPER}} .post-card_thumbnail img',
-            ]
-        );
-
-        $this->end_controls_tab();
-
-        $this->start_controls_tab('hover', [
-                'label' => __('Hover', 'easy-addons'),
-            ]
-        );
-
-        $this->add_group_control(
-            Group_Control_Css_Filter::get_type(), [
-                'name' => 'thumbnail_hover_filters',
-                'condition' => [
-                    'post_card_style' => ['post-card-style-1', 'post-card-style-2'],
-                ],
-                'selector' => '{{WRAPPER}} .elementor-post:hover .post-card_thumbnail:hover img',
-            ]
-        );
-
-        $this->end_controls_tab();
-
-        $this->end_controls_tabs();
-
-        $this->end_controls_section();
-
-
-        $this->start_controls_section(
-            'section_design_content_bg', [
-                'label' => __('Background Color', 'easy-addons'),
-                'tab' => Controls_Manager::TAB_STYLE,
-                'condition' => [
-                    'post_card_style' => ['post-card-style-1', 'post-card-style-2'],
-                ],
-            ]
-        );
-
-        $this->add_control(
-            'category_bg_color', [
-                'label' => __('Category Color', 'easy-addons'),
-                'type' => Controls_Manager::COLOR,
-                'condition' => ['post_card_style' => 'post-card-style-1'],
-                'selectors' => [
-                    '{{WRAPPER}} .post-card_category_background' => 'background-color: {{VALUE}};',
-                ],
-            ]
-        );
-
-        $this->add_control(
-            'date_bg_color', [
-                'label' => __('Date Color', 'easy-addons'),
-                'type' => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .post-card_date' => 'background-color: {{VALUE}};',
-                ],
-                'condition' => ['post_card_style' => 'post-card-style-1'],
+            Group_Control_Box_Shadow::get_type(),
+            [
+                'name' => 'post_card_box_shadow',
+                'label' => esc_html__('Box Shadow', 'easy-addons'),
+                'selector' => '{{WRAPPER}} .post-card-module',
             ]
         );
 
@@ -497,7 +367,43 @@ class Post_Card_Widget extends Widget_Base
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .post-card-content-box, 
+                    {{WRAPPER}} .post-card-module, 
 				{{WRAPPER}} .post-card-content-bg-box' => 'background-color: {{VALUE}};',
+                ],
+            ]
+        );
+
+        $this->add_control(
+            'post_card_alignment', [
+                'label' => __('Alignment', 'easy-addons'),
+                'type' => Controls_Manager::CHOOSE,
+                'label_block' => false,
+                'options' => [
+                    'left' => [
+                        'title' => esc_html__('Left', 'easy-addons'),
+                        'icon' => 'eicon-text-align-left',
+                    ],
+                    'center' => [
+                        'title' => esc_html__('Center', 'easy-addons'),
+                        'icon' => 'eicon-text-align-center',
+                    ],
+                    'right' => [
+                        'title' => esc_html__('Right', 'easy-addons'),
+                        'icon' => 'eicon-text-align-right',
+                    ],
+                    'justify' => [
+                        'title' => esc_html__('Justified', 'easy-addons'),
+                        'icon' => 'eicon-text-align-justify',
+                    ],
+                ],
+                'default' => 'left',
+                'prefix_class' => 'elementor-posts--align-',
+                'selectors' => [
+                    '{{WRAPPER}} .post-card-alignment,
+				 {{WRAPPER}} .card_align,
+				 {{WRAPPER}} .card-category,
+				 {{WRAPPER}} .category.post-card_category.post-card_category_background,
+                 {{WRAPPER}} .card_title' => 'text-align: {{VALUE}};',
                 ],
             ]
         );
@@ -513,83 +419,20 @@ class Post_Card_Widget extends Widget_Base
         );
 
         $this->add_control(
-            'date_style', [
-                'label' => __('Date', 'easy-addons'),
+            'heading_title_style', [
+                'label' => __('Title', 'easy-addons'),
                 'type' => Controls_Manager::HEADING,
-            ]
-        );
-
-        $this->add_control(
-            'date_color', [
-                'label' => __('Color', 'easy-addons'),
-                'type' => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .post-card_date_color,
-				 {{WRAPPER}} .post-card-style-3 .card-time' => 'color: {{VALUE}};',
-                ],
-            ]
-        );
-        $this->add_control(
-            'category_style', [
-                'label' => __('Category', 'easy-addons'),
-                'type' => Controls_Manager::HEADING,
-            ]
-        );
-
-        $this->add_control(
-            'category_color', [
-                'label' => __('Color', 'easy-addons'),
-                'type' => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .post-card_category,
-                {{WRAPPER}} .post-content .post-card_category,
-                {{WRAPPER}} .post-card_category a,
-                {{WRAPPER}} .post-card-style-3 .card-category' => 'color: {{VALUE}};',
-                ],
-            ]
-        );
-
-        $this->add_control(
-            'category_hover_color', [
-                'label' => __('Hover Color', 'easy-addons'),
-                'type' => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .post-card_category,
-                {{WRAPPER}} .post-card_category:hover span.cat-links a,
-                {{WRAPPER}} .post-content .post-card_category a:hover,
-                {{WRAPPER}} .post-card-style-3 .card-category' => 'color: {{VALUE}};',
-                ],
+                'condition' => ['show_title' => 'yes'],
             ]
         );
 
         $this->add_group_control(
             Group_Control_Typography::get_type(), [
-                'name' => 'category_typography',
-                'selector' => '{{WRAPPER}} .post-card_category,
-                {{WRAPPER}} .post-card_category a',
-            ]
-        );
-
-        $this->add_control(
-            'category_spacing', [
-                'label' => __('Spacing', 'easy-addons'),
-                'type' => Controls_Manager::SLIDER,
-                'range' => [
-                    'px' => [
-                        'max' => 100,
-                    ],
-                ],
-                'selectors' => [
-                    '{{WRAPPER}} .post-card_category' => 'margin-bottom: {{SIZE}}{{UNIT}};',
-                ],
-            ]
-        );
-
-        $this->add_control(
-            'heading_title_style', [
-                'label' => __('Title', 'easy-addons'),
-                'type' => Controls_Manager::HEADING,
-                'condition' => ['show_title' => 'yes'],
+                'name' => 'title_typography',
+                'selector' =>
+                    '{{WRAPPER}} .post-card_title,
+            {{WRAPPER}} .post-card_title a,
+            {{WRAPPER}} .post-card-style-6 .card-title a'
             ]
         );
 
@@ -600,23 +443,19 @@ class Post_Card_Widget extends Widget_Base
                 'selectors' => [
                     '{{WRAPPER}} .post-card_title,
                 {{WRAPPER}} .post-card_title a,
-                {{WRAPPER}} .post-card-style-6 .card-title a' => 'color: {{VALUE}};',
-                ],
-                'condition' => [
-                    'show_title' => 'yes'
+                {{WRAPPER}} .card-title a' => 'color: {{VALUE}};',
                 ],
             ]
         );
 
-        $this->add_group_control(
-            Group_Control_Typography::get_type(), [
-                'name' => 'title_typography',
-                'selector' =>
-                    '{{WRAPPER}} .post-card_title,
-            {{WRAPPER}} .post-card_title a,
-            {{WRAPPER}} .post-card-style-6 .card-title a',
-                'condition' => [
-                    'show_title' => 'yes'
+        $this->add_control(
+            'title_h_color', [
+                'label' => __('Hover Color', 'easy-addons'),
+                'type' => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .post-card_title:hover,
+                {{WRAPPER}} .post-card_title a:hover,
+                {{WRAPPER}} .card-title a:hover' => 'color: {{VALUE}};',
                 ],
             ]
         );
@@ -631,8 +470,7 @@ class Post_Card_Widget extends Widget_Base
                     ],
                 ],
                 'selectors' => [
-                    '{{WRAPPER}} .post-card_title,
-		{{WRAPPER}} .post-card-style-6 .card-title' => 'margin-bottom: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .post-card_title' => 'margin-bottom: {{SIZE}}{{UNIT}};',
                 ],
                 'condition' => [
                     'show_title' => 'yes'
@@ -693,10 +531,18 @@ class Post_Card_Widget extends Widget_Base
         );
 
         $this->add_control(
-            'heading_readmore_style', [
+            'heading_read_more_style', [
                 'label' => __('Read More', 'easy-addons'),
                 'type' => Controls_Manager::HEADING,
                 'separator' => 'before',
+                'condition' => ['show_read_more' => 'yes'],
+            ]
+        );
+
+        $this->add_group_control(
+            Group_Control_Typography::get_type(), [
+                'name' => 'read_more_typography',
+                'selector' => '{{WRAPPER}} .post-card_read-more',
                 'condition' => ['show_read_more' => 'yes'],
             ]
         );
@@ -712,19 +558,161 @@ class Post_Card_Widget extends Widget_Base
             ]
         );
 
-        $this->add_group_control(
-            Group_Control_Typography::get_type(), [
-                'name' => 'read_more_typography',
-                'selector' => '{{WRAPPER}} .post-card_read-more',
-                'condition' => ['show_read_more' => 'yes'],
+        $this->end_controls_section();
+
+        $this->start_controls_section(
+            'post_card_category', [
+                'label' => __('Category', 'easy-addons'),
+                'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
 
         $this->add_control(
-            'heading_meta_style', [
-                'label' => __('Meta', 'easy-addons'),
+            'img_border_radius', [
+                'label' => __('Border Radius', 'easy-addons'),
+                'type' => Controls_Manager::DIMENSIONS,
+                'size_units' => ['px', '%'],
+                'selectors' => [
+                    '{{WRAPPER}} .post-card-item_img, {{WRAPPER}} .elementor-post-item__overlay' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+            ]
+        );
+
+        $this->start_controls_tabs(
+            'post_card_cat_tabs', [
+                'label' => __('Category', 'easy-addons'),
+            ]
+        );
+
+        $this->start_controls_tab('post_cat_normal', [
+                'label' => __('Normal', 'easy-addons'),
+            ]
+        );
+
+        $this->add_control(
+            'category_style', [
+                'label' => __('Category', 'easy-addons'),
                 'type' => Controls_Manager::HEADING,
-                'separator' => 'before',
+            ]
+        );
+
+        $this->add_group_control(
+            Group_Control_Typography::get_type(), [
+                'name' => 'category_typography',
+                'selector' => '{{WRAPPER}} .post-card_category,
+                {{WRAPPER}} .post-card_category a',
+            ]
+        );
+
+        $this->add_control(
+            'category_color', [
+                'label' => __('Color', 'easy-addons'),
+                'type' => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .post-card_category a,
+                {{WRAPPER}} .post-card-style-3 .card-category' => 'color: {{VALUE}};',
+                ],
+            ]
+        );
+
+        $this->add_control(
+            'category_links_bg_color', [
+                'label' => __('Background Color', 'easy-addons'),
+                'type' => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .post-card_category span.cat-links a' => 'background: {{VALUE}};  border-color: {{VALUE}};',
+                ],
+            ]
+        );
+
+        $this->add_control(
+            'category_spacing', [
+                'label' => __('Spacing', 'easy-addons'),
+                'type' => Controls_Manager::SLIDER,
+                'range' => [
+                    'px' => [
+                        'max' => 100,
+                    ],
+                ],
+                'selectors' => [
+                    '{{WRAPPER}} .post-card_category' => 'margin-bottom: {{SIZE}}{{UNIT}};',
+                ],
+            ]
+        );
+
+        $this->end_controls_tab();
+
+        $this->start_controls_tab('post_cat_hover', [
+                'label' => __('Hover', 'easy-addons'),
+            ]
+        );
+
+        $this->add_control(
+            'category_hover_color', [
+                'label' => __('Hover Color', 'easy-addons'),
+                'type' => Controls_Manager::COLOR,
+                'selectors' => [
+                    ' {{WRAPPER}} .post-card_category span.cat-links a:hover,
+                {{WRAPPER}} .post-content .post-card_category a:hover' => 'color: {{VALUE}};',
+                ],
+            ]
+        );
+
+        $this->add_control(
+            'category_hover_bg', [
+                'label' => __('Hover Background Color', 'easy-addons'),
+                'type' => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .post-card_category span.cat-links a:hover,
+                {{WRAPPER}} .post-content .post-card_category a:hover' => 'background: {{VALUE}};  border-color: {{VALUE}};',
+                ],
+            ]
+        );
+
+        $this->end_controls_tab();
+
+        $this->end_controls_tabs();
+
+        $this->end_controls_section();
+
+        $this->start_controls_section(
+            'post_card_meta_info', [
+                'label' => __('Post Meta', 'easy-addons'),
+                'tab' => Controls_Manager::TAB_STYLE,
+            ]
+        );
+
+        $this->add_responsive_control(
+            'post_card_meta_padding',
+            [
+                'label' => esc_html__('Padding', 'easy-addons'),
+                'type' => Controls_Manager::DIMENSIONS,
+                'size_units' => ['px', '%', 'em'],
+                'selectors' => [
+                    '{{WRAPPER}} .post-meta.post-card_meta-data.post-card-alignment' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+            ]
+        );
+
+        $this->start_controls_tabs(
+            'post_card_meta_info_tabs', [
+                'label' => __('Category', 'easy-addons'),
+            ]
+        );
+
+        $this->start_controls_tab('post_card_meta_info_normal', [
+                'label' => __('Normal', 'easy-addons'),
+            ]
+        );
+
+        $this->add_group_control(
+            Group_Control_Typography::get_type(), [
+                'name' => 'meta_typography',
+                'selector' =>
+                    '{{WRAPPER}} .post-card_meta-data .easy-post-meta-info li,
+            {{WRAPPER}} .post-card_meta-data i .fa,
+            {{WRAPPER}} .post-card_meta-data span a,
+            {{WRAPPER}} .post-card-style-6 .card-by a',
                 'condition' => ['show_meta_data' => 'yes'],
             ]
         );
@@ -734,8 +722,7 @@ class Post_Card_Widget extends Widget_Base
                 'label' => __('Icon Color', 'easy-addons'),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .post-card_meta-data span .fa,
-		{{WRAPPER}} .post-card-style-6 .card-by span .fa' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .post-meta.post-card_meta-data.post-card-alignment ul li i' => 'color: {{VALUE}};',
                 ],
                 'condition' => ['show_meta_data' => 'yes'],
             ]
@@ -747,21 +734,10 @@ class Post_Card_Widget extends Widget_Base
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .post-card_meta-data span,
+                    {{WRAPPER}} .post-meta.post-card_meta-data.post-card-alignment ul li,
                 {{WRAPPER}} .post-card_meta-data a,
                 {{WRAPPER}} .post-card-style-6 .card-by a' => 'color: {{VALUE}};',
                 ],
-                'condition' => ['show_meta_data' => 'yes'],
-            ]
-        );
-
-        $this->add_group_control(
-            Group_Control_Typography::get_type(), [
-                'name' => 'meta_typography',
-                'selector' =>
-                    '{{WRAPPER}} .post-card_meta-data,
-            {{WRAPPER}} .post-card_meta-data i .fa,
-            {{WRAPPER}} .post-card_meta-data span a,
-            {{WRAPPER}} .post-card-style-6 .card-by a',
                 'condition' => ['show_meta_data' => 'yes'],
             ]
         );
@@ -782,6 +758,29 @@ class Post_Card_Widget extends Widget_Base
                 'condition' => ['show_meta_data' => 'yes'],
             ]
         );
+
+        $this->end_controls_tab();
+
+        $this->start_controls_tab('post_card_meta_info_hover', [
+                'label' => __('Hover', 'easy-addons'),
+            ]
+        );
+
+        $this->add_control(
+            'post_card_meta_info_hover_color', [
+                'label' => __('Hover Color', 'easy-addons'),
+                'type' => Controls_Manager::COLOR,
+                'selectors' => [
+                    ' {{WRAPPER}} .post-card_category span.cat-links a:hover,
+                    {{WRAPPER}} .post-meta.post-card_meta-data.post-card-alignment ul li a:hover,
+                {{WRAPPER}} .post-content .post-card_category a:hover' => 'color: {{VALUE}};',
+                ],
+            ]
+        );
+
+        $this->end_controls_tab();
+
+        $this->end_controls_tabs();
 
         $this->end_controls_section();
 

@@ -17,7 +17,7 @@
 .easy-post-meta-info li {
     display: inline-flex;
     align-items: center;
-    padding: 5px;
+    padding: 0 0 2px 0;
     text-transform: capitalize;
     font-size: 16px;
 }
@@ -58,3 +58,42 @@
 .post-card-module:hover .post-card-image.post-card_thumbnail img {
     transform: scale(1.4);
 }
+
+h1.title.post-card_title.post-card-alignment a {
+    color: #818CF8;
+}
+.post-card_title,
+.post-card_title a,
+.card-title a,
+.post-meta.post-card_meta-data.post-card-alignment ul li a,
+.category.post-card_category .cat-links a {
+    transition: all 0.4s ease 0s;
+}
+
+.category.post-card_category .cat-links a:hover {
+    color: #ffffff;
+    background: #0C0C10;
+}
+.easy-post-meta-info a {
+    color: #818CF8;
+}
+h2.title.post-card_title.post-card-alignment a {
+    color: #818CF8;
+}
+.post-meta.post-card_meta-data.post-card-alignment i{
+    color: #818CF8;
+}
+
+.post-meta.post-card_meta-data.post-card-alignment li{
+    color: #818CF8;
+}
+.post-meta.post-card_meta-data.post-card-alignment ul li i{
+    color: #818CF8;
+}
+/*
+* Start Post Card Style-01
+-------------------------*/
+
+/*
+* End Post Card Style-01
+-------------------------*/

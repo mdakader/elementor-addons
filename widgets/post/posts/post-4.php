@@ -13,40 +13,40 @@ $card_style = $settings['post_card_style'];
             ?>
             <<?php echo $tag; ?> class="title post-card_title post-card-alignment">
             <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-            <div class="post-meta post-card_meta-data post-card-alignment">
-                <div class="easy-post-meta-info">
-                    <ul>
-                        <li>
-                            <?php
-                            if ($settings['show_meta_data'] == "yes") {
-                                if (in_array('author', $settings['meta_data'])) {
-                                    easy_addons__posted_by();
-                                }
-                            }
-                            ?></li>
-                        <li>
-                            <?php
-                            if ($settings['show_meta_data'] == "yes") {
-                                if (in_array('date', $settings['meta_data'])) {
-                                    ?>
-                                    <i class="easy-post-date fas fa-calendar"></i><?php echo get_the_date('d M, Y'); ?>
-
-                                <?php }
-                            }
-                            ?> </li>
-                        <li>                <?php
-                            if ($settings['show_meta_data'] == "yes") {
-                                if (in_array('comments', $settings['meta_data'])) {
-                                    easy_addons_post_comment_count();
-                                }
-                            }
-                            ?>
-                        </li>
-                    </ul>
-                </div>
-            </div>
         </<?php echo $tag; ?>>
         <?php } ?>
+        <div class="post-meta post-card_meta-data post-card-alignment">
+            <div class="easy-post-meta-info">
+                <ul>
+                    <li>
+                        <?php
+                        if ($settings['show_meta_data'] == "yes") {
+                            if (in_array('author', $settings['meta_data'])) {
+                                easy_addons__posted_by();
+                            }
+                        }
+                        ?></li>
+                    <li>
+                        <?php
+                        if ($settings['show_meta_data'] == "yes") {
+                            if (in_array('date', $settings['meta_data'])) {
+                                ?>
+                                <i class="easy-post-date fas fa-calendar"></i><?php echo get_the_date('d M, Y'); ?>
+
+                            <?php }
+                        }
+                        ?> </li>
+                    <li>                <?php
+                        if ($settings['show_meta_data'] == "yes") {
+                            if (in_array('comments', $settings['meta_data'])) {
+                                easy_addons_post_comment_count();
+                            }
+                        }
+                        ?>
+                    </li>
+                </ul>
+            </div>
+        </div>
         <div class="thumbnail post-card-item_img">
             <?php if (has_post_thumbnail()) { ?>
                 <div class="post-card-image post-card_thumbnail">
