@@ -332,22 +332,7 @@ class Post_Card_Widget extends Widget_Base
                 ],
                 'frontend_available' => true,
                 'selectors' => [
-                    '{{WRAPPER}} .post-card-container,
-				 {{WRAPPER}} .post-card-style-6' => 'margin-bottom: {{SIZE}}{{UNIT}};',
-                ],
-            ]
-        );
-
-        $this->add_control(
-            'post_card_border_radius', [
-                'label' => __('Border Radius', 'easy-addons'),
-                'type' => Controls_Manager::DIMENSIONS,
-                'size_units' => ['px', '%'],
-                'selectors' => [
-                    '{{WRAPPER}} .post-card-box-radius' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-                ],
-                'condition' => [
-                    'post_card_style' => ['post-card-style-2', 'post-card-style-6']
+                    '{{WRAPPER}} .post-card-container' => 'margin-bottom: {{SIZE}}{{UNIT}};',
                 ],
             ]
         );
@@ -711,8 +696,7 @@ class Post_Card_Widget extends Widget_Base
                 'selector' =>
                     '{{WRAPPER}} .post-card_meta-data .easy-post-meta-info li,
             {{WRAPPER}} .post-card_meta-data i .fa,
-            {{WRAPPER}} .post-card_meta-data span a,
-            {{WRAPPER}} .post-card-style-6 .card-by a',
+            {{WRAPPER}} .post-card_meta-data span a',
                 'condition' => ['show_meta_data' => 'yes'],
             ]
         );
