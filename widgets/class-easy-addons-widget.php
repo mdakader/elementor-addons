@@ -181,7 +181,7 @@ class Easy_Addons_Widget {
         $widgets_manager->register( new Widgets\Call_To_Action());
         $widgets_manager->register( new Widgets\Image_Gallery());
         $widgets_manager->register( new Widgets\Counter_Up());
-        $widgets_manager->register( new Widgets\Testimonial());
+        $widgets_manager->register( new Widgets\Widget_Testimonial());
         $widgets_manager->register( new Widgets\Service_Widget());
         $widgets_manager->register( new Widgets\Post_Card_Widget());
     }

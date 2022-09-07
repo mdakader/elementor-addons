@@ -16,7 +16,7 @@ if (!defined('ABSPATH')) {
 /**
  * Testimonial Widget
  */
-class Testimonial extends Widget_Base
+class Widget_Testimonial extends Widget_Base
 {
 
     /**
@@ -24,7 +24,7 @@ class Testimonial extends Widget_Base
      */
     public function get_name()
     {
-        return 'testimonial';
+        return 'easy_testimonial';
     }
 
     /**
@@ -369,18 +369,19 @@ class Testimonial extends Widget_Base
          * Style
          */
         $this->start_controls_section(
-            'style',
+            'testimonial_custom_style',
             [
-                'label' => esc_html__('Styles', 'easy-addons'),
+                'label' => esc_html__('Testimonial Style', 'easy-addons'),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
+        $this->end_controls_section();
 
-        $this->add_control(
-            'quote_icon', [
+        $this->start_controls_section(
+            'testimonial_quote_icon',
+            [
                 'label' => esc_html__('Quote Icon', 'easy-addons'),
-                'type' => Controls_Manager::HEADING,
-                'separator' => 'before',
+                'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
 
@@ -405,12 +406,13 @@ class Testimonial extends Widget_Base
                 ],
             ]
         );
+        $this->end_controls_section();
 
-        $this->add_control(
-            's_client_name', [
-                'label' => esc_html__('Client Name', 'easy-addons'),
-                'type' => Controls_Manager::HEADING,
-                'separator' => 'before',
+        $this->start_controls_section(
+            'testimonial_client_name',
+            [
+                'label' => esc_html__('Name', 'easy-addons'),
+                'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
 
@@ -426,18 +428,19 @@ class Testimonial extends Widget_Base
             'client_name_color', [
                 'label' => esc_html__('Color', 'easy-addons'),
                 'type' => Controls_Manager::COLOR,
-                'default' => '#3C2C7D',
+                'default' => '#54595F',
                 'selectors' => [
                     '{{WRAPPER}} .easy-testimonial-item h2' => 'color: {{VALUE}}'
                 ],
             ]
         );
+        $this->end_controls_section();
 
-        $this->add_control(
-            's_client_designation', [
+        $this->start_controls_section(
+            'testimonial_client_designation',
+            [
                 'label' => esc_html__('Client Designation', 'easy-addons'),
-                'type' => Controls_Manager::HEADING,
-                'separator' => 'before',
+                'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
 
@@ -453,20 +456,22 @@ class Testimonial extends Widget_Base
             'client_designation_color', [
                 'label' => esc_html__('Color', 'easy-addons'),
                 'type' => Controls_Manager::COLOR,
-                'default' => '#3C2C7D',
+                'default' => '#54595F',
                 'selectors' => [
                     '{{WRAPPER}} .easy-testimonial-item h4' => 'color: {{VALUE}}'
                 ],
             ]
         );
+        $this->end_controls_section();
 
-        $this->add_control(
-            's_client_review', [
+        $this->start_controls_section(
+            'testimonial_client_review',
+            [
                 'label' => esc_html__('Client Review', 'easy-addons'),
-                'type' => Controls_Manager::HEADING,
-                'separator' => 'before',
+                'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
+
         $this->add_group_control(
             Group_Control_Border::get_type(),
             [
@@ -516,7 +521,7 @@ class Testimonial extends Widget_Base
             'client_review_color', [
                 'label' => esc_html__('Color', 'easy-addons'),
                 'type' => Controls_Manager::COLOR,
-                'default' => '#3C2C7D',
+                'default' => '#54595F',
                 'selectors' => [
                     '{{WRAPPER}} .easy-testimonial-item p' => 'color: {{VALUE}}'
                 ],

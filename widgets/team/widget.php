@@ -2,8 +2,6 @@
 
 namespace Easy_Addons\Widgets;
 
-use Elementor\Group_Control_Background;
-use Elementor\Group_Control_Border;
 use Elementor\Group_Control_Typography;
 use Elementor\Repeater;
 use Elementor\Utils;
@@ -334,19 +332,6 @@ class Widget_Team extends Widget_Base
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
-
-//        $this->add_control(
-//            'team_h_bg_color',
-//            [
-//                'label' => esc_html__('Hover Background Color', 'easy-addons'),
-//                'type' => Controls_Manager::COLOR,
-//                'alpha' => true,
-//                'default' => '',
-//                'selectors' => [
-//                    '{{WRAPPER}} .team-wrapper.team-style-1 .our-team .team-img:after' => 'background-color: {{VALUE}}',
-//                ],
-//            ]
-//        );
 
         $this->end_controls_section();
 

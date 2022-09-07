@@ -18,7 +18,7 @@
   };
 
   jQuery(window).on('elementor/frontend/init', function () {
-      elementorFrontend.hooks.addAction('frontend/element_ready/testimonial.default', widgetTestimonial);
+      elementorFrontend.hooks.addAction('frontend/element_ready/easy_testimonial.default', widgetTestimonial);
   });
 
 }(jQuery, window.elementorFrontend));
