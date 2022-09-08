@@ -3,7 +3,7 @@
  * Plugin Name: Easy Addons for Elementor
  * Description: Easy Addons For Elementor is a plugin for widgets to extend for Elementor Page Builder.
  * Plugin URI: https://babuwp.com/wp/easy-addons/
- * Version:           1.1.1
+ * Version:           1.1.0
  * Requires at least: 5.2
  * Requires PHP:      7.2
  * Author: Babu WP
@@ -27,7 +27,7 @@ if ( ! defined( 'WPINC' ) ) {
  * Start at version 1.0.0 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define( 'EASY_ADDONS_VERSION', '1.1.1' );
+define( 'EASY_ADDONS_VERSION', '1.1.0' );
 define( 'EASY_ADDONS_FILE', __FILE__ );
 define( 'EASY_ADDONS_PATH', __DIR__ );
 define( 'EASY_ADDONS_URL', plugins_url( '', EASY_ADDONS_FILE ) );
