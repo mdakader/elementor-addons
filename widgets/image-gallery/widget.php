@@ -188,9 +188,6 @@ class Image_Gallery extends Widget_Base {
 		$image_justified = $this->get_settings( 'image_justified' );
 		$image_margin = $this->get_settings( 'image_margin' );
 
-		$this->add_render_attribute( 'image_caption', 'class', 'easy-image-gallery-caption' );
-		$this->add_inline_editing_attributes( 'image_caption' );
-
 		?>
 
         <div class="easy-gallery">
