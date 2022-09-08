@@ -30,7 +30,7 @@ Easy Addons For Elementor plugin will add some features For Elementor Website Bu
     <li>Counter Up</li>
 </ul>
 
-**[View Demo](https://https://babuwp.com/wp/easy-addons//)**
+**[View Demo](https://babuwp.com/wp/easy-addons/)**
 
 == Installation ==
 
