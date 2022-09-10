@@ -1,7 +1,7 @@
 ;(function ($) {
     $(window).on('elementor/frontend/init', function () {
         elementorFrontend.hooks.addAction('frontend/element_ready/image-gallery.default', function (scope, $) {
-            var imageJustify = $(scope).find("#ea-gallery");
+            var imageJustify = $(scope).find("#easy-gallery");
             var justifyImage = imageJustify.data('justify-image');
             var margin = imageJustify.data('margin');
 
