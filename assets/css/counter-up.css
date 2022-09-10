@@ -33,12 +33,12 @@
 * Start Counter Up Style-02
 -------------------------*/
 .easy-counter.counter-style-2 {
-    background: #ddd;
+    background: #ffffff;
     padding: 40px;
     border-radius: 10px;
     -webkit-box-shadow: 10px 10px 5px 0px rgb(0 0 0 / 75%);
     -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-    box-shadow: 10px 10px 5px 0px rgb(0 0 0 / 75%);
+    box-shadow: rgb(50 50 93 / 25%) 0px 30px 60px -12px, rgb(0 0 0 / 30%) 0px 18px 36px -18px;
 }
 
 /*
