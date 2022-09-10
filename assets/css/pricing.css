@@ -150,10 +150,10 @@
 }
 .easy-pricing-table-item.pricing-card-style-2 .pricing-table .pricing-table-header{
     color: #fff;
-    text-align: left;
-    padding: 0 0 0 35px;
+    text-align: center;
     margin: 0 0 25px;
 }
+
 .easy-pricing-table-item.pricing-card-style-2 .pricing-table .title{
     color: #F87BA3;
     background-color: #fff;
@@ -161,7 +161,7 @@
     font-weight: 400;
     text-transform: uppercase;
     padding: 10px 10px 10px 30px;
-    margin: 0 0 25px;
+    margin: 0 0 30px 25px;
     border-radius: 50px 0 0 50px;
 }
 .easy-pricing-table-item.pricing-card-style-2 .pricing-table .price-table-signup a{

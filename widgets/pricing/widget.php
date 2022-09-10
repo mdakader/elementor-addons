@@ -421,6 +421,34 @@ class Widget_Price extends Widget_Base
                 ]
             ]
         );
+
+        $this->add_responsive_control(
+            'price_title_padding',
+            [
+                'label' => esc_html__( 'Padding', 'easy-addons'),
+                'type' => Controls_Manager::DIMENSIONS,
+                'size_units' => [ 'px', '%', 'em' ],
+                'selectors' => [
+                    '{{WRAPPER}} .easy-pricing-table-item.pricing-card-style-2 .pricing-table .title' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+                'condition' => [
+                    'pricing_card_style' => ['pricing-card-style-2'],
+                ]
+            ]
+        );
+
+        $this->add_responsive_control(
+            'price_title_margin',
+            [
+                'label' => esc_html__( 'Margin', 'easy-addons'),
+                'type' => Controls_Manager::DIMENSIONS,
+                'size_units' => [ 'px', '%', 'em' ],
+                'selectors' => [
+                    '{{WRAPPER}} .easy-pricing-table-item .pricing-table .pricing-table-header' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+            ]
+        );
+
         $this->end_controls_section();
 
         $this->start_controls_section(
@@ -450,7 +478,7 @@ class Widget_Price extends Widget_Base
                 'label' => esc_html__('Margin Bottom', 'easy-addons'),
                 'type' => Controls_Manager::SLIDER,
                 'selectors' => [
-                    '{{WRAPPER}} .easy-pricing-table-item.pricing-card-style-1 .pricing-table .price-value' => 'margin-bottom: {{SIZE}}{{UNIT}}',
+                    '{{WRAPPER}} .easy-pricing-table-item .pricing-table .pricing-table-header' => 'margin-bottom: {{SIZE}}{{UNIT}}',
                 ],
                 'default' => [
                     'unit' => 'px',
