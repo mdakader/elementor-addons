@@ -123,11 +123,21 @@ class Call_To_Action extends Widget_Base {
 		);
 
 		$this->add_control(
+			'ea_cta_title',
+			[
+				'label' => esc_html__( 'Title', 'easy-addons' ),
+				'type'  => Controls_Manager::TEXTAREA,
+				'placeholder' => esc_html__( 'Heading Text Here', 'easy-addons' ),
+				'default' => esc_html__( 'Lorem Ipsum is simply dummy.', 'easy-addons' ),
+			]
+		);
+
+		$this->add_control(
 			'ea_cta_desc',
 			[
-				'label' => esc_html__( 'Call To Action Text', 'easy-addons' ),
+				'label' => esc_html__( 'Description', 'easy-addons' ),
 				'type'  => Controls_Manager::TEXTAREA,
-				'placeholder' => esc_html__( 'Heading First Text Here', 'easy-addons' ),
+				'placeholder' => esc_html__( 'Description Text Here', 'easy-addons' ),
 				'default' => esc_html__( 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.', 'easy-addons' ),
 			]
 		);
@@ -237,6 +247,48 @@ class Call_To_Action extends Widget_Base {
         $this->end_controls_section();
 
         $this->start_controls_section(
+            'cta_title_style',
+            [
+                'label' => esc_html__('Title', 'easy-addons'),
+                'tab' => Controls_Manager::TAB_STYLE,
+            ]
+        );
+
+        $this->add_control(
+            'cta_title_clr_text',
+            [
+                'label' => esc_html__('Title Text Color', 'easy-addons'),
+                'type' => Controls_Manager::COLOR,
+                'default' => '#ffffff',
+                'selectors' => [
+                    '{{WRAPPER}} h3.easy-cta-title' => 'color: {{VALUE}};',
+                ],
+            ]
+        );
+
+        $this->add_group_control(
+            Group_Control_Typography::get_type(),
+            [
+                'name' => 'ct_title_typography',
+                'label' => esc_html__('Title Typography', 'easy-addons'),
+                'selector' => '{{WRAPPER}} h3.easy-cta-title',
+            ]
+        );
+        $this->add_responsive_control(
+            'cta_title_margin',
+            [
+                'label' => esc_html__( 'Margin', 'easy-addons'),
+                'type' => Controls_Manager::DIMENSIONS,
+                'size_units' => [ 'px', '%', 'em' ],
+                'selectors' => [
+                    '{{WRAPPER}} h3.easy-cta-title' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+            ]
+        );
+
+        $this->end_controls_section();
+
+        $this->start_controls_section(
             'cta_desc_style',
             [
                 'label' => esc_html__('CTA Description', 'easy-addons'),
@@ -247,7 +299,7 @@ class Call_To_Action extends Widget_Base {
         $this->add_control(
             'cta_desc_clr_text',
             [
-                'label' => esc_html__('CTA Description Text Color', 'easy-addons'),
+                'label' => esc_html__('Description Text Color', 'easy-addons'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '#ffffff',
                 'selectors' => [
@@ -260,7 +312,7 @@ class Call_To_Action extends Widget_Base {
             Group_Control_Typography::get_type(),
             [
                 'name' => 'ct_desc_typography',
-                'label' => esc_html__('CTA Description Typography', 'easy-addons'),
+                'label' => esc_html__('Description Typography', 'easy-addons'),
                 'selector' => '{{WRAPPER}} p.easy-cta-desc',
             ]
         );
@@ -376,6 +428,10 @@ class Call_To_Action extends Widget_Base {
 	protected function render() {
 		$settings = $this->get_settings_for_display();
 
+		$ea_cta_title = $this->get_settings( 'ea_cta_title' );
+		$this->add_render_attribute( 'ea_cta_title', 'class', 'easy-cta-title' );
+		$this->add_inline_editing_attributes( 'ea_cta_title' );
+
 		$ea_cta_desc = $this->get_settings( 'ea_cta_desc' );
 		$this->add_render_attribute( 'ea_cta_desc', 'class', 'easy-cta-desc' );
 		$this->add_inline_editing_attributes( 'ea_cta_desc' );
@@ -385,7 +441,10 @@ class Call_To_Action extends Widget_Base {
 		$this->add_inline_editing_attributes( 'cta_link_text' );
 		?>
 		<div class="easy-cta <?php echo esc_attr($settings['easy_cta_style']);?>">
-			<div class="easy-desc">
+            <div class="easy-desc">
+                <?php if(!empty($ea_cta_title)):?>
+                    <h3 <?php  $this->print_render_attribute_string( 'ea_cta_title' ) ?>> <?php echo esc_html( $ea_cta_title ); ?></h3>
+                <?php endif;?>
 				<?php if(!empty($ea_cta_desc)):?>
 					<p <?php  $this->print_render_attribute_string( 'ea_cta_desc' ) ?>> <?php echo esc_html( $ea_cta_desc ); ?></p>
 				<?php endif;?>

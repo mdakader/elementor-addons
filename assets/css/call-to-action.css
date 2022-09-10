@@ -10,6 +10,13 @@
     color: #fff;
     padding: 50px;
 }
+h3.easy-cta-title {
+    font-size: 28px;
+    line-height: 28px;
+    font-weight: 600;
+    color: #ffffff;
+}
+
 p.easy-cta-desc {
     margin-bottom: 0;
 }

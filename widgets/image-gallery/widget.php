@@ -88,7 +88,7 @@ class Image_Gallery extends Widget_Base {
 	 *
 	 */
 	public function get_script_depends() {
-		return [ 'image-gallery', 'justifiedGallery', 'venobox' ];
+		return [ 'image-gallery', 'justifiedGallery', 'venobox', 'isotope', 'images-loaded' ];
 	}
 
 	/**
@@ -123,7 +123,25 @@ class Image_Gallery extends Widget_Base {
 			]
 		);
 
-		$repeater = new Repeater();
+        $this->add_responsive_control(
+            'columns', [
+                'label' => esc_html__('Column', 'easy-addons' ),
+                'type' => Controls_Manager::SELECT,
+                'options' => [
+                    1 => esc_html__('1 Column', 'easy-addons' ),
+                    2 => esc_html__('2 Column', 'easy-addons' ),
+                    3 => esc_html__('3 Column', 'easy-addons' ),
+                    4 => esc_html__('4 Column', 'easy-addons' ),
+                    5 => esc_html__('5 Column', 'easy-addons' ),
+                    6 => esc_html__('6 Column', 'easy-addons' ),
+                ],
+                'default' => 3,
+                'selectors' => [
+                    '{{WRAPPER}} .image-gallery-item' => '--image-grid-column: {{VALUE}};',
+                ],
+                'style_transfer' => true,
+            ]
+        );
 
         $this->add_control(
             'gallery_image',
@@ -204,7 +222,21 @@ class Image_Gallery extends Widget_Base {
                         </a>
 					<?php endforeach; endif; ?>
             </div>
-
+            <h1>Isotope - imagesLoaded progress</h1>
+            <div class="gallery-grid">
+                <div class="gallery-grid-sizer"></div>
+                <div class="gallery-grid-item">
+                    <?php
+                    if (!empty($settings['gallery_image'])):
+                        foreach ($settings['gallery_image'] as $em_gallery_photo):?>
+                        <a class="easy-image-gallery image-gallery-item" data-gall="gallery01" href="<?php echo esc_url($em_gallery_photo['url']) ?>">
+                            <img alt=""
+                                 src="<?php echo esc_url($em_gallery_photo['url']) ?>"/>
+                        </a>
+                    <?php endforeach;
+                    endif; ?>
+                </div>
+            </div>
         </div>
 
 		<?php

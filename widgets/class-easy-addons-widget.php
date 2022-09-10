@@ -83,6 +83,8 @@ class Easy_Addons_Widget {
         wp_register_style( 'venobox', EASY_ADDONS_ASSETS . '/css/venobox.css', );
 
         wp_register_script( 'justifiedGallery', EASY_ADDONS_ASSETS .'/js/jquery.justifiedGallery.js', [ 'jquery' ], false, true );
+        wp_register_script( 'isotope', EASY_ADDONS_ASSETS .'/js/isotope.pkgd.min.js', [ 'jquery' ], false, true );
+        wp_register_script( 'images-loaded', EASY_ADDONS_ASSETS .'/js/imagesloaded.pkgd.min.js', [ 'jquery' ], false, true );
         wp_register_script( 'counter-up', EASY_ADDONS_ASSETS .'/js/jquery.counterup.min.js', [ 'jquery' ], false, true );
         wp_register_script( 'waypoints', EASY_ADDONS_ASSETS .'/js/waypoints.min.js', [ 'jquery' ], false, true );
         wp_register_script( 'progressbar', EASY_ADDONS_ASSETS .'/js/progressbar.min.js', [ 'jquery' ], false, true );
