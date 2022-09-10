@@ -558,7 +558,7 @@ class Service_Widget extends Widget_Base
                 'label' => esc_html__('Button Text Color', 'easy-addons'),
                 'type' => Controls_Manager::COLOR,
                 'alpha' => true,
-                'default' => '#e74c3c',
+                'default' => '#7E22CE',
                 'selectors' => [
                     '{{WRAPPER}} .easy-services a.easy-service-link' => 'color: {{VALUE}}',
                 ],
@@ -651,12 +651,28 @@ class Service_Widget extends Widget_Base
                 'label' => esc_html__('Button Text Hover Color', 'easy-addons'),
                 'type' => Controls_Manager::COLOR,
                 'alpha' => true,
-                'default' => '#33B5BF',
+                'default' => '#ffffff',
                 'selectors' => [
                     '{{WRAPPER}} .easy-services-item:hover .easy-service-link' => 'color: {{VALUE}}',
                 ],
                 'condition' => [
                     'service_style' => ['service-style-4'],
+                ]
+            ]
+        );
+
+        $this->add_control(
+            'services_btn_h_color',
+            [
+                'label' => esc_html__('Button Text Hover Color', 'easy-addons'),
+                'type' => Controls_Manager::COLOR,
+                'alpha' => true,
+                'default' => '#ffffff',
+                'selectors' => [
+                    '{{WRAPPER}} .easy-services-item:hover .easy-service-link' => 'color: {{VALUE}}',
+                ],
+                'condition' => [
+                    'service_style' => ['service-style-1', 'service-style-2', 'service-style-3'],
                 ]
             ]
         );

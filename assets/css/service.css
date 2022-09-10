@@ -1,5 +1,5 @@
 /*
-* Start Team Style
+* Start Service Style
 -------------------------*/
 .easy-services-item {
     background: #ffffff;
@@ -56,25 +56,33 @@ a.easy-service-link {
     text-transform: capitalize;
     display: inline-block;
     transition: 0.5s ease 0s;
-    color: #db3157;
+    color: #4F46E5;
 }
 
 /*
-* End Team Style
+* End Service Style
 -------------------------*/
 
 /*
-* Start Team Style-1
+* Start Service Style-1
+-------------------------*/
+.easy-services.service-style-1 a.easy-service-link {
+    margin-bottom: 25px;
+    padding: 10px 15px;
+    transition: all 0.5s ease 0s;
+    border: 1px solid transparent;
+}
+.easy-services.service-style-1 .easy-services-item:hover a.easy-service-link {
+    border: 1px solid #ffffff;
+    color: #fff;
+}
+/*
+* End Service Style-1
 -------------------------*/
 
 
 /*
-* End Team Style-1
--------------------------*/
-
-
-/*
-* Start Team Style-2
+* Start Service Style-2
 -------------------------*/
 .easy-services.service-style-2 .easy-services-item{
     padding: 20px 25px;
@@ -114,16 +122,18 @@ a.easy-service-link {
     padding: 10px 15px;
     transition: all 0.5s ease 0s;
 }
-.easy-services.service-style-2 .easy-services-item:hover a.easy-service-link{
+.easy-services.service-style-2 .easy-services-item:hover a.easy-service-link {
     border: 1px solid #ffffff;
+    color: #fff;
 }
+
 /*
-* End Team Style-2
+* End Service Style-2
 -------------------------*/
 
 
 /*
-* Start Team Style-3
+* Start Service Style-3
 -------------------------*/
 .easy-services.service-style-3 .easy-services-item{
     padding: 0;
@@ -146,19 +156,21 @@ a.easy-service-link {
 .easy-services.service-style-3 a.easy-service-link{
     margin-bottom: 25px;
     padding: 10px 15px;
+    border: 1px solid transparent;
     transition: all 0.5s ease 0s;
 }
 .easy-services.service-style-3 .easy-services-item:hover a.easy-service-link{
     border: 1px solid #ffffff;
+    color: #ffffff;
 }
 /*
-* End Team Style-3
+* End Service Style-3
 -------------------------*/
 
 
 
 /*
-* Start Team Style-4
+* Start Service Style-4
 -------------------------*/
 .easy-services.service-style-4 .easy-services-item {
     background: #f6fcfd;
@@ -240,6 +252,10 @@ a.easy-service-link {
 .easy-services.service-style-4 .easy-services-item:hover .easy-service-description {
     color: #172E5A;
 }
+
+.easy-services.service-style-4 .easy-services-item:hover .easy-service-link {
+    color: #172E5A;
+}
 /*
-* End Team Style-4
+* End Service Style-4
 -------------------------*/

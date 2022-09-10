@@ -19,32 +19,6 @@
                     navigation: true
                 });
             });
-
-            var $portfolio = $(scope).find('.gallery-grid');
-            if ($.fn.imagesLoaded && $portfolio.length > 0) {
-                imagesLoaded($portfolio, function () {
-                    $portfolio.isotope({
-                        itemSelector: '.gallery-grid-item a',
-                        filter: '*'
-                    });
-                    $(window).trigger("resize");
-                });
-            }
-            // external js: isotope.pkgd.js, imagesloaded.pkgd.js
-
-            // init Isotope
-            // var $grid  = $(scope).find('.gallery-grid').isotope({
-            //     itemSelector: '.gallery-grid-item a',
-            //     percentPosition: true,
-            //     masonry: {
-            //         columnWidth: '.gallery-grid-sizer'
-            //     }
-            // });
-            // layout Isotope after each image loads
-            $grid.imagesLoaded().progress( function() {
-                $grid.isotope('layout');
-            });
-
         });
 
     });

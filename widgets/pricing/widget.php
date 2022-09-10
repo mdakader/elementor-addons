@@ -612,7 +612,6 @@ class Widget_Price extends Widget_Base
             [
                 'label' => esc_html__('Subscribe Button Color', 'easy-addons'),
                 'type' => Controls_Manager::COLOR,
-                'default' => '#2c3e50',
                 'selectors' => [
                     '{{WRAPPER}} .easy-pricing-table-item .pricing-table .price-table-signup a' => 'color: {{VALUE}};',
                 ],
@@ -649,7 +648,6 @@ class Widget_Price extends Widget_Base
             [
                 'label' => esc_html__('Subscribe Button Color', 'easy-addons'),
                 'type' => Controls_Manager::COLOR,
-                'default' => '#2c3e50',
                 'selectors' => [
                     '{{WRAPPER}} .easy-pricing-table-item .pricing-table .price-table-signup a:hover' => 'color: {{VALUE}};',
                 ],
