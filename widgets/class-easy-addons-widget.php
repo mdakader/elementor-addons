@@ -156,6 +156,8 @@ class Easy_Addons_Widget {
         require_once( __DIR__ . '/service/widget.php');
         require_once(__DIR__ . '/post/widget.php');
         require_once(__DIR__ . '/post/posts/functions-post-card.php');
+        require_once(__DIR__ . '/banner/widget.php');
+        require_once(__DIR__ . '/banner/banners/functions-banner.php');
     }
 
     /**
@@ -181,6 +183,7 @@ class Easy_Addons_Widget {
         $widgets_manager->register( new Widgets\Testimonial());
         $widgets_manager->register( new Widgets\Service_Widget());
         $widgets_manager->register( new Widgets\Post_Card_Widget());
+        $widgets_manager->register( new Widgets\Banner_Widget());
     }
 
 
