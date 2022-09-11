@@ -6,7 +6,7 @@
  * Version:           1.1.1
  * Requires at least: 5.2
  * Requires PHP:      7.2
- * Author: Babu WP
+ * Author: Md Abdul Kader
  * Author URI: https://profiles.wordpress.org/babuwpd/
  * Text Domain: easy-addons
  * License:           GPL v2 or later
