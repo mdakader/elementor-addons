@@ -382,7 +382,14 @@ class Flip_Box extends Widget_Base {
                 ],
             ]
         );
-
+        $this->add_group_control(
+            Group_Control_Border::get_type(),
+            [
+                'name' => 'flip_btn_border',
+                'label' => esc_html__( 'Border', 'easy-addons' ),
+                'selector' => '{{WRAPPER}} .inner-content a',
+            ]
+        );
         $this->end_controls_tab();
 
         $this->start_controls_tab('flip_box_btn_hover', [
