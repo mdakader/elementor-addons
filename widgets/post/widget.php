@@ -336,6 +336,17 @@ class Post_Card_Widget extends Widget_Base
                 ],
             ]
         );
+        $this->add_responsive_control(
+            'post_card_padding',
+            [
+                'label' => esc_html__('Padding', 'easy-addons'),
+                'type' => Controls_Manager::DIMENSIONS,
+                'size_units' => ['px', '%', 'em'],
+                'selectors' => [
+                    '{{WRAPPER}} .post-content.post-card-content-box' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+            ]
+        );
 
         $this->add_group_control(
             Group_Control_Box_Shadow::get_type(),
