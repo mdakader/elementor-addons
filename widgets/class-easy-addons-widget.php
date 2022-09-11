@@ -66,37 +66,37 @@ class Easy_Addons_Widget {
 
 	}
     public function widget_scripts() {
-        wp_register_style( 'fontAwesome', EASY_ADDONS_ASSETS . '/css/all.css');
-        wp_register_style( 'team', EASY_ADDONS_ASSETS . '/css/team.css');
-        wp_register_style( 'flip-box', EASY_ADDONS_ASSETS . '/css/flip-box.css');
-        wp_register_style( 'dual-heading', EASY_ADDONS_ASSETS . '/css/dual-heading.css');
-        wp_register_style( 'call-to-action', EASY_ADDONS_ASSETS . '/css/call-to-action.css');
-        wp_register_style( 'price', EASY_ADDONS_ASSETS . '/css/pricing.css');
-        wp_register_style( 'image-gallery', EASY_ADDONS_ASSETS .'/css/image-gallery.css');
-        wp_register_style( 'counter-up', EASY_ADDONS_ASSETS .'/css/counter-up.css');
-        wp_register_style( 'testimonial', EASY_ADDONS_ASSETS .'/css/testimonial.css');
-        wp_register_style( 'service', EASY_ADDONS_ASSETS .'/css/service.css');
-        wp_register_style( 'posts', EASY_ADDONS_ASSETS .'/css/posts.css');
-        wp_register_style( 'skills-bar', EASY_ADDONS_ASSETS .'/css/skills-bar.css');
-        wp_register_style( 'portfolio', EASY_ADDONS_ASSETS .'/css/portfolio.css');
+        wp_register_style( 'fontAwesome', EASY_ADDONS_ASSETS . '/css/all.css',[],EASY_ADDONS_VERSION);
+        wp_register_style( 'team', EASY_ADDONS_ASSETS . '/css/team.css',[],EASY_ADDONS_VERSION);
+        wp_register_style( 'flip-box', EASY_ADDONS_ASSETS . '/css/flip-box.css',[],EASY_ADDONS_VERSION);
+        wp_register_style( 'dual-heading', EASY_ADDONS_ASSETS . '/css/dual-heading.css',[],EASY_ADDONS_VERSION);
+        wp_register_style( 'call-to-action', EASY_ADDONS_ASSETS . '/css/call-to-action.css',[],EASY_ADDONS_VERSION);
+        wp_register_style( 'price', EASY_ADDONS_ASSETS . '/css/pricing.css',[],EASY_ADDONS_VERSION);
+        wp_register_style( 'image-gallery', EASY_ADDONS_ASSETS .'/css/image-gallery.css',[],EASY_ADDONS_VERSION);
+        wp_register_style( 'counter-up', EASY_ADDONS_ASSETS .'/css/counter-up.css',[],EASY_ADDONS_VERSION);
+        wp_register_style( 'testimonial', EASY_ADDONS_ASSETS .'/css/testimonial.css',[],EASY_ADDONS_VERSION);
+        wp_register_style( 'service', EASY_ADDONS_ASSETS .'/css/service.css',[],EASY_ADDONS_VERSION);
+        wp_register_style( 'posts', EASY_ADDONS_ASSETS .'/css/posts.css',[],EASY_ADDONS_VERSION);
+        wp_register_style( 'skills-bar', EASY_ADDONS_ASSETS .'/css/skills-bar.css',[],EASY_ADDONS_VERSION);
+        wp_register_style( 'portfolio', EASY_ADDONS_ASSETS .'/css/portfolio.css',[],EASY_ADDONS_VERSION);
         wp_register_style( 'lightgallery', EASY_ADDONS_ASSETS .'/css/lightgallery.min.css');
 
         wp_register_style( 'justifiedGallery', EASY_ADDONS_ASSETS .'/css/justifiedGallery.min.css');
-        wp_register_style( 'venobox', EASY_ADDONS_ASSETS . '/css/venobox.css', );
+        wp_register_style( 'venobox', EASY_ADDONS_ASSETS . '/css/venobox.css');
 
-        wp_register_script( 'justifiedGallery', EASY_ADDONS_ASSETS .'/js/jquery.justifiedGallery.js', [ 'jquery' ], false, true );
-        wp_register_script( 'lightgallery', EASY_ADDONS_ASSETS .'/js/lightgalleryall.min.js', [ 'jquery' ], false, true );
-        wp_register_script( 'isotope', EASY_ADDONS_ASSETS .'/js/isotope.pkgd.min.js', [ 'jquery' ], false, true );
-        wp_register_script( 'images-loaded', EASY_ADDONS_ASSETS .'/js/imagesloaded.pkgd.min.js', [ 'jquery' ], false, true );
-        wp_register_script( 'portfolio', EASY_ADDONS_ASSETS .'/js/portfolio.js', [ 'jquery' ], false, true );
-        wp_register_script( 'counter-up', EASY_ADDONS_ASSETS .'/js/jquery.counterup.min.js', [ 'jquery' ], false, true );
-        wp_register_script( 'waypoints', EASY_ADDONS_ASSETS .'/js/waypoints.min.js', [ 'jquery' ], false, true );
-        wp_register_script( 'progressbar', EASY_ADDONS_ASSETS .'/js/progressbar.min.js', [ 'jquery' ], false, true );
-        wp_register_script( 'counterUp', EASY_ADDONS_ASSETS .'/js/counter-up.js', [ 'jquery' ], false, true );
-        wp_register_script( 'venobox', EASY_ADDONS_ASSETS .'/js/venobox.js', [ 'jquery' ], false, true );
-        wp_register_script( 'image-gallery',EASY_ADDONS_ASSETS .'/js/image-gallery.js',  [ 'jquery' ], false, true );
-        wp_register_script( 'testimonial',EASY_ADDONS_ASSETS .'/js/testimonial.js',  [ 'jquery' ], false, true );
-        wp_register_script( 'skills-bar',EASY_ADDONS_ASSETS .'/js/skills-bar.js',  [ 'jquery' ], false, true );
+        wp_register_script( 'justifiedGallery', EASY_ADDONS_ASSETS .'/js/jquery.justifiedGallery.js', [ 'jquery' ], EASY_ADDONS_VERSION, true );
+        wp_register_script( 'lightgallery', EASY_ADDONS_ASSETS .'/js/lightgalleryall.min.js', [ 'jquery' ], EASY_ADDONS_VERSION, true );
+        wp_register_script( 'isotope', EASY_ADDONS_ASSETS .'/js/isotope.pkgd.min.js', [ 'jquery' ], EASY_ADDONS_VERSION, true );
+        wp_register_script( 'images-loaded', EASY_ADDONS_ASSETS .'/js/imagesloaded.pkgd.min.js', [ 'jquery' ], EASY_ADDONS_VERSION, true );
+        wp_register_script( 'portfolio', EASY_ADDONS_ASSETS .'/js/portfolio.js', [ 'jquery' ], EASY_ADDONS_VERSION, true );
+        wp_register_script( 'counter-up', EASY_ADDONS_ASSETS .'/js/jquery.counterup.min.js', [ 'jquery' ], EASY_ADDONS_VERSION, true );
+        wp_register_script( 'waypoints', EASY_ADDONS_ASSETS .'/js/waypoints.min.js', [ 'jquery' ], EASY_ADDONS_VERSION, true );
+        wp_register_script( 'progressbar', EASY_ADDONS_ASSETS .'/js/progressbar.min.js', [ 'jquery' ], EASY_ADDONS_VERSION, true );
+        wp_register_script( 'counterUp', EASY_ADDONS_ASSETS .'/js/counter-up.js', [ 'jquery' ], EASY_ADDONS_VERSION, true );
+        wp_register_script( 'venobox', EASY_ADDONS_ASSETS .'/js/venobox.js', [ 'jquery' ], EASY_ADDONS_VERSION, true );
+        wp_register_script( 'image-gallery',EASY_ADDONS_ASSETS .'/js/image-gallery.js',  [ 'jquery' ], EASY_ADDONS_VERSION, true );
+        wp_register_script( 'testimonial',EASY_ADDONS_ASSETS .'/js/testimonial.js',  [ 'jquery' ], EASY_ADDONS_VERSION, true );
+        wp_register_script( 'skills-bar',EASY_ADDONS_ASSETS .'/js/skills-bar.js',  [ 'jquery' ], EASY_ADDONS_VERSION, true );
     }
 	/**
 	 * Register the stylesheets for the public-facing side of the site.
