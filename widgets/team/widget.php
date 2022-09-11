@@ -332,6 +332,29 @@ class Widget_Team extends Widget_Base
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
+        $this->add_responsive_control(
+            'team_img_box_height',
+            [
+                'label' => esc_html__('Image Box Height', 'easy-addons'),
+                'type' => Controls_Manager::SLIDER,
+                'size_units' => ['px'],
+                'range' => [
+                    'px' => [
+                        'min' => 0,
+                        'max' => 700,
+                        'step' => 5,
+                    ],
+                ],
+                'default' => [
+                    'unit' => 'px',
+                    'size' => 430,
+                ],
+                'selectors' => [
+                    '{{WRAPPER}} .team-img' => 'height: {{SIZE}}{{UNIT}};',
+                ],
+            ]
+
+        );
 
         $this->end_controls_section();
 
@@ -460,7 +483,7 @@ class Widget_Team extends Widget_Base
         );
 
         $this->start_controls_tab('socials_link_normal', [
-                'label' => __('Normal','easy-addons'),
+                'label' => __('Normal', 'easy-addons'),
             ]
         );
 
@@ -526,9 +549,6 @@ class Widget_Team extends Widget_Base
                 'selectors' => [
                     '{{WRAPPER}} .team-wrapper .our-team .social-links li a' => 'color: {{VALUE}}',
                 ],
-//                'condition' => [
-//                    'service_style' => ['service-style-4'],
-//                ]
             ]
         );
 
@@ -558,7 +578,7 @@ class Widget_Team extends Widget_Base
         $this->end_controls_tab();
 
         $this->start_controls_tab('socials_link_hover', [
-                'label' => __('Hover','easy-addons'),
+                'label' => __('Hover', 'easy-addons'),
             ]
         );
 

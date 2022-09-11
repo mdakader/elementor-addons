@@ -25,8 +25,10 @@ small.team-position {
 
 .team-img img {
     height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
 }
-
 
 /*
 * Start Team Style-1
@@ -54,11 +56,6 @@ small.team-position {
 
 .team-wrapper.team-style-1 .our-team:hover .team-img:after {
     bottom: 0;
-}
-
-.team-wrapper.team-style-1 .our-team img {
-    width: 100%;
-    height: auto;
 }
 
 .team-wrapper.team-style-1 .our-team .social-links {
@@ -177,11 +174,6 @@ small.team-position {
     overflow: hidden;
 }
 
-.team-wrapper.team-style-2 .team-img img {
-    width: 100%;
-    height: auto;
-}
-
 .team-wrapper.team-style-2 .social_media_team {
     position: absolute;
     top: 100%;
@@ -292,11 +284,6 @@ small.team-position {
     height: 100%;
     bottom: 0;
     opacity: 0.6;
-}
-
-.team-wrapper.team-style-3 .our-team .team-img img {
-    width: 100%;
-    height: auto;
 }
 
 .team-wrapper.team-style-3 .our-team .team-content {
@@ -571,12 +558,11 @@ small.team-position {
     position: relative;
     overflow: hidden;
 }
-
-.team-wrapper.team-style-5 .our-team img {
-    width: 100%;
-    height: auto;
+.team-wrapper.team-style-5 .team-img {
+    position: static;
+    height: 430px;
+    overflow: hidden;
 }
-
 .team-wrapper.team-style-5 .our-team .team-content {
     width: 100%;
     height: 100%;

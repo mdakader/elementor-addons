@@ -26,7 +26,9 @@ $migration_allowed = Icons_Manager::is_migration_allowed();
 <div class="easy-addons-team">
     <div class="team-wrapper <?php echo esc_attr($team_style) ?>">
         <div class="our-team">
-            <img src="<?php echo esc_url($settings['team_image']['url']) ?>" alt="Image"/>
+            <div class="team-img">
+                <img src="<?php echo esc_url($settings['team_image']['url']) ?>" alt="Image"/>
+            </div>
             <div class="team-content">
                 <?php if(!empty($team_name)):?>
                     <h3 class="team-name"><?php echo esc_html($team_name);?>
