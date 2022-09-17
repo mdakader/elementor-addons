@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: Easy Addons for Elementor
- * Description: Easy Addons For Elementor is a plugin for widgets to extend for Elementor Page Builder.
+ * Description: Easy Addons is a plugin for Elementor page building. It will add some widgets that will give you the flexibility to design beautiful sections for your Elementor based websites.
  * Plugin URI: https://babuwp.com/wp/easy-addons/
  * Version:           1.1.1
  * Requires at least: 5.2

@@ -12,8 +12,9 @@ Easy Addons For Elementor is a plugin for widgets to extend for Elementor Page B
 
 == Description ==
 
-Easy Addons For Elementor plugin will add some features For Elementor Website Builder Addons.
+Easy Addons is a plugin for **[Elementor](https://wordpress.org/plugins/elementor/)** page building. It will add some widgets that will give you the flexibility to design beautiful sections for your Elementor based websites.
 
+**[View Demo](https://babuwp.com/wp/easy-addons/)**
 
 = Available Widgets =
 
@@ -30,7 +31,6 @@ Easy Addons For Elementor plugin will add some features For Elementor Website Bu
     <li>Counter Up</li>
 </ul>
 
-**[View Demo](https://babuwp.com/wp/easy-addons/)**
 
 == Installation ==
 
@@ -41,13 +41,22 @@ Easy Addons For Elementor plugin will add some features For Elementor Website Bu
 
 == Screenshots ==
 
-1. Image gallery
+1. Flip Box
+2. Call To Action
+3. Service Card
+4. Dual Heading
+5. Image Gallery
+6. Team
+7. Testimonial
+8. Price Table
+9. Post Card
+10. Counter Up
 
 
 == Frequently Asked Questions ==
 
 
-= What is the requirement for Easy Addons? =
+= What is the requirement for Easy Addons For Elementor? =
 
 You need Elementor Website Builder or Pro Version active for Easy Addons for Elementor.
 
