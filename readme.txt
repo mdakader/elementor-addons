@@ -2,7 +2,7 @@
 Contributors: babuwpd
 Tags: Easy Addons for Elementor Page Builder, page builder, elementor website builder, front-end builder, drag and drop editor, post card, testimonial, service, heading, price, counter up, call to action, image gallery, team, flip box.
 Requires at least: 4.6
-Tested up to: 6.0
+Tested up to: 6.1
 Requires PHP: 5.6
 Stable tag: 1.1.1
 License: GPLv2 or later
